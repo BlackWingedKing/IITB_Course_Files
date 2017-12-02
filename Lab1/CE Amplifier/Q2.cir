@@ -1,0 +1,24 @@
+Q2 netlist for the setup
+.include bc547.txt
+*after solving Rc=3k,Re=2k,R1=27k given R2=10k
+*passive elements in the cicuit
+Re 0 1 2k
+R2 0 2 10k
+Rc 6 7 3k
+R1 2 7 27k
+
+*biasing voltage
+Vba 7 0 dc 10v
+
+*voltage sources for measuring currents
+vie 3 1 dc 0v
+vic 6 5 dc 0v
+vib 2 4 dc 0v
+
+*nodes of the transistor
+q1 5 4 3 bc547a
+
+.control
+run
+.endc
+.end
