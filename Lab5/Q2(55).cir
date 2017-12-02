@@ -1,0 +1,20 @@
+Lab5 dark condition Q2
+.include Solar_Cell.txt
+
+*define the Cell and others 
+xs 1 2 solar_cell
+r 2 0 100
+vin 1 0 dc 1v ac 0
+
+*analysis
+.dc vin 0.00001 2 0.001
+
+.control
+.temp 55
+run
+
+*plot the required graphs
+plot -i(vin) vs v(1,2)
+plot ln(-i(vin)) vs v(1,2)
+.endc
+.end
