@@ -1,0 +1,21 @@
+Q4(2)
+*Passive Components
+C 1 2 100n
+R 2 0 1k
+
+*ac source of 10Vpp
+vin 1 0 dc 0 ac 5
+
+*vary frequency from 50-50khz
+.ac dec 10 50 50k
+
+.control
+run
+
+*plot the outputs
+plot v(2)
+plot {57.29*vp(2)-57.29*vp(1)}
+*v(2) is output voltage and v(1) is input voltage
+
+.endc
+.end
