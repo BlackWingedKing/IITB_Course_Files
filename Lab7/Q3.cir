@@ -1,0 +1,20 @@
+Q3 Lab7
+.include cd4007.txt
+
+m 2 1 0 0 NMOS4007
+vgs 1 0 dc 3.5v
+vds 3 0 dc 200mv
+
+*DC source of 0v to measure current
+vid 3 2 dc 0v
+
+*DC analysis 
+.dc vgs 0 5 0.0001
+
+.control
+run
+
+plot i(vid) vs v(1)
+.endc
+.end
+
