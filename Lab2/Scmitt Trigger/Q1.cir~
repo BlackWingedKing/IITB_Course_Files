@@ -1,0 +1,16 @@
+Q1 Scmidtt Trigger
+.include ua741.txt
+x1 1 2 3 4 5 UA741
+R1 0 1 10k
+R2 1 5 10K
+Vin 2 0 sin(0 10 1kHz)
+
+.tran 0.001ms 50ms
+
+.control
+run
+
+plot v(5) v(2)
+.endc
+.end
+
