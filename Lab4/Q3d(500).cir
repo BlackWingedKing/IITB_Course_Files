@@ -1,0 +1,19 @@
+Lab4 lighted condition Q2 IL = 8mA
+.include Solar_Cell10_500.txt
+
+*define the Cell and others 
+xs 1 2 solar_cell
+r 2 0 100
+vin 1 0 dc 1v ac 0
+
+*analysis
+.dc vin -2 2 0.01
+
+.control
+run
+
+*plot the required graphs
+plot -i(vin) vs v(1,2)
+
+.endcs
+.end
