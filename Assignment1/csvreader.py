@@ -1,5 +1,5 @@
 #To run in terminal: python csvreader.py -n = path/to/dataset.csv
-#gives : attributes array, array of attribute's data (with Row ID), array of mean of attribute's data (except output attribute), array of variance data (except output attribute)
+#gives : attributes array, array of attribute's data (with Row ID), array of mean of attribute's data, array of variance data (except output attribute)
 
 import csv
 import numpy as np
