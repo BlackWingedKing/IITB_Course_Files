@@ -75,8 +75,18 @@ def loss(a):
 def split(a,n):
 	#got an array in which index n's attribute is sorted
 	#now need to produce the best split
-
-
+	total_loss = []
+	l = a.shape[0]
+	for i in range(0,l-1):
+		loss = 0.0
+		#need to add end conditions
+		if(i==0):
+			loss = loss + loss(a)
+		else:
+			loss = loss + loss(a[0:i]) + loss(a[i:l])
+		total_loss.append[loss]
+	total_loss = np.asarray(total_loss)
+	split_index = np.argmax(total_loss)
 
 #just a random array to check all stuff
-data = np.array([[1,2,3],[4,5,6],[7,8,9],[10,11,12]],dtype = 'double')
+data = np.arange(20).reshape(5,4)
