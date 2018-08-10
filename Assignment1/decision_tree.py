@@ -19,6 +19,32 @@ class d_tree(object):
 		self.right = None
 		self.data = data
 		
+		self.left_data = None
+		self.right_data = None
+		self.attribute_value = False
+		
+		# self.threshold_loss = None	
+		
+		self.corr = self.correlation(self.data)
+		self.pred = self.prediction(self.data)
+
+		self.split_attribute = self.find_attribute(self.corr)
+		print(self.split_attribute)
+		#sort the data
+		self.data = self.index_sort(self.data,self.split_attribute)
+		print(self.data)
+		self.split_index = self.find_split_index(self.data,self.split_attribute)
+		print(self.split_index)
+		#adding the condition for the split
+		if(self.split_index==0):
+			self.isleaf= True
+
+		if(self.isleaf==False):
+			self.attribute_value = self.data[self.split_index,self.split_attribute]
+			self.left_data,self.right_data = self.split(self.data,self.split_index)
+			self.right = d_tree(self.right_data)
+			self.left = d_tree(self.left_data)		
+
 	#member functions
 	def mean(self,a):
 		# finds mean of each column
@@ -54,7 +80,7 @@ class d_tree(object):
 		return corr
 
 	def find_attribute(self,a):
-		#returns the index no. the attribute
+		#returns the index no. the attribute index. input must be the correlation matrix
 		a = a[:-1]
 		a = np.absolute(a)
 		b = np.argmax(a)
@@ -64,6 +90,7 @@ class d_tree(object):
 	def add_rid_sort(self,a,n):
 		#this function adds the row id to the input array and then sorts it according to the attribute found
 		#n is the id w.r.t which sorting needs to be done
+		#input is the data_array and attribute_index
 		l = (a.shape)[0]
 		rid = np.arange(l).reshape(l, 1)
 		b = np.concatenate((a,rid),axis=1)
@@ -72,21 +99,33 @@ class d_tree(object):
 		print(c)
 		return c
 
-	def index_sort(self,a):
+	def index_sort(self,a,n):
+		#the above function without row_id sort
 		#this function doesn't add row id to the input array but sorts it according to the attribute found
 		#n is the id w.r.t which sorting needs to be done
+		#input is the data_array and attribute_index
 		c = a[a[:,n].argsort()]
 		print(c)
 		return c
 
+	def prediction(self,a):
+		#inputs the data array
+		#prediction would be the mean of the last column 
+		l = (a.shape)[0]
+		b = a[:,-1]
+		b = b.reshape(l,1)
+		pred = self.mean(b)
+		return pred
+
 	def loss(self,a):
 		#for this function given an numpy array it calculates the pred and returns the error
-		#calculates the square loss
+		#calculates the mean square loss
 		l = (a.shape)[0]
 		b = a[:,-1]
 		b = b.reshape(l,1)
 		loss = self.mean_dev(b)
 		loss = np.multiply(loss,loss)
+		loss = np.sum(loss, axis = 0)
 		return loss
 
 	def find_split_index(self,a,n):
@@ -98,15 +137,25 @@ class d_tree(object):
 			loss = 0.0
 			#need to add end conditions
 			if(i==0):
-				loss = loss + loss(a)
+				loss = loss + self.loss(a)
 			else:
-				loss = loss + loss(a[0:i]) + loss(a[i:l])
-			total_loss.append[loss]
+				loss = loss + self.loss(a[0:i]) + self.loss(a[i:l])
+			total_loss.append(loss)
 		total_loss = np.asarray(total_loss)
-		split_index = np.argmax(total_loss)
+		split_index = np.argmin(total_loss)
 		return split_index
+	
+	def split(self,a,m):
+		#calculate current loss
+		#we should have the split index and sorted array(important) and attribute index
+		l = a.shape[0]
+		return a[0:m],a[m:l]
+
 
 if __name__=='__main__':
 	#instantize the class from the csv file
 	#we get the data from paramters or infer.py
-	parent = d_tree(data)
+	data_array = np.genfromtxt('toy_dataset.csv', delimiter=',')
+	l = data_array.shape[0]
+	data_array = data_array[1:l]
+	parent = d_tree(data_array)
