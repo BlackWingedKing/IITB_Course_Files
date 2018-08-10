@@ -27,25 +27,28 @@ class d_tree(object):
 
 		self.left_data = None
 		self.right_data = None
+		self.standard_dev = (self.sd(self.data))[-1]
 		
 
 		# self.threshold_loss = None
 		print('height.....===',self.height)	
 		print('xxxxxxxxxxxx......Decision_Tree_called........xxxxxxxxxxx')
-		if(self.data.shape[0]>1):
+		if(self.data.shape[0]>1 and self.standard_dev>0):
 
+			print(self.sd(self.data))
+			print(self.standard_dev)
 			self.corr = self.correlation(self.data)			
 			self.split_attribute = self.find_attribute(self.corr)
 			print('split_attribute...===',self.split_attribute)
 			#sort the data
 			self.data = self.index_sort(self.data,self.split_attribute)
-			# print('sorted_data.....')
-			# print(self.data)
+			print('sorted_data.....')
+			print(self.data)
 
 			self.split_index = self.find_split_index(self.data,self.split_attribute)
 			print('split_index...===',self.split_index)
 		#adding the condition for the split
-		if(self.split_index==0 or self.data.shape[0]==1):
+		if(self.split_index==0 or self.data.shape[0]==1 or self.standard_dev==0):
 			self.isleaf= True
 
 		if(self.height<10):
@@ -94,6 +97,8 @@ class d_tree(object):
 		temp = s_dev*s_dev[-1]
 		corr = corr/temp
 		corr = np.sum(corr, axis=0)
+		# if(corr!=corr):
+		# 	print('............NAN_OCCURED.............')
 		print(corr)
 		return corr
 
