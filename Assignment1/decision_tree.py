@@ -14,6 +14,7 @@ class d_tree(object):
 		#right child
 		#data numpy array
 		#isleaf condition
+		self.threshold_height = 4
 		self.isleaf = False
 		self.left = None
 		self.right = None
@@ -33,7 +34,14 @@ class d_tree(object):
 		# self.threshold_loss = None
 		print('height.....===',self.height)	
 		print('xxxxxxxxxxxx......Decision_Tree_called........xxxxxxxxxxx')
-		if(self.data.shape[0]>1 and self.standard_dev>0):
+
+		#adding the condition for the split
+		if(self.split_index==0 or self.data.shape[0]==1 or self.standard_dev==0 or self.height== self.threshold_height ):
+			self.isleaf= True
+			print('this is a leaf at height ===',self.height)
+			print('its prediction is ===',self.pred)
+
+		if(self.data.shape[0]>1 and self.standard_dev>0 and self.isleaf==False):
 
 			print(self.sd(self.data))
 			print(self.standard_dev)
@@ -47,14 +55,12 @@ class d_tree(object):
 
 			self.split_index = self.find_split_index(self.data,self.split_attribute)
 			print('split_index...===',self.split_index)
-		#adding the condition for the split
-		if(self.split_index==0 or self.data.shape[0]==1 or self.standard_dev==0):
-			self.isleaf= True
 
-		if(self.height<10):
+		if(self.height<=self.threshold_height):
 			if(self.isleaf==False):
 				print(' ')
 				self.attribute_value = self.data[self.split_index,self.split_attribute]
+				print('......attribute_value......===',self.attribute_value)
 				self.left_data,self.right_data = self.split(self.data,self.split_index)
 				print('left child_data.....')
 				print(self.left_data)
@@ -64,8 +70,6 @@ class d_tree(object):
 				print(' ')
 				self.right = d_tree(self.right_data,(self.height+1))
 				
-						
-
 	#member functions
 	def mean(self,a):
 		# finds mean of each column
@@ -134,7 +138,7 @@ class d_tree(object):
 		b = a[:,-1]
 		b = b.reshape(l,1)
 		pred = self.mean(b)
-		return pred
+		return pred[0]
 
 	def loss(self,a):
 		#for this function given an numpy array it calculates the pred and returns the error
