@@ -7,7 +7,7 @@ import numpy as np
 
 class d_tree(object):
 	"""docstring for d_tree"""
-	def __init__(self, data):
+	def __init__(self, data,height):
 		super(d_tree, self).__init__()
 		#attributes of this class??
 		#left child
@@ -18,32 +18,50 @@ class d_tree(object):
 		self.left = None
 		self.right = None
 		self.data = data
-		
+		self.height = height
+		self.pred = self.prediction(self.data)
+		self.attribute_value = None
+		self.corr = None
+		self.split_attribute = None
+		self.split_index = None
+
 		self.left_data = None
 		self.right_data = None
-		self.attribute_value = False
 		
-		# self.threshold_loss = None	
-		
-		self.corr = self.correlation(self.data)
-		self.pred = self.prediction(self.data)
 
-		self.split_attribute = self.find_attribute(self.corr)
-		print(self.split_attribute)
-		#sort the data
-		self.data = self.index_sort(self.data,self.split_attribute)
-		print(self.data)
-		self.split_index = self.find_split_index(self.data,self.split_attribute)
-		print(self.split_index)
+		# self.threshold_loss = None
+		print('height.....===',self.height)	
+		print('xxxxxxxxxxxx......Decision_Tree_called........xxxxxxxxxxx')
+		if(self.data.shape[0]>1):
+
+			self.corr = self.correlation(self.data)			
+			self.split_attribute = self.find_attribute(self.corr)
+			print('split_attribute...===',self.split_attribute)
+			#sort the data
+			self.data = self.index_sort(self.data,self.split_attribute)
+			# print('sorted_data.....')
+			# print(self.data)
+
+			self.split_index = self.find_split_index(self.data,self.split_attribute)
+			print('split_index...===',self.split_index)
 		#adding the condition for the split
-		if(self.split_index==0):
+		if(self.split_index==0 or self.data.shape[0]==1):
 			self.isleaf= True
 
-		if(self.isleaf==False):
-			self.attribute_value = self.data[self.split_index,self.split_attribute]
-			self.left_data,self.right_data = self.split(self.data,self.split_index)
-			self.right = d_tree(self.right_data)
-			self.left = d_tree(self.left_data)		
+		if(self.height<10):
+			if(self.isleaf==False):
+				print(' ')
+				self.attribute_value = self.data[self.split_index,self.split_attribute]
+				self.left_data,self.right_data = self.split(self.data,self.split_index)
+				print('left child_data.....')
+				print(self.left_data)
+				print('right child_data.....')
+				print(self.right_data)
+				self.left = d_tree(self.left_data,(self.height+1))
+				print(' ')
+				self.right = d_tree(self.right_data,(self.height+1))
+				
+						
 
 	#member functions
 	def mean(self,a):
@@ -84,7 +102,6 @@ class d_tree(object):
 		a = a[:-1]
 		a = np.absolute(a)
 		b = np.argmax(a)
-		print(b)
 		return b
 
 	def add_rid_sort(self,a,n):
@@ -94,9 +111,7 @@ class d_tree(object):
 		l = (a.shape)[0]
 		rid = np.arange(l).reshape(l, 1)
 		b = np.concatenate((a,rid),axis=1)
-		print(b)
 		c = b[b[:,n].argsort()]
-		print(c)
 		return c
 
 	def index_sort(self,a,n):
@@ -105,7 +120,6 @@ class d_tree(object):
 		#n is the id w.r.t which sorting needs to be done
 		#input is the data_array and attribute_index
 		c = a[a[:,n].argsort()]
-		print(c)
 		return c
 
 	def prediction(self,a):
@@ -158,4 +172,4 @@ if __name__=='__main__':
 	data_array = np.genfromtxt('toy_dataset.csv', delimiter=',')
 	l = data_array.shape[0]
 	data_array = data_array[1:l]
-	parent = d_tree(data_array)
+	parent = d_tree(data_array,0)
