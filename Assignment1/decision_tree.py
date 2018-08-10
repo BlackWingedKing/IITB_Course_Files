@@ -14,7 +14,7 @@ class d_tree(object):
 		#right child
 		#data numpy array
 		#isleaf condition
-		self.threshold_height = 4
+		self.threshold_height = 5
 		self.isleaf = False
 		self.left = None
 		self.right = None
@@ -36,7 +36,7 @@ class d_tree(object):
 		print('xxxxxxxxxxxx......Decision_Tree_called........xxxxxxxxxxx')
 
 		#adding the condition for the split
-		if(self.split_index==0 or self.data.shape[0]==1 or self.standard_dev==0 or self.height== self.threshold_height ):
+		if(self.data.shape[0]==1 or self.standard_dev==0 or self.height== self.threshold_height ):
 			self.isleaf= True
 			print('this is a leaf at height ===',self.height)
 			print('its prediction is ===',self.pred)
@@ -55,6 +55,11 @@ class d_tree(object):
 
 			self.split_index = self.find_split_index(self.data,self.split_attribute)
 			print('split_index...===',self.split_index)
+			
+			if(self.split_index==0):
+				self.isleaf = True
+				print('this is a leaf at height ===',self.height)
+				print('its prediction is ===',self.pred)
 
 		if(self.height<=self.threshold_height):
 			if(self.isleaf==False):
