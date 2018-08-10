@@ -14,7 +14,7 @@ class d_tree(object):
 		#right child
 		#data numpy array
 		#isleaf condition
-		self.threshold_height = 5
+		self.threshold_height = 10
 		self.isleaf = False
 		self.left = None
 		self.right = None
@@ -50,8 +50,8 @@ class d_tree(object):
 			print('split_attribute...===',self.split_attribute)
 			#sort the data
 			self.data = self.index_sort(self.data,self.split_attribute)
-			print('sorted_data.....')
-			print(self.data)
+			# print('sorted_data.....')
+			# print(self.data)
 
 			self.split_index = self.find_split_index(self.data,self.split_attribute)
 			print('split_index...===',self.split_index)
@@ -67,10 +67,10 @@ class d_tree(object):
 				self.attribute_value = self.data[self.split_index,self.split_attribute]
 				print('......attribute_value......===',self.attribute_value)
 				self.left_data,self.right_data = self.split(self.data,self.split_index)
-				print('left child_data.....')
-				print(self.left_data)
-				print('right child_data.....')
-				print(self.right_data)
+				# print('left child_data.....')
+				# print(self.left_data)
+				# print('right child_data.....')
+				# print(self.right_data)
 				self.left = d_tree(self.left_data,(self.height+1))
 				print(' ')
 				self.right = d_tree(self.right_data,(self.height+1))
@@ -106,8 +106,12 @@ class d_tree(object):
 		temp = s_dev*s_dev[-1]
 		corr = corr/temp
 		corr = np.sum(corr, axis=0)
+		for i in range(0,corr.shape[0]):
+			if(corr[i]!=corr[i]):
+				corr[i]=0
+				#print('............NAN_OCCURED.............')
 		# if(corr!=corr):
-		# 	print('............NAN_OCCURED.............')
+		
 		print(corr)
 		return corr
 
@@ -183,7 +187,7 @@ class d_tree(object):
 if __name__=='__main__':
 	#instantize the class from the csv file
 	#we get the data from paramters or infer.py
-	data_array = np.genfromtxt('toy_dataset.csv', delimiter=',')
+	data_array = np.genfromtxt('kaggle1_train.csv', delimiter=',')
 	l = data_array.shape[0]
 	data_array = data_array[1:l]
 	parent = d_tree(data_array,0)
