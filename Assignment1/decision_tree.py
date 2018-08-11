@@ -1,7 +1,7 @@
 #class implementation of the previous code
 
 import numpy as np
-
+threshold_height = 5
 #I'm assuming I will be getting two numpy arrays of size n*(m+1) array names are data and index
 #also I have cross checked all the functions :)
 class d_tree(object):
@@ -13,7 +13,7 @@ class d_tree(object):
 		#right child
 		#data numpy array
 		#isleaf condition
-		self.threshold_height = 15
+		self.threshold_height = threshold_height
 		self.isleaf = False
 		self.left = None
 		self.right = None
@@ -215,20 +215,22 @@ def calculate_loss(data,tree):
 if __name__=='__main__':
 	#instantize the class from the csv file
 	#we get the data from paramters or infer.py
-	data_array = np.genfromtxt('kaggle2_train.csv',delimiter=',')
+	data_array = np.genfromtxt('kaggle1_train.csv',delimiter=',')
 	# print(data_array)
 	l = data_array.shape[0]
 	data_array = data_array[1:l]
-	# print(data_array)
-	parent = d_tree(data_array,0)
-	print('xxxxxx.......Training completed.........xxxxxx ')
-	#this completes the training part now for the testing part we just need to implement insert function
-	print('train_error === ',calculate_loss(data_array,parent))
-
+	
 	#validation part 
-	val_array = np.genfromtxt('kaggle2_test.csv',delimiter=',')
+	val_array = np.genfromtxt('kaggle1_test.csv',delimiter=',')
 	l = val_array.shape[0]
 	val_array = val_array[1:l]
-	print('val_error === ',calculate_loss(val_array,parent))
 
 	#pruning part
+	for i in range(2,20):
+		global threshold_height
+		threshold_height = i
+		#fit the tree
+		print('height == ',i)
+		parent = d_tree(data_array,0)
+		print('train_error for height ',i,' === ',calculate_loss(data_array,parent))
+		print('train_error for height ',i,' === ',calculate_loss(val_array,parent))
