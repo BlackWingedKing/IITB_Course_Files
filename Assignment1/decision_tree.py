@@ -13,7 +13,7 @@ class d_tree(object):
 		#right child
 		#data numpy array
 		#isleaf condition
-		self.threshold_height = 10
+		self.threshold_height = 15
 		self.isleaf = False
 		self.left = None
 		self.right = None
@@ -31,14 +31,14 @@ class d_tree(object):
 		
 
 		# self.threshold_loss = None
-		print('height.....===',self.height)	
-		print('xxxxxxxxxxxx......Decision_Tree_called........xxxxxxxxxxx')
+		# print('height.....===',self.height)	
+		# print('xxxxxxxxxxxx......Decision_Tree_called........xxxxxxxxxxx')
 
 		#adding the condition for the split
 		if(self.data.shape[0]==1 or self.standard_dev==0 or self.height== self.threshold_height ):
 			self.isleaf= True
-			print('this is a leaf at height ===',self.height)
-			print('its prediction is ===',self.pred)
+			# print('this is a leaf at height ===',self.height)
+			# print('its prediction is ===',self.pred)
 
 		if(self.data.shape[0]>1 and self.standard_dev>0 and self.isleaf==False):
 
@@ -46,7 +46,7 @@ class d_tree(object):
 			#print(self.standard_dev)
 			self.corr = self.correlation(self.data)			
 			self.split_attribute = self.find_attribute(self.corr)
-			print('split_attribute...===',self.split_attribute)
+			# print('split_attribute...===',self.split_attribute)
 			#sort the data
 			self.data = self.index_sort(self.data,self.split_attribute)
 			# print('sorted_data.....')
@@ -57,21 +57,21 @@ class d_tree(object):
 			
 			if(self.split_index==0):
 				self.isleaf = True
-				print('this is a leaf at height ===',self.height)
+				# print('this is a leaf at height ===',self.height)
 				#print('its prediction is ===',self.pred)
 
 		if(self.height<=self.threshold_height):
 			if(self.isleaf==False):
 				# print(' ')
 				self.attribute_value = self.data[self.split_index,self.split_attribute]
-				print('......attribute_value......===',self.attribute_value)
+				# print('......attribute_value......===',self.attribute_value)
 				self.left_data,self.right_data = self.split(self.data,self.split_index)
 				# print('left child_data.....')
 				# print(self.left_data)
 				# print('right child_data.....')
 				# print(self.right_data)
 				self.left = d_tree(self.left_data,(self.height+1))
-				print(' ')
+				# print(' ')
 				self.right = d_tree(self.right_data,(self.height+1))
 				
 	#member functions
@@ -111,7 +111,7 @@ class d_tree(object):
 				#print('............NAN_OCCURED.............')
 		# if(corr!=corr):
 		
-		print(corr)
+		#print(corr)
 		return corr
 
 	def find_attribute(self,a):
@@ -196,12 +196,49 @@ def insert_pred(item, tree):
 if __name__=='__main__':
 	#instantize the class from the csv file
 	#we get the data from paramters or infer.py
-	data_array = np.genfromtxt('toy_dataset.csv',delimiter=',')
+	data_array = np.genfromtxt('kaggle2_train.csv',delimiter=',')
 	# print(data_array)
 	l = data_array.shape[0]
 	data_array = data_array[1:l]
 	# print(data_array)
 	parent = d_tree(data_array,0)
+	print('xxxxxx.......Training completed.........xxxxxx ')
 	#this completes the training part now for the testing part we just need to implement insert function
-	l = np.asarray([1,-5])
-	print(insert_pred(l,parent))
+	prediction =[]
+	for i in range(0,l-1):
+		pred = insert_pred(data_array[i],parent)
+		prediction.append(pred)
+	prediction = np.asarray(prediction)
+	prediction = np.reshape(prediction,(l-1,1))
+	#print(prediction)
+	gt = data_array[:,-1]
+	gt = np.reshape(gt,(l-1,1))
+	
+	train_loss = prediction - gt
+
+	train_error = np.multiply(train_loss,train_loss)
+	train_error = np.sum(train_error,axis=0)
+	train_error = train_error/(l-1)
+	print('train_error === ',train_error[0])
+
+	#validation part 
+	val_array = np.genfromtxt('kaggle2_test.csv',delimiter=',')
+	l = val_array.shape[0]
+	val_array = val_array[1:l]
+	
+	prediction =[]
+	for i in range(0,l-1):
+		pred = insert_pred(val_array[i],parent)
+		prediction.append(pred)
+	prediction = np.asarray(prediction)
+	prediction = np.reshape(prediction,(l-1,1))
+	#print(prediction)
+	gt = val_array[:,-1]
+	gt = np.reshape(gt,(l-1,1))
+	
+	val_loss = prediction - gt
+
+	val_error = np.multiply(val_loss,val_loss)
+	val_error = np.sum(val_error,axis=0)
+	val_error = val_error/(l-1)
+	print('val_error === ',val_error[0])
