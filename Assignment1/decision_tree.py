@@ -192,6 +192,25 @@ def insert_pred(item, tree):
     		return insert_pred(item,tree.left)
     	else:
     		return insert_pred(item,tree.right)
+def calculate_loss(data,tree):
+	l = data.shape[0]
+	prediction =[]
+	for i in range(0,l):
+		pred = insert_pred(data[i],parent)
+		prediction.append(pred)
+	prediction = np.asarray(prediction)
+	prediction = np.reshape(prediction,(l,1))
+	#print(prediction)
+	gt = data[:,-1]
+	gt = np.reshape(gt,(l,1))
+	
+	loss = prediction - gt
+	error = np.multiply(loss,loss)
+	error = np.sum(error,axis=0)
+	error = error[0]/(l)
+	return error
+
+
 
 if __name__=='__main__':
 	#instantize the class from the csv file
@@ -204,41 +223,12 @@ if __name__=='__main__':
 	parent = d_tree(data_array,0)
 	print('xxxxxx.......Training completed.........xxxxxx ')
 	#this completes the training part now for the testing part we just need to implement insert function
-	prediction =[]
-	for i in range(0,l-1):
-		pred = insert_pred(data_array[i],parent)
-		prediction.append(pred)
-	prediction = np.asarray(prediction)
-	prediction = np.reshape(prediction,(l-1,1))
-	#print(prediction)
-	gt = data_array[:,-1]
-	gt = np.reshape(gt,(l-1,1))
-	
-	train_loss = prediction - gt
-
-	train_error = np.multiply(train_loss,train_loss)
-	train_error = np.sum(train_error,axis=0)
-	train_error = train_error/(l-1)
-	print('train_error === ',train_error[0])
+	print('train_error === ',calculate_loss(data_array,parent))
 
 	#validation part 
 	val_array = np.genfromtxt('kaggle2_test.csv',delimiter=',')
 	l = val_array.shape[0]
 	val_array = val_array[1:l]
-	
-	prediction =[]
-	for i in range(0,l-1):
-		pred = insert_pred(val_array[i],parent)
-		prediction.append(pred)
-	prediction = np.asarray(prediction)
-	prediction = np.reshape(prediction,(l-1,1))
-	#print(prediction)
-	gt = val_array[:,-1]
-	gt = np.reshape(gt,(l-1,1))
-	
-	val_loss = prediction - gt
+	print('val_error === ',calculate_loss(val_array,parent))
 
-	val_error = np.multiply(val_loss,val_loss)
-	val_error = np.sum(val_error,axis=0)
-	val_error = val_error/(l-1)
-	print('val_error === ',val_error[0])
+	#pruning part
