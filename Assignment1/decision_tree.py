@@ -4,7 +4,6 @@ import numpy as np
 
 #I'm assuming I will be getting two numpy arrays of size n*(m+1) array names are data and index
 #also I have cross checked all the functions :)
-
 class d_tree(object):
 	"""docstring for d_tree"""
 	def __init__(self, data,height):
@@ -43,8 +42,8 @@ class d_tree(object):
 
 		if(self.data.shape[0]>1 and self.standard_dev>0 and self.isleaf==False):
 
-			print(self.sd(self.data))
-			print(self.standard_dev)
+			#print(self.sd(self.data))
+			#print(self.standard_dev)
 			self.corr = self.correlation(self.data)			
 			self.split_attribute = self.find_attribute(self.corr)
 			print('split_attribute...===',self.split_attribute)
@@ -54,16 +53,16 @@ class d_tree(object):
 			# print(self.data)
 
 			self.split_index = self.find_split_index(self.data,self.split_attribute)
-			print('split_index...===',self.split_index)
+			#print('split_index...===',self.split_index)
 			
 			if(self.split_index==0):
 				self.isleaf = True
 				print('this is a leaf at height ===',self.height)
-				print('its prediction is ===',self.pred)
+				#print('its prediction is ===',self.pred)
 
 		if(self.height<=self.threshold_height):
 			if(self.isleaf==False):
-				print(' ')
+				# print(' ')
 				self.attribute_value = self.data[self.split_index,self.split_attribute]
 				print('......attribute_value......===',self.attribute_value)
 				self.left_data,self.right_data = self.split(self.data,self.split_index)
@@ -183,11 +182,26 @@ class d_tree(object):
 		l = a.shape[0]
 		return a[0:m],a[m:l]
 
+def insert_pred(item, tree):
+    if(tree.isleaf==True):
+    	prediction = tree.pred
+    	return prediction
+
+    else:
+    	if(item[tree.split_attribute] < tree.attribute_value):
+    		return insert_pred(item,tree.left)
+    	else:
+    		return insert_pred(item,tree.right)
 
 if __name__=='__main__':
 	#instantize the class from the csv file
 	#we get the data from paramters or infer.py
-	data_array = np.genfromtxt('kaggle1_train.csv', delimiter=',')
+	data_array = np.genfromtxt('toy_dataset.csv',delimiter=',')
+	# print(data_array)
 	l = data_array.shape[0]
 	data_array = data_array[1:l]
+	# print(data_array)
 	parent = d_tree(data_array,0)
+	#this completes the training part now for the testing part we just need to implement insert function
+	l = np.asarray([1,-5])
+	print(insert_pred(l,parent))
