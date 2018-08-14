@@ -1,9 +1,14 @@
 #To run in terminal: python csvreader.py -n=path/to/dataset.csv
 #gives : attributes array, array of attribute's data (with Row ID), array of mean of attribute's data, array of variance data (except output attribute)
 
+#P.S. ------>This is same as infer.py
+
 import csv
 import numpy as np
 import argparse
+from decision_tree import *
+import random
+import pickle
 
 class dtree:
  	
@@ -33,63 +38,46 @@ class dtree:
 		arr1 = arr1.astype(np.float)
 		return arr1,arr2
 
-	def make_RID(self,matrix):
-
-		RID = []
-		for i in range(matrix.shape[1]):
-			RID.append(i)
-		RID = np.array(RID)
-		matrix = np.vstack((matrix,RID))
-		return matrix
-
-	def find_variance(self,matrix,mean_mat):
-		var_list = []
-		var = 0
-		for i in range(matrix.shape[0]):
-			for j in range(matrix.shape[1]):
-				var = var + (matrix[i][j] - mean_mat[i])**2
-			var_list.append(var)
-			var=0
-		var_mat = np.array(var_list)
-		return var_mat
-
-
-
-	def find_mean(self,matrix,mean_mat):
-		new = np.empty((matrix.shape[1]))
-		new = np.sum(matrix,axis = 1)/float(matrix.shape[1])
-		np.resize(mean_mat,np.shape(new))
-		mean_mat = new
-		return mean_mat
-
-	# def find_error(self):
-
-	# def make_split(self,matrix,attribute_index):
-
 
 if __name__=='__main__':
+	
+	#Parsing the arguments
 	ap = argparse.ArgumentParser()
-	ap.add_argument("-n", "--name", required=True,help="path to the csvfile")
+	ap.add_argument("-n", "--data_file", required=True,help="path to the csvfile")
+	#for absolute or square error  #ap.add_argument("-t", "--data_file", required=False,help="path to the csvfile") #----------Change it to true afterwards!!!-------
 	args = vars(ap.parse_args())
+
+	#Data array
 	cols=np.empty([])
+
+	#Attributes array
 	att=np.empty([])
+
+
 	D=dtree()
 	p=args["name"]
+
+	#Filling arrays of data and attributes respectively
 	cols,att = dtree.readcsv(D,p,cols,att)
-	mean_mat = np.empty([])
-	mean_mat = dtree.find_mean(D,cols,mean_mat)
-	cols = dtree.make_RID(D,cols)
-	att_col = np.delete(cols,cols.shape[0]-1,0)
-	att_col = np.delete(att_col,att_col.shape[0]-1,0)
-	var_mat = dtree.find_variance(D,att_col,mean_mat)
-	min_var=np.amax(var_mat)
+
+#Loop around this for n-n cross validation
+#______________________________________________________________________________________________________________
+
+	#generating random number for dataset split into val and train
+	random_row_number = random.randrange(1,cols.shape[0]*2/3,1)
+	
+
+	#Making train and val datasets of sizes 2/3 and 1/3 of orignal datasets respectively
+	train = cols[0:random_row_number,:]
+	val = cols[random_row_number:int(random_row_number*2/3),:]
+	train = np.vstack(train,cols[int(random_row_number*2/3)+1:cols.shape[0],:])
 
 
-	print("attributes:")
-	print(att)
-	print("columns:")
-	print(cols)
-	print("mean:")
-	print(mean_mat)
-	print("variance:")
-	print(var_mat)
+	#Making tree on the basis of train dataset
+	parent = d_tree(train,0)
+
+#_____________________________________________________________________________________________________________
+
+	#Saving the model
+	filename = 'model.csv'
+	pickle.dump(model, open(filename, 'wb'))
