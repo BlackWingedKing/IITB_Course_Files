@@ -1,6 +1,8 @@
 #class implementation of the previous code
 
 import numpy as np
+import random
+import time
 threshold_height = 5
 #I'm assuming I will be getting two numpy arrays of size n*(m+1) array names are data and index
 #also I have cross checked all the functions :)
@@ -8,11 +10,7 @@ class d_tree(object):
 	"""docstring for d_tree"""
 	def __init__(self, data,height):
 		super(d_tree, self).__init__()
-		#attributes of this class??
-		#left child
-		#right child
-		#data numpy array
-		#isleaf condition
+		#attributes of this class
 		self.threshold_height = threshold_height
 		self.isleaf = False
 		self.left = None
@@ -192,6 +190,7 @@ def insert_pred(item, tree):
     		return insert_pred(item,tree.left)
     	else:
     		return insert_pred(item,tree.right)
+
 def calculate_loss(data,tree):
 	l = data.shape[0]
 	prediction =[]
@@ -210,27 +209,80 @@ def calculate_loss(data,tree):
 	error = error[0]/(l)
 	return error
 
+def calculate_abs_loss(data,tree):
+	l = data.shape[0]
+	prediction =[]
+	for i in range(0,l):
+		pred = insert_pred(data[i],parent)
+		prediction.append(pred)
+	prediction = np.asarray(prediction)
+	prediction = np.reshape(prediction,(l,1))
+	#print(prediction)
+	gt = data[:,-1]
+	gt = np.reshape(gt,(l,1))
+	
+	loss = prediction - gt
+	error = np.absolute(loss)
+	error = np.sum(error,axis=0)
+	error = error[0]/(l)
+	return error
 
 
 if __name__=='__main__':
 	#instantize the class from the csv file
 	#we get the data from paramters or infer.py
-	data_array = np.genfromtxt('kaggle1_train.csv',delimiter=',')
+	start = time.time()
+	data_array = np.genfromtxt('kaggle2_train.csv',delimiter=',')
 	# print(data_array)
 	l = data_array.shape[0]
 	data_array = data_array[1:l]
 	
-	#validation part 
-	val_array = np.genfromtxt('kaggle1_test.csv',delimiter=',')
-	l = val_array.shape[0]
-	val_array = val_array[1:l]
+	pruning_const = 20
+	#split the  data array into train and val
+	#generate a random number for dataset split into val and train
+	#n-fold cross validation where n is pruning_const
+	
+	val_array_list = []
+	train_array_list = []
+
+
+	random_row_number = random.randrange(1,(data_array.shape[0]*2)/3,1)
+	# print(random_row_number)
+
+	#Making train and val datasets of sizes 2/3 and 1/3 of orignal datasets respectively
+	train_array = data_array[0:random_row_number,:]
+	val_array = data_array[random_row_number:int(random_row_number+data_array.shape[0]*1/3),:]
+	train_array = np.vstack((train_array,data_array[int(random_row_number+data_array.shape[0]*1/3)+1:data_array.shape[0],:]))
 
 	#pruning part
-	for i in range(2,20):
+	train_loss_list = []
+	val_loss_list = []
+	
+	for i in range(1,pruning_const):
 		global threshold_height
 		threshold_height = i
 		#fit the tree
 		print('height == ',i)
-		parent = d_tree(data_array,0)
-		print('train_error for height ',i,' === ',calculate_loss(data_array,parent))
-		print('train_error for height ',i,' === ',calculate_loss(val_array,parent))
+		parent = d_tree(train_array,0)
+		train_loss = calculate_loss(train_array,parent)
+		val_loss = calculate_loss(val_array,parent)
+		# train_loss = calculate_loss(train_array_list[i-1],parent)
+		# val_loss = calculate_loss(val_array_list[i-1],parent)
+		print('train_error for height ',i,' === ',train_loss)
+		print('val_error for height ',i,' === ',val_loss)
+		train_loss_list.append(train_loss)
+		val_loss_list.append(val_loss)
+	
+	best_height = np.argmin(val_loss_list)+1
+	
+	#since we got the best height from pruning now train it back again on all the data
+	global threshold_height
+	threshold_height = best_height
+	#fit the tree
+	parent = d_tree(data_array,0)
+	print(' ')
+	print('height of the final_tree is ','=== ',best_height)
+	print('training error on the final_tree in ','=== ',calculate_loss(data_array,parent))
+	end = time.time()
+	
+	print(end-start)
