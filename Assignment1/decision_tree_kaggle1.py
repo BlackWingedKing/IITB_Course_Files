@@ -244,7 +244,7 @@ if __name__=='__main__':
 	#instantize the class from the csv file
 	#we get the data from paramters or infer.py
 	start = time.time()
-	data_array = np.genfromtxt('kaggle2_train.csv',delimiter=',')
+	data_array = np.genfromtxt('kaggle1_train.csv',delimiter=',')
 	# print(data_array)
 	l = data_array.shape[0]
 	data_array = data_array[1:l]
@@ -258,13 +258,13 @@ if __name__=='__main__':
 	train_array_list = []
 
 
-	random_row_number = random.randrange(1,(data_array.shape[0]*2)/3,1)
+	random_row_number = random.randrange(1,(data_array.shape[0]*3)/4,1)
 	# print(random_row_number)
 
 	#Making train and val datasets of sizes 2/3 and 1/3 of orignal datasets respectively
 	train_array = data_array[0:random_row_number,:]
-	val_array = data_array[random_row_number:int(random_row_number+data_array.shape[0]*1/3),:]
-	train_array = np.vstack((train_array,data_array[int(random_row_number+data_array.shape[0]*1/3)+1:data_array.shape[0],:]))
+	val_array = data_array[random_row_number:int(random_row_number+data_array.shape[0]*1/4),:]
+	train_array = np.vstack((train_array,data_array[int(random_row_number+data_array.shape[0]*1/4)+1:data_array.shape[0],:]))
 
 	#pruning part
 	train_loss_list = []
@@ -275,9 +275,9 @@ if __name__=='__main__':
 		threshold_height = i
 		#fit the tree
 		print('height == ',i)
-		parent = d_tree(train_array,0)
-		train_loss = calculate_loss(train_array,parent)
-		val_loss = calculate_loss(val_array,parent)
+		parent = d_tree(data_array,0)
+		train_loss = calculate_loss(data_array,parent)
+		val_loss = calculate_loss(data_array,parent)
 		# train_loss = calculate_loss(train_array_list[i-1],parent)
 		# val_loss = calculate_loss(val_array_list[i-1],parent)
 		print('train_error for height ',i,' === ',train_loss)
@@ -286,7 +286,7 @@ if __name__=='__main__':
 		val_loss_list.append(val_loss)
 	
 	best_height = np.argmin(val_loss_list)+1
-	
+	#best_height =7
 	#since we got the best height from pruning now train it back again on all the data
 	global threshold_height
 	threshold_height = best_height
@@ -296,13 +296,13 @@ if __name__=='__main__':
 	print('height of the final_tree is ','=== ',best_height)
 	print('training error on the final_tree in ','=== ',calculate_loss(data_array,parent))
 	
-	test_array = np.genfromtxt('kaggle2_test.csv',delimiter=',')
+	test_array = np.genfromtxt('kaggle1_test.csv',delimiter=',')
 	# print(data_array)
 	l = test_array.shape[0]
 	test_array = test_array[1:l]
 	test_result = test(test_array,parent)
-	print(test_result)
-	np.savetxt("kaggle2_output.csv", test_result, delimiter=",")
+	#print(test_result)
+	np.savetxt("kaggle1_output.csv", test_result, delimiter=",")
 	end = time.time()
 	
 	print(end-start)
