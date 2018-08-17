@@ -1,8 +1,8 @@
 #class implementation of the previous code
-
 import numpy as np
 import random
 import time
+global threshold_height
 threshold_height = 5
 #I'm assuming I will be getting two numpy arrays of size n*(m+1) array names are data and index
 #also I have cross checked all the functions :)
@@ -64,10 +64,6 @@ class d_tree(object):
 				self.attribute_value = self.data[self.split_index,self.split_attribute]
 				# print('......attribute_value......===',self.attribute_value)
 				self.left_data,self.right_data = self.split(self.data,self.split_index)
-				# print('left child_data.....')
-				# print(self.left_data)
-				# print('right child_data.....')
-				# print(self.right_data)
 				self.left = d_tree(self.left_data,(self.height+1))
 				# print(' ')
 				self.right = d_tree(self.right_data,(self.height+1))
@@ -228,7 +224,7 @@ def calculate_abs_loss(data,tree):
 	error = np.sum(error,axis=0)
 	error = error[0]/(l)
 	return #error
-best_height = 3
+
 def test(data,tree):
 	l = data.shape[0]
 	prediction = []
@@ -261,7 +257,7 @@ if __name__=='__main__':
 	train_array_list = []
 
 
-	random_row_number = random.randrange(1,(data_array.shape[0]*2)/3,1)
+	random_row_number = random.randrange(1,(int)((data_array.shape[0]*2)/3),1)
 	# print(random_row_number)
 
 	#Making train and val datasets of sizes 2/3 and 1/3 of orignal datasets respectively
@@ -288,8 +284,8 @@ if __name__=='__main__':
 		train_loss_list.append(train_loss)
 		val_loss_list.append(val_loss)
 	
-	#best_height = np.argmin(val_loss_list)+1
-	best_height = 3
+	best_height = np.argmin(val_loss_list)+1
+
 	#since we got the best height from pruning now train it back again on all the data
 	global threshold_height
 	threshold_height = best_height
@@ -304,7 +300,7 @@ if __name__=='__main__':
 	l = test_array.shape[0]
 	test_array = test_array[1:l]
 	test_result = test(test_array,parent)
-	print(test_result)
+	#print(test_result)
 	np.savetxt("kaggle2_output.csv", test_result, delimiter=",")
 	end = time.time()
 	
