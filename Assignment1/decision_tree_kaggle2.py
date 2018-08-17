@@ -4,6 +4,8 @@ import random
 import time
 global threshold_height
 threshold_height = 5
+global error_cutoff
+error_cutoff = 0
 #I'm assuming I will be getting two numpy arrays of size n*(m+1) array names are data and index
 #also I have cross checked all the functions :)
 class d_tree(object):
@@ -22,23 +24,21 @@ class d_tree(object):
 		self.corr = None
 		self.split_attribute = None
 		self.split_index = None
-
+		self.d = self.data.shape[0]
 		self.left_data = None
 		self.right_data = None
 		self.standard_dev = (self.sd(self.data))[-1]
+		self.standard_dev = (self.standard_dev*self.standard_dev)/self.d
 		
 
-		# self.threshold_loss = None
-		# print('height.....===',self.height)	
-		# print('xxxxxxxxxxxx......Decision_Tree_called........xxxxxxxxxxx')
-
 		#adding the condition for the split
-		if(self.data.shape[0]==1 or self.standard_dev==0 or self.height== self.threshold_height ):
+		global error_cutoff
+		if(self.d==1 or self.standard_dev<=error_cutoff or self.height== self.threshold_height ):
 			self.isleaf= True
 			# print('this is a leaf at height ===',self.height)
 			# print('its prediction is ===',self.pred)
 
-		if(self.data.shape[0]>1 and self.standard_dev>0 and self.isleaf==False):
+		if(self.d>1 and self.standard_dev>0 and self.isleaf==False):
 
 			#print(self.sd(self.data))
 			#print(self.standard_dev)
@@ -102,10 +102,6 @@ class d_tree(object):
 		for i in range(0,corr.shape[0]):
 			if(corr[i]!=corr[i]):
 				corr[i]=0
-				#print('............NAN_OCCURED.............')
-		# if(corr!=corr):
-		
-		#print(corr)
 		return corr
 
 	def find_attribute(self,a):
@@ -182,7 +178,7 @@ def insert_pred(item, tree):
     	return prediction
 
     else:
-    	if(item[tree.split_attribute] < tree.attribute_value):
+    	if(item[tree.split_attribute] <= tree.attribute_value):
     		return insert_pred(item,tree.left)
     	else:
     		return insert_pred(item,tree.right)
@@ -262,8 +258,8 @@ if __name__=='__main__':
 
 	#Making train and val datasets of sizes 2/3 and 1/3 of orignal datasets respectively
 	train_array = data_array[0:random_row_number,:]
-	val_array = data_array[random_row_number:int(random_row_number+data_array.shape[0]*1/3),:]
-	train_array = np.vstack((train_array,data_array[int(random_row_number+data_array.shape[0]*1/3)+1:data_array.shape[0],:]))
+	val_array = data_array[random_row_number:int(random_row_number+(int)(data_array.shape[0]*1/3)),:]
+	train_array = np.vstack((train_array,data_array[int(random_row_number+(int)(data_array.shape[0]*1/3))+1:data_array.shape[0],:]))
 
 	#pruning part
 	train_loss_list = []
@@ -285,10 +281,10 @@ if __name__=='__main__':
 		val_loss_list.append(val_loss)
 	
 	best_height = np.argmin(val_loss_list)+1
-
 	#since we got the best height from pruning now train it back again on all the data
 	global threshold_height
 	threshold_height = best_height
+	
 	#fit the tree
 	parent = d_tree(data_array,0)
 	print(' ')
