@@ -1,9 +1,10 @@
 #class implementation of the previous code
-
 import numpy as np
 import random
 import time
 threshold_height = 5
+global error_cutoff
+error_cutoff = 4.7
 #I'm assuming I will be getting two numpy arrays of size n*(m+1) array names are data and index
 #also I have cross checked all the functions :)
 class d_tree(object):
@@ -22,7 +23,7 @@ class d_tree(object):
 		self.corr = None
 		self.split_attribute = None
 		self.split_index = None
-
+		self.d = self.data.shape[0]
 		self.left_data = None
 		self.right_data = None
 		self.standard_dev = (self.sd(self.data))[-1]
@@ -33,12 +34,12 @@ class d_tree(object):
 		# print('xxxxxxxxxxxx......Decision_Tree_called........xxxxxxxxxxx')
 
 		#adding the condition for the split
-		if(self.data.shape[0]==1 or self.standard_dev==0 or self.height== self.threshold_height ):
+		if(self.d==1 or self.standard_dev<=error_cutoff or self.height== self.threshold_height ):
 			self.isleaf= True
 			# print('this is a leaf at height ===',self.height)
 			# print('its prediction is ===',self.pred)
 
-		if(self.data.shape[0]>1 and self.standard_dev>0 and self.isleaf==False):
+		if(self.d>1 and self.standard_dev>0 and self.isleaf==False):
 
 			#print(self.sd(self.data))
 			#print(self.standard_dev)
@@ -186,7 +187,7 @@ def insert_pred(item, tree):
     	return prediction
 
     else:
-    	if(item[tree.split_attribute] < tree.attribute_value):
+    	if(item[tree.split_attribute] <= tree.attribute_value):
     		return insert_pred(item,tree.left)
     	else:
     		return insert_pred(item,tree.right)
@@ -257,14 +258,13 @@ if __name__=='__main__':
 	val_array_list = []
 	train_array_list = []
 
-
-	random_row_number = random.randrange(1,(data_array.shape[0]*3)/4,1)
+	random_row_number = random.randrange(1,(int)((data_array.shape[0]*3)/4),1)
 	# print(random_row_number)
 
 	#Making train and val datasets of sizes 2/3 and 1/3 of orignal datasets respectively
 	train_array = data_array[0:random_row_number,:]
-	val_array = data_array[random_row_number:int(random_row_number+data_array.shape[0]*1/4),:]
-	train_array = np.vstack((train_array,data_array[int(random_row_number+data_array.shape[0]*1/4)+1:data_array.shape[0],:]))
+	val_array = data_array[random_row_number:int(random_row_number+(int)(data_array.shape[0]*1/4)),:]
+	train_array = np.vstack((train_array,data_array[int(random_row_number+(int)(data_array.shape[0]*1/4))+1:data_array.shape[0],:]))
 
 	#pruning part
 	train_loss_list = []
@@ -275,9 +275,9 @@ if __name__=='__main__':
 		threshold_height = i
 		#fit the tree
 		print('height == ',i)
-		parent = d_tree(data_array,0)
-		train_loss = calculate_loss(data_array,parent)
-		val_loss = calculate_loss(data_array,parent)
+		parent = d_tree(train_array,0)
+		train_loss = calculate_loss(train_array,parent)
+		val_loss = calculate_loss(val_array,parent)
 		# train_loss = calculate_loss(train_array_list[i-1],parent)
 		# val_loss = calculate_loss(val_array_list[i-1],parent)
 		print('train_error for height ',i,' === ',train_loss)
@@ -304,5 +304,4 @@ if __name__=='__main__':
 	#print(test_result)
 	np.savetxt("kaggle1_output.csv", test_result, delimiter=",")
 	end = time.time()
-	
 	print(end-start)
