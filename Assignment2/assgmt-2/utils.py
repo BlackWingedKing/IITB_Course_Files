@@ -5,8 +5,8 @@ def rescale(targets,outputs):
 	m = targets.shape[0]
 	targets = np.reshape(targets,(m,1))
 	outputs = np.reshape(outputs,(m,1))
-	return (2*targets-1),(2*outputs-1)
-	#return targets,outputs
+	#return (2*targets-1),(2*outputs-1)
+	return targets,outputs
 
 def square_hinge_loss(targets, outputs):
 	# Write thee square hinge loss here
@@ -15,7 +15,7 @@ def square_hinge_loss(targets, outputs):
 	l = targets1.shape[1]
 	hinge = 1-np.multiply(targets1,outputs1)
 	loss = np.maximum(0.0,hinge)
-	mean_loss = (1.0/m)*np.dot(loss,loss)
+	mean_loss = (1.0/m)*np.dot(loss.T,loss)
 	return mean_loss
 
 def logistic_loss(targets, outputs):
