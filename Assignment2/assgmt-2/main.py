@@ -2,6 +2,13 @@ import argparse
 from scipy.optimize import minimize
 import utils
 import numpy as np
+import matplotlib.pyplot as plt
+global graph_start
+global graph_end
+global loss_list
+graph_start = 0
+graph_end = 1000
+loss_list = []
 
 class DataLoader(object):
     # this class has a standard iterator declared
@@ -106,7 +113,8 @@ def train(data_loader, loss_type, regularizer_type, loss_weight):
             start_parameters=trained_model_parameters.x
         # prints the batch loss
         print("loss is  ",loss)
-        
+        global loss_list
+        loss_list.append(loss)
     print("Optimizer information:")
     print(trained_model_parameters)
     return trained_model_parameters.x
@@ -145,14 +153,24 @@ def main(args):
     write_csv_file(test_data_output, "output.csv")
 
 if __name__=="__main__":
-    parser = argparse.ArgumentParser()
+	parser = argparse.ArgumentParser()
 
-    parser.add_argument("--loss", action="store", dest="loss_type", type=str, help="Loss function to be used", default="perceptron_loss")
-    parser.add_argument("--regularizer", action="store", dest="regularizer_type", type=str, help="Regularizer to be used", default=None)
-    parser.add_argument("--batch-size", action="store", dest="batch_size", type=int, help="Batch size for training", default=20)
-    parser.add_argument("--train-data", action="store", dest="train_data_file", type=str, help="Train data file", default="train.csv")
-    parser.add_argument("--test-data", action="store", dest="test_data_file", type=str, help="Test data file", default="test.csv")
-    parser.add_argument("--loss-weight", action="store", dest="loss_weight", type=float, help="Relative weight", default=1.0)    
-    args = parser.parse_args()
+	parser.add_argument("--loss", action="store", dest="loss_type", type=str, help="Loss function to be used", default="perceptron_loss")
+	parser.add_argument("--regularizer", action="store", dest="regularizer_type", type=str, help="Regularizer to be used", default=None)
+	parser.add_argument("--batch-size", action="store", dest="batch_size", type=int, help="Batch size for training", default=20)
+	parser.add_argument("--train-data", action="store", dest="train_data_file", type=str, help="Train data file", default="train.csv")
+	parser.add_argument("--test-data", action="store", dest="test_data_file", type=str, help="Test data file", default="test.csv")
+	parser.add_argument("--loss-weight", action="store", dest="loss_weight", type=float, help="Relative weight", default=1.0)    
+	args = parser.parse_args()
 
-    main(args)
+	main(args)
+	global graph_start
+	global graph_end
+	global loss_list
+	plt.xlabel('number of epochs')
+	plt.ylabel('training loss')
+	loss_array = np.asarray(loss_list)
+	loss_array = np.reshape(loss_array,(-1,1))
+	X = np.linspace(graph_start, graph_end, loss_array.shape[0] , endpoint=True)
+	plt.plot(X,loss_array)
+	plt.show()
