@@ -1,6 +1,5 @@
 import argparse
 from scipy.optimize import minimize
-
 import utils
 import numpy as np
 
@@ -43,9 +42,9 @@ def get_objective_function(trainx,trainy,loss_type, regularizer_type, loss_weigh
     if regularizer_type != None:
 
         regularizer_function = utils.regularizer_functions[regularizer_type]
-           def objective_function(weights):
+    def objective_function(weights):
         loss = 0
-        
+
         inputs, targets = trainx,trainy
         outputs = classify(inputs, weights)
         loss += loss_weight*loss_function(targets, outputs)
@@ -125,7 +124,6 @@ def write_csv_file(outputs, output_file):
         out_file.write("ID, Output\n")
         for i in range(len(outputs)):
             out_file.write("{}, {}".format(i+1, str(outputs[i])) + "\n")
-
 def get_data(data_file):
     with open(data_file, 'r') as df:
         data = df.readlines()
@@ -149,7 +147,7 @@ def main(args):
 if __name__=="__main__":
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("--loss", action="store", dest="loss_type", type=str, help="Loss function to be used", default="logistic_loss")
+    parser.add_argument("--loss", action="store", dest="loss_type", type=str, help="Loss function to be used", default="perceptron_loss")
     parser.add_argument("--regularizer", action="store", dest="regularizer_type", type=str, help="Regularizer to be used", default=None)
     parser.add_argument("--batch-size", action="store", dest="batch_size", type=int, help="Batch size for training", default=20)
     parser.add_argument("--train-data", action="store", dest="train_data_file", type=str, help="Train data file", default="train.csv")
