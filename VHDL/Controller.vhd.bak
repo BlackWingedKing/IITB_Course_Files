@@ -1,0 +1,65 @@
+library std;
+use std.standard.all;
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Control is
+  port (Click, CLKH, Reset: in std_logic; LED: out std_logic;
+			D0, D1, D2, D3, D4: out std_logic_vector(3 downto 0));
+end entity Control;
+architecture Behave of Control is
+signal C: std_logic_vector(4 downto 0);
+signal TimeClk: std_logic;
+
+
+component TenCounter is
+  port (CLK, Reset: in std_logic;
+         Count: out std_logic_vector(3 downto 0);
+			Carry: out std_logic);
+end component;
+
+begin
+
+	TimeCount0:TenCounter port map(TimeClk, Reset, D0, C(0));
+	TimeCount1:TenCounter port map(C(0), Reset, D0, C(1));
+	TimeCount2:TenCounter port map(C(1), Reset, D0, C(2));
+	TimeCount3:TenCounter port map(C(2), Reset, D0, C(3));
+	TimeCount4:TenCounter port map(C(3), Reset, D0, C(4));
+	
+	process(LED)
+	begin
+		if (LED <= '1') then
+			TimeClk <= CLKH;
+		else
+			TimeClk <= '0';
+		end if;
+	end process;
+	
+	process(CLKH, Reset, Click)
+		variable Count: integer:= 0;
+		variable Random: integer:= 1000;
+	begin
+		if(rising_edge(CLKH)) then
+			if(LED = '0') then
+				Count := Count + 1;
+				if(Count = Random) then
+					LED <= '1';
+					Count := 0;
+				end if;
+			else
+				Count := Count + 1;
+				if(Click = 1) then
+					Random := 1000 + (Count/2);
+					Count := 0;
+					LED <= '0';
+				elsif(Count > 2000) then
+					Count := 0;
+					LED <= '0';
+				end if;
+			end if;
+		end if;
+	end process;
+			
+
+end Behave;

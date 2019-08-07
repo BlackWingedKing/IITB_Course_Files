@@ -1,0 +1,3 @@
+library ieee;
+use ieee.std_logic_1164.all;
+-- 11 bit counter to count the time

@@ -1,0 +1,336 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use ieee.numeric_std.all;
+ 
+entity randomfsm is
+    Port ( CLK,reset1,react2: in  STD_LOGIC;
+            led,gameover,finish:out  STD_LOGIC;--);
+				lcd_rw : out std_logic;                         --read & write control
+				lcd_en : out std_logic;                         --enable control
+				lcd_rs : out std_logic;                         --data or command control
+				lcd1  : out std_logic_vector(7 downto 0);		 --see pin planning in krypton manual 
+				b11 : out std_logic;
+				b12 : out std_logic;
+				s : in std_logic);     --data line);
+end randomfsm;
+ 
+architecture Behavioral of randomfsm is
+--include 1scount and 2scount
+
+component counter1 is
+	Port ( CLK,reset : in  STD_LOGIC;
+           OUTPUT : out  STD_LOGIC);
+end component; 
+
+component counter2 is
+	Port ( CLK,reset : in  STD_LOGIC;
+           OUTPUT : out  STD_LOGIC);
+end component; 
+
+component random is
+    Port ( CLK,reset,x: in  STD_LOGIC;
+            o: out  STD_LOGIC);
+end component;
+
+component global_counter is
+	port ( CLK,reset,pause: in std_logic;
+			outin: integer);
+end component;
+
+component msclock is
+	port ( CLK,reset: in std_logic;
+			OUTPUT: out std_logic);
+end component;
+
+component debouncer is
+   port (CLK,r,x: in std_logic; 
+			o: out std_logic);
+end component;
+
+component lcd_controller is
+port ( clk    : in std_logic;                          --clock i/p
+       rst    : in std_logic;                          -- reset
+	   erase : in std_logic;                  --- clear position
+	   put_char : in std_logic;
+	   write_data : in std_logic_vector(7 downto 0) ;
+		write_row : in std_logic_vector(0 downto 0);
+		write_column : in std_logic_vector(3 downto 0);
+	   ack : out std_logic;
+      lcd_rw : out std_logic;                         --read & write control
+      lcd_en : out std_logic;                         --enable control
+      lcd_rs : out std_logic;                         --data or command control
+      lcd1  : out std_logic_vector(7 downto 0);
+		b11 : out std_logic;
+		b12 : out std_logic;
+		s : in std_logic);     --data line
+end component lcd_controller;
+
+type state_type is (sstart, swait1s, sled, swait2s, swait1s2, sgameover, scountadd, sfinish);
+signal state, next_state : state_type;
+signal clk2,reset, pause, react,ledtrig, onestrig, ldone, done1s, wait1sedge,done2s, twostrig, c1out, c2out, c3out, nonestrig, ntwostrig, nledtrig, temp, react1: STD_LOGIC;
+signal count: integer:=0;
+signal outin: integer;
+
+--lcd signals 
+signal write_row : std_logic_vector( 0 downto 0) := "0";
+signal write_column : std_logic_vector(3 downto 0) := "0000";
+signal erase : std_logic := '0';                  --- clear position
+signal put_char :  std_logic := '1';
+signal ack : std_logic;
+type dataarr1 is array (0 to 31) of std_logic_vector(7 downto 0);
+
+begin
+
+NEXT_STATE_DECODE : process (CLK,state, reset, done1s, ldone, react, done2s)
+
+begin
+--CLK Sampling
+	if rising_edge(CLK) then
+		if (reset = '1') then
+			state <= sstart;
+		else
+			state <= next_state;
+		end if;
+	end if;
+	
+	if rising_edge(ldone) then
+		count <= count + 1;
+	end if;
+--default values	
+	led <= '0';
+	ledtrig <= '0';
+	onestrig <= '0';
+	twostrig <= '0';
+	gameover <= '0';
+	finish <= '0';
+	pause <= '1';
+	
+	case (state) is
+		--sstart
+		when sstart => 
+			--default values in start
+			led <= '0';
+			ledtrig <= '0';
+			onestrig <= '0';
+			twostrig <= '0';
+			gameover <= '0';
+			finish <= '0';
+			count <= 0;
+			pause <= '1';
+			
+			if(reset = '0') then
+				onestrig <= '1';
+				next_state <= swait1s;
+			end if;
+			
+			if(reset = '1') then
+				next_state <= sstart;
+			end if;
+		
+		--swait 1s
+		when swait1s =>
+			--default values in wait1s state
+			led <= '0';
+			ledtrig <= '0';
+			onestrig <= '1';
+			twostrig <= '0';
+			finish <= '0';
+			gameover <= '0';
+			pause<= '1';
+			
+			if (done1s = '1') then
+				ledtrig <= '1';
+				next_state <= sled;
+			end if;
+			
+			if (done1s = '0' and react = '1') then
+				pause <= '1';
+				next_state <= sgameover;
+				led <= '0';
+				ledtrig <= '0';
+			end if;
+			
+			if (done1s = '0' and react = '0') then
+				next_state <= swait1s;
+				led <= '0';
+				ledtrig <= '0';
+			end if;
+		
+		-- srandom turn on led	
+		when sled =>
+			--default values in led state
+			led <= '0';
+			ledtrig <= '1';
+			onestrig <= '0';
+			twostrig <= '0';
+			finish <= '0';
+			gameover <= '0';
+			pause <= '1';
+			
+			if (ldone = '1') then
+				led <= '1';
+				pause <= '0';
+				twostrig <= '1';
+				next_state <= swait2s;
+			end if;
+			
+			if (ldone = '0' and react = '1') then
+				led <= '0';
+				twostrig <= '0';
+				pause <= '1';
+				next_state <= sgameover;
+			end if;
+			
+			if (ldone = '0' and react = '0') then
+				led <= '0';
+				twostrig <= '0';
+				next_state <= sled;
+			end if;
+			
+		-- wait for 2s till react	
+		when swait2s =>
+			--default values in wait2s state
+			led <= '1';
+			ledtrig <= '0';
+			onestrig <= '0';
+			twostrig <= '1';
+			finish <= '0';
+			gameover <= '0';
+			
+			if (done2s = '0' and react = '1') then
+				gameover <= '0';
+				pause <= '1';
+				next_state <= swait1s2;		
+			end if;
+			
+			if (done2s = '0' and react = '0') then
+				finish <= '0';
+				gameover <= '0';
+				next_state <= swait2s;
+			end if;
+			
+			if (done2s = '1' and react = '0') then
+				gameover <= '1';
+				next_state <= sgameover;
+			--extra condition not needed
+			elsif (done2s = '1' and react = '1') then
+				gameover <= '1';
+				next_state <= sgameover;
+			end if;
+			
+		when swait1s2 =>
+			--default values in wait1s2 state
+			led <= '0';
+			ledtrig <= '0';
+			onestrig <= '1';
+			twostrig <= '0';
+			finish <= '0';
+			gameover <= '0';
+			
+			--extra maynot be needed after debouncing
+			if(wait1sedge = '1') then
+				if (done1s = '1' and react = '0') then
+					gameover <= '0';
+					next_state <= scountadd;
+				end if;
+
+				if(done1s = '0') then
+					if(react = '0') then
+						gameover <= '0';
+						next_state <= swait1s2;
+					end if;
+
+					if(react = '1') then
+						gameover <= '1';
+					pause <= '1';
+					next_state <= sgameover;
+					end if;
+				end if;
+			
+				if(done1s = '1') then
+					if(react = '0') then
+						gameover <= '0';
+						next_state <= scountadd;
+					end if;
+
+					if(react = '1') then
+						gameover <= '0';
+						pause <= '1';
+						next_state <= scountadd;
+					end if;
+				end if;
+			
+			end if;
+			
+			if(wait1sedge = '0') then
+				if(done1s = '1') then
+					gameover <= '1';
+					next_state <= sgameover;
+				end if;
+				if(done1s = '0') then
+					gameover <= '0';
+					next_state <= swait1s2;
+				end if;	
+			end if;	
+		--countadd state
+		when scountadd =>
+			led <= '0';
+			ledtrig <= '0';
+			onestrig <= '0';
+			twostrig <= '0';
+			finish <= '0';
+			gameover <= '0';
+			
+			if(count = 8) then
+				gameover <= '0';
+				finish <= '1';
+				next_state <= sfinish;
+				
+				else
+				onestrig <= '1';
+				next_state <= swait1s;
+			end if;
+			
+		-- gameover state
+		when sgameover =>
+			led <= '0';
+			gameover <= '1';
+			finish <= '0';
+			next_state <= sgameover;
+			pause <= '1';
+			
+		-- finish state
+		when sfinish =>
+			led <= '0';
+			gameover <= '0';
+			finish <= '1';
+			next_state <= sfinish;	
+			pause <= '1';
+			
+			
+	end case;
+end process;
+reset <= not (reset1);
+react <= not (react1);
+nonestrig <= not(onestrig);
+nledtrig <= not(ledtrig);
+ntwostrig <= not(twostrig);
+--edge detection
+onescount1 : counter1 port map (CLK => CLK,reset => nonestrig ,OUTPUT => c1out);
+ranfsm1 : random port map (CLK => CLK, reset => nonestrig, x => c1out, o => done1s);
+
+freecount : counter1 port map (CLK => CLK,reset => '0',OUTPUT => c2out);
+ranfsm2 : random port map (CLK => CLK, reset => nledtrig, x => c2out, o => ldone);
+
+twoscount : counter2 port map (CLK => CLK,reset => ntwostrig ,OUTPUT => c3out);
+ranfsm3 : random port map (CLK => CLK, reset => ntwostrig, x => c3out, o => done2s);
+
+ranfsm4 : random port map (CLK => CLK, reset => nonestrig, x => react, o => wait1sedge);
+
+global1 : global_counter port map(CLK => clk2, reset => reset, pause => pause, outin => outin);
+
+msclock1 : msclock port map (CLK => CLK,reset => reset ,OUTPUT => clk2);
+
+debouncereact : debouncer port map (CLK => CLK, r => reset, x => react2, o => react1 );
+end Behavioral;

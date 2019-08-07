@@ -1,0 +1,685 @@
+Analysis & Synthesis report for shifter
+Mon Mar  5 19:18:12 2018
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Port Connectivity Checks: "alu:dut|eightbitsub:d|fullsub:\g_1:6:f_1"
+ 11. Port Connectivity Checks: "alu:dut|eightbitsub:d|fullsub:f_1"
+ 12. Port Connectivity Checks: "alu:dut|eightbitsub:d"
+ 13. Port Connectivity Checks: "alu:dut|modifiedleftshift:b|inputinverter:in_2"
+ 14. Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:7:m_8"
+ 15. Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:6:m_8"
+ 16. Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:5:m_8"
+ 17. Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:4:m_8"
+ 18. Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:3:m_8"
+ 19. Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:2:m_8"
+ 20. Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:1:m_8"
+ 21. Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:0:m_8"
+ 22. Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|ebitrightshift:r_1|multiplexor:m_7"
+ 23. Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|ebitrightshift:r_1|multiplexor:m_5"
+ 24. Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|ebitrightshift:r_1|multiplexor:m_4"
+ 25. Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|ebitrightshift:r_1|multiplexor:\g_4:7:m_2"
+ 26. Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|ebitrightshift:r_1|multiplexor:\g_4:6:m_2"
+ 27. Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|ebitrightshift:r_1|multiplexor:\g_4:5:m_2"
+ 28. Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|ebitrightshift:r_1|multiplexor:\g_4:4:m_2"
+ 29. Port Connectivity Checks: "alu:dut|modifiedleftshift:b|inputinverter:in_1"
+ 30. Port Connectivity Checks: "alu:dut|eightbit:a|fulladder:\g_1:6:f_1"
+ 31. Port Connectivity Checks: "alu:dut|eightbit:a|fulladder:f_1"
+ 32. Port Connectivity Checks: "alu:dut|eightbit:a"
+ 33. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Mon Mar  5 19:18:12 2018       ;
+; Quartus Prime Version       ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Revision Name               ; shifter                                     ;
+; Top-level Entity Name       ; DUT                                         ;
+; Family                      ; MAX V                                       ;
+; Total logic elements        ; 82                                          ;
+; Total pins                  ; 26                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; 5M1270ZT144C5      ;                    ;
+; Top-level entity name                                                      ; DUT                ; shifter            ;
+; Family name                                                                ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                               ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                        ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
+; DUT.vhd                          ; yes             ; User VHDL File  ; /home/ritesh/Desktop/digitalLab/digital_lab3/DUT.vhd                ;         ;
+; alu.vhd                          ; yes             ; User VHDL File  ; /home/ritesh/Desktop/digitalLab/digital_lab3/alu.vhd                ;         ;
+; fullsub.vhd                      ; yes             ; User VHDL File  ; /home/ritesh/Desktop/digitalLab/digital_lab3/fullsub.vhd            ;         ;
+; fulladder.vhd                    ; yes             ; User VHDL File  ; /home/ritesh/Desktop/digitalLab/digital_lab3/fulladder.vhd          ;         ;
+; eightbitsub.vhd                  ; yes             ; User VHDL File  ; /home/ritesh/Desktop/digitalLab/digital_lab3/eightbitsub.vhd        ;         ;
+; eightbit.vhd                     ; yes             ; User VHDL File  ; /home/ritesh/Desktop/digitalLab/digital_lab3/eightbit.vhd           ;         ;
+; ebitrightshift.vhd               ; yes             ; User VHDL File  ; /home/ritesh/Desktop/digitalLab/digital_lab3/ebitrightshift.vhd     ;         ;
+; halfadder.vhd                    ; yes             ; User VHDL File  ; /home/ritesh/Desktop/digitalLab/digital_lab3/halfadder.vhd          ;         ;
+; multiplexor.vhd                  ; yes             ; User VHDL File  ; /home/ritesh/Desktop/digitalLab/digital_lab3/multiplexor.vhd        ;         ;
+; inputinverter.vhd                ; yes             ; User VHDL File  ; /home/ritesh/Desktop/digitalLab/digital_lab3/inputinverter.vhd      ;         ;
+; modifiedrightshift.vhd           ; yes             ; User VHDL File  ; /home/ritesh/Desktop/digitalLab/digital_lab3/modifiedrightshift.vhd ;         ;
+; modifiedleftshift.vhd            ; yes             ; User VHDL File  ; /home/ritesh/Desktop/digitalLab/digital_lab3/modifiedleftshift.vhd  ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+; Total logic elements                        ; 82              ;
+;     -- Combinational with no register       ; 82              ;
+;     -- Register only                        ; 0               ;
+;     -- Combinational with a register        ; 0               ;
+;                                             ;                 ;
+; Logic element usage by number of LUT inputs ;                 ;
+;     -- 4 input functions                    ; 49              ;
+;     -- 3 input functions                    ; 24              ;
+;     -- 2 input functions                    ; 9               ;
+;     -- 1 input functions                    ; 0               ;
+;     -- 0 input functions                    ; 0               ;
+;                                             ;                 ;
+; Logic elements by mode                      ;                 ;
+;     -- normal mode                          ; 82              ;
+;     -- arithmetic mode                      ; 0               ;
+;     -- qfbk mode                            ; 0               ;
+;     -- register cascade mode                ; 0               ;
+;     -- synchronous clear/load mode          ; 0               ;
+;     -- asynchronous clear/load mode         ; 0               ;
+;                                             ;                 ;
+; Total registers                             ; 0               ;
+; I/O pins                                    ; 26              ;
+; Maximum fan-out node                        ; input_vector[0] ;
+; Maximum fan-out                             ; 20              ;
+; Total fan-out                               ; 294             ;
+; Average fan-out                             ; 2.72            ;
++---------------------------------------------+-----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                           ;
++-----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node              ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                        ; Entity Name        ; Library Name ;
++-----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------------------------+--------------------+--------------+
+; |DUT                                    ; 82 (0)      ; 0            ; 0          ; 26   ; 0            ; 82 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT                                                                                                       ; alu                ; work         ;
+;    |alu:dut|                            ; 82 (25)     ; 0            ; 0          ; 0    ; 0            ; 82 (25)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut                                                                                               ; alu                ; work         ;
+;       |eightbit:a|                      ; 7 (0)       ; 0            ; 0          ; 0    ; 0            ; 7 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbit:a                                                                                    ; eightbit           ; work         ;
+;          |fulladder:\g_1:0:f_1|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbit:a|fulladder:\g_1:0:f_1                                                               ; fulladder          ; work         ;
+;             |OR_2:o_1|                  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbit:a|fulladder:\g_1:0:f_1|OR_2:o_1                                                      ; OR_2               ; work         ;
+;          |fulladder:\g_1:1:f_1|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbit:a|fulladder:\g_1:1:f_1                                                               ; fulladder          ; work         ;
+;             |OR_2:o_1|                  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbit:a|fulladder:\g_1:1:f_1|OR_2:o_1                                                      ; OR_2               ; work         ;
+;          |fulladder:\g_1:2:f_1|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbit:a|fulladder:\g_1:2:f_1                                                               ; fulladder          ; work         ;
+;             |OR_2:o_1|                  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbit:a|fulladder:\g_1:2:f_1|OR_2:o_1                                                      ; OR_2               ; work         ;
+;          |fulladder:\g_1:3:f_1|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbit:a|fulladder:\g_1:3:f_1                                                               ; fulladder          ; work         ;
+;             |OR_2:o_1|                  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbit:a|fulladder:\g_1:3:f_1|OR_2:o_1                                                      ; OR_2               ; work         ;
+;          |fulladder:\g_1:4:f_1|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbit:a|fulladder:\g_1:4:f_1                                                               ; fulladder          ; work         ;
+;             |OR_2:o_1|                  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbit:a|fulladder:\g_1:4:f_1|OR_2:o_1                                                      ; OR_2               ; work         ;
+;          |fulladder:\g_1:6:f_1|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbit:a|fulladder:\g_1:6:f_1                                                               ; fulladder          ; work         ;
+;             |halfadder:h_2|             ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbit:a|fulladder:\g_1:6:f_1|halfadder:h_2                                                 ; halfadder          ; work         ;
+;                |XOR_2:x_1|              ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbit:a|fulladder:\g_1:6:f_1|halfadder:h_2|XOR_2:x_1                                       ; XOR_2              ; work         ;
+;          |fulladder:f_1|                ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbit:a|fulladder:f_1                                                                      ; fulladder          ; work         ;
+;             |halfadder:h_1|             ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbit:a|fulladder:f_1|halfadder:h_1                                                        ; halfadder          ; work         ;
+;                |XOR_2:x_1|              ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbit:a|fulladder:f_1|halfadder:h_1|XOR_2:x_1                                              ; XOR_2              ; work         ;
+;       |eightbitsub:d|                   ; 7 (0)       ; 0            ; 0          ; 0    ; 0            ; 7 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbitsub:d                                                                                 ; eightbitsub        ; work         ;
+;          |fullsub:\g_1:0:f_1|           ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbitsub:d|fullsub:\g_1:0:f_1                                                              ; fullsub            ; work         ;
+;             |OR_2:o_4|                  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbitsub:d|fullsub:\g_1:0:f_1|OR_2:o_4                                                     ; OR_2               ; work         ;
+;          |fullsub:\g_1:1:f_1|           ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbitsub:d|fullsub:\g_1:1:f_1                                                              ; fullsub            ; work         ;
+;             |OR_2:o_4|                  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbitsub:d|fullsub:\g_1:1:f_1|OR_2:o_4                                                     ; OR_2               ; work         ;
+;          |fullsub:\g_1:2:f_1|           ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbitsub:d|fullsub:\g_1:2:f_1                                                              ; fullsub            ; work         ;
+;             |OR_2:o_4|                  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbitsub:d|fullsub:\g_1:2:f_1|OR_2:o_4                                                     ; OR_2               ; work         ;
+;          |fullsub:\g_1:3:f_1|           ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbitsub:d|fullsub:\g_1:3:f_1                                                              ; fullsub            ; work         ;
+;             |OR_2:o_4|                  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbitsub:d|fullsub:\g_1:3:f_1|OR_2:o_4                                                     ; OR_2               ; work         ;
+;          |fullsub:\g_1:4:f_1|           ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbitsub:d|fullsub:\g_1:4:f_1                                                              ; fullsub            ; work         ;
+;             |OR_2:o_4|                  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbitsub:d|fullsub:\g_1:4:f_1|OR_2:o_4                                                     ; OR_2               ; work         ;
+;          |fullsub:\g_1:6:f_1|           ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbitsub:d|fullsub:\g_1:6:f_1                                                              ; fullsub            ; work         ;
+;             |XOR_2:x_2|                 ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|eightbitsub:d|fullsub:\g_1:6:f_1|XOR_2:x_2                                                    ; XOR_2              ; work         ;
+;       |modifiedleftshift:b|             ; 21 (0)      ; 0            ; 0          ; 0    ; 0            ; 21 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedleftshift:b                                                                           ; modifiedleftshift  ; work         ;
+;          |modifiedrightshift:r_1|       ; 21 (0)      ; 0            ; 0          ; 0    ; 0            ; 21 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedleftshift:b|modifiedrightshift:r_1                                                    ; modifiedrightshift ; work         ;
+;             |ebitrightshift:r_1|        ; 8 (0)       ; 0            ; 0          ; 0    ; 0            ; 8 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|ebitrightshift:r_1                                 ; ebitrightshift     ; work         ;
+;                |multiplexor:\g_1:2:m_1| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|ebitrightshift:r_1|multiplexor:\g_1:2:m_1          ; multiplexor        ; work         ;
+;                   |OR_2:o_1|            ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|ebitrightshift:r_1|multiplexor:\g_1:2:m_1|OR_2:o_1 ; OR_2               ; work         ;
+;                |multiplexor:\g_2:1:m_3| ; 3 (0)       ; 0            ; 0          ; 0    ; 0            ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|ebitrightshift:r_1|multiplexor:\g_2:1:m_3          ; multiplexor        ; work         ;
+;                   |OR_2:o_1|            ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|ebitrightshift:r_1|multiplexor:\g_2:1:m_3|OR_2:o_1 ; OR_2               ; work         ;
+;                |multiplexor:\g_2:3:m_3| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|ebitrightshift:r_1|multiplexor:\g_2:3:m_3          ; multiplexor        ; work         ;
+;                   |OR_2:o_1|            ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|ebitrightshift:r_1|multiplexor:\g_2:3:m_3|OR_2:o_1 ; OR_2               ; work         ;
+;                |multiplexor:\g_3:0:m_6| ; 3 (0)       ; 0            ; 0          ; 0    ; 0            ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|ebitrightshift:r_1|multiplexor:\g_3:0:m_6          ; multiplexor        ; work         ;
+;                   |OR_2:o_1|            ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|ebitrightshift:r_1|multiplexor:\g_3:0:m_6|OR_2:o_1 ; OR_2               ; work         ;
+;             |multiplexor:\g_1:0:m_8|    ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:0:m_8                             ; multiplexor        ; work         ;
+;                |AND_2:a_2|              ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:0:m_8|AND_2:a_2                   ; AND_2              ; work         ;
+;             |multiplexor:\g_1:1:m_8|    ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:1:m_8                             ; multiplexor        ; work         ;
+;                |AND_2:a_2|              ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:1:m_8|AND_2:a_2                   ; AND_2              ; work         ;
+;             |multiplexor:\g_1:2:m_8|    ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:2:m_8                             ; multiplexor        ; work         ;
+;                |AND_2:a_2|              ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:2:m_8|AND_2:a_2                   ; AND_2              ; work         ;
+;             |multiplexor:\g_1:3:m_8|    ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:3:m_8                             ; multiplexor        ; work         ;
+;                |AND_2:a_2|              ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:3:m_8|AND_2:a_2                   ; AND_2              ; work         ;
+;             |multiplexor:\g_1:4:m_8|    ; 3 (0)       ; 0            ; 0          ; 0    ; 0            ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:4:m_8                             ; multiplexor        ; work         ;
+;                |AND_2:a_2|              ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:4:m_8|AND_2:a_2                   ; AND_2              ; work         ;
+;             |multiplexor:\g_1:5:m_8|    ; 3 (0)       ; 0            ; 0          ; 0    ; 0            ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:5:m_8                             ; multiplexor        ; work         ;
+;                |AND_2:a_2|              ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:5:m_8|AND_2:a_2                   ; AND_2              ; work         ;
+;             |multiplexor:\g_1:6:m_8|    ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:6:m_8                             ; multiplexor        ; work         ;
+;                |AND_2:a_2|              ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:6:m_8|AND_2:a_2                   ; AND_2              ; work         ;
+;       |modifiedrightshift:c|            ; 22 (0)      ; 0            ; 0          ; 0    ; 0            ; 22 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedrightshift:c                                                                          ; modifiedrightshift ; work         ;
+;          |OR_2:o_4|                     ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedrightshift:c|OR_2:o_4                                                                 ; OR_2               ; work         ;
+;          |ebitrightshift:r_1|           ; 7 (0)       ; 0            ; 0          ; 0    ; 0            ; 7 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedrightshift:c|ebitrightshift:r_1                                                       ; ebitrightshift     ; work         ;
+;             |multiplexor:\g_1:2:m_1|    ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedrightshift:c|ebitrightshift:r_1|multiplexor:\g_1:2:m_1                                ; multiplexor        ; work         ;
+;                |OR_2:o_1|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedrightshift:c|ebitrightshift:r_1|multiplexor:\g_1:2:m_1|OR_2:o_1                       ; OR_2               ; work         ;
+;             |multiplexor:\g_2:1:m_3|    ; 3 (0)       ; 0            ; 0          ; 0    ; 0            ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedrightshift:c|ebitrightshift:r_1|multiplexor:\g_2:1:m_3                                ; multiplexor        ; work         ;
+;                |OR_2:o_1|               ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedrightshift:c|ebitrightshift:r_1|multiplexor:\g_2:1:m_3|OR_2:o_1                       ; OR_2               ; work         ;
+;             |multiplexor:\g_2:3:m_3|    ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedrightshift:c|ebitrightshift:r_1|multiplexor:\g_2:3:m_3                                ; multiplexor        ; work         ;
+;                |OR_2:o_1|               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedrightshift:c|ebitrightshift:r_1|multiplexor:\g_2:3:m_3|OR_2:o_1                       ; OR_2               ; work         ;
+;             |multiplexor:\g_3:0:m_6|    ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedrightshift:c|ebitrightshift:r_1|multiplexor:\g_3:0:m_6                                ; multiplexor        ; work         ;
+;                |OR_2:o_1|               ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedrightshift:c|ebitrightshift:r_1|multiplexor:\g_3:0:m_6|OR_2:o_1                       ; OR_2               ; work         ;
+;          |multiplexor:\g_1:1:m_8|       ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedrightshift:c|multiplexor:\g_1:1:m_8                                                   ; multiplexor        ; work         ;
+;             |AND_2:a_2|                 ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedrightshift:c|multiplexor:\g_1:1:m_8|AND_2:a_2                                         ; AND_2              ; work         ;
+;          |multiplexor:\g_1:2:m_8|       ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedrightshift:c|multiplexor:\g_1:2:m_8                                                   ; multiplexor        ; work         ;
+;             |AND_2:a_2|                 ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedrightshift:c|multiplexor:\g_1:2:m_8|AND_2:a_2                                         ; AND_2              ; work         ;
+;          |multiplexor:\g_1:3:m_8|       ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedrightshift:c|multiplexor:\g_1:3:m_8                                                   ; multiplexor        ; work         ;
+;             |AND_2:a_2|                 ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedrightshift:c|multiplexor:\g_1:3:m_8|AND_2:a_2                                         ; AND_2              ; work         ;
+;          |multiplexor:\g_1:4:m_8|       ; 3 (0)       ; 0            ; 0          ; 0    ; 0            ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedrightshift:c|multiplexor:\g_1:4:m_8                                                   ; multiplexor        ; work         ;
+;             |AND_2:a_2|                 ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedrightshift:c|multiplexor:\g_1:4:m_8|AND_2:a_2                                         ; AND_2              ; work         ;
+;          |multiplexor:\g_1:5:m_8|       ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedrightshift:c|multiplexor:\g_1:5:m_8                                                   ; multiplexor        ; work         ;
+;             |AND_2:a_2|                 ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedrightshift:c|multiplexor:\g_1:5:m_8|AND_2:a_2                                         ; AND_2              ; work         ;
+;          |multiplexor:\g_1:7:m_8|       ; 3 (0)       ; 0            ; 0          ; 0    ; 0            ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedrightshift:c|multiplexor:\g_1:7:m_8                                                   ; multiplexor        ; work         ;
+;             |AND_2:a_2|                 ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|alu:dut|modifiedrightshift:c|multiplexor:\g_1:7:m_8|AND_2:a_2                                         ; AND_2              ; work         ;
++-----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------------------------+--------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------+
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |DUT|alu:dut|Z[4]                                                                                            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DUT|alu:dut|modifiedrightshift:c|ebitrightshift:r_1|multiplexor:\g_2:1:m_3|OR_2:o_1|c                       ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DUT|alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|ebitrightshift:r_1|multiplexor:\g_3:0:m_6|OR_2:o_1|c ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|eightbitsub:d|fullsub:\g_1:6:f_1"                                           ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; b1   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|eightbitsub:d|fullsub:f_1" ;
++------+-------+----------+-------------------------------------+
+; Port ; Type  ; Severity ; Details                             ;
++------+-------+----------+-------------------------------------+
+; b    ; Input ; Info     ; Stuck at GND                        ;
++------+-------+----------+-------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|eightbitsub:d"                                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; b1   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|modifiedleftshift:b|inputinverter:in_2" ;
++------+-------+----------+--------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                          ;
++------+-------+----------+--------------------------------------------------+
+; r    ; Input ; Info     ; Stuck at VCC                                     ;
++------+-------+----------+--------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:7:m_8" ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                     ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; x1   ; Input ; Info     ; Stuck at GND                                                                ;
++------+-------+----------+-----------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:6:m_8" ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                     ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; x1   ; Input ; Info     ; Stuck at GND                                                                ;
++------+-------+----------+-----------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:5:m_8" ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                     ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; x1   ; Input ; Info     ; Stuck at GND                                                                ;
++------+-------+----------+-----------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:4:m_8" ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                     ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; x1   ; Input ; Info     ; Stuck at GND                                                                ;
++------+-------+----------+-----------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:3:m_8" ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                     ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; x1   ; Input ; Info     ; Stuck at GND                                                                ;
++------+-------+----------+-----------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:2:m_8" ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                     ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; x1   ; Input ; Info     ; Stuck at GND                                                                ;
++------+-------+----------+-----------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:1:m_8" ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                     ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; x1   ; Input ; Info     ; Stuck at GND                                                                ;
++------+-------+----------+-----------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|multiplexor:\g_1:0:m_8" ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                     ;
++------+-------+----------+-----------------------------------------------------------------------------+
+; x1   ; Input ; Info     ; Stuck at GND                                                                ;
++------+-------+----------+-----------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|ebitrightshift:r_1|multiplexor:m_7" ;
++------+-------+----------+-----------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                 ;
++------+-------+----------+-----------------------------------------------------------------------------------------+
+; x1   ; Input ; Info     ; Stuck at GND                                                                            ;
++------+-------+----------+-----------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|ebitrightshift:r_1|multiplexor:m_5" ;
++------+-------+----------+-----------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                 ;
++------+-------+----------+-----------------------------------------------------------------------------------------+
+; x1   ; Input ; Info     ; Stuck at GND                                                                            ;
++------+-------+----------+-----------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|ebitrightshift:r_1|multiplexor:m_4" ;
++------+-------+----------+-----------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                 ;
++------+-------+----------+-----------------------------------------------------------------------------------------+
+; x1   ; Input ; Info     ; Stuck at GND                                                                            ;
++------+-------+----------+-----------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|ebitrightshift:r_1|multiplexor:\g_4:7:m_2" ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                        ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; x1   ; Input ; Info     ; Stuck at GND                                                                                   ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|ebitrightshift:r_1|multiplexor:\g_4:6:m_2" ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                        ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; x1   ; Input ; Info     ; Stuck at GND                                                                                   ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|ebitrightshift:r_1|multiplexor:\g_4:5:m_2" ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                        ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; x1   ; Input ; Info     ; Stuck at GND                                                                                   ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|ebitrightshift:r_1|multiplexor:\g_4:4:m_2" ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                        ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; x1   ; Input ; Info     ; Stuck at GND                                                                                   ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|modifiedleftshift:b|inputinverter:in_1" ;
++------+-------+----------+--------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                          ;
++------+-------+----------+--------------------------------------------------+
+; r    ; Input ; Info     ; Stuck at VCC                                     ;
++------+-------+----------+--------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|eightbit:a|fulladder:\g_1:6:f_1"                                            ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; s1   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|eightbit:a|fulladder:f_1" ;
++------+-------+----------+------------------------------------+
+; Port ; Type  ; Severity ; Details                            ;
++------+-------+----------+------------------------------------+
+; c    ; Input ; Info     ; Stuck at GND                       ;
++------+-------+----------+------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|eightbit:a"                                                                 ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; c    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+    Info: Processing started: Mon Mar  5 19:18:00 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off shifter -c shifter
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file multiply.vhd
+    Info (12022): Found design unit 1: multiply-Struct File: /home/ritesh/Desktop/digitalLab/digital_lab3/multiply.vhd Line: 16
+    Info (12023): Found entity 1: multiply File: /home/ritesh/Desktop/digitalLab/digital_lab3/multiply.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file leftshift.vhd
+    Info (12022): Found design unit 1: leftshift-Struct File: /home/ritesh/Desktop/digitalLab/digital_lab3/leftshift.vhd Line: 16
+    Info (12023): Found entity 1: leftshift File: /home/ritesh/Desktop/digitalLab/digital_lab3/leftshift.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file ebitleftshift.vhd
+    Info (12022): Found design unit 1: ebitleftshift-Struct File: /home/ritesh/Desktop/digitalLab/digital_lab3/ebitleftshift.vhd Line: 16
+    Info (12023): Found entity 1: ebitleftshift File: /home/ritesh/Desktop/digitalLab/digital_lab3/ebitleftshift.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file add.vhd
+    Info (12022): Found design unit 1: add-Struct File: /home/ritesh/Desktop/digitalLab/digital_lab3/add.vhd Line: 16
+    Info (12023): Found entity 1: add File: /home/ritesh/Desktop/digitalLab/digital_lab3/add.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file rightshift.vhd
+    Info (12022): Found design unit 1: rightshift-Struct File: /home/ritesh/Desktop/digitalLab/digital_lab3/rightshift.vhd Line: 16
+    Info (12023): Found entity 1: rightshift File: /home/ritesh/Desktop/digitalLab/digital_lab3/rightshift.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file shiftleft.vhd
+    Info (12022): Found design unit 1: shiftleft-Struct File: /home/ritesh/Desktop/digitalLab/digital_lab3/shiftleft.vhd Line: 14
+    Info (12023): Found entity 1: shiftleft File: /home/ritesh/Desktop/digitalLab/digital_lab3/shiftleft.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file decoder.vhd
+    Info (12022): Found design unit 1: decoder-Struct File: /home/ritesh/Desktop/digitalLab/digital_lab3/decoder.vhd Line: 15
+    Info (12023): Found entity 1: decoder File: /home/ritesh/Desktop/digitalLab/digital_lab3/decoder.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file shiftright.vhd
+    Info (12022): Found design unit 1: shiftright-Struct File: /home/ritesh/Desktop/digitalLab/digital_lab3/shiftright.vhd Line: 14
+    Info (12023): Found entity 1: shiftright File: /home/ritesh/Desktop/digitalLab/digital_lab3/shiftright.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file scan_reg.vhdl
+    Info (12022): Found design unit 1: Scan_Reg-behave File: /home/ritesh/Desktop/digitalLab/digital_lab3/scan_reg.vhdl Line: 26
+    Info (12023): Found entity 1: Scan_Reg File: /home/ritesh/Desktop/digitalLab/digital_lab3/scan_reg.vhdl Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file scan_chain.vhdl
+    Info (12022): Found design unit 1: Scan_Chain-behave File: /home/ritesh/Desktop/digitalLab/digital_lab3/scan_chain.vhdl Line: 26
+    Info (12023): Found entity 1: Scan_Chain File: /home/ritesh/Desktop/digitalLab/digital_lab3/scan_chain.vhdl Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file TopLevel.vhdl
+    Info (12022): Found design unit 1: TopLevel-Struct File: /home/ritesh/Desktop/digitalLab/digital_lab3/TopLevel.vhdl Line: 21
+    Info (12023): Found entity 1: TopLevel File: /home/ritesh/Desktop/digitalLab/digital_lab3/TopLevel.vhdl Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file addtestbench.vhd
+    Info (12022): Found design unit 1: addtestbench-Behave File: /home/ritesh/Desktop/digitalLab/digital_lab3/addtestbench.vhd Line: 12
+    Info (12023): Found entity 1: addtestbench File: /home/ritesh/Desktop/digitalLab/digital_lab3/addtestbench.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file dutadd.vhd
+    Info (12022): Found design unit 1: dutadd-DutWrap File: /home/ritesh/Desktop/digitalLab/digital_lab3/dutadd.vhd Line: 15
+    Info (12023): Found entity 1: dutadd File: /home/ritesh/Desktop/digitalLab/digital_lab3/dutadd.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file Testbench.vhd
+    Info (12022): Found design unit 1: Testbench-Behave File: /home/ritesh/Desktop/digitalLab/digital_lab3/Testbench.vhd Line: 12
+    Info (12023): Found entity 1: Testbench File: /home/ritesh/Desktop/digitalLab/digital_lab3/Testbench.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file DUT.vhd
+    Info (12022): Found design unit 1: DUT-DutWrap File: /home/ritesh/Desktop/digitalLab/digital_lab3/DUT.vhd Line: 15
+    Info (12023): Found entity 1: DUT File: /home/ritesh/Desktop/digitalLab/digital_lab3/DUT.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
+    Info (12022): Found design unit 1: alu-behave File: /home/ritesh/Desktop/digitalLab/digital_lab3/alu.vhd Line: 13
+    Info (12023): Found entity 1: alu File: /home/ritesh/Desktop/digitalLab/digital_lab3/alu.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file halfsub.vhd
+    Info (12022): Found design unit 1: halfsub-Struct File: /home/ritesh/Desktop/digitalLab/digital_lab3/halfsub.vhd Line: 15
+    Info (12023): Found entity 1: halfsub File: /home/ritesh/Desktop/digitalLab/digital_lab3/halfsub.vhd Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file fullsub.vhd
+    Info (12022): Found design unit 1: fullsub-Struct File: /home/ritesh/Desktop/digitalLab/digital_lab3/fullsub.vhd Line: 17
+    Info (12023): Found entity 1: fullsub File: /home/ritesh/Desktop/digitalLab/digital_lab3/fullsub.vhd Line: 13
+Info (12021): Found 2 design units, including 1 entities, in source file fulladder.vhd
+    Info (12022): Found design unit 1: fulladder-Struct File: /home/ritesh/Desktop/digitalLab/digital_lab3/fulladder.vhd Line: 15
+    Info (12023): Found entity 1: fulladder File: /home/ritesh/Desktop/digitalLab/digital_lab3/fulladder.vhd Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file eightbitsub.vhd
+    Info (12022): Found design unit 1: eightbitsub-Struct File: /home/ritesh/Desktop/digitalLab/digital_lab3/eightbitsub.vhd Line: 19
+    Info (12023): Found entity 1: eightbitsub File: /home/ritesh/Desktop/digitalLab/digital_lab3/eightbitsub.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file eightbit.vhd
+    Info (12022): Found design unit 1: eightbit-Struct File: /home/ritesh/Desktop/digitalLab/digital_lab3/eightbit.vhd Line: 18
+    Info (12023): Found entity 1: eightbit File: /home/ritesh/Desktop/digitalLab/digital_lab3/eightbit.vhd Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file ebitrightshift.vhd
+    Info (12022): Found design unit 1: ebitrightshift-Struct File: /home/ritesh/Desktop/digitalLab/digital_lab3/ebitrightshift.vhd Line: 18
+    Info (12023): Found entity 1: ebitrightshift File: /home/ritesh/Desktop/digitalLab/digital_lab3/ebitrightshift.vhd Line: 12
+Info (12021): Found 13 design units, including 6 entities, in source file halfadder.vhd
+    Info (12022): Found design unit 1: EE224_Components File: /home/ritesh/Desktop/digitalLab/digital_lab3/halfadder.vhd Line: 7
+    Info (12022): Found design unit 2: INVERTER-Behave File: /home/ritesh/Desktop/digitalLab/digital_lab3/halfadder.vhd Line: 31
+    Info (12022): Found design unit 3: AND_2-Behave File: /home/ritesh/Desktop/digitalLab/digital_lab3/halfadder.vhd Line: 42
+    Info (12022): Found design unit 4: OR_2-Behave File: /home/ritesh/Desktop/digitalLab/digital_lab3/halfadder.vhd Line: 53
+    Info (12022): Found design unit 5: NAND_2-Behave File: /home/ritesh/Desktop/digitalLab/digital_lab3/halfadder.vhd Line: 64
+    Info (12022): Found design unit 6: XOR_2-Behave File: /home/ritesh/Desktop/digitalLab/digital_lab3/halfadder.vhd Line: 75
+    Info (12022): Found design unit 7: halfadder-Struct File: /home/ritesh/Desktop/digitalLab/digital_lab3/halfadder.vhd Line: 95
+    Info (12023): Found entity 1: INVERTER File: /home/ritesh/Desktop/digitalLab/digital_lab3/halfadder.vhd Line: 27
+    Info (12023): Found entity 2: AND_2 File: /home/ritesh/Desktop/digitalLab/digital_lab3/halfadder.vhd Line: 38
+    Info (12023): Found entity 3: OR_2 File: /home/ritesh/Desktop/digitalLab/digital_lab3/halfadder.vhd Line: 49
+    Info (12023): Found entity 4: NAND_2 File: /home/ritesh/Desktop/digitalLab/digital_lab3/halfadder.vhd Line: 60
+    Info (12023): Found entity 5: XOR_2 File: /home/ritesh/Desktop/digitalLab/digital_lab3/halfadder.vhd Line: 71
+    Info (12023): Found entity 6: halfadder File: /home/ritesh/Desktop/digitalLab/digital_lab3/halfadder.vhd Line: 90
+Info (12021): Found 2 design units, including 1 entities, in source file multiplexor.vhd
+    Info (12022): Found design unit 1: multiplexor-Struct File: /home/ritesh/Desktop/digitalLab/digital_lab3/multiplexor.vhd Line: 17
+    Info (12023): Found entity 1: multiplexor File: /home/ritesh/Desktop/digitalLab/digital_lab3/multiplexor.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file inputinverter.vhd
+    Info (12022): Found design unit 1: inputinverter-Struct File: /home/ritesh/Desktop/digitalLab/digital_lab3/inputinverter.vhd Line: 17
+    Info (12023): Found entity 1: inputinverter File: /home/ritesh/Desktop/digitalLab/digital_lab3/inputinverter.vhd Line: 12
+Info (12021): Found 2 design units, including 1 entities, in source file modifiedrightshift.vhd
+    Info (12022): Found design unit 1: modifiedrightshift-Struct File: /home/ritesh/Desktop/digitalLab/digital_lab3/modifiedrightshift.vhd Line: 18
+    Info (12023): Found entity 1: modifiedrightshift File: /home/ritesh/Desktop/digitalLab/digital_lab3/modifiedrightshift.vhd Line: 12
+Info (12021): Found 2 design units, including 1 entities, in source file modifiedleftshift.vhd
+    Info (12022): Found design unit 1: modifiedleftshift-Struct File: /home/ritesh/Desktop/digitalLab/digital_lab3/modifiedleftshift.vhd Line: 17
+    Info (12023): Found entity 1: modifiedleftshift File: /home/ritesh/Desktop/digitalLab/digital_lab3/modifiedleftshift.vhd Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file dutsub.vhd
+    Info (12022): Found design unit 1: dutsub-DutWrap File: /home/ritesh/Desktop/digitalLab/digital_lab3/dutsub.vhd Line: 15
+    Info (12023): Found entity 1: dutsub File: /home/ritesh/Desktop/digitalLab/digital_lab3/dutsub.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file subtestbench.vhd
+    Info (12022): Found design unit 1: subtestbench-Behave File: /home/ritesh/Desktop/digitalLab/digital_lab3/subtestbench.vhd Line: 12
+    Info (12023): Found entity 1: subtestbench File: /home/ritesh/Desktop/digitalLab/digital_lab3/subtestbench.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file dutleft.vhd
+    Info (12022): Found design unit 1: dutleft-DutWrap File: /home/ritesh/Desktop/digitalLab/digital_lab3/dutleft.vhd Line: 15
+    Info (12023): Found entity 1: dutleft File: /home/ritesh/Desktop/digitalLab/digital_lab3/dutleft.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file lefttestbench.vhd
+    Info (12022): Found design unit 1: lefttestbench-Behave File: /home/ritesh/Desktop/digitalLab/digital_lab3/lefttestbench.vhd Line: 12
+    Info (12023): Found entity 1: lefttestbench File: /home/ritesh/Desktop/digitalLab/digital_lab3/lefttestbench.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file righttestbench.vhd
+    Info (12022): Found design unit 1: righttestbench-Behave File: /home/ritesh/Desktop/digitalLab/digital_lab3/righttestbench.vhd Line: 12
+    Info (12023): Found entity 1: righttestbench File: /home/ritesh/Desktop/digitalLab/digital_lab3/righttestbench.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file dutright.vhd
+    Info (12022): Found design unit 1: dutright-DutWrap File: /home/ritesh/Desktop/digitalLab/digital_lab3/dutright.vhd Line: 15
+    Info (12023): Found entity 1: dutright File: /home/ritesh/Desktop/digitalLab/digital_lab3/dutright.vhd Line: 10
+Info (12127): Elaborating entity "DUT" for the top level hierarchy
+Info (12128): Elaborating entity "alu" for hierarchy "alu:dut" File: /home/ritesh/Desktop/digitalLab/digital_lab3/DUT.vhd Line: 52
+Warning (10036): Verilog HDL or VHDL warning at alu.vhd(14): object "sig5" assigned a value but never read File: /home/ritesh/Desktop/digitalLab/digital_lab3/alu.vhd Line: 14
+Info (12128): Elaborating entity "eightbit" for hierarchy "alu:dut|eightbit:a" File: /home/ritesh/Desktop/digitalLab/digital_lab3/alu.vhd Line: 41
+Info (12128): Elaborating entity "fulladder" for hierarchy "alu:dut|eightbit:a|fulladder:f_1" File: /home/ritesh/Desktop/digitalLab/digital_lab3/eightbit.vhd Line: 28
+Info (12128): Elaborating entity "halfadder" for hierarchy "alu:dut|eightbit:a|fulladder:f_1|halfadder:h_1" File: /home/ritesh/Desktop/digitalLab/digital_lab3/fulladder.vhd Line: 26
+Info (12128): Elaborating entity "XOR_2" for hierarchy "alu:dut|eightbit:a|fulladder:f_1|halfadder:h_1|XOR_2:x_1" File: /home/ritesh/Desktop/digitalLab/digital_lab3/halfadder.vhd Line: 99
+Info (12128): Elaborating entity "AND_2" for hierarchy "alu:dut|eightbit:a|fulladder:f_1|halfadder:h_1|AND_2:a_1" File: /home/ritesh/Desktop/digitalLab/digital_lab3/halfadder.vhd Line: 101
+Info (12128): Elaborating entity "OR_2" for hierarchy "alu:dut|eightbit:a|fulladder:f_1|OR_2:o_1" File: /home/ritesh/Desktop/digitalLab/digital_lab3/fulladder.vhd Line: 28
+Info (12128): Elaborating entity "modifiedleftshift" for hierarchy "alu:dut|modifiedleftshift:b" File: /home/ritesh/Desktop/digitalLab/digital_lab3/alu.vhd Line: 42
+Info (12128): Elaborating entity "inputinverter" for hierarchy "alu:dut|modifiedleftshift:b|inputinverter:in_1" File: /home/ritesh/Desktop/digitalLab/digital_lab3/modifiedleftshift.vhd Line: 34
+Info (12128): Elaborating entity "multiplexor" for hierarchy "alu:dut|modifiedleftshift:b|inputinverter:in_1|multiplexor:\g_1:0:m_1" File: /home/ritesh/Desktop/digitalLab/digital_lab3/inputinverter.vhd Line: 27
+Info (12128): Elaborating entity "INVERTER" for hierarchy "alu:dut|modifiedleftshift:b|inputinverter:in_1|multiplexor:\g_1:0:m_1|INVERTER:n_1" File: /home/ritesh/Desktop/digitalLab/digital_lab3/multiplexor.vhd Line: 23
+Info (12128): Elaborating entity "modifiedrightshift" for hierarchy "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1" File: /home/ritesh/Desktop/digitalLab/digital_lab3/modifiedleftshift.vhd Line: 36
+Info (12128): Elaborating entity "ebitrightshift" for hierarchy "alu:dut|modifiedleftshift:b|modifiedrightshift:r_1|ebitrightshift:r_1" File: /home/ritesh/Desktop/digitalLab/digital_lab3/modifiedrightshift.vhd Line: 40
+Info (12128): Elaborating entity "eightbitsub" for hierarchy "alu:dut|eightbitsub:d" File: /home/ritesh/Desktop/digitalLab/digital_lab3/alu.vhd Line: 44
+Info (12128): Elaborating entity "fullsub" for hierarchy "alu:dut|eightbitsub:d|fullsub:f_1" File: /home/ritesh/Desktop/digitalLab/digital_lab3/eightbitsub.vhd Line: 29
+Info (21057): Implemented 108 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 18 input pins
+    Info (21059): Implemented 8 output pins
+    Info (21061): Implemented 82 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 1220 megabytes
+    Info: Processing ended: Mon Mar  5 19:18:12 2018
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:29
+
+

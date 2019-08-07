@@ -1,0 +1,230 @@
+|DUT
+input[0] => string:dut.x[0]
+input[1] => string:dut.x[1]
+input[2] => string:dut.x[2]
+input[3] => string:dut.x[3]
+input[4] => string:dut.x[4]
+input[5] => string:dut.CLK
+input[6] => string:dut.reset
+output[0] <= string:dut.o
+
+
+|DUT|string:dut
+reset => gun:g.r
+reset => knife:k.r
+reset => bomb:p.r
+reset => terror:t.reset
+x[0] => gun:g.x[0]
+x[0] => knife:k.x[0]
+x[0] => bomb:p.x[0]
+x[0] => terror:t.x[0]
+x[1] => gun:g.x[1]
+x[1] => knife:k.x[1]
+x[1] => bomb:p.x[1]
+x[1] => terror:t.x[1]
+x[2] => gun:g.x[2]
+x[2] => knife:k.x[2]
+x[2] => bomb:p.x[2]
+x[2] => terror:t.x[2]
+x[3] => gun:g.x[3]
+x[3] => knife:k.x[3]
+x[3] => bomb:p.x[3]
+x[3] => terror:t.x[3]
+x[4] => gun:g.x[4]
+x[4] => knife:k.x[4]
+x[4] => bomb:p.x[4]
+x[4] => terror:t.x[4]
+CLK => gun:g.CLK
+CLK => knife:k.CLK
+CLK => bomb:p.CLK
+CLK => terror:t.CLK
+o <= o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|string:dut|gun:g
+r => o.IN1
+r => y.IN1
+r => z.IN1
+r => a.IN1
+r => b.IN1
+x[0] => y.IN1
+x[0] => z.IN1
+x[0] => a.IN1
+x[0] => o.IN1
+x[0] => b.IN1
+x[1] => o.IN1
+x[1] => a.IN1
+x[1] => b.IN1
+x[1] => y.IN1
+x[1] => z.IN1
+x[2] => o.IN1
+x[2] => y.IN1
+x[2] => a.IN1
+x[2] => z.IN1
+x[2] => b.IN1
+x[3] => o.IN1
+x[3] => b.IN0
+x[3] => y.IN1
+x[3] => z.IN0
+x[3] => a.IN1
+x[4] => y.IN1
+x[4] => z.IN1
+x[4] => o.IN1
+x[4] => a.IN1
+x[4] => b.IN1
+CLK => dff_new:d_1.CLK
+CLK => dff_new:d_2.CLK
+o <= o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|string:dut|gun:g|dff_new:d_1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|string:dut|gun:g|dff_new:d_2
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|string:dut|knife:k
+r => o.IN1
+r => nq[2].IN1
+r => nq[1].IN1
+r => nq[0].IN1
+x[0] => k.IN1
+x[0] => i.IN1
+x[0] => e.IN1
+x[0] => n.IN1
+x[0] => f.IN1
+x[1] => k.IN1
+x[1] => n.IN1
+x[1] => f.IN1
+x[1] => i.IN1
+x[1] => e.IN1
+x[2] => n.IN1
+x[2] => f.IN1
+x[2] => e.IN1
+x[2] => k.IN1
+x[2] => i.IN1
+x[3] => k.IN0
+x[3] => n.IN0
+x[3] => i.IN0
+x[3] => f.IN0
+x[3] => e.IN0
+x[4] => k.IN1
+x[4] => n.IN1
+x[4] => i.IN1
+x[4] => f.IN1
+x[4] => e.IN1
+CLK => dff_new:d_1.CLK
+CLK => dff_new:d_2.CLK
+CLK => dff_new:d_3.CLK
+o <= o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|string:dut|knife:k|dff_new:d_1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|string:dut|knife:k|dff_new:d_2
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|string:dut|knife:k|dff_new:d_3
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|string:dut|bomb:p
+r => o.IN1
+r => nq[1].IN1
+r => nq[0].IN1
+x[0] => a.IN1
+x[0] => m.IN1
+x[0] => b.IN1
+x[1] => b.IN1
+x[1] => a.IN1
+x[1] => m.IN1
+x[2] => a.IN1
+x[2] => m.IN1
+x[2] => b.IN1
+x[3] => a.IN0
+x[3] => m.IN0
+x[3] => b.IN0
+x[4] => b.IN1
+x[4] => a.IN1
+x[4] => m.IN1
+CLK => dff_new:d_1.CLK
+CLK => dff_new:d_2.CLK
+o <= o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|string:dut|bomb:p|dff_new:d_1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|string:dut|bomb:p|dff_new:d_2
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|string:dut|terror:t
+reset => o.IN1
+reset => nq[2].IN1
+reset => nq[1].IN1
+reset => nq[0].IN1
+x[0] => e.IN1
+x[0] => a.IN1
+x[0] => t.IN1
+x[0] => r.IN1
+x[1] => r.IN1
+x[1] => a.IN1
+x[1] => t.IN1
+x[1] => e.IN1
+x[2] => t.IN1
+x[2] => e.IN1
+x[2] => a.IN1
+x[2] => r.IN1
+x[3] => a.IN0
+x[3] => t.IN0
+x[3] => e.IN0
+x[3] => r.IN0
+x[4] => t.IN1
+x[4] => r.IN1
+x[4] => e.IN1
+x[4] => a.IN1
+CLK => dff_new:d_1.CLK
+CLK => dff_new:d_2.CLK
+CLK => dff_new:d_3.CLK
+o <= o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|string:dut|terror:t|dff_new:d_1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|string:dut|terror:t|dff_new:d_2
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|string:dut|terror:t|dff_new:d_3
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

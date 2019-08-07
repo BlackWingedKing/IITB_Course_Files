@@ -1,0 +1,277 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'CLK'
+Slack : -12.226
+TNS   : -1023.490
+
+Type  : Setup 'msclock:msclock1|tmp'
+Slack : -11.705
+TNS   : -282.433
+
+Type  : Setup 'randomfsm:r0|msclock:msclock1|tmp'
+Slack : -6.440
+TNS   : -99.344
+
+Type  : Setup 'randomfsm:r0|counter1:freecount|tmp'
+Slack : -5.184
+TNS   : -132.238
+
+Type  : Setup 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:c_1|dff_new:d_1|Q'
+Slack : -3.154
+TNS   : -3.154
+
+Type  : Setup 'reset'
+Slack : -3.153
+TNS   : -3.833
+
+Type  : Setup 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q'
+Slack : -2.600
+TNS   : -2.600
+
+Type  : Setup 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q'
+Slack : -2.599
+TNS   : -2.599
+
+Type  : Setup 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q'
+Slack : -2.323
+TNS   : -2.323
+
+Type  : Setup 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q'
+Slack : -2.297
+TNS   : -2.297
+
+Type  : Setup 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q'
+Slack : -2.065
+TNS   : -2.065
+
+Type  : Setup 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q'
+Slack : -2.065
+TNS   : -2.065
+
+Type  : Setup 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q'
+Slack : -2.056
+TNS   : -2.056
+
+Type  : Setup 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q'
+Slack : -1.919
+TNS   : -1.919
+
+Type  : Hold 'reset'
+Slack : -5.467
+TNS   : -32.549
+
+Type  : Hold 'CLK'
+Slack : -2.435
+TNS   : -13.295
+
+Type  : Hold 'msclock:msclock1|tmp'
+Slack : 0.848
+TNS   : 0.000
+
+Type  : Hold 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q'
+Slack : 1.471
+TNS   : 0.000
+
+Type  : Hold 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q'
+Slack : 1.502
+TNS   : 0.000
+
+Type  : Hold 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q'
+Slack : 1.865
+TNS   : 0.000
+
+Type  : Hold 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q'
+Slack : 1.897
+TNS   : 0.000
+
+Type  : Hold 'randomfsm:r0|msclock:msclock1|tmp'
+Slack : 1.934
+TNS   : 0.000
+
+Type  : Hold 'randomfsm:r0|counter1:freecount|tmp'
+Slack : 2.116
+TNS   : 0.000
+
+Type  : Hold 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q'
+Slack : 2.145
+TNS   : 0.000
+
+Type  : Hold 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q'
+Slack : 2.145
+TNS   : 0.000
+
+Type  : Hold 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q'
+Slack : 2.155
+TNS   : 0.000
+
+Type  : Hold 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q'
+Slack : 2.243
+TNS   : 0.000
+
+Type  : Hold 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:c_1|dff_new:d_1|Q'
+Slack : 2.501
+TNS   : 0.000
+
+Type  : Recovery 'CLK'
+Slack : -13.861
+TNS   : -752.222
+
+Type  : Recovery 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q'
+Slack : -4.313
+TNS   : -4.313
+
+Type  : Recovery 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q'
+Slack : -3.992
+TNS   : -3.992
+
+Type  : Recovery 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:c_1|dff_new:d_1|Q'
+Slack : -3.962
+TNS   : -3.962
+
+Type  : Recovery 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q'
+Slack : -3.600
+TNS   : -3.600
+
+Type  : Recovery 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q'
+Slack : -3.596
+TNS   : -3.596
+
+Type  : Recovery 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q'
+Slack : -3.583
+TNS   : -3.583
+
+Type  : Recovery 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q'
+Slack : -3.567
+TNS   : -3.567
+
+Type  : Recovery 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q'
+Slack : -3.271
+TNS   : -3.271
+
+Type  : Recovery 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q'
+Slack : -3.105
+TNS   : -3.105
+
+Type  : Recovery 'reset'
+Slack : -1.213
+TNS   : -6.682
+
+Type  : Recovery 'randomfsm:r0|msclock:msclock1|tmp'
+Slack : -1.159
+TNS   : -16.664
+
+Type  : Recovery 'randomfsm:r0|counter1:freecount|tmp'
+Slack : -0.483
+TNS   : -2.898
+
+Type  : Removal 'randomfsm:r0|counter1:freecount|tmp'
+Slack : -0.320
+TNS   : -1.920
+
+Type  : Removal 'reset'
+Slack : 0.368
+TNS   : 0.000
+
+Type  : Removal 'randomfsm:r0|msclock:msclock1|tmp'
+Slack : 0.870
+TNS   : 0.000
+
+Type  : Removal 'CLK'
+Slack : 1.101
+TNS   : 0.000
+
+Type  : Removal 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q'
+Slack : 3.051
+TNS   : 0.000
+
+Type  : Removal 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q'
+Slack : 3.217
+TNS   : 0.000
+
+Type  : Removal 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q'
+Slack : 3.513
+TNS   : 0.000
+
+Type  : Removal 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q'
+Slack : 3.529
+TNS   : 0.000
+
+Type  : Removal 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q'
+Slack : 3.542
+TNS   : 0.000
+
+Type  : Removal 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q'
+Slack : 3.546
+TNS   : 0.000
+
+Type  : Removal 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:c_1|dff_new:d_1|Q'
+Slack : 3.908
+TNS   : 0.000
+
+Type  : Removal 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q'
+Slack : 3.938
+TNS   : 0.000
+
+Type  : Removal 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q'
+Slack : 4.259
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'CLK'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'reset'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'msclock:msclock1|tmp'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'randomfsm:r0|counter1:freecount|tmp'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:c_1|dff_new:d_1|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'randomfsm:r0|msclock:msclock1|tmp'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------

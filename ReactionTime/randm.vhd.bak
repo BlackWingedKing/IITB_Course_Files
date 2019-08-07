@@ -1,0 +1,28 @@
+library ieee;
+use ieee.std_logic_1164.all;
+entity randm is 
+	port(switch, clk : in std_logic; 
+		outval : out std_logic_vector(10 downto 0));
+end entity;
+architecture behave of test is
+	signal count:unsigned(10 downto 0):= to_unsigned(1000,11);
+	constant lower:unsigned(10 downto 0):= to_unsigned(1000,11);
+	constant upper:unsigned(10 downto 0):= to_unsigned(2000,11);
+	constant step:std_logic_vector(10 downto 0):= to_unsigned(100,11);
+begin
+	process(switch,clk)
+	begin 
+		if rising_edge(clk) then
+			if count = upper then
+				count <= lower;
+			end if;
+			count <= count + step;
+			if switch = '1' then
+				outval <= std_logic_vector(count);
+			end if;
+		end if;
+	end process;
+end behave;
+		
+		
+		

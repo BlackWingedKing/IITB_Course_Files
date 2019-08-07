@@ -1,0 +1,896 @@
+Analysis & Synthesis report for rxn1
+Fri May  4 00:49:06 2018
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |reactiongame|lcd_controller:s6|state
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for Inferred Entity Instance: lpm_divide:Div2
+ 15. Parameter Settings for Inferred Entity Instance: lpm_divide:Div3
+ 16. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 17. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
+ 18. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult2
+ 19. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult1
+ 20. lpm_mult Parameter Settings by Entity Instance
+ 21. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Fri May  4 00:49:06 2018       ;
+; Quartus Prime Version       ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Revision Name               ; rxn1                                        ;
+; Top-level Entity Name       ; reactiongame                                ;
+; Family                      ; MAX V                                       ;
+; Total logic elements        ; 2,252                                       ;
+; Total pins                  ; 27                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; 5M1270ZT144C5      ;                    ;
+; Top-level entity name                                                      ; reactiongame       ; rxn1               ;
+; Family name                                                                ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                              ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                          ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
+; lcd_controller.vhd               ; yes             ; User VHDL File               ; /home/ritesh/Desktop/xyz/lcd_controller.vhd                                           ;         ;
+; slowclk.vhd                      ; yes             ; User VHDL File               ; /home/ritesh/Desktop/xyz/slowclk.vhd                                                  ;         ;
+; randgen.vhd                      ; yes             ; User VHDL File               ; /home/ritesh/Desktop/xyz/randgen.vhd                                                  ;         ;
+; ledctrl.vhd                      ; yes             ; User VHDL File               ; /home/ritesh/Desktop/xyz/ledctrl.vhd                                                  ;         ;
+; looper.vhd                       ; yes             ; User VHDL File               ; /home/ritesh/Desktop/xyz/looper.vhd                                                   ;         ;
+; reactiongame.vhd                 ; yes             ; User VHDL File               ; /home/ritesh/Desktop/xyz/reactiongame.vhd                                             ;         ;
+; timer.vhd                        ; yes             ; User VHDL File               ; /home/ritesh/Desktop/xyz/timer.vhd                                                    ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/lpm_divide.tdf          ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/abs_divider.inc         ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/sign_div_unsign.inc     ;         ;
+; aglobal160.inc                   ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/aglobal160.inc          ;         ;
+; db/lpm_divide_7co.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/lpm_divide_7co.tdf                                        ;         ;
+; db/abs_divider_nbg.tdf           ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/abs_divider_nbg.tdf                                       ;         ;
+; db/alt_u_div_nie.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/alt_u_div_nie.tdf                                         ;         ;
+; db/add_sub_i4c.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/add_sub_i4c.tdf                                           ;         ;
+; db/add_sub_j4c.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/add_sub_j4c.tdf                                           ;         ;
+; db/add_sub_q4c.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/add_sub_q4c.tdf                                           ;         ;
+; db/add_sub_k4c.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/add_sub_k4c.tdf                                           ;         ;
+; db/add_sub_l4c.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/add_sub_l4c.tdf                                           ;         ;
+; db/add_sub_m4c.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/add_sub_m4c.tdf                                           ;         ;
+; db/add_sub_n4c.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/add_sub_n4c.tdf                                           ;         ;
+; db/add_sub_o4c.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/add_sub_o4c.tdf                                           ;         ;
+; db/add_sub_p4c.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/add_sub_p4c.tdf                                           ;         ;
+; db/lpm_abs_ga9.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/lpm_abs_ga9.tdf                                           ;         ;
+; db/lpm_abs_tb9.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/lpm_abs_tb9.tdf                                           ;         ;
+; db/add_sub_tte.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/add_sub_tte.tdf                                           ;         ;
+; db/add_sub_gse.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/add_sub_gse.tdf                                           ;         ;
+; db/lpm_divide_4co.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/lpm_divide_4co.tdf                                        ;         ;
+; db/abs_divider_kbg.tdf           ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/abs_divider_kbg.tdf                                       ;         ;
+; db/alt_u_div_hie.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/alt_u_div_hie.tdf                                         ;         ;
+; db/lpm_abs_da9.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/lpm_abs_da9.tdf                                           ;         ;
+; db/add_sub_dse.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/add_sub_dse.tdf                                           ;         ;
+; db/lpm_divide_hdo.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/lpm_divide_hdo.tdf                                        ;         ;
+; db/abs_divider_1dg.tdf           ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/abs_divider_1dg.tdf                                       ;         ;
+; db/alt_u_div_ble.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/alt_u_div_ble.tdf                                         ;         ;
+; db/add_sub_36c.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/add_sub_36c.tdf                                           ;         ;
+; db/add_sub_46c.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/add_sub_46c.tdf                                           ;         ;
+; db/add_sub_26c.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/add_sub_26c.tdf                                           ;         ;
+; db/lpm_abs_qb9.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/lpm_abs_qb9.tdf                                           ;         ;
+; db/add_sub_qte.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/xyz/db/add_sub_qte.tdf                                           ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/lpm_mult.tdf            ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/multcore.inc            ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/bypassff.inc            ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/altshift.inc            ;         ;
+; multcore.tdf                     ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/multcore.tdf            ;         ;
+; csa_add.inc                      ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/csa_add.inc             ;         ;
+; mpar_add.inc                     ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/mpar_add.inc            ;         ;
+; muleabz.inc                      ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/muleabz.inc             ;         ;
+; mul_lfrg.inc                     ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/mul_lfrg.inc            ;         ;
+; mul_boothc.inc                   ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/mul_boothc.inc          ;         ;
+; alt_ded_mult.inc                 ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/alt_ded_mult.inc        ;         ;
+; alt_ded_mult_y.inc               ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/alt_ded_mult_y.inc      ;         ;
+; dffpipe.inc                      ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/dffpipe.inc             ;         ;
+; mpar_add.tdf                     ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/mpar_add.tdf            ;         ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
+; addcore.inc                      ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/addcore.inc             ;         ;
+; look_add.inc                     ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/look_add.inc            ;         ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
+; addcore.tdf                      ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/addcore.tdf             ;         ;
+; a_csnbuffer.inc                  ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/a_csnbuffer.inc         ;         ;
+; a_csnbuffer.tdf                  ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/a_csnbuffer.tdf         ;         ;
+; altshift.tdf                     ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/altshift.tdf            ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                     ;
++---------------------------------------------+-------------------+
+; Resource                                    ; Usage             ;
++---------------------------------------------+-------------------+
+; Total logic elements                        ; 2252              ;
+;     -- Combinational with no register       ; 2046              ;
+;     -- Register only                        ; 107               ;
+;     -- Combinational with a register        ; 99                ;
+;                                             ;                   ;
+; Logic element usage by number of LUT inputs ;                   ;
+;     -- 4 input functions                    ; 467               ;
+;     -- 3 input functions                    ; 634               ;
+;     -- 2 input functions                    ; 707               ;
+;     -- 1 input functions                    ; 336               ;
+;     -- 0 input functions                    ; 1                 ;
+;                                             ;                   ;
+; Logic elements by mode                      ;                   ;
+;     -- normal mode                          ; 1403              ;
+;     -- arithmetic mode                      ; 849               ;
+;     -- qfbk mode                            ; 0                 ;
+;     -- register cascade mode                ; 0                 ;
+;     -- synchronous clear/load mode          ; 26                ;
+;     -- asynchronous clear/load mode         ; 0                 ;
+;                                             ;                   ;
+; Total registers                             ; 206               ;
+; Total logic cells in carry chains           ; 1035              ;
+; I/O pins                                    ; 27                ;
+; Maximum fan-out node                        ; slowclk:s1|outclk ;
+; Maximum fan-out                             ; 155               ;
+; Total fan-out                               ; 5961              ;
+; Average fan-out                             ; 2.62              ;
++---------------------------------------------+-------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                  ;
++---------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                  ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                                              ; Entity Name     ; Library Name ;
++---------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |reactiongame                               ; 2252 (201)  ; 206          ; 0          ; 27   ; 0            ; 2046 (144)   ; 107 (41)          ; 99 (16)          ; 1035 (90)       ; 0 (0)      ; |reactiongame                                                                                                                    ; reactiongame    ; work         ;
+;    |lcd_controller:s6|                      ; 61 (61)     ; 36           ; 0          ; 0    ; 0            ; 25 (25)      ; 14 (14)           ; 22 (22)          ; 0 (0)           ; 0 (0)      ; |reactiongame|lcd_controller:s6                                                                                                  ; lcd_controller  ; work         ;
+;    |ledctrl:s3|                             ; 31 (31)     ; 24           ; 0          ; 0    ; 0            ; 7 (7)        ; 12 (12)           ; 12 (12)          ; 11 (11)         ; 0 (0)      ; |reactiongame|ledctrl:s3                                                                                                         ; ledctrl         ; work         ;
+;    |looper:s5|                              ; 45 (45)     ; 18           ; 0          ; 0    ; 0            ; 27 (27)      ; 1 (1)             ; 17 (17)          ; 12 (12)         ; 0 (0)      ; |reactiongame|looper:s5                                                                                                          ; looper          ; work         ;
+;    |lpm_divide:Div0|                        ; 682 (0)     ; 0            ; 0          ; 0    ; 0            ; 682 (0)      ; 0 (0)             ; 0 (0)            ; 313 (0)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0                                                                                                    ; lpm_divide      ; work         ;
+;       |lpm_divide_hdo:auto_generated|       ; 682 (0)     ; 0            ; 0          ; 0    ; 0            ; 682 (0)      ; 0 (0)             ; 0 (0)            ; 313 (0)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated                                                                      ; lpm_divide_hdo  ; work         ;
+;          |abs_divider_1dg:divider|          ; 682 (7)     ; 0            ; 0          ; 0    ; 0            ; 682 (7)      ; 0 (0)             ; 0 (0)            ; 313 (0)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated|abs_divider_1dg:divider                                              ; abs_divider_1dg ; work         ;
+;             |add_sub_tte:compl_add_quot|    ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated|abs_divider_1dg:divider|add_sub_tte:compl_add_quot                   ; add_sub_tte     ; work         ;
+;             |alt_u_div_ble:divider|         ; 634 (362)   ; 0            ; 0          ; 0    ; 0            ; 634 (362)    ; 0 (0)             ; 0 (0)            ; 272 (0)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated|abs_divider_1dg:divider|alt_u_div_ble:divider                        ; alt_u_div_ble   ; work         ;
+;                |add_sub_26c:add_sub_9|      ; 11 (11)     ; 0            ; 0          ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 0 (0)            ; 11 (11)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated|abs_divider_1dg:divider|alt_u_div_ble:divider|add_sub_26c:add_sub_9  ; add_sub_26c     ; work         ;
+;                |add_sub_36c:add_sub_10|     ; 11 (11)     ; 0            ; 0          ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 0 (0)            ; 11 (11)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated|abs_divider_1dg:divider|alt_u_div_ble:divider|add_sub_36c:add_sub_10 ; add_sub_36c     ; work         ;
+;                |add_sub_46c:add_sub_11|     ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated|abs_divider_1dg:divider|alt_u_div_ble:divider|add_sub_46c:add_sub_11 ; add_sub_46c     ; work         ;
+;                |add_sub_46c:add_sub_12|     ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated|abs_divider_1dg:divider|alt_u_div_ble:divider|add_sub_46c:add_sub_12 ; add_sub_46c     ; work         ;
+;                |add_sub_46c:add_sub_13|     ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated|abs_divider_1dg:divider|alt_u_div_ble:divider|add_sub_46c:add_sub_13 ; add_sub_46c     ; work         ;
+;                |add_sub_46c:add_sub_14|     ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated|abs_divider_1dg:divider|alt_u_div_ble:divider|add_sub_46c:add_sub_14 ; add_sub_46c     ; work         ;
+;                |add_sub_46c:add_sub_15|     ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated|abs_divider_1dg:divider|alt_u_div_ble:divider|add_sub_46c:add_sub_15 ; add_sub_46c     ; work         ;
+;                |add_sub_46c:add_sub_16|     ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated|abs_divider_1dg:divider|alt_u_div_ble:divider|add_sub_46c:add_sub_16 ; add_sub_46c     ; work         ;
+;                |add_sub_46c:add_sub_17|     ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated|abs_divider_1dg:divider|alt_u_div_ble:divider|add_sub_46c:add_sub_17 ; add_sub_46c     ; work         ;
+;                |add_sub_46c:add_sub_18|     ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated|abs_divider_1dg:divider|alt_u_div_ble:divider|add_sub_46c:add_sub_18 ; add_sub_46c     ; work         ;
+;                |add_sub_46c:add_sub_19|     ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated|abs_divider_1dg:divider|alt_u_div_ble:divider|add_sub_46c:add_sub_19 ; add_sub_46c     ; work         ;
+;                |add_sub_46c:add_sub_20|     ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated|abs_divider_1dg:divider|alt_u_div_ble:divider|add_sub_46c:add_sub_20 ; add_sub_46c     ; work         ;
+;                |add_sub_46c:add_sub_21|     ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated|abs_divider_1dg:divider|alt_u_div_ble:divider|add_sub_46c:add_sub_21 ; add_sub_46c     ; work         ;
+;                |add_sub_46c:add_sub_22|     ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated|abs_divider_1dg:divider|alt_u_div_ble:divider|add_sub_46c:add_sub_22 ; add_sub_46c     ; work         ;
+;                |add_sub_46c:add_sub_23|     ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated|abs_divider_1dg:divider|alt_u_div_ble:divider|add_sub_46c:add_sub_23 ; add_sub_46c     ; work         ;
+;                |add_sub_46c:add_sub_24|     ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated|abs_divider_1dg:divider|alt_u_div_ble:divider|add_sub_46c:add_sub_24 ; add_sub_46c     ; work         ;
+;                |add_sub_46c:add_sub_25|     ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated|abs_divider_1dg:divider|alt_u_div_ble:divider|add_sub_46c:add_sub_25 ; add_sub_46c     ; work         ;
+;                |add_sub_46c:add_sub_26|     ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated|abs_divider_1dg:divider|alt_u_div_ble:divider|add_sub_46c:add_sub_26 ; add_sub_46c     ; work         ;
+;                |add_sub_46c:add_sub_27|     ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated|abs_divider_1dg:divider|alt_u_div_ble:divider|add_sub_46c:add_sub_27 ; add_sub_46c     ; work         ;
+;                |add_sub_46c:add_sub_28|     ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated|abs_divider_1dg:divider|alt_u_div_ble:divider|add_sub_46c:add_sub_28 ; add_sub_46c     ; work         ;
+;                |add_sub_46c:add_sub_29|     ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated|abs_divider_1dg:divider|alt_u_div_ble:divider|add_sub_46c:add_sub_29 ; add_sub_46c     ; work         ;
+;                |add_sub_46c:add_sub_30|     ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated|abs_divider_1dg:divider|alt_u_div_ble:divider|add_sub_46c:add_sub_30 ; add_sub_46c     ; work         ;
+;                |add_sub_46c:add_sub_31|     ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated|abs_divider_1dg:divider|alt_u_div_ble:divider|add_sub_46c:add_sub_31 ; add_sub_46c     ; work         ;
+;             |lpm_abs_tb9:my_abs_num|        ; 33 (33)     ; 0            ; 0          ; 0    ; 0            ; 33 (33)      ; 0 (0)             ; 0 (0)            ; 33 (33)         ; 0 (0)      ; |reactiongame|lpm_divide:Div0|lpm_divide_hdo:auto_generated|abs_divider_1dg:divider|lpm_abs_tb9:my_abs_num                       ; lpm_abs_tb9     ; work         ;
+;    |lpm_divide:Div2|                        ; 606 (0)     ; 0            ; 0          ; 0    ; 0            ; 606 (0)      ; 0 (0)             ; 0 (0)            ; 298 (0)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2                                                                                                    ; lpm_divide      ; work         ;
+;       |lpm_divide_7co:auto_generated|       ; 606 (0)     ; 0            ; 0          ; 0    ; 0            ; 606 (0)      ; 0 (0)             ; 0 (0)            ; 298 (0)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated                                                                      ; lpm_divide_7co  ; work         ;
+;          |abs_divider_nbg:divider|          ; 606 (8)     ; 0            ; 0          ; 0    ; 0            ; 606 (8)      ; 0 (0)             ; 0 (0)            ; 298 (0)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider                                              ; abs_divider_nbg ; work         ;
+;             |add_sub_tte:compl_add_quot|    ; 9 (9)       ; 0            ; 0          ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 0 (0)            ; 9 (9)           ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|add_sub_tte:compl_add_quot                   ; add_sub_tte     ; work         ;
+;             |alt_u_div_nie:divider|         ; 556 (300)   ; 0            ; 0          ; 0    ; 0            ; 556 (300)    ; 0 (0)             ; 0 (0)            ; 256 (0)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|alt_u_div_nie:divider                        ; alt_u_div_nie   ; work         ;
+;                |add_sub_o4c:add_sub_6|      ; 9 (9)       ; 0            ; 0          ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 0 (0)            ; 9 (9)           ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|alt_u_div_nie:divider|add_sub_o4c:add_sub_6  ; add_sub_o4c     ; work         ;
+;                |add_sub_p4c:add_sub_7|      ; 9 (9)       ; 0            ; 0          ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 0 (0)            ; 9 (9)           ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|alt_u_div_nie:divider|add_sub_p4c:add_sub_7  ; add_sub_p4c     ; work         ;
+;                |add_sub_q4c:add_sub_10|     ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|alt_u_div_nie:divider|add_sub_q4c:add_sub_10 ; add_sub_q4c     ; work         ;
+;                |add_sub_q4c:add_sub_11|     ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|alt_u_div_nie:divider|add_sub_q4c:add_sub_11 ; add_sub_q4c     ; work         ;
+;                |add_sub_q4c:add_sub_12|     ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|alt_u_div_nie:divider|add_sub_q4c:add_sub_12 ; add_sub_q4c     ; work         ;
+;                |add_sub_q4c:add_sub_13|     ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|alt_u_div_nie:divider|add_sub_q4c:add_sub_13 ; add_sub_q4c     ; work         ;
+;                |add_sub_q4c:add_sub_14|     ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|alt_u_div_nie:divider|add_sub_q4c:add_sub_14 ; add_sub_q4c     ; work         ;
+;                |add_sub_q4c:add_sub_15|     ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|alt_u_div_nie:divider|add_sub_q4c:add_sub_15 ; add_sub_q4c     ; work         ;
+;                |add_sub_q4c:add_sub_16|     ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|alt_u_div_nie:divider|add_sub_q4c:add_sub_16 ; add_sub_q4c     ; work         ;
+;                |add_sub_q4c:add_sub_17|     ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|alt_u_div_nie:divider|add_sub_q4c:add_sub_17 ; add_sub_q4c     ; work         ;
+;                |add_sub_q4c:add_sub_18|     ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|alt_u_div_nie:divider|add_sub_q4c:add_sub_18 ; add_sub_q4c     ; work         ;
+;                |add_sub_q4c:add_sub_19|     ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|alt_u_div_nie:divider|add_sub_q4c:add_sub_19 ; add_sub_q4c     ; work         ;
+;                |add_sub_q4c:add_sub_20|     ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|alt_u_div_nie:divider|add_sub_q4c:add_sub_20 ; add_sub_q4c     ; work         ;
+;                |add_sub_q4c:add_sub_21|     ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|alt_u_div_nie:divider|add_sub_q4c:add_sub_21 ; add_sub_q4c     ; work         ;
+;                |add_sub_q4c:add_sub_22|     ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|alt_u_div_nie:divider|add_sub_q4c:add_sub_22 ; add_sub_q4c     ; work         ;
+;                |add_sub_q4c:add_sub_23|     ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|alt_u_div_nie:divider|add_sub_q4c:add_sub_23 ; add_sub_q4c     ; work         ;
+;                |add_sub_q4c:add_sub_24|     ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|alt_u_div_nie:divider|add_sub_q4c:add_sub_24 ; add_sub_q4c     ; work         ;
+;                |add_sub_q4c:add_sub_25|     ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|alt_u_div_nie:divider|add_sub_q4c:add_sub_25 ; add_sub_q4c     ; work         ;
+;                |add_sub_q4c:add_sub_26|     ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|alt_u_div_nie:divider|add_sub_q4c:add_sub_26 ; add_sub_q4c     ; work         ;
+;                |add_sub_q4c:add_sub_27|     ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|alt_u_div_nie:divider|add_sub_q4c:add_sub_27 ; add_sub_q4c     ; work         ;
+;                |add_sub_q4c:add_sub_28|     ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|alt_u_div_nie:divider|add_sub_q4c:add_sub_28 ; add_sub_q4c     ; work         ;
+;                |add_sub_q4c:add_sub_29|     ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|alt_u_div_nie:divider|add_sub_q4c:add_sub_29 ; add_sub_q4c     ; work         ;
+;                |add_sub_q4c:add_sub_30|     ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|alt_u_div_nie:divider|add_sub_q4c:add_sub_30 ; add_sub_q4c     ; work         ;
+;                |add_sub_q4c:add_sub_31|     ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|alt_u_div_nie:divider|add_sub_q4c:add_sub_31 ; add_sub_q4c     ; work         ;
+;                |add_sub_q4c:add_sub_8|      ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|alt_u_div_nie:divider|add_sub_q4c:add_sub_8  ; add_sub_q4c     ; work         ;
+;                |add_sub_q4c:add_sub_9|      ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|alt_u_div_nie:divider|add_sub_q4c:add_sub_9  ; add_sub_q4c     ; work         ;
+;             |lpm_abs_tb9:my_abs_num|        ; 33 (33)     ; 0            ; 0          ; 0    ; 0            ; 33 (33)      ; 0 (0)             ; 0 (0)            ; 33 (33)         ; 0 (0)      ; |reactiongame|lpm_divide:Div2|lpm_divide_7co:auto_generated|abs_divider_nbg:divider|lpm_abs_tb9:my_abs_num                       ; lpm_abs_tb9     ; work         ;
+;    |lpm_divide:Div3|                        ; 503 (0)     ; 0            ; 0          ; 0    ; 0            ; 503 (0)      ; 0 (0)             ; 0 (0)            ; 270 (0)         ; 0 (0)      ; |reactiongame|lpm_divide:Div3                                                                                                    ; lpm_divide      ; work         ;
+;       |lpm_divide_4co:auto_generated|       ; 503 (0)     ; 0            ; 0          ; 0    ; 0            ; 503 (0)      ; 0 (0)             ; 0 (0)            ; 270 (0)         ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated                                                                      ; lpm_divide_4co  ; work         ;
+;          |abs_divider_kbg:divider|          ; 503 (8)     ; 0            ; 0          ; 0    ; 0            ; 503 (8)      ; 0 (0)             ; 0 (0)            ; 270 (0)         ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider                                              ; abs_divider_kbg ; work         ;
+;             |add_sub_tte:compl_add_quot|    ; 9 (9)       ; 0            ; 0          ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 0 (0)            ; 9 (9)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|add_sub_tte:compl_add_quot                   ; add_sub_tte     ; work         ;
+;             |alt_u_div_hie:divider|         ; 452 (224)   ; 0            ; 0          ; 0    ; 0            ; 452 (224)    ; 0 (0)             ; 0 (0)            ; 228 (0)         ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider                        ; alt_u_div_hie   ; work         ;
+;                |add_sub_l4c:add_sub_3|      ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_l4c:add_sub_3  ; add_sub_l4c     ; work         ;
+;                |add_sub_m4c:add_sub_4|      ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_m4c:add_sub_4  ; add_sub_m4c     ; work         ;
+;                |add_sub_n4c:add_sub_10|     ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_n4c:add_sub_10 ; add_sub_n4c     ; work         ;
+;                |add_sub_n4c:add_sub_11|     ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_n4c:add_sub_11 ; add_sub_n4c     ; work         ;
+;                |add_sub_n4c:add_sub_12|     ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_n4c:add_sub_12 ; add_sub_n4c     ; work         ;
+;                |add_sub_n4c:add_sub_13|     ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_n4c:add_sub_13 ; add_sub_n4c     ; work         ;
+;                |add_sub_n4c:add_sub_14|     ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_n4c:add_sub_14 ; add_sub_n4c     ; work         ;
+;                |add_sub_n4c:add_sub_15|     ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_n4c:add_sub_15 ; add_sub_n4c     ; work         ;
+;                |add_sub_n4c:add_sub_16|     ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_n4c:add_sub_16 ; add_sub_n4c     ; work         ;
+;                |add_sub_n4c:add_sub_17|     ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_n4c:add_sub_17 ; add_sub_n4c     ; work         ;
+;                |add_sub_n4c:add_sub_18|     ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_n4c:add_sub_18 ; add_sub_n4c     ; work         ;
+;                |add_sub_n4c:add_sub_19|     ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_n4c:add_sub_19 ; add_sub_n4c     ; work         ;
+;                |add_sub_n4c:add_sub_20|     ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_n4c:add_sub_20 ; add_sub_n4c     ; work         ;
+;                |add_sub_n4c:add_sub_21|     ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_n4c:add_sub_21 ; add_sub_n4c     ; work         ;
+;                |add_sub_n4c:add_sub_22|     ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_n4c:add_sub_22 ; add_sub_n4c     ; work         ;
+;                |add_sub_n4c:add_sub_23|     ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_n4c:add_sub_23 ; add_sub_n4c     ; work         ;
+;                |add_sub_n4c:add_sub_24|     ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_n4c:add_sub_24 ; add_sub_n4c     ; work         ;
+;                |add_sub_n4c:add_sub_25|     ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_n4c:add_sub_25 ; add_sub_n4c     ; work         ;
+;                |add_sub_n4c:add_sub_26|     ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_n4c:add_sub_26 ; add_sub_n4c     ; work         ;
+;                |add_sub_n4c:add_sub_27|     ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_n4c:add_sub_27 ; add_sub_n4c     ; work         ;
+;                |add_sub_n4c:add_sub_28|     ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_n4c:add_sub_28 ; add_sub_n4c     ; work         ;
+;                |add_sub_n4c:add_sub_29|     ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_n4c:add_sub_29 ; add_sub_n4c     ; work         ;
+;                |add_sub_n4c:add_sub_30|     ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_n4c:add_sub_30 ; add_sub_n4c     ; work         ;
+;                |add_sub_n4c:add_sub_31|     ; 6 (6)       ; 0            ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 6 (6)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_n4c:add_sub_31 ; add_sub_n4c     ; work         ;
+;                |add_sub_n4c:add_sub_5|      ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_n4c:add_sub_5  ; add_sub_n4c     ; work         ;
+;                |add_sub_n4c:add_sub_6|      ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_n4c:add_sub_6  ; add_sub_n4c     ; work         ;
+;                |add_sub_n4c:add_sub_7|      ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_n4c:add_sub_7  ; add_sub_n4c     ; work         ;
+;                |add_sub_n4c:add_sub_8|      ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_n4c:add_sub_8  ; add_sub_n4c     ; work         ;
+;                |add_sub_n4c:add_sub_9|      ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|alt_u_div_hie:divider|add_sub_n4c:add_sub_9  ; add_sub_n4c     ; work         ;
+;             |lpm_abs_tb9:my_abs_num|        ; 34 (34)     ; 0            ; 0          ; 0    ; 0            ; 34 (34)      ; 0 (0)             ; 0 (0)            ; 33 (33)         ; 0 (0)      ; |reactiongame|lpm_divide:Div3|lpm_divide_4co:auto_generated|abs_divider_kbg:divider|lpm_abs_tb9:my_abs_num                       ; lpm_abs_tb9     ; work         ;
+;    |lpm_mult:Mult0|                         ; 5 (0)       ; 0            ; 0          ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 2 (0)           ; 0 (0)      ; |reactiongame|lpm_mult:Mult0                                                                                                     ; lpm_mult        ; work         ;
+;       |multcore:mult_core|                  ; 5 (3)       ; 0            ; 0          ; 0    ; 0            ; 5 (3)        ; 0 (0)             ; 0 (0)            ; 2 (0)           ; 0 (0)      ; |reactiongame|lpm_mult:Mult0|multcore:mult_core                                                                                  ; multcore        ; work         ;
+;          |mpar_add:padder|                  ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 2 (0)           ; 0 (0)      ; |reactiongame|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                                  ; mpar_add        ; work         ;
+;             |lpm_add_sub:adder[0]|          ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 2 (0)           ; 0 (0)      ; |reactiongame|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                             ; lpm_add_sub     ; work         ;
+;                |addcore:adder|              ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 2 (0)           ; 0 (0)      ; |reactiongame|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder                               ; addcore         ; work         ;
+;                   |a_csnbuffer:result_node| ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 2 (2)           ; 0 (0)      ; |reactiongame|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node       ; a_csnbuffer     ; work         ;
+;    |lpm_mult:Mult1|                         ; 4 (0)       ; 0            ; 0          ; 0    ; 0            ; 4 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |reactiongame|lpm_mult:Mult1                                                                                                     ; lpm_mult        ; work         ;
+;       |multcore:mult_core|                  ; 4 (3)       ; 0            ; 0          ; 0    ; 0            ; 4 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |reactiongame|lpm_mult:Mult1|multcore:mult_core                                                                                  ; multcore        ; work         ;
+;          |mpar_add:padder|                  ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |reactiongame|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder                                                                  ; mpar_add        ; work         ;
+;             |lpm_add_sub:adder[0]|          ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |reactiongame|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                             ; lpm_add_sub     ; work         ;
+;                |addcore:adder|              ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |reactiongame|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder                               ; addcore         ; work         ;
+;                   |a_csnbuffer:result_node| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |reactiongame|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node       ; a_csnbuffer     ; work         ;
+;    |lpm_mult:Mult2|                         ; 5 (0)       ; 0            ; 0          ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 2 (0)           ; 0 (0)      ; |reactiongame|lpm_mult:Mult2                                                                                                     ; lpm_mult        ; work         ;
+;       |multcore:mult_core|                  ; 5 (3)       ; 0            ; 0          ; 0    ; 0            ; 5 (3)        ; 0 (0)             ; 0 (0)            ; 2 (0)           ; 0 (0)      ; |reactiongame|lpm_mult:Mult2|multcore:mult_core                                                                                  ; multcore        ; work         ;
+;          |mpar_add:padder|                  ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 2 (0)           ; 0 (0)      ; |reactiongame|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder                                                                  ; mpar_add        ; work         ;
+;             |lpm_add_sub:adder[0]|          ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 2 (0)           ; 0 (0)      ; |reactiongame|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                             ; lpm_add_sub     ; work         ;
+;                |addcore:adder|              ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 2 (0)           ; 0 (0)      ; |reactiongame|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder                               ; addcore         ; work         ;
+;                   |a_csnbuffer:result_node| ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 2 (2)           ; 0 (0)      ; |reactiongame|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node       ; a_csnbuffer     ; work         ;
+;    |randgen:s2|                             ; 47 (47)     ; 33           ; 0          ; 0    ; 0            ; 14 (14)      ; 19 (19)           ; 14 (14)          ; 11 (11)         ; 0 (0)      ; |reactiongame|randgen:s2                                                                                                         ; randgen         ; work         ;
+;    |slowclk:s1|                             ; 42 (42)     ; 18           ; 0          ; 0    ; 0            ; 24 (24)      ; 10 (10)           ; 8 (8)            ; 16 (16)         ; 0 (0)      ; |reactiongame|slowclk:s1                                                                                                         ; slowclk         ; work         ;
+;    |timer:s4|                               ; 20 (20)     ; 20           ; 0          ; 0    ; 0            ; 0 (0)        ; 10 (10)           ; 10 (10)          ; 10 (10)         ; 0 (0)      ; |reactiongame|timer:s4                                                                                                           ; timer           ; work         ;
++---------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |reactiongame|lcd_controller:s6|state                                                                                           ;
++-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; Name      ; state.S11 ; state.S10 ; state.S9 ; state.S8 ; state.S7 ; state.S6 ; state.S5 ; state.S4 ; state.S3 ; state.S2 ; state.S1 ; state.S0 ;
++-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; state.S0  ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ;
+; state.S1  ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 1        ;
+; state.S2  ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 1        ;
+; state.S3  ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 1        ;
+; state.S4  ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 1        ;
+; state.S5  ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.S6  ; 0         ; 0         ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.S7  ; 0         ; 0         ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.S8  ; 0         ; 0         ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.S9  ; 0         ; 0         ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.S10 ; 0         ; 1         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.S11 ; 1         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
++-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; erase                                  ; Stuck at GND due to stuck port data_in ;
+; write_row[0]                           ; Stuck at VCC due to stuck port data_in ;
+; lcd_controller:s6|cmd_position[4,5]    ; Stuck at GND due to stuck port data_in ;
+; lcd_controller:s6|cmd_position[6,7]    ; Stuck at VCC due to stuck port data_in ;
+; state[23]                              ; Merged with nstate[19]                 ;
+; nstate[1..18,20..31]                   ; Merged with nstate[19]                 ;
+; state[0]                               ; Merged with nstate[0]                  ;
+; mytime[11..30]                         ; Merged with mytime[10]                 ;
+; state[1..22,24..31]                    ; Merged with nstate[19]                 ;
+; mytime[10]                             ; Stuck at GND due to stuck port data_in ;
+; nstate[19]                             ; Stuck at GND due to stuck port data_in ;
+; lcd_controller:s6|lcd_rw               ; Stuck at GND due to stuck port data_in ;
+; lcd_controller:s6|state.S10            ; Lost fanout                            ;
+; lcd_controller:s6|state.S11            ; Lost fanout                            ;
+; Total Number of Removed Registers = 93 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                       ;
++---------------+---------------------------+-----------------------------------------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register                                ;
++---------------+---------------------------+-----------------------------------------------------------------------+
+; write_row[0]  ; Stuck at VCC              ; lcd_controller:s6|cmd_position[4], lcd_controller:s6|cmd_position[5], ;
+;               ; due to stuck port data_in ; lcd_controller:s6|cmd_position[6], lcd_controller:s6|cmd_position[7]  ;
+; erase         ; Stuck at GND              ; lcd_controller:s6|lcd_rw                                              ;
+;               ; due to stuck port data_in ;                                                                       ;
++---------------+---------------------------+-----------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 206   ;
+; Number of registers using Synchronous Clear  ; 26    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 81    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; nstate[0]                               ; 34      ;
+; randgen:s2|outsig[3]                    ; 1       ;
+; randgen:s2|outsig[5]                    ; 1       ;
+; randgen:s2|outsig[6]                    ; 1       ;
+; randgen:s2|outsig[7]                    ; 1       ;
+; randgen:s2|outsig[8]                    ; 1       ;
+; randgen:s2|outsig[9]                    ; 1       ;
+; mytime[31]                              ; 61      ;
+; mytime[0]                               ; 1       ;
+; randgen:s2|count[3]                     ; 3       ;
+; randgen:s2|count[5]                     ; 3       ;
+; randgen:s2|count[6]                     ; 3       ;
+; randgen:s2|count[7]                     ; 3       ;
+; randgen:s2|count[8]                     ; 3       ;
+; randgen:s2|count[9]                     ; 3       ;
+; Total number of inverted registers = 15 ;         ;
++-----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |reactiongame|lcd_controller:s6|count_cmd[2] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |reactiongame|looper:s5|count_sig[2]         ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |reactiongame|write_data[7]                  ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |reactiongame|write_data[6]                  ;
+; 5:1                ; 12 bits   ; 36 LEs        ; 12 LEs               ; 24 LEs                 ; Yes        ; |reactiongame|looper:s5|delay[0]             ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |reactiongame|lcd_controller:s6|lcd[7]       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div2 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 8              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_7co ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div3 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 5              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_4co ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 11             ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_hdo ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0                ;
++------------------------------------------------+---------+---------------------+
+; Parameter Name                                 ; Value   ; Type                ;
++------------------------------------------------+---------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON      ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF     ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON      ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF     ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 8       ; Untyped             ;
+; LPM_WIDTHB                                     ; 8       ; Untyped             ;
+; LPM_WIDTHP                                     ; 16      ; Untyped             ;
+; LPM_WIDTHR                                     ; 16      ; Untyped             ;
+; LPM_WIDTHS                                     ; 1       ; Untyped             ;
+; LPM_REPRESENTATION                             ; SIGNED  ; Untyped             ;
+; LPM_PIPELINE                                   ; 0       ; Untyped             ;
+; LATENCY                                        ; 0       ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; YES     ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO      ; Untyped             ;
+; USE_EAB                                        ; OFF     ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5       ; Untyped             ;
+; DEVICE_FAMILY                                  ; MAX V   ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL  ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT     ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO    ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0       ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0       ; Untyped             ;
+; CBXI_PARAMETER                                 ; NOTHING ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx      ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx      ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF     ; Untyped             ;
++------------------------------------------------+---------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult2                ;
++------------------------------------------------+---------+---------------------+
+; Parameter Name                                 ; Value   ; Type                ;
++------------------------------------------------+---------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON      ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF     ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON      ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF     ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 8       ; Untyped             ;
+; LPM_WIDTHB                                     ; 8       ; Untyped             ;
+; LPM_WIDTHP                                     ; 16      ; Untyped             ;
+; LPM_WIDTHR                                     ; 16      ; Untyped             ;
+; LPM_WIDTHS                                     ; 1       ; Untyped             ;
+; LPM_REPRESENTATION                             ; SIGNED  ; Untyped             ;
+; LPM_PIPELINE                                   ; 0       ; Untyped             ;
+; LATENCY                                        ; 0       ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; YES     ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO      ; Untyped             ;
+; USE_EAB                                        ; OFF     ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5       ; Untyped             ;
+; DEVICE_FAMILY                                  ; MAX V   ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL  ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT     ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO    ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0       ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0       ; Untyped             ;
+; CBXI_PARAMETER                                 ; NOTHING ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx      ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx      ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF     ; Untyped             ;
++------------------------------------------------+---------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult1                ;
++------------------------------------------------+---------+---------------------+
+; Parameter Name                                 ; Value   ; Type                ;
++------------------------------------------------+---------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON      ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF     ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON      ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF     ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 6       ; Untyped             ;
+; LPM_WIDTHB                                     ; 8       ; Untyped             ;
+; LPM_WIDTHP                                     ; 14      ; Untyped             ;
+; LPM_WIDTHR                                     ; 14      ; Untyped             ;
+; LPM_WIDTHS                                     ; 1       ; Untyped             ;
+; LPM_REPRESENTATION                             ; SIGNED  ; Untyped             ;
+; LPM_PIPELINE                                   ; 0       ; Untyped             ;
+; LATENCY                                        ; 0       ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; YES     ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO      ; Untyped             ;
+; USE_EAB                                        ; OFF     ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5       ; Untyped             ;
+; DEVICE_FAMILY                                  ; MAX V   ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL  ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT     ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO    ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0       ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0       ; Untyped             ;
+; CBXI_PARAMETER                                 ; NOTHING ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx      ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx      ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF     ; Untyped             ;
++------------------------------------------------+---------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance         ;
++---------------------------------------+----------------+
+; Name                                  ; Value          ;
++---------------------------------------+----------------+
+; Number of entity instances            ; 3              ;
+; Entity Instance                       ; lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 8              ;
+;     -- LPM_WIDTHB                     ; 8              ;
+;     -- LPM_WIDTHP                     ; 16             ;
+;     -- LPM_REPRESENTATION             ; SIGNED         ;
+;     -- INPUT_A_IS_CONSTANT            ; YES            ;
+;     -- INPUT_B_IS_CONSTANT            ; NO             ;
+;     -- USE_EAB                        ; OFF            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
+; Entity Instance                       ; lpm_mult:Mult2 ;
+;     -- LPM_WIDTHA                     ; 8              ;
+;     -- LPM_WIDTHB                     ; 8              ;
+;     -- LPM_WIDTHP                     ; 16             ;
+;     -- LPM_REPRESENTATION             ; SIGNED         ;
+;     -- INPUT_A_IS_CONSTANT            ; YES            ;
+;     -- INPUT_B_IS_CONSTANT            ; NO             ;
+;     -- USE_EAB                        ; OFF            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
+; Entity Instance                       ; lpm_mult:Mult1 ;
+;     -- LPM_WIDTHA                     ; 6              ;
+;     -- LPM_WIDTHB                     ; 8              ;
+;     -- LPM_WIDTHP                     ; 14             ;
+;     -- LPM_REPRESENTATION             ; SIGNED         ;
+;     -- INPUT_A_IS_CONSTANT            ; YES            ;
+;     -- INPUT_B_IS_CONSTANT            ; NO             ;
+;     -- USE_EAB                        ; OFF            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
++---------------------------------------+----------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+    Info: Processing started: Fri May  4 00:48:49 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off rxn1 -c rxn1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file lcd_controller.vhd
+    Info (12022): Found design unit 1: lcd_controller-Behavioral File: /home/ritesh/Desktop/xyz/lcd_controller.vhd Line: 24
+    Info (12023): Found entity 1: lcd_controller File: /home/ritesh/Desktop/xyz/lcd_controller.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file slowclk.vhd
+    Info (12022): Found design unit 1: slowclk-behave File: /home/ritesh/Desktop/xyz/slowclk.vhd Line: 11
+    Info (12023): Found entity 1: slowclk File: /home/ritesh/Desktop/xyz/slowclk.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file randgen.vhd
+    Info (12022): Found design unit 1: randgen-struct File: /home/ritesh/Desktop/xyz/randgen.vhd Line: 11
+    Info (12023): Found entity 1: randgen File: /home/ritesh/Desktop/xyz/randgen.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file ledctrl.vhd
+    Info (12022): Found design unit 1: ledctrl-Behave File: /home/ritesh/Desktop/xyz/ledctrl.vhd Line: 12
+    Info (12023): Found entity 1: ledctrl File: /home/ritesh/Desktop/xyz/ledctrl.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file looper.vhd
+    Info (12022): Found design unit 1: looper-behave File: /home/ritesh/Desktop/xyz/looper.vhd Line: 11
+    Info (12023): Found entity 1: looper File: /home/ritesh/Desktop/xyz/looper.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file reactiongame.vhd
+    Info (12022): Found design unit 1: reactiongame-struct File: /home/ritesh/Desktop/xyz/reactiongame.vhd Line: 15
+    Info (12023): Found entity 1: reactiongame File: /home/ritesh/Desktop/xyz/reactiongame.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file timer.vhd
+    Info (12022): Found design unit 1: timer-behave File: /home/ritesh/Desktop/xyz/timer.vhd Line: 11
+    Info (12023): Found entity 1: timer File: /home/ritesh/Desktop/xyz/timer.vhd Line: 7
+Info (12127): Elaborating entity "reactiongame" for the top level hierarchy
+Info (12128): Elaborating entity "slowclk" for hierarchy "slowclk:s1" File: /home/ritesh/Desktop/xyz/reactiongame.vhd Line: 84
+Info (12128): Elaborating entity "randgen" for hierarchy "randgen:s2" File: /home/ritesh/Desktop/xyz/reactiongame.vhd Line: 85
+Info (12128): Elaborating entity "ledctrl" for hierarchy "ledctrl:s3" File: /home/ritesh/Desktop/xyz/reactiongame.vhd Line: 86
+Info (12128): Elaborating entity "timer" for hierarchy "timer:s4" File: /home/ritesh/Desktop/xyz/reactiongame.vhd Line: 87
+Info (12128): Elaborating entity "looper" for hierarchy "looper:s5" File: /home/ritesh/Desktop/xyz/reactiongame.vhd Line: 88
+Info (12128): Elaborating entity "lcd_controller" for hierarchy "lcd_controller:s6" File: /home/ritesh/Desktop/xyz/reactiongame.vhd Line: 90
+Warning (10036): Verilog HDL or VHDL warning at lcd_controller.vhd(32): object "count_next_data" assigned a value but never read File: /home/ritesh/Desktop/xyz/lcd_controller.vhd Line: 32
+Warning (10036): Verilog HDL or VHDL warning at lcd_controller.vhd(33): object "count_next_data1" assigned a value but never read File: /home/ritesh/Desktop/xyz/lcd_controller.vhd Line: 33
+Warning (10036): Verilog HDL or VHDL warning at lcd_controller.vhd(34): object "cmd_line_next" assigned a value but never read File: /home/ritesh/Desktop/xyz/lcd_controller.vhd Line: 34
+Info (278001): Inferred 6 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div2" File: /home/ritesh/Desktop/xyz/reactiongame.vhd Line: 107
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div3" File: /home/ritesh/Desktop/xyz/reactiongame.vhd Line: 108
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: /home/ritesh/Desktop/xyz/reactiongame.vhd Line: 106
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0" File: /home/ritesh/Desktop/xyz/reactiongame.vhd Line: 108
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult2" File: /home/ritesh/Desktop/xyz/reactiongame.vhd Line: 109
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult1" File: /home/ritesh/Desktop/xyz/reactiongame.vhd Line: 109
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div2" File: /home/ritesh/Desktop/xyz/reactiongame.vhd Line: 107
+Info (12133): Instantiated megafunction "lpm_divide:Div2" with the following parameter: File: /home/ritesh/Desktop/xyz/reactiongame.vhd Line: 107
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "8"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_7co.tdf
+    Info (12023): Found entity 1: lpm_divide_7co File: /home/ritesh/Desktop/xyz/db/lpm_divide_7co.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_nbg.tdf
+    Info (12023): Found entity 1: abs_divider_nbg File: /home/ritesh/Desktop/xyz/db/abs_divider_nbg.tdf Line: 33
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_nie.tdf
+    Info (12023): Found entity 1: alt_u_div_nie File: /home/ritesh/Desktop/xyz/db/alt_u_div_nie.tdf Line: 41
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_i4c.tdf
+    Info (12023): Found entity 1: add_sub_i4c File: /home/ritesh/Desktop/xyz/db/add_sub_i4c.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_j4c.tdf
+    Info (12023): Found entity 1: add_sub_j4c File: /home/ritesh/Desktop/xyz/db/add_sub_j4c.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_q4c.tdf
+    Info (12023): Found entity 1: add_sub_q4c File: /home/ritesh/Desktop/xyz/db/add_sub_q4c.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_k4c.tdf
+    Info (12023): Found entity 1: add_sub_k4c File: /home/ritesh/Desktop/xyz/db/add_sub_k4c.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_l4c.tdf
+    Info (12023): Found entity 1: add_sub_l4c File: /home/ritesh/Desktop/xyz/db/add_sub_l4c.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_m4c.tdf
+    Info (12023): Found entity 1: add_sub_m4c File: /home/ritesh/Desktop/xyz/db/add_sub_m4c.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_n4c.tdf
+    Info (12023): Found entity 1: add_sub_n4c File: /home/ritesh/Desktop/xyz/db/add_sub_n4c.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_o4c.tdf
+    Info (12023): Found entity 1: add_sub_o4c File: /home/ritesh/Desktop/xyz/db/add_sub_o4c.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_p4c.tdf
+    Info (12023): Found entity 1: add_sub_p4c File: /home/ritesh/Desktop/xyz/db/add_sub_p4c.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_ga9.tdf
+    Info (12023): Found entity 1: lpm_abs_ga9 File: /home/ritesh/Desktop/xyz/db/lpm_abs_ga9.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_tb9.tdf
+    Info (12023): Found entity 1: lpm_abs_tb9 File: /home/ritesh/Desktop/xyz/db/lpm_abs_tb9.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_tte.tdf
+    Info (12023): Found entity 1: add_sub_tte File: /home/ritesh/Desktop/xyz/db/add_sub_tte.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_gse.tdf
+    Info (12023): Found entity 1: add_sub_gse File: /home/ritesh/Desktop/xyz/db/add_sub_gse.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div3" File: /home/ritesh/Desktop/xyz/reactiongame.vhd Line: 108
+Info (12133): Instantiated megafunction "lpm_divide:Div3" with the following parameter: File: /home/ritesh/Desktop/xyz/reactiongame.vhd Line: 108
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_4co.tdf
+    Info (12023): Found entity 1: lpm_divide_4co File: /home/ritesh/Desktop/xyz/db/lpm_divide_4co.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_kbg.tdf
+    Info (12023): Found entity 1: abs_divider_kbg File: /home/ritesh/Desktop/xyz/db/abs_divider_kbg.tdf Line: 33
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_hie.tdf
+    Info (12023): Found entity 1: alt_u_div_hie File: /home/ritesh/Desktop/xyz/db/alt_u_div_hie.tdf Line: 35
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_da9.tdf
+    Info (12023): Found entity 1: lpm_abs_da9 File: /home/ritesh/Desktop/xyz/db/lpm_abs_da9.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_dse.tdf
+    Info (12023): Found entity 1: add_sub_dse File: /home/ritesh/Desktop/xyz/db/add_sub_dse.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: /home/ritesh/Desktop/xyz/reactiongame.vhd Line: 106
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: /home/ritesh/Desktop/xyz/reactiongame.vhd Line: 106
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "11"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_hdo.tdf
+    Info (12023): Found entity 1: lpm_divide_hdo File: /home/ritesh/Desktop/xyz/db/lpm_divide_hdo.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_1dg.tdf
+    Info (12023): Found entity 1: abs_divider_1dg File: /home/ritesh/Desktop/xyz/db/abs_divider_1dg.tdf Line: 33
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ble.tdf
+    Info (12023): Found entity 1: alt_u_div_ble File: /home/ritesh/Desktop/xyz/db/alt_u_div_ble.tdf Line: 47
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_36c.tdf
+    Info (12023): Found entity 1: add_sub_36c File: /home/ritesh/Desktop/xyz/db/add_sub_36c.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_46c.tdf
+    Info (12023): Found entity 1: add_sub_46c File: /home/ritesh/Desktop/xyz/db/add_sub_46c.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_26c.tdf
+    Info (12023): Found entity 1: add_sub_26c File: /home/ritesh/Desktop/xyz/db/add_sub_26c.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_qb9.tdf
+    Info (12023): Found entity 1: lpm_abs_qb9 File: /home/ritesh/Desktop/xyz/db/lpm_abs_qb9.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_qte.tdf
+    Info (12023): Found entity 1: add_sub_qte File: /home/ritesh/Desktop/xyz/db/add_sub_qte.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0" File: /home/ritesh/Desktop/xyz/reactiongame.vhd Line: 108
+Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following parameter: File: /home/ritesh/Desktop/xyz/reactiongame.vhd Line: 108
+    Info (12134): Parameter "LPM_WIDTHA" = "8"
+    Info (12134): Parameter "LPM_WIDTHB" = "8"
+    Info (12134): Parameter "LPM_WIDTHP" = "16"
+    Info (12134): Parameter "LPM_WIDTHR" = "16"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "lpm_mult:Mult0" File: /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/lpm_mult.tdf Line: 309
+Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "lpm_mult:Mult0" File: /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/multcore.tdf Line: 229
+Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "lpm_mult:Mult0" File: /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/mpar_add.tdf Line: 115
+Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder", which is child of megafunction instantiation "lpm_mult:Mult0" File: /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/lpm_add_sub.tdf Line: 251
+Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:oflow_node", which is child of megafunction instantiation "lpm_mult:Mult0" File: /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/addcore.tdf Line: 86
+Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node", which is child of megafunction instantiation "lpm_mult:Mult0" File: /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/addcore.tdf Line: 112
+Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|altshift:result_ext_latency_ffs", which is child of megafunction instantiation "lpm_mult:Mult0" File: /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/lpm_add_sub.tdf Line: 269
+Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|altshift:carry_ext_latency_ffs", which is child of megafunction instantiation "lpm_mult:Mult0" File: /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/lpm_add_sub.tdf Line: 271
+Warning (287013): Variable or input pin "clock" is defined but never used. File: /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/altshift.tdf Line: 34
+Warning (287013): Variable or input pin "aclr" is defined but never used. File: /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/altshift.tdf Line: 35
+Warning (287013): Variable or input pin "clken" is defined but never used. File: /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/altshift.tdf Line: 36
+Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|altshift:oflow_ext_latency_ffs", which is child of megafunction instantiation "lpm_mult:Mult0" File: /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/lpm_add_sub.tdf Line: 273
+Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "lpm_mult:Mult0" File: /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult1" File: /home/ritesh/Desktop/xyz/reactiongame.vhd Line: 109
+Info (12133): Instantiated megafunction "lpm_mult:Mult1" with the following parameter: File: /home/ritesh/Desktop/xyz/reactiongame.vhd Line: 109
+    Info (12134): Parameter "LPM_WIDTHA" = "6"
+    Info (12134): Parameter "LPM_WIDTHB" = "8"
+    Info (12134): Parameter "LPM_WIDTHP" = "14"
+    Info (12134): Parameter "LPM_WIDTHR" = "14"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult1|multcore:mult_core", which is child of megafunction instantiation "lpm_mult:Mult1" File: /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/lpm_mult.tdf Line: 309
+Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult1|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "lpm_mult:Mult1" File: /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/multcore.tdf Line: 229
+Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "lpm_mult:Mult1" File: /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/mpar_add.tdf Line: 115
+Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder", which is child of megafunction instantiation "lpm_mult:Mult1" File: /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/lpm_add_sub.tdf Line: 251
+Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:oflow_node", which is child of megafunction instantiation "lpm_mult:Mult1" File: /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/addcore.tdf Line: 86
+Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node", which is child of megafunction instantiation "lpm_mult:Mult1" File: /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/addcore.tdf Line: 112
+Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|altshift:result_ext_latency_ffs", which is child of megafunction instantiation "lpm_mult:Mult1" File: /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/lpm_add_sub.tdf Line: 269
+Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult1|altshift:external_latency_ffs", which is child of megafunction instantiation "lpm_mult:Mult1" File: /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "rw" is stuck at GND File: /home/ritesh/Desktop/xyz/reactiongame.vhd Line: 10
+    Warning (13410): Pin "b11" is stuck at VCC File: /home/ritesh/Desktop/xyz/reactiongame.vhd Line: 12
+    Warning (13410): Pin "b12" is stuck at GND File: /home/ritesh/Desktop/xyz/reactiongame.vhd Line: 12
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (21057): Implemented 2279 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 24 output pins
+    Info (21061): Implemented 2252 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 1279 megabytes
+    Info: Processing ended: Fri May  4 00:49:06 2018
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:34
+
+

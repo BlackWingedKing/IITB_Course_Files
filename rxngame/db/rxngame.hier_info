@@ -1,0 +1,1112 @@
+|final
+react => randomfsm:r0.react2
+CLK => randomfsm:r0.CLK
+CLK => msclock:msclock1.CLK
+reset => randomfsm:r0.reset1
+reset => lcd_controller:LCD1.rst
+reset => erase1.OUTPUTSELECT
+reset => col.OUTPUTSELECT
+reset => col.OUTPUTSELECT
+reset => col.OUTPUTSELECT
+reset => col.OUTPUTSELECT
+reset => lcd_data.OUTPUTSELECT
+reset => lcd_data.OUTPUTSELECT
+reset => lcd_data.OUTPUTSELECT
+reset => lcd_data.OUTPUTSELECT
+reset => lcd_data.OUTPUTSELECT
+reset => lcd_data.OUTPUTSELECT
+reset => lcd_data.OUTPUTSELECT
+reset => lcd_data.OUTPUTSELECT
+reset => erase1.OUTPUTSELECT
+reset => lcd_data.OUTPUTSELECT
+reset => lcd_data.OUTPUTSELECT
+reset => lcd_data.OUTPUTSELECT
+reset => lcd_data.OUTPUTSELECT
+reset => lcd_data.OUTPUTSELECT
+reset => lcd_data.OUTPUTSELECT
+reset => lcd_data.OUTPUTSELECT
+reset => lcd_data.OUTPUTSELECT
+reset => msclock:msclock1.reset
+led <= randomfsm:r0.led
+gameover <= randomfsm:r0.gameover
+finish <= randomfsm:r0.finish
+x <= msclock:msclock1.OUTPUT
+pause1 <= randomfsm:r0.pause1
+LCD[0] <= lcd_controller:LCD1.lcd1[0]
+LCD[1] <= lcd_controller:LCD1.lcd1[1]
+LCD[2] <= lcd_controller:LCD1.lcd1[2]
+LCD[3] <= lcd_controller:LCD1.lcd1[3]
+LCD[4] <= lcd_controller:LCD1.lcd1[4]
+LCD[5] <= lcd_controller:LCD1.lcd1[5]
+LCD[6] <= lcd_controller:LCD1.lcd1[6]
+LCD[7] <= lcd_controller:LCD1.lcd1[7]
+en <= lcd_controller:LCD1.lcd_en
+rw <= lcd_controller:LCD1.lcd_rw
+rs <= lcd_controller:LCD1.lcd_rs
+b11 <= lcd_controller:LCD1.b11
+b12 <= lcd_controller:LCD1.b12
+
+
+|final|randomfsm:r0
+CLK => counter1:onescount1.CLK
+CLK => random:ranfsm1.CLK
+CLK => counter1:freecount.CLK
+CLK => random:ranfsm2.CLK
+CLK => counter2:twoscount.CLK
+CLK => random:ranfsm3.CLK
+CLK => random:ranfsm4.CLK
+CLK => msclock:msclock1.CLK
+CLK => debouncer:debouncereact.CLK
+CLK => state~1.DATAIN
+reset1 => Selector13.IN5
+reset1 => Selector1.IN7
+reset1 => state.OUTPUTSELECT
+reset1 => state.OUTPUTSELECT
+reset1 => state.OUTPUTSELECT
+reset1 => state.OUTPUTSELECT
+reset1 => state.OUTPUTSELECT
+reset1 => state.OUTPUTSELECT
+reset1 => state.OUTPUTSELECT
+reset1 => state.OUTPUTSELECT
+reset1 => global_counter:global1.reset
+reset1 => msclock:msclock1.reset
+reset1 => debouncer:debouncereact.r
+reset1 => Selector0.IN1
+react2 => debouncer:debouncereact.x
+led <= Selector11.DB_MAX_OUTPUT_PORT_TYPE
+gameover <= Selector15.DB_MAX_OUTPUT_PORT_TYPE
+finish <= Selector16.DB_MAX_OUTPUT_PORT_TYPE
+pause1 <= Selector17.DB_MAX_OUTPUT_PORT_TYPE
+D0[0] <= global_counter:global1.outin[0]
+D0[1] <= global_counter:global1.outin[1]
+D0[2] <= global_counter:global1.outin[2]
+D0[3] <= global_counter:global1.outin[3]
+D1[0] <= global_counter:global1.outin[4]
+D1[1] <= global_counter:global1.outin[5]
+D1[2] <= global_counter:global1.outin[6]
+D1[3] <= global_counter:global1.outin[7]
+D2[0] <= global_counter:global1.outin[8]
+D2[1] <= global_counter:global1.outin[9]
+D2[2] <= global_counter:global1.outin[10]
+D2[3] <= global_counter:global1.outin[11]
+D3[0] <= global_counter:global1.outin[12]
+D3[1] <= global_counter:global1.outin[13]
+D3[2] <= global_counter:global1.outin[14]
+D3[3] <= global_counter:global1.outin[15]
+
+
+|final|randomfsm:r0|counter1:onescount1
+CLK => tmp.CLK
+CLK => count[0].CLK
+CLK => count[1].CLK
+CLK => count[2].CLK
+CLK => count[3].CLK
+CLK => count[4].CLK
+CLK => count[5].CLK
+CLK => count[6].CLK
+CLK => count[7].CLK
+CLK => count[8].CLK
+CLK => count[9].CLK
+CLK => count[10].CLK
+CLK => count[11].CLK
+CLK => count[12].CLK
+CLK => count[13].CLK
+CLK => count[14].CLK
+CLK => count[15].CLK
+CLK => count[16].CLK
+CLK => count[17].CLK
+CLK => count[18].CLK
+CLK => count[19].CLK
+CLK => count[20].CLK
+CLK => count[21].CLK
+CLK => count[22].CLK
+CLK => count[23].CLK
+CLK => count[24].CLK
+CLK => count[25].CLK
+CLK => count[26].CLK
+CLK => count[27].CLK
+CLK => count[28].CLK
+CLK => count[29].CLK
+CLK => count[30].CLK
+CLK => count[31].CLK
+reset => tmp.ACLR
+reset => count[0].PRESET
+reset => count[1].ACLR
+reset => count[2].ACLR
+reset => count[3].ACLR
+reset => count[4].ACLR
+reset => count[5].ACLR
+reset => count[6].ACLR
+reset => count[7].ACLR
+reset => count[8].ACLR
+reset => count[9].ACLR
+reset => count[10].ACLR
+reset => count[11].ACLR
+reset => count[12].ACLR
+reset => count[13].ACLR
+reset => count[14].ACLR
+reset => count[15].ACLR
+reset => count[16].ACLR
+reset => count[17].ACLR
+reset => count[18].ACLR
+reset => count[19].ACLR
+reset => count[20].ACLR
+reset => count[21].ACLR
+reset => count[22].ACLR
+reset => count[23].ACLR
+reset => count[24].ACLR
+reset => count[25].ACLR
+reset => count[26].ACLR
+reset => count[27].ACLR
+reset => count[28].ACLR
+reset => count[29].ACLR
+reset => count[30].ACLR
+reset => count[31].ACLR
+OUTPUT <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|random:ranfsm1
+CLK => state~1.DATAIN
+reset => state.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+reset => state.sstart.DATAIN
+x => Selector0.IN2
+x => Selector1.IN2
+x => Selector0.IN1
+x => Selector2.IN2
+o <= Selector0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|counter1:freecount
+CLK => tmp.CLK
+CLK => count[0].CLK
+CLK => count[1].CLK
+CLK => count[2].CLK
+CLK => count[3].CLK
+CLK => count[4].CLK
+CLK => count[5].CLK
+CLK => count[6].CLK
+CLK => count[7].CLK
+CLK => count[8].CLK
+CLK => count[9].CLK
+CLK => count[10].CLK
+CLK => count[11].CLK
+CLK => count[12].CLK
+CLK => count[13].CLK
+CLK => count[14].CLK
+CLK => count[15].CLK
+CLK => count[16].CLK
+CLK => count[17].CLK
+CLK => count[18].CLK
+CLK => count[19].CLK
+CLK => count[20].CLK
+CLK => count[21].CLK
+CLK => count[22].CLK
+CLK => count[23].CLK
+CLK => count[24].CLK
+CLK => count[25].CLK
+CLK => count[26].CLK
+CLK => count[27].CLK
+CLK => count[28].CLK
+CLK => count[29].CLK
+CLK => count[30].CLK
+CLK => count[31].CLK
+reset => tmp.ACLR
+reset => count[0].PRESET
+reset => count[1].ACLR
+reset => count[2].ACLR
+reset => count[3].ACLR
+reset => count[4].ACLR
+reset => count[5].ACLR
+reset => count[6].ACLR
+reset => count[7].ACLR
+reset => count[8].ACLR
+reset => count[9].ACLR
+reset => count[10].ACLR
+reset => count[11].ACLR
+reset => count[12].ACLR
+reset => count[13].ACLR
+reset => count[14].ACLR
+reset => count[15].ACLR
+reset => count[16].ACLR
+reset => count[17].ACLR
+reset => count[18].ACLR
+reset => count[19].ACLR
+reset => count[20].ACLR
+reset => count[21].ACLR
+reset => count[22].ACLR
+reset => count[23].ACLR
+reset => count[24].ACLR
+reset => count[25].ACLR
+reset => count[26].ACLR
+reset => count[27].ACLR
+reset => count[28].ACLR
+reset => count[29].ACLR
+reset => count[30].ACLR
+reset => count[31].ACLR
+OUTPUT <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|random:ranfsm2
+CLK => state~1.DATAIN
+reset => state.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+reset => state.sstart.DATAIN
+x => Selector0.IN2
+x => Selector1.IN2
+x => Selector0.IN1
+x => Selector2.IN2
+o <= Selector0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|counter2:twoscount
+CLK => tmp.CLK
+CLK => count[0].CLK
+CLK => count[1].CLK
+CLK => count[2].CLK
+CLK => count[3].CLK
+CLK => count[4].CLK
+CLK => count[5].CLK
+CLK => count[6].CLK
+CLK => count[7].CLK
+CLK => count[8].CLK
+CLK => count[9].CLK
+CLK => count[10].CLK
+CLK => count[11].CLK
+CLK => count[12].CLK
+CLK => count[13].CLK
+CLK => count[14].CLK
+CLK => count[15].CLK
+CLK => count[16].CLK
+CLK => count[17].CLK
+CLK => count[18].CLK
+CLK => count[19].CLK
+CLK => count[20].CLK
+CLK => count[21].CLK
+CLK => count[22].CLK
+CLK => count[23].CLK
+CLK => count[24].CLK
+CLK => count[25].CLK
+CLK => count[26].CLK
+CLK => count[27].CLK
+CLK => count[28].CLK
+CLK => count[29].CLK
+CLK => count[30].CLK
+CLK => count[31].CLK
+reset => tmp.ACLR
+reset => count[0].PRESET
+reset => count[1].ACLR
+reset => count[2].ACLR
+reset => count[3].ACLR
+reset => count[4].ACLR
+reset => count[5].ACLR
+reset => count[6].ACLR
+reset => count[7].ACLR
+reset => count[8].ACLR
+reset => count[9].ACLR
+reset => count[10].ACLR
+reset => count[11].ACLR
+reset => count[12].ACLR
+reset => count[13].ACLR
+reset => count[14].ACLR
+reset => count[15].ACLR
+reset => count[16].ACLR
+reset => count[17].ACLR
+reset => count[18].ACLR
+reset => count[19].ACLR
+reset => count[20].ACLR
+reset => count[21].ACLR
+reset => count[22].ACLR
+reset => count[23].ACLR
+reset => count[24].ACLR
+reset => count[25].ACLR
+reset => count[26].ACLR
+reset => count[27].ACLR
+reset => count[28].ACLR
+reset => count[29].ACLR
+reset => count[30].ACLR
+reset => count[31].ACLR
+OUTPUT <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|random:ranfsm3
+CLK => state~1.DATAIN
+reset => state.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+reset => state.sstart.DATAIN
+x => Selector0.IN2
+x => Selector1.IN2
+x => Selector0.IN1
+x => Selector2.IN2
+o <= Selector0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|random:ranfsm4
+CLK => state~1.DATAIN
+reset => state.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+reset => state.sstart.DATAIN
+x => Selector0.IN2
+x => Selector1.IN2
+x => Selector0.IN1
+x => Selector2.IN2
+o <= Selector0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|global_counter:global1
+CLK => count[0].CLK
+CLK => count[1].CLK
+CLK => count[2].CLK
+CLK => count[3].CLK
+CLK => count[4].CLK
+CLK => count[5].CLK
+CLK => count[6].CLK
+CLK => count[7].CLK
+CLK => count[8].CLK
+CLK => count[9].CLK
+CLK => count[10].CLK
+CLK => count[11].CLK
+CLK => count[12].CLK
+CLK => count[13].CLK
+CLK => count[14].CLK
+CLK => count[15].CLK
+reset => count[0].ACLR
+reset => count[1].ACLR
+reset => count[2].ACLR
+reset => count[3].ACLR
+reset => count[4].ACLR
+reset => count[5].ACLR
+reset => count[6].ACLR
+reset => count[7].ACLR
+reset => count[8].ACLR
+reset => count[9].ACLR
+reset => count[10].ACLR
+reset => count[11].ACLR
+reset => count[12].ACLR
+reset => count[13].ACLR
+reset => count[14].ACLR
+reset => count[15].ACLR
+pause => count[15].ENA
+pause => count[14].ENA
+pause => count[13].ENA
+pause => count[12].ENA
+pause => count[11].ENA
+pause => count[10].ENA
+pause => count[9].ENA
+pause => count[8].ENA
+pause => count[7].ENA
+pause => count[6].ENA
+pause => count[5].ENA
+pause => count[4].ENA
+pause => count[3].ENA
+pause => count[2].ENA
+pause => count[1].ENA
+pause => count[0].ENA
+outin[0] <= count[0].DB_MAX_OUTPUT_PORT_TYPE
+outin[1] <= count[1].DB_MAX_OUTPUT_PORT_TYPE
+outin[2] <= count[2].DB_MAX_OUTPUT_PORT_TYPE
+outin[3] <= count[3].DB_MAX_OUTPUT_PORT_TYPE
+outin[4] <= count[4].DB_MAX_OUTPUT_PORT_TYPE
+outin[5] <= count[5].DB_MAX_OUTPUT_PORT_TYPE
+outin[6] <= count[6].DB_MAX_OUTPUT_PORT_TYPE
+outin[7] <= count[7].DB_MAX_OUTPUT_PORT_TYPE
+outin[8] <= count[8].DB_MAX_OUTPUT_PORT_TYPE
+outin[9] <= count[9].DB_MAX_OUTPUT_PORT_TYPE
+outin[10] <= count[10].DB_MAX_OUTPUT_PORT_TYPE
+outin[11] <= count[11].DB_MAX_OUTPUT_PORT_TYPE
+outin[12] <= count[12].DB_MAX_OUTPUT_PORT_TYPE
+outin[13] <= count[13].DB_MAX_OUTPUT_PORT_TYPE
+outin[14] <= count[14].DB_MAX_OUTPUT_PORT_TYPE
+outin[15] <= count[15].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|msclock:msclock1
+CLK => tmp.CLK
+CLK => count[0].CLK
+CLK => count[1].CLK
+CLK => count[2].CLK
+CLK => count[3].CLK
+CLK => count[4].CLK
+CLK => count[5].CLK
+CLK => count[6].CLK
+CLK => count[7].CLK
+CLK => count[8].CLK
+CLK => count[9].CLK
+CLK => count[10].CLK
+CLK => count[11].CLK
+CLK => count[12].CLK
+CLK => count[13].CLK
+CLK => count[14].CLK
+CLK => count[15].CLK
+CLK => count[16].CLK
+CLK => count[17].CLK
+CLK => count[18].CLK
+CLK => count[19].CLK
+CLK => count[20].CLK
+CLK => count[21].CLK
+CLK => count[22].CLK
+CLK => count[23].CLK
+CLK => count[24].CLK
+CLK => count[25].CLK
+CLK => count[26].CLK
+CLK => count[27].CLK
+CLK => count[28].CLK
+CLK => count[29].CLK
+CLK => count[30].CLK
+CLK => count[31].CLK
+reset => tmp.ACLR
+reset => count[0].PRESET
+reset => count[1].ACLR
+reset => count[2].ACLR
+reset => count[3].ACLR
+reset => count[4].ACLR
+reset => count[5].ACLR
+reset => count[6].ACLR
+reset => count[7].ACLR
+reset => count[8].ACLR
+reset => count[9].ACLR
+reset => count[10].ACLR
+reset => count[11].ACLR
+reset => count[12].ACLR
+reset => count[13].ACLR
+reset => count[14].ACLR
+reset => count[15].ACLR
+reset => count[16].ACLR
+reset => count[17].ACLR
+reset => count[18].ACLR
+reset => count[19].ACLR
+reset => count[20].ACLR
+reset => count[21].ACLR
+reset => count[22].ACLR
+reset => count[23].ACLR
+reset => count[24].ACLR
+reset => count[25].ACLR
+reset => count[26].ACLR
+reset => count[27].ACLR
+reset => count[28].ACLR
+reset => count[29].ACLR
+reset => count[30].ACLR
+reset => count[31].ACLR
+OUTPUT <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact
+CLK => divider:d_1.CLK
+r => divider:d_1.reset
+r => debounce:db_1.r
+x => debounce:db_1.x
+o <= debounce:db_1.o
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1
+CLK => counter4:c_1.CLK
+reset => counter4:c_1.reset
+reset => counter4:g_1:0:c_2.reset
+reset => counter4:g_1:1:c_2.reset
+reset => counter4:g_1:2:c_2.reset
+reset => counter4:g_1:3:c_2.reset
+reset => counter4:g_1:4:c_2.reset
+reset => counter4:g_1:5:c_2.reset
+reset => counter4:g_1:6:c_2.reset
+reset => counter4:g_1:7:c_2.reset
+cout <= counter4:g_1:7:c_2.cout
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:c_1
+reset => dff_new:d_1.reset
+reset => dff_new:d_2.reset
+reset => q11.IN1
+reset => q12.IN1
+reset => cout.IN1
+CLK => dff_new:d_1.CLK
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:c_1|dff_new:d_1
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:c_1|dff_new:d_2
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:0:c_2
+reset => dff_new:d_1.reset
+reset => dff_new:d_2.reset
+reset => q11.IN1
+reset => q12.IN1
+reset => cout.IN1
+CLK => dff_new:d_1.CLK
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:0:c_2|dff_new:d_2
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:1:c_2
+reset => dff_new:d_1.reset
+reset => dff_new:d_2.reset
+reset => q11.IN1
+reset => q12.IN1
+reset => cout.IN1
+CLK => dff_new:d_1.CLK
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:1:c_2|dff_new:d_2
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:2:c_2
+reset => dff_new:d_1.reset
+reset => dff_new:d_2.reset
+reset => q11.IN1
+reset => q12.IN1
+reset => cout.IN1
+CLK => dff_new:d_1.CLK
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:2:c_2|dff_new:d_2
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:3:c_2
+reset => dff_new:d_1.reset
+reset => dff_new:d_2.reset
+reset => q11.IN1
+reset => q12.IN1
+reset => cout.IN1
+CLK => dff_new:d_1.CLK
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:3:c_2|dff_new:d_2
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:4:c_2
+reset => dff_new:d_1.reset
+reset => dff_new:d_2.reset
+reset => q11.IN1
+reset => q12.IN1
+reset => cout.IN1
+CLK => dff_new:d_1.CLK
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:4:c_2|dff_new:d_2
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:5:c_2
+reset => dff_new:d_1.reset
+reset => dff_new:d_2.reset
+reset => q11.IN1
+reset => q12.IN1
+reset => cout.IN1
+CLK => dff_new:d_1.CLK
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:5:c_2|dff_new:d_2
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:6:c_2
+reset => dff_new:d_1.reset
+reset => dff_new:d_2.reset
+reset => q11.IN1
+reset => q12.IN1
+reset => cout.IN1
+CLK => dff_new:d_1.CLK
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:6:c_2|dff_new:d_2
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:7:c_2
+reset => dff_new:d_1.reset
+reset => dff_new:d_2.reset
+reset => q11.IN1
+reset => q12.IN1
+reset => cout.IN1
+CLK => dff_new:d_1.CLK
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|divider:d_1|counter4:\g_1:7:c_2|dff_new:d_2
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|debounce:db_1
+CLK => dff_new:d_1.CLK
+CLK => dff_new:d_2.CLK
+r => nq[0].IN1
+r => nq[1].IN1
+r => o.IN1
+x => nq.IN1
+x => nq.IN1
+x => nq.IN1
+x => nq.IN1
+x => nq.IN1
+x => nq.IN1
+x => nq.IN1
+x => o.IN1
+x => o.IN1
+x => o.IN1
+x => nq.IN1
+x => o.IN1
+o <= o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|debounce:db_1|dff_new:d_1
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|randomfsm:r0|debouncer:debouncereact|debounce:db_1|dff_new:d_2
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|final|Assign:A0
+X[0] => tmp.DATAB
+X[1] => tmp.DATAB
+X[2] => tmp.DATAB
+X[3] => tmp.DATAB
+C => tmp.OUTPUTSELECT
+C => tmp.OUTPUTSELECT
+C => tmp.OUTPUTSELECT
+C => tmp.OUTPUTSELECT
+Y[0] <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+Y[4] <= <VCC>
+Y[5] <= <VCC>
+Y[6] <= <GND>
+Y[7] <= <GND>
+
+
+|final|Assign:A1
+X[0] => tmp.DATAB
+X[1] => tmp.DATAB
+X[2] => tmp.DATAB
+X[3] => tmp.DATAB
+C => tmp.OUTPUTSELECT
+C => tmp.OUTPUTSELECT
+C => tmp.OUTPUTSELECT
+C => tmp.OUTPUTSELECT
+Y[0] <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+Y[4] <= <VCC>
+Y[5] <= <VCC>
+Y[6] <= <GND>
+Y[7] <= <GND>
+
+
+|final|Assign:A2
+X[0] => tmp.DATAB
+X[1] => tmp.DATAB
+X[2] => tmp.DATAB
+X[3] => tmp.DATAB
+C => tmp.OUTPUTSELECT
+C => tmp.OUTPUTSELECT
+C => tmp.OUTPUTSELECT
+C => tmp.OUTPUTSELECT
+Y[0] <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+Y[4] <= <VCC>
+Y[5] <= <VCC>
+Y[6] <= <GND>
+Y[7] <= <GND>
+
+
+|final|Assign:A3
+X[0] => tmp.DATAB
+X[1] => tmp.DATAB
+X[2] => tmp.DATAB
+X[3] => tmp.DATAB
+C => tmp.OUTPUTSELECT
+C => tmp.OUTPUTSELECT
+C => tmp.OUTPUTSELECT
+C => tmp.OUTPUTSELECT
+Y[0] <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+Y[4] <= <VCC>
+Y[5] <= <VCC>
+Y[6] <= <GND>
+Y[7] <= <GND>
+
+
+|final|Assign:A4
+X[0] => tmp.DATAB
+X[1] => tmp.DATAB
+X[2] => tmp.DATAB
+X[3] => tmp.DATAB
+C => tmp.OUTPUTSELECT
+C => tmp.OUTPUTSELECT
+C => tmp.OUTPUTSELECT
+C => tmp.OUTPUTSELECT
+Y[0] <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+Y[4] <= <VCC>
+Y[5] <= <VCC>
+Y[6] <= <GND>
+Y[7] <= <GND>
+
+
+|final|lcd_controller:LCD1
+clk => data_dis[0].CLK
+clk => data_dis[1].CLK
+clk => data_dis[2].CLK
+clk => data_dis[3].CLK
+clk => data_dis[4].CLK
+clk => data_dis[5].CLK
+clk => data_dis[6].CLK
+clk => data_dis[7].CLK
+clk => lcd_en~reg0.CLK
+clk => lcd_rw~reg0.CLK
+clk => lcd_rs~reg0.CLK
+clk => lcd[0].CLK
+clk => lcd[1].CLK
+clk => lcd[2].CLK
+clk => lcd[3].CLK
+clk => lcd[4].CLK
+clk => lcd[5].CLK
+clk => lcd[6].CLK
+clk => lcd[7].CLK
+clk => ack~reg0.CLK
+clk => count_cmd[0].CLK
+clk => count_cmd[1].CLK
+clk => count_cmd[2].CLK
+clk => cmd_position[0].CLK
+clk => cmd_position[1].CLK
+clk => cmd_position[2].CLK
+clk => cmd_position[3].CLK
+clk => cmd_position[4].CLK
+clk => cmd_position[5].CLK
+clk => cmd_position[6].CLK
+clk => cmd_position[7].CLK
+clk => state~13.DATAIN
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => count_cmd.OUTPUTSELECT
+rst => count_cmd.OUTPUTSELECT
+rst => count_cmd.OUTPUTSELECT
+rst => ack.OUTPUTSELECT
+rst => data_dis[5].ENA
+rst => data_dis[4].ENA
+rst => data_dis[3].ENA
+rst => data_dis[2].ENA
+rst => data_dis[1].ENA
+rst => data_dis[0].ENA
+rst => data_dis[6].ENA
+rst => data_dis[7].ENA
+rst => lcd_en~reg0.ENA
+rst => lcd_rw~reg0.ENA
+rst => lcd_rs~reg0.ENA
+rst => lcd[0].ENA
+rst => lcd[1].ENA
+rst => lcd[2].ENA
+rst => lcd[3].ENA
+rst => lcd[4].ENA
+rst => lcd[5].ENA
+rst => lcd[6].ENA
+rst => lcd[7].ENA
+erase => data_dis.OUTPUTSELECT
+erase => data_dis.OUTPUTSELECT
+erase => data_dis.OUTPUTSELECT
+erase => data_dis.OUTPUTSELECT
+erase => data_dis.OUTPUTSELECT
+erase => data_dis.OUTPUTSELECT
+erase => data_dis.OUTPUTSELECT
+erase => data_dis.OUTPUTSELECT
+erase => lcd.OUTPUTSELECT
+erase => lcd.OUTPUTSELECT
+erase => lcd.OUTPUTSELECT
+erase => lcd.OUTPUTSELECT
+erase => lcd.OUTPUTSELECT
+erase => lcd.OUTPUTSELECT
+erase => lcd.OUTPUTSELECT
+erase => lcd.OUTPUTSELECT
+erase => lcd_rs.OUTPUTSELECT
+erase => lcd_rw.OUTPUTSELECT
+erase => lcd_en.OUTPUTSELECT
+erase => ack.OUTPUTSELECT
+erase => state.OUTPUTSELECT
+erase => state.OUTPUTSELECT
+erase => state.OUTPUTSELECT
+erase => state.OUTPUTSELECT
+erase => state.OUTPUTSELECT
+erase => state.OUTPUTSELECT
+erase => state.OUTPUTSELECT
+erase => state.OUTPUTSELECT
+erase => state.OUTPUTSELECT
+erase => state.OUTPUTSELECT
+erase => state.OUTPUTSELECT
+erase => state.OUTPUTSELECT
+erase => process_1.IN0
+put_char => data_dis.OUTPUTSELECT
+put_char => data_dis.OUTPUTSELECT
+put_char => data_dis.OUTPUTSELECT
+put_char => data_dis.OUTPUTSELECT
+put_char => data_dis.OUTPUTSELECT
+put_char => data_dis.OUTPUTSELECT
+put_char => data_dis.OUTPUTSELECT
+put_char => data_dis.OUTPUTSELECT
+put_char => lcd.OUTPUTSELECT
+put_char => lcd.OUTPUTSELECT
+put_char => lcd.OUTPUTSELECT
+put_char => lcd.OUTPUTSELECT
+put_char => lcd.OUTPUTSELECT
+put_char => lcd.OUTPUTSELECT
+put_char => lcd.OUTPUTSELECT
+put_char => lcd.OUTPUTSELECT
+put_char => lcd_rs.OUTPUTSELECT
+put_char => lcd_rw.OUTPUTSELECT
+put_char => lcd_en.OUTPUTSELECT
+put_char => ack.OUTPUTSELECT
+put_char => state.OUTPUTSELECT
+put_char => state.OUTPUTSELECT
+put_char => state.OUTPUTSELECT
+put_char => state.OUTPUTSELECT
+put_char => state.OUTPUTSELECT
+put_char => state.OUTPUTSELECT
+put_char => state.OUTPUTSELECT
+put_char => state.OUTPUTSELECT
+put_char => state.OUTPUTSELECT
+put_char => state.OUTPUTSELECT
+put_char => state.OUTPUTSELECT
+put_char => state.OUTPUTSELECT
+put_char => process_1.IN1
+write_data[0] => data_dis.DATAB
+write_data[1] => data_dis.DATAB
+write_data[2] => data_dis.DATAB
+write_data[3] => data_dis.DATAB
+write_data[4] => data_dis.DATAB
+write_data[5] => data_dis.DATAB
+write_data[6] => data_dis.DATAB
+write_data[7] => data_dis.DATAB
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_column[0] => cmd_position.DATAB
+write_column[0] => cmd_position.DATAB
+write_column[1] => cmd_position.DATAB
+write_column[1] => cmd_position.DATAB
+write_column[2] => cmd_position.DATAB
+write_column[2] => cmd_position.DATAB
+write_column[3] => cmd_position.DATAB
+write_column[3] => cmd_position.DATAB
+ack <= ack~reg0.DB_MAX_OUTPUT_PORT_TYPE
+lcd_rw <= lcd_rw~reg0.DB_MAX_OUTPUT_PORT_TYPE
+lcd_en <= lcd_en~reg0.DB_MAX_OUTPUT_PORT_TYPE
+lcd_rs <= lcd_rs~reg0.DB_MAX_OUTPUT_PORT_TYPE
+lcd1[0] <= lcd[0].DB_MAX_OUTPUT_PORT_TYPE
+lcd1[1] <= lcd[1].DB_MAX_OUTPUT_PORT_TYPE
+lcd1[2] <= lcd[2].DB_MAX_OUTPUT_PORT_TYPE
+lcd1[3] <= lcd[3].DB_MAX_OUTPUT_PORT_TYPE
+lcd1[4] <= lcd[4].DB_MAX_OUTPUT_PORT_TYPE
+lcd1[5] <= lcd[5].DB_MAX_OUTPUT_PORT_TYPE
+lcd1[6] <= lcd[6].DB_MAX_OUTPUT_PORT_TYPE
+lcd1[7] <= lcd[7].DB_MAX_OUTPUT_PORT_TYPE
+b11 <= <VCC>
+b12 <= <GND>
+
+
+|final|msclock:msclock1
+CLK => tmp.CLK
+CLK => count[0].CLK
+CLK => count[1].CLK
+CLK => count[2].CLK
+CLK => count[3].CLK
+CLK => count[4].CLK
+CLK => count[5].CLK
+CLK => count[6].CLK
+CLK => count[7].CLK
+CLK => count[8].CLK
+CLK => count[9].CLK
+CLK => count[10].CLK
+CLK => count[11].CLK
+CLK => count[12].CLK
+CLK => count[13].CLK
+CLK => count[14].CLK
+CLK => count[15].CLK
+CLK => count[16].CLK
+CLK => count[17].CLK
+CLK => count[18].CLK
+CLK => count[19].CLK
+CLK => count[20].CLK
+CLK => count[21].CLK
+CLK => count[22].CLK
+CLK => count[23].CLK
+CLK => count[24].CLK
+CLK => count[25].CLK
+CLK => count[26].CLK
+CLK => count[27].CLK
+CLK => count[28].CLK
+CLK => count[29].CLK
+CLK => count[30].CLK
+CLK => count[31].CLK
+reset => tmp.ACLR
+reset => count[0].PRESET
+reset => count[1].ACLR
+reset => count[2].ACLR
+reset => count[3].ACLR
+reset => count[4].ACLR
+reset => count[5].ACLR
+reset => count[6].ACLR
+reset => count[7].ACLR
+reset => count[8].ACLR
+reset => count[9].ACLR
+reset => count[10].ACLR
+reset => count[11].ACLR
+reset => count[12].ACLR
+reset => count[13].ACLR
+reset => count[14].ACLR
+reset => count[15].ACLR
+reset => count[16].ACLR
+reset => count[17].ACLR
+reset => count[18].ACLR
+reset => count[19].ACLR
+reset => count[20].ACLR
+reset => count[21].ACLR
+reset => count[22].ACLR
+reset => count[23].ACLR
+reset => count[24].ACLR
+reset => count[25].ACLR
+reset => count[26].ACLR
+reset => count[27].ACLR
+reset => count[28].ACLR
+reset => count[29].ACLR
+reset => count[30].ACLR
+reset => count[31].ACLR
+OUTPUT <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,21 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {/home/ritesh/Desktop/digitalLab/debounce/debounce.vhd}
+vcom -93 -work work {/home/ritesh/Desktop/digitalLab/debounce/divider.vhd}
+vcom -93 -work work {/home/ritesh/Desktop/digitalLab/debounce/dff_new.vhdl}
+vcom -93 -work work {/home/ritesh/Desktop/digitalLab/debounce/counter4.vhd}
+vcom -93 -work work {/home/ritesh/Desktop/digitalLab/debounce/debouncer.vhd}
+vcom -93 -work work {/home/ritesh/Desktop/digitalLab/rxngame/lcd_controller.vhd}
+vcom -93 -work work {/home/ritesh/Desktop/digitalLab/rxngame/random.vhd}
+vcom -93 -work work {/home/ritesh/Desktop/digitalLab/rxngame/randomfsm.vhd}
+vcom -93 -work work {/home/ritesh/Desktop/digitalLab/rxngame/counter1.vhd}
+vcom -93 -work work {/home/ritesh/Desktop/digitalLab/rxngame/counter2.vhd}
+vcom -93 -work work {/home/ritesh/Desktop/digitalLab/rxngame/global_counter.vhd}
+vcom -93 -work work {/home/ritesh/Desktop/digitalLab/rxngame/msclock.vhd}
+vcom -93 -work work {/home/ritesh/Desktop/digitalLab/rxngame/lcd_test.vhd}
+

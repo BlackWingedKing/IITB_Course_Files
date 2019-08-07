@@ -1,0 +1,41 @@
+|dut
+input_vector[0] => decoder:dut1.a[0]
+input_vector[1] => decoder:dut1.a[1]
+input_vector[2] => decoder:dut1.a[2]
+output_vector[0] << decoder:dut1.b[0]
+output_vector[1] << decoder:dut1.b[1]
+output_vector[2] << decoder:dut1.b[2]
+output_vector[3] << decoder:dut1.b[3]
+output_vector[4] << decoder:dut1.b[4]
+output_vector[5] << decoder:dut1.b[5]
+output_vector[6] << decoder:dut1.b[6]
+output_vector[7] << decoder:dut1.b[7]
+
+
+|dut|decoder:dut1
+a[0] => b.IN0
+a[0] => b.IN0
+a[0] => b.IN0
+a[0] => b.IN0
+a[1] => b.IN1
+a[1] => b.IN1
+a[1] => b.IN1
+a[1] => b.IN1
+a[2] => b.IN1
+a[2] => b.IN1
+a[2] => b.IN1
+a[2] => b.IN1
+a[2] => b.IN1
+a[2] => b.IN1
+a[2] => b.IN1
+a[2] => b.IN1
+b[0] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[1] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[2] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[3] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[4] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[5] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[6] <= b.DB_MAX_OUTPUT_PORT_TYPE
+b[7] <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+

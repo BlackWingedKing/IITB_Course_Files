@@ -1,0 +1,532 @@
+Analysis & Synthesis report for ReactionTime
+Thu May  3 21:38:47 2018
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |ReactionTime|lcd_controller:cmp8|state
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 15. Port Connectivity Checks: "lcd_controller:cmp8"
+ 16. Port Connectivity Checks: "runMultiple:cmp7"
+ 17. Port Connectivity Checks: "calculateTime:cmp5"
+ 18. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Thu May  3 21:38:47 2018       ;
+; Quartus Prime Version       ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Revision Name               ; ReactionTime                                ;
+; Top-level Entity Name       ; ReactionTime                                ;
+; Family                      ; MAX V                                       ;
+; Total logic elements        ; 228                                         ;
+; Total pins                  ; 17                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; 5M1270ZT144C5      ;                    ;
+; Top-level entity name                                                      ; ReactionTime       ; ReactionTime       ;
+; Family name                                                                ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                          ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                      ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
+; lcd_controller.vhd               ; yes             ; User VHDL File               ; /home/ritesh/Desktop/ReactionTime/lcd_controller.vhd                              ;         ;
+; ReactionTime.vhd                 ; yes             ; User VHDL File               ; /home/ritesh/Desktop/ReactionTime/ReactionTime.vhd                                ;         ;
+; randm.vhd                        ; yes             ; User VHDL File               ; /home/ritesh/Desktop/ReactionTime/randm.vhd                                       ;         ;
+; lowCLK.vhd                       ; yes             ; User VHDL File               ; /home/ritesh/Desktop/ReactionTime/lowCLK.vhd                                      ;         ;
+; lighter.vhd                      ; yes             ; User VHDL File               ; /home/ritesh/Desktop/ReactionTime/lighter.vhd                                     ;         ;
+; calculateTime.vhd                ; yes             ; User VHDL File               ; /home/ritesh/Desktop/ReactionTime/calculateTime.vhd                               ;         ;
+; runMultiple.vhd                  ; yes             ; User VHDL File               ; /home/ritesh/Desktop/ReactionTime/runMultiple.vhd                                 ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal160.inc                   ; yes             ; Megafunction                 ; /home/ritesh/altera_lite/16.0/quartus/libraries/megafunctions/aglobal160.inc      ;         ;
+; db/lpm_divide_4co.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/ReactionTime/db/lpm_divide_4co.tdf                           ;         ;
+; db/abs_divider_kbg.tdf           ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/ReactionTime/db/abs_divider_kbg.tdf                          ;         ;
+; db/alt_u_div_hie.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/ReactionTime/db/alt_u_div_hie.tdf                            ;         ;
+; db/add_sub_i4c.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/ReactionTime/db/add_sub_i4c.tdf                              ;         ;
+; db/add_sub_j4c.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/ReactionTime/db/add_sub_j4c.tdf                              ;         ;
+; db/add_sub_n4c.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/ReactionTime/db/add_sub_n4c.tdf                              ;         ;
+; db/add_sub_k4c.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/ReactionTime/db/add_sub_k4c.tdf                              ;         ;
+; db/add_sub_l4c.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/ReactionTime/db/add_sub_l4c.tdf                              ;         ;
+; db/add_sub_m4c.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/ReactionTime/db/add_sub_m4c.tdf                              ;         ;
+; db/lpm_abs_da9.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/ReactionTime/db/lpm_abs_da9.tdf                              ;         ;
+; db/lpm_abs_tb9.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/ReactionTime/db/lpm_abs_tb9.tdf                              ;         ;
+; db/add_sub_tte.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/ReactionTime/db/add_sub_tte.tdf                              ;         ;
+; db/add_sub_dse.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/ritesh/Desktop/ReactionTime/db/add_sub_dse.tdf                              ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                      ;
++---------------------------------------------+--------------------+
+; Resource                                    ; Usage              ;
++---------------------------------------------+--------------------+
+; Total logic elements                        ; 228                ;
+;     -- Combinational with no register       ; 110                ;
+;     -- Register only                        ; 52                 ;
+;     -- Combinational with a register        ; 66                 ;
+;                                             ;                    ;
+; Logic element usage by number of LUT inputs ;                    ;
+;     -- 4 input functions                    ; 67                 ;
+;     -- 3 input functions                    ; 12                 ;
+;     -- 2 input functions                    ; 81                 ;
+;     -- 1 input functions                    ; 16                 ;
+;     -- 0 input functions                    ; 0                  ;
+;                                             ;                    ;
+; Logic elements by mode                      ;                    ;
+;     -- normal mode                          ; 164                ;
+;     -- arithmetic mode                      ; 64                 ;
+;     -- qfbk mode                            ; 0                  ;
+;     -- register cascade mode                ; 0                  ;
+;     -- synchronous clear/load mode          ; 14                 ;
+;     -- asynchronous clear/load mode         ; 0                  ;
+;                                             ;                    ;
+; Total registers                             ; 118                ;
+; Total logic cells in carry chains           ; 68                 ;
+; I/O pins                                    ; 17                 ;
+; Maximum fan-out node                        ; lowCLK:cmp2|outclk ;
+; Maximum fan-out                             ; 77                 ;
+; Total fan-out                               ; 730                ;
+; Average fan-out                             ; 2.98               ;
++---------------------------------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                 ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------+----------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name               ; Entity Name    ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------+----------------+--------------+
+; |ReactionTime              ; 228 (80)    ; 118          ; 0          ; 17   ; 0            ; 110 (43)     ; 52 (32)           ; 66 (5)           ; 68 (32)         ; 0 (0)      ; |ReactionTime                     ; ReactionTime   ; work         ;
+;    |lcd_controller:cmp8|   ; 51 (51)     ; 27           ; 0          ; 0    ; 0            ; 24 (24)      ; 6 (6)             ; 21 (21)          ; 0 (0)           ; 0 (0)      ; |ReactionTime|lcd_controller:cmp8 ; lcd_controller ; work         ;
+;    |lighter:cmp4|          ; 20 (20)     ; 13           ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 13 (13)          ; 11 (11)         ; 0 (0)      ; |ReactionTime|lighter:cmp4        ; lighter        ; work         ;
+;    |lowCLK:cmp2|           ; 42 (42)     ; 18           ; 0          ; 0    ; 0            ; 24 (24)      ; 10 (10)           ; 8 (8)            ; 16 (16)         ; 0 (0)      ; |ReactionTime|lowCLK:cmp2         ; lowCLK         ; work         ;
+;    |randm:cmp3|            ; 29 (29)     ; 18           ; 0          ; 0    ; 0            ; 11 (11)      ; 4 (4)             ; 14 (14)          ; 9 (9)           ; 0 (0)      ; |ReactionTime|randm:cmp3          ; randm          ; work         ;
+;    |runMultiple:cmp7|      ; 6 (6)       ; 5            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |ReactionTime|runMultiple:cmp7    ; runMultiple    ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------+----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |ReactionTime|lcd_controller:cmp8|state                                                                                         ;
++-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; Name      ; state.S11 ; state.S10 ; state.S9 ; state.S8 ; state.S7 ; state.S6 ; state.S5 ; state.S4 ; state.S3 ; state.S2 ; state.S1 ; state.S0 ;
++-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; state.S0  ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ;
+; state.S1  ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 1        ;
+; state.S2  ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 1        ;
+; state.S3  ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 1        ;
+; state.S4  ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 1        ;
+; state.S5  ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.S6  ; 0         ; 0         ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.S7  ; 0         ; 0         ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.S8  ; 0         ; 0         ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.S9  ; 0         ; 0         ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.S10 ; 0         ; 1         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.S11 ; 1         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
++-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; erase                                   ; Stuck at GND due to stuck port data_in ;
+; wrRow[0]                                ; Stuck at VCC due to stuck port data_in ;
+; lcd_controller:cmp8|cmd_position[4,5]   ; Stuck at GND due to stuck port data_in ;
+; lcd_controller:cmp8|cmd_position[6,7]   ; Stuck at VCC due to stuck port data_in ;
+; randm:cmp3|count[0,1]                   ; Stuck at GND due to stuck port data_in ;
+; randm:cmp3|outval[0,1]                  ; Stuck at GND due to stuck port data_in ;
+; st[2]                                   ; Merged with nst[10]                    ;
+; nst[1..9,11..31]                        ; Merged with nst[10]                    ;
+; st[0]                                   ; Merged with nst[0]                     ;
+; st[1,3..31]                             ; Merged with nst[10]                    ;
+; nst[10]                                 ; Stuck at GND due to stuck port data_in ;
+; putIn                                   ; Merged with nst[0]                     ;
+; lcd_controller:cmp8|lcd_rw              ; Stuck at GND due to stuck port data_in ;
+; lcd_controller:cmp8|state.S10           ; Lost fanout                            ;
+; lcd_controller:cmp8|state.S11           ; Lost fanout                            ;
+; newNum[0..31]                           ; Stuck at GND due to stuck port data_in ;
+; wrData[0..3]                            ; Stuck at GND due to stuck port data_in ;
+; wrData[4,5]                             ; Stuck at VCC due to stuck port data_in ;
+; wrData[6,7]                             ; Stuck at GND due to stuck port data_in ;
+; lcd_controller:cmp8|data_dis[0..3]      ; Stuck at GND due to stuck port data_in ;
+; lcd_controller:cmp8|data_dis[4,5]       ; Stuck at VCC due to stuck port data_in ;
+; lcd_controller:cmp8|data_dis[6,7]       ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 125 ;                                        ;
++-----------------------------------------+----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                 ;
++---------------------+---------------------------+---------------------------------------------------------------------------+
+; Register name       ; Reason for Removal        ; Registers Removed due to This Register                                    ;
++---------------------+---------------------------+---------------------------------------------------------------------------+
+; erase               ; Stuck at GND              ; lcd_controller:cmp8|lcd_rw, lcd_controller:cmp8|data_dis[0],              ;
+;                     ; due to stuck port data_in ; lcd_controller:cmp8|data_dis[1], lcd_controller:cmp8|data_dis[2],         ;
+;                     ;                           ; lcd_controller:cmp8|data_dis[3], lcd_controller:cmp8|data_dis[4],         ;
+;                     ;                           ; lcd_controller:cmp8|data_dis[5], lcd_controller:cmp8|data_dis[6],         ;
+;                     ;                           ; lcd_controller:cmp8|data_dis[7]                                           ;
+; wrRow[0]            ; Stuck at VCC              ; lcd_controller:cmp8|cmd_position[4], lcd_controller:cmp8|cmd_position[5], ;
+;                     ; due to stuck port data_in ; lcd_controller:cmp8|cmd_position[6], lcd_controller:cmp8|cmd_position[7]  ;
+; newNum[31]          ; Stuck at GND              ; wrData[3], wrData[7]                                                      ;
+;                     ; due to stuck port data_in ;                                                                           ;
+; randm:cmp3|count[0] ; Stuck at GND              ; randm:cmp3|outval[0]                                                      ;
+;                     ; due to stuck port data_in ;                                                                           ;
+; randm:cmp3|count[1] ; Stuck at GND              ; randm:cmp3|outval[1]                                                      ;
+;                     ; due to stuck port data_in ;                                                                           ;
+; newNum[30]          ; Stuck at GND              ; newNum[25]                                                                ;
+;                     ; due to stuck port data_in ;                                                                           ;
+; newNum[6]           ; Stuck at GND              ; wrData[6]                                                                 ;
+;                     ; due to stuck port data_in ;                                                                           ;
+; newNum[5]           ; Stuck at GND              ; wrData[5]                                                                 ;
+;                     ; due to stuck port data_in ;                                                                           ;
+; newNum[4]           ; Stuck at GND              ; wrData[4]                                                                 ;
+;                     ; due to stuck port data_in ;                                                                           ;
+; newNum[2]           ; Stuck at GND              ; wrData[2]                                                                 ;
+;                     ; due to stuck port data_in ;                                                                           ;
+; newNum[1]           ; Stuck at GND              ; wrData[1]                                                                 ;
+;                     ; due to stuck port data_in ;                                                                           ;
+; newNum[0]           ; Stuck at GND              ; wrData[0]                                                                 ;
+;                     ; due to stuck port data_in ;                                                                           ;
++---------------------+---------------------------+---------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 118   ;
+; Number of registers using Synchronous Clear  ; 14    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 53    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; lighter:cmp4|light                     ; 2       ;
+; nst[0]                                 ; 40      ;
+; randm:cmp3|count[3]                    ; 3       ;
+; randm:cmp3|count[5]                    ; 3       ;
+; randm:cmp3|count[6]                    ; 3       ;
+; randm:cmp3|count[7]                    ; 3       ;
+; randm:cmp3|count[8]                    ; 3       ;
+; randm:cmp3|count[9]                    ; 3       ;
+; Total number of inverted registers = 8 ;         ;
++----------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |ReactionTime|lcd_controller:cmp8|count_cmd[1] ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |ReactionTime|lcd_controller:cmp8|lcd[7]       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 5              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_4co ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lcd_controller:cmp8"                                                                ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; ack  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "runMultiple:cmp7"                                                                                                                            ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "calculateTime:cmp5"                                                                     ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; calctime ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+    Info: Processing started: Thu May  3 21:38:35 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ReactionTime -c ReactionTime
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file lcd_controller.vhd
+    Info (12022): Found design unit 1: lcd_controller-Behavioral File: /home/ritesh/Desktop/ReactionTime/lcd_controller.vhd Line: 24
+    Info (12023): Found entity 1: lcd_controller File: /home/ritesh/Desktop/ReactionTime/lcd_controller.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file df.vhd
+    Info (12022): Found design unit 1: df-behave File: /home/ritesh/Desktop/ReactionTime/df.vhd Line: 8
+    Info (12023): Found entity 1: df File: /home/ritesh/Desktop/ReactionTime/df.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file debounceFSM.vhd
+    Info (12022): Found design unit 1: debounceFSM-behave File: /home/ritesh/Desktop/ReactionTime/debounceFSM.vhd Line: 7
+    Info (12023): Found entity 1: debounceFSM File: /home/ritesh/Desktop/ReactionTime/debounceFSM.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ReactionTime.vhd
+    Info (12022): Found design unit 1: ReactionTime-intelli File: /home/ritesh/Desktop/ReactionTime/ReactionTime.vhd Line: 15
+    Info (12023): Found entity 1: ReactionTime File: /home/ritesh/Desktop/ReactionTime/ReactionTime.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file debounce.vhd
+    Info (12022): Found design unit 1: debounce-debcntr File: /home/ritesh/Desktop/ReactionTime/debounce.vhd Line: 10
+    Info (12023): Found entity 1: debounce File: /home/ritesh/Desktop/ReactionTime/debounce.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file randm.vhd
+    Info (12022): Found design unit 1: randm-behave File: /home/ritesh/Desktop/ReactionTime/randm.vhd Line: 9
+    Info (12023): Found entity 1: randm File: /home/ritesh/Desktop/ReactionTime/randm.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file divider4.vhd
+    Info (12022): Found design unit 1: divider4-behave File: /home/ritesh/Desktop/ReactionTime/divider4.vhd Line: 8
+    Info (12023): Found entity 1: divider4 File: /home/ritesh/Desktop/ReactionTime/divider4.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file divider2.vhd
+    Info (12022): Found design unit 1: divider2-behave File: /home/ritesh/Desktop/ReactionTime/divider2.vhd Line: 8
+    Info (12023): Found entity 1: divider2 File: /home/ritesh/Desktop/ReactionTime/divider2.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file divider.vhd
+    Info (12022): Found design unit 1: divider-behave File: /home/ritesh/Desktop/ReactionTime/divider.vhd Line: 7
+    Info (12023): Found entity 1: divider File: /home/ritesh/Desktop/ReactionTime/divider.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file dflip.vhd
+    Info (12022): Found design unit 1: dflip-behave File: /home/ritesh/Desktop/ReactionTime/dflip.vhd Line: 8
+    Info (12023): Found entity 1: dflip File: /home/ritesh/Desktop/ReactionTime/dflip.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file lowCLK.vhd
+    Info (12022): Found design unit 1: lowCLK-behave File: /home/ritesh/Desktop/ReactionTime/lowCLK.vhd Line: 11
+    Info (12023): Found entity 1: lowCLK File: /home/ritesh/Desktop/ReactionTime/lowCLK.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file lighter.vhd
+    Info (12022): Found design unit 1: lighter-letsee File: /home/ritesh/Desktop/ReactionTime/lighter.vhd Line: 11
+    Info (12023): Found entity 1: lighter File: /home/ritesh/Desktop/ReactionTime/lighter.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file calculateTime.vhd
+    Info (12022): Found design unit 1: calculateTime-notedown File: /home/ritesh/Desktop/ReactionTime/calculateTime.vhd Line: 11
+    Info (12023): Found entity 1: calculateTime File: /home/ritesh/Desktop/ReactionTime/calculateTime.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file validation.vhd
+    Info (12022): Found design unit 1: validation-check File: /home/ritesh/Desktop/ReactionTime/validation.vhd Line: 11
+    Info (12023): Found entity 1: validation File: /home/ritesh/Desktop/ReactionTime/validation.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file runMultiple.vhd
+    Info (12022): Found design unit 1: runMultiple-looparound File: /home/ritesh/Desktop/ReactionTime/runMultiple.vhd Line: 11
+    Info (12023): Found entity 1: runMultiple File: /home/ritesh/Desktop/ReactionTime/runMultiple.vhd Line: 7
+Info (12127): Elaborating entity "ReactionTime" for the top level hierarchy
+Warning (10540): VHDL Signal Declaration warning at ReactionTime.vhd(74): used explicit default value for signal "rst" because signal was never assigned a value File: /home/ritesh/Desktop/ReactionTime/ReactionTime.vhd Line: 74
+Info (12128): Elaborating entity "lowCLK" for hierarchy "lowCLK:cmp2" File: /home/ritesh/Desktop/ReactionTime/ReactionTime.vhd Line: 78
+Info (12128): Elaborating entity "randm" for hierarchy "randm:cmp3" File: /home/ritesh/Desktop/ReactionTime/ReactionTime.vhd Line: 79
+Info (12128): Elaborating entity "lighter" for hierarchy "lighter:cmp4" File: /home/ritesh/Desktop/ReactionTime/ReactionTime.vhd Line: 80
+Warning (10540): VHDL Signal Declaration warning at lighter.vhd(14): used explicit default value for signal "initialVal" because signal was never assigned a value File: /home/ritesh/Desktop/ReactionTime/lighter.vhd Line: 14
+Info (12128): Elaborating entity "calculateTime" for hierarchy "calculateTime:cmp5" File: /home/ritesh/Desktop/ReactionTime/ReactionTime.vhd Line: 81
+Warning (10540): VHDL Signal Declaration warning at calculateTime.vhd(13): used explicit default value for signal "initVal" because signal was never assigned a value File: /home/ritesh/Desktop/ReactionTime/calculateTime.vhd Line: 13
+Info (12128): Elaborating entity "runMultiple" for hierarchy "runMultiple:cmp7" File: /home/ritesh/Desktop/ReactionTime/ReactionTime.vhd Line: 83
+Warning (10540): VHDL Signal Declaration warning at runMultiple.vhd(12): used explicit default value for signal "numTimes" because signal was never assigned a value File: /home/ritesh/Desktop/ReactionTime/runMultiple.vhd Line: 12
+Warning (10492): VHDL Process Statement warning at runMultiple.vhd(18): signal "countTimes" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/ReactionTime/runMultiple.vhd Line: 18
+Warning (10492): VHDL Process Statement warning at runMultiple.vhd(18): signal "numTimes" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/ReactionTime/runMultiple.vhd Line: 18
+Warning (10492): VHDL Process Statement warning at runMultiple.vhd(20): signal "countTimes" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/ReactionTime/runMultiple.vhd Line: 20
+Warning (10492): VHDL Process Statement warning at runMultiple.vhd(20): signal "numTimes" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/ReactionTime/runMultiple.vhd Line: 20
+Info (12128): Elaborating entity "lcd_controller" for hierarchy "lcd_controller:cmp8" File: /home/ritesh/Desktop/ReactionTime/ReactionTime.vhd Line: 87
+Warning (10036): Verilog HDL or VHDL warning at lcd_controller.vhd(32): object "count_next_data" assigned a value but never read File: /home/ritesh/Desktop/ReactionTime/lcd_controller.vhd Line: 32
+Warning (10036): Verilog HDL or VHDL warning at lcd_controller.vhd(33): object "count_next_data1" assigned a value but never read File: /home/ritesh/Desktop/ReactionTime/lcd_controller.vhd Line: 33
+Warning (10036): Verilog HDL or VHDL warning at lcd_controller.vhd(34): object "cmd_line_next" assigned a value but never read File: /home/ritesh/Desktop/ReactionTime/lcd_controller.vhd Line: 34
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: /home/ritesh/Desktop/ReactionTime/ReactionTime.vhd Line: 101
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: /home/ritesh/Desktop/ReactionTime/ReactionTime.vhd Line: 101
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: /home/ritesh/Desktop/ReactionTime/ReactionTime.vhd Line: 101
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_4co.tdf
+    Info (12023): Found entity 1: lpm_divide_4co File: /home/ritesh/Desktop/ReactionTime/db/lpm_divide_4co.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_kbg.tdf
+    Info (12023): Found entity 1: abs_divider_kbg File: /home/ritesh/Desktop/ReactionTime/db/abs_divider_kbg.tdf Line: 33
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_hie.tdf
+    Info (12023): Found entity 1: alt_u_div_hie File: /home/ritesh/Desktop/ReactionTime/db/alt_u_div_hie.tdf Line: 35
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_i4c.tdf
+    Info (12023): Found entity 1: add_sub_i4c File: /home/ritesh/Desktop/ReactionTime/db/add_sub_i4c.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_j4c.tdf
+    Info (12023): Found entity 1: add_sub_j4c File: /home/ritesh/Desktop/ReactionTime/db/add_sub_j4c.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_n4c.tdf
+    Info (12023): Found entity 1: add_sub_n4c File: /home/ritesh/Desktop/ReactionTime/db/add_sub_n4c.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_k4c.tdf
+    Info (12023): Found entity 1: add_sub_k4c File: /home/ritesh/Desktop/ReactionTime/db/add_sub_k4c.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_l4c.tdf
+    Info (12023): Found entity 1: add_sub_l4c File: /home/ritesh/Desktop/ReactionTime/db/add_sub_l4c.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_m4c.tdf
+    Info (12023): Found entity 1: add_sub_m4c File: /home/ritesh/Desktop/ReactionTime/db/add_sub_m4c.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_da9.tdf
+    Info (12023): Found entity 1: lpm_abs_da9 File: /home/ritesh/Desktop/ReactionTime/db/lpm_abs_da9.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_tb9.tdf
+    Info (12023): Found entity 1: lpm_abs_tb9 File: /home/ritesh/Desktop/ReactionTime/db/lpm_abs_tb9.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_tte.tdf
+    Info (12023): Found entity 1: add_sub_tte File: /home/ritesh/Desktop/ReactionTime/db/add_sub_tte.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_dse.tdf
+    Info (12023): Found entity 1: add_sub_dse File: /home/ritesh/Desktop/ReactionTime/db/add_sub_dse.tdf Line: 25
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "readWrite" is stuck at GND File: /home/ritesh/Desktop/ReactionTime/ReactionTime.vhd Line: 11
+    Warning (13410): Pin "b11" is stuck at VCC File: /home/ritesh/Desktop/ReactionTime/ReactionTime.vhd Line: 11
+    Warning (13410): Pin "b12" is stuck at GND File: /home/ritesh/Desktop/ReactionTime/ReactionTime.vhd Line: 11
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (21057): Implemented 245 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 14 output pins
+    Info (21061): Implemented 228 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
+    Info: Peak virtual memory: 1253 megabytes
+    Info: Processing ended: Thu May  3 21:38:47 2018
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:28
+
+

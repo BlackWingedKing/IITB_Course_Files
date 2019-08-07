@@ -1,0 +1,49 @@
+library std;
+use std.standard.all;
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+
+entity terror is
+  port (reset: in std_logic;
+        x: in std_logic_vector(4 downto 0);
+		  CLK: in std_logic;
+		  o: out std_logic);
+end entity terror;
+architecture Behave of terror is
+
+component dff_new is
+  port (D, CLK: in std_logic; Q: out std_logic);
+end component;
+	signal  q,nq: std_logic_vector(2 downto 0);
+	signal  t,e,r,a,nt,ne,nr,na,ss,st,ste,ster,sterr,sterro,rbar: std_logic; 
+begin
+  t <= (x(4)) and (not x(3)) and (x(2)) and (not x(1)) and (not x(0));
+  nt <= not t;
+  e <= (not x(4)) and (not x(3)) and (x(2)) and (not x(1)) and (x(0));
+  ne <= not e;
+  r <= (x(4)) and (not x(3)) and (not x(2)) and (x(1)) and (not x(0));
+  nr <= not r;
+  a <= (not x(4)) and (x(3)) and (x(2)) and (x(1)) and (x(0));
+  na <= not a;
+  
+  rbar <= not reset;
+  
+  ss <= (not q(2)) and (not q(1)) and (not q(0));
+  st <= (not q(2)) and (not q(1)) and (q(0));
+  ste <= (not q(2)) and (q(1)) and (not q(0));
+  ster <= (not q(2)) and (q(1)) and (q(0));
+  sterr <= (q(2)) and (not q(1)) and (not q(0));
+  sterro <= (q(2)) and (not q(1)) and (q(0));
+  
+  o <= (rbar) and (sterro) and r;
+  
+  nq(2) <= (rbar) and ((ster and r) or (sterr and na) or (sterr and a) or (sterro and nr));
+  nq(1) <= (rbar) and ((st and e) or (ste and nr) or (ste and r) or (ster and nr));
+  nq(0) <= (rbar) and ((ss and t) or (st and ne) or (ste and r) or (ster and nr) or (sterr and a) or (sterro and nr));
+  
+  d_1: dff_new port map (D => nq(0), CLK => CLK, Q => q(0));
+  d_2: dff_new port map (D => nq(1), CLK => CLK, Q => q(1));
+  d_3: dff_new port map (D => nq(2), CLK => CLK, Q => q(2));
+end Behave;

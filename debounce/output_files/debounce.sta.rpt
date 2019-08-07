@@ -1,0 +1,1166 @@
+TimeQuest Timing Analyzer report for debounce
+Sat Apr 21 10:30:32 2018
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q'
+ 12. Setup: 'divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q'
+ 13. Setup: 'divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q'
+ 14. Setup: 'divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q'
+ 15. Setup: 'divider:d_1|counter4:c_1|dff_new:d_1|Q'
+ 16. Setup: 'divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q'
+ 17. Setup: 'divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q'
+ 18. Setup: 'divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q'
+ 19. Setup: 'divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q'
+ 20. Setup: 'divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q'
+ 21. Setup: 'r'
+ 22. Setup: 'CLK'
+ 23. Hold: 'r'
+ 24. Hold: 'CLK'
+ 25. Hold: 'divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q'
+ 26. Hold: 'divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q'
+ 27. Hold: 'divider:d_1|counter4:c_1|dff_new:d_1|Q'
+ 28. Hold: 'divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q'
+ 29. Hold: 'divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q'
+ 30. Hold: 'divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q'
+ 31. Hold: 'divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q'
+ 32. Hold: 'divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q'
+ 33. Hold: 'divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q'
+ 34. Hold: 'divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q'
+ 35. Recovery: 'divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q'
+ 36. Recovery: 'divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q'
+ 37. Recovery: 'divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q'
+ 38. Recovery: 'divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q'
+ 39. Recovery: 'divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q'
+ 40. Recovery: 'divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q'
+ 41. Recovery: 'divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q'
+ 42. Recovery: 'divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q'
+ 43. Recovery: 'divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q'
+ 44. Recovery: 'divider:d_1|counter4:c_1|dff_new:d_1|Q'
+ 45. Recovery: 'r'
+ 46. Recovery: 'CLK'
+ 47. Removal: 'r'
+ 48. Removal: 'CLK'
+ 49. Removal: 'divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q'
+ 50. Removal: 'divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q'
+ 51. Removal: 'divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q'
+ 52. Removal: 'divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q'
+ 53. Removal: 'divider:d_1|counter4:c_1|dff_new:d_1|Q'
+ 54. Removal: 'divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q'
+ 55. Removal: 'divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q'
+ 56. Removal: 'divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q'
+ 57. Removal: 'divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q'
+ 58. Removal: 'divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q'
+ 59. Setup Transfers
+ 60. Hold Transfers
+ 61. Recovery Transfers
+ 62. Removal Transfers
+ 63. Report TCCS
+ 64. Report RSKM
+ 65. Unconstrained Paths Summary
+ 66. Clock Status Summary
+ 67. Unconstrained Input Ports
+ 68. Unconstrained Output Ports
+ 69. Unconstrained Input Ports
+ 70. Unconstrained Output Ports
+ 71. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                           ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Timing Analyzer       ; TimeQuest                                           ;
+; Revision Name         ; debounce                                            ;
+; Device Family         ; MAX V                                               ;
+; Device Name           ; 5M1270ZT144C5                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                                       ;
++-----------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------------------------------+
+; Clock Name                                    ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                           ;
++-----------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------------------------------+
+; CLK                                           ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLK }                                           ;
+; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q } ;
+; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q } ;
+; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q } ;
+; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q } ;
+; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q } ;
+; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q } ;
+; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q } ;
+; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q } ;
+; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q } ;
+; divider:d_1|counter4:c_1|dff_new:d_1|Q        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { divider:d_1|counter4:c_1|dff_new:d_1|Q }        ;
+; r                                             ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { r }                                             ;
++-----------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Fmax Summary                                                                                                                                 ;
++------------+-----------------+-----------------------------------------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name                                    ; Note                                                          ;
++------------+-----------------+-----------------------------------------------+---------------------------------------------------------------+
+; 288.68 MHz ; 288.68 MHz      ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ;                                                               ;
+; 288.68 MHz ; 288.68 MHz      ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ;                                                               ;
+; 288.68 MHz ; 288.68 MHz      ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ;                                                               ;
+; 288.93 MHz ; 288.93 MHz      ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ;                                                               ;
+; 327.23 MHz ; 327.23 MHz      ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ;                                                               ;
+; 327.23 MHz ; 327.23 MHz      ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ;                                                               ;
+; 327.23 MHz ; 327.23 MHz      ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ;                                                               ;
+; 370.51 MHz ; 370.51 MHz      ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ;                                                               ;
+; 370.51 MHz ; 370.51 MHz      ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ;                                                               ;
+; 370.51 MHz ; 370.51 MHz      ; divider:d_1|counter4:c_1|dff_new:d_1|Q        ;                                                               ;
+; 392.46 MHz ; 304.04 MHz      ; r                                             ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+-----------------------------------------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------------------------------------------+
+; Setup Summary                                                          ;
++-----------------------------------------------+--------+---------------+
+; Clock                                         ; Slack  ; End Point TNS ;
++-----------------------------------------------+--------+---------------+
+; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; -3.142 ; -3.142        ;
+; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; -3.136 ; -3.136        ;
+; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; -3.109 ; -3.109        ;
+; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; -3.077 ; -3.077        ;
+; divider:d_1|counter4:c_1|dff_new:d_1|Q        ; -3.066 ; -3.066        ;
+; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; -2.794 ; -2.794        ;
+; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; -2.756 ; -2.756        ;
+; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; -2.688 ; -2.688        ;
+; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; -2.665 ; -2.665        ;
+; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; -2.446 ; -2.446        ;
+; r                                             ; -1.196 ; -1.970        ;
+; CLK                                           ; 4.097  ; 0.000         ;
++-----------------------------------------------+--------+---------------+
+
+
++------------------------------------------------------------------------+
+; Hold Summary                                                           ;
++-----------------------------------------------+--------+---------------+
+; Clock                                         ; Slack  ; End Point TNS ;
++-----------------------------------------------+--------+---------------+
+; r                                             ; -5.311 ; -40.938       ;
+; CLK                                           ; -4.151 ; -4.151        ;
+; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; 2.145  ; 0.000         ;
+; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; 2.145  ; 0.000         ;
+; divider:d_1|counter4:c_1|dff_new:d_1|Q        ; 2.145  ; 0.000         ;
+; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; 2.392  ; 0.000         ;
+; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; 2.502  ; 0.000         ;
+; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; 2.502  ; 0.000         ;
+; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; 2.740  ; 0.000         ;
+; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; 2.907  ; 0.000         ;
+; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; 2.910  ; 0.000         ;
+; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; 2.910  ; 0.000         ;
++-----------------------------------------------+--------+---------------+
+
+
++------------------------------------------------------------------------+
+; Recovery Summary                                                       ;
++-----------------------------------------------+--------+---------------+
+; Clock                                         ; Slack  ; End Point TNS ;
++-----------------------------------------------+--------+---------------+
+; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; -6.375 ; -6.375        ;
+; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; -6.374 ; -6.374        ;
+; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; -6.374 ; -6.374        ;
+; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; -6.373 ; -6.373        ;
+; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; -6.373 ; -6.373        ;
+; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; -6.372 ; -6.372        ;
+; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; -6.372 ; -6.372        ;
+; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; -6.372 ; -6.372        ;
+; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; -6.372 ; -6.372        ;
+; divider:d_1|counter4:c_1|dff_new:d_1|Q        ; -6.372 ; -6.372        ;
+; r                                             ; -2.731 ; -19.154       ;
+; CLK                                           ; -2.469 ; -2.469        ;
++-----------------------------------------------+--------+---------------+
+
+
++-----------------------------------------------------------------------+
+; Removal Summary                                                       ;
++-----------------------------------------------+-------+---------------+
+; Clock                                         ; Slack ; End Point TNS ;
++-----------------------------------------------+-------+---------------+
+; r                                             ; 1.254 ; 0.000         ;
+; CLK                                           ; 2.415 ; 0.000         ;
+; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; 6.318 ; 0.000         ;
+; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; 6.318 ; 0.000         ;
+; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; 6.318 ; 0.000         ;
+; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; 6.318 ; 0.000         ;
+; divider:d_1|counter4:c_1|dff_new:d_1|Q        ; 6.318 ; 0.000         ;
+; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; 6.319 ; 0.000         ;
+; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; 6.319 ; 0.000         ;
+; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; 6.320 ; 0.000         ;
+; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; 6.320 ; 0.000         ;
+; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; 6.321 ; 0.000         ;
++-----------------------------------------------+-------+---------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Pulse Width Summary                                            ;
++-----------------------------------------------+--------+---------------+
+; Clock                                         ; Slack  ; End Point TNS ;
++-----------------------------------------------+--------+---------------+
+; CLK                                           ; -2.289 ; -2.289        ;
+; r                                             ; -2.289 ; -2.289        ;
+; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; 0.234  ; 0.000         ;
+; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; 0.234  ; 0.000         ;
+; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; 0.234  ; 0.000         ;
+; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; 0.234  ; 0.000         ;
+; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; 0.234  ; 0.000         ;
+; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; 0.234  ; 0.000         ;
+; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; 0.234  ; 0.000         ;
+; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; 0.234  ; 0.000         ;
+; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; 0.234  ; 0.000         ;
+; divider:d_1|counter4:c_1|dff_new:d_1|Q        ; 0.234  ; 0.000         ;
++-----------------------------------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q'                                                                                                                                                                                          ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                                     ; To Node                                       ; Launch Clock                                  ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; -3.142 ; r                                             ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; 0.500        ; 1.787      ; 5.096      ;
+; -2.642 ; r                                             ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; 1.000        ; 1.787      ; 5.096      ;
+; -2.464 ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; 1.000        ; 0.000      ; 3.131      ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q'                                                                                                                                                                                          ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                                     ; To Node                                       ; Launch Clock                                  ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; -3.136 ; r                                             ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; 0.500        ; 1.785      ; 5.088      ;
+; -2.636 ; r                                             ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; 1.000        ; 1.785      ; 5.088      ;
+; -2.461 ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; 1.000        ; 0.000      ; 3.128      ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q'                                                                                                                                                                                          ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                                     ; To Node                                       ; Launch Clock                                  ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; -3.109 ; r                                             ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; 0.500        ; 1.784      ; 5.060      ;
+; -2.609 ; r                                             ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; 1.000        ; 1.784      ; 5.060      ;
+; -2.464 ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; 1.000        ; 0.000      ; 3.131      ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q'                                                                                                                                                                                          ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                                     ; To Node                                       ; Launch Clock                                  ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; -3.077 ; r                                             ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; 0.500        ; 1.787      ; 5.031      ;
+; -2.577 ; r                                             ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; 1.000        ; 1.787      ; 5.031      ;
+; -1.699 ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; 1.000        ; 0.000      ; 2.366      ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'divider:d_1|counter4:c_1|dff_new:d_1|Q'                                                                                                                                                                     ;
++--------+----------------------------------------+----------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                              ; To Node                                ; Launch Clock                           ; Latch Clock                            ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------+----------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; -3.066 ; r                                      ; divider:d_1|counter4:c_1|dff_new:d_2|Q ; r                                      ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; 0.500        ; 1.787      ; 5.020      ;
+; -2.566 ; r                                      ; divider:d_1|counter4:c_1|dff_new:d_2|Q ; r                                      ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; 1.000        ; 1.787      ; 5.020      ;
+; -1.699 ; divider:d_1|counter4:c_1|dff_new:d_2|Q ; divider:d_1|counter4:c_1|dff_new:d_2|Q ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; 1.000        ; 0.000      ; 2.366      ;
++--------+----------------------------------------+----------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q'                                                                                                                                                                                          ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                                     ; To Node                                       ; Launch Clock                                  ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; -2.794 ; r                                             ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; 0.500        ; 1.787      ; 4.748      ;
+; -2.464 ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; 1.000        ; 0.000      ; 3.131      ;
+; -2.294 ; r                                             ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; 1.000        ; 1.787      ; 4.748      ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q'                                                                                                                                                                                          ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                                     ; To Node                                       ; Launch Clock                                  ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; -2.756 ; r                                             ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; 0.500        ; 1.787      ; 4.710      ;
+; -2.256 ; r                                             ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; 1.000        ; 1.787      ; 4.710      ;
+; -1.699 ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; 1.000        ; 0.000      ; 2.366      ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q'                                                                                                                                                                                          ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                                     ; To Node                                       ; Launch Clock                                  ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; -2.688 ; r                                             ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; 0.500        ; 1.786      ; 4.641      ;
+; -2.188 ; r                                             ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; 1.000        ; 1.786      ; 4.641      ;
+; -2.056 ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; 1.000        ; 0.000      ; 2.723      ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q'                                                                                                                                                                                          ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                                     ; To Node                                       ; Launch Clock                                  ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; -2.665 ; r                                             ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; 0.500        ; 1.786      ; 4.618      ;
+; -2.165 ; r                                             ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; 1.000        ; 1.786      ; 4.618      ;
+; -2.056 ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; 1.000        ; 0.000      ; 2.723      ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q'                                                                                                                                                                                          ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                                     ; To Node                                       ; Launch Clock                                  ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; -2.446 ; r                                             ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; 0.500        ; 1.785      ; 4.398      ;
+; -2.056 ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; 1.000        ; 0.000      ; 2.723      ;
+; -1.946 ; r                                             ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; 1.000        ; 1.785      ; 4.398      ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'r'                                                                                                                                                                                                    ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                     ; To Node                                       ; Launch Clock                                  ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-------------+--------------+------------+------------+
+; -1.196 ; debounce:db_1|dff_new:d_2|Q                   ; debounce:db_1|dff_new:d_1|Q                   ; r                                             ; r           ; 1.000        ; 0.000      ; 1.863      ;
+; -0.774 ; r                                             ; debounce:db_1|dff_new:d_2|Q                   ; r                                             ; r           ; 0.500        ; 8.682      ; 9.623      ;
+; -0.670 ; r                                             ; debounce:db_1|dff_new:d_1|Q                   ; r                                             ; r           ; 0.500        ; 8.682      ; 9.519      ;
+; -0.632 ; debounce:db_1|dff_new:d_1|Q                   ; debounce:db_1|dff_new:d_1|Q                   ; r                                             ; r           ; 1.000        ; 0.000      ; 1.299      ;
+; -0.274 ; r                                             ; debounce:db_1|dff_new:d_2|Q                   ; r                                             ; r           ; 1.000        ; 8.682      ; 9.623      ;
+; -0.170 ; r                                             ; debounce:db_1|dff_new:d_1|Q                   ; r                                             ; r           ; 1.000        ; 8.682      ; 9.519      ;
+; 3.835  ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; r           ; 0.500        ; 5.428      ; 2.136      ;
+; 4.117  ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; r           ; 0.500        ; 5.712      ; 2.138      ;
+; 4.183  ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; r           ; 0.500        ; 5.776      ; 2.136      ;
+; 4.335  ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; r           ; 1.000        ; 5.428      ; 2.136      ;
+; 4.400  ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; r           ; 0.500        ; 5.735      ; 1.878      ;
+; 4.474  ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; r           ; 0.500        ; 5.809      ; 1.878      ;
+; 4.520  ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; r           ; 0.500        ; 6.114      ; 2.137      ;
+; 4.617  ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; r           ; 1.000        ; 5.712      ; 2.138      ;
+; 4.682  ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; r           ; 0.500        ; 6.275      ; 2.136      ;
+; 4.683  ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; r           ; 1.000        ; 5.776      ; 2.136      ;
+; 4.900  ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; r           ; 1.000        ; 5.735      ; 1.878      ;
+; 4.974  ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; r           ; 1.000        ; 5.809      ; 1.878      ;
+; 4.984  ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; r           ; 0.500        ; 6.577      ; 2.136      ;
+; 5.020  ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; r           ; 1.000        ; 6.114      ; 2.137      ;
+; 5.182  ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; r           ; 1.000        ; 6.275      ; 2.136      ;
+; 5.257  ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; r           ; 0.500        ; 6.851      ; 2.137      ;
+; 5.484  ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; r           ; 1.000        ; 6.577      ; 2.136      ;
+; 5.757  ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; r           ; 1.000        ; 6.851      ; 2.137      ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'CLK'                                                                                                                                                                            ;
++-------+----------------------------------------+----------------------------------------+----------------------------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                              ; To Node                                ; Launch Clock                           ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------+----------------------------------------+----------------------------------------+-------------+--------------+------------+------------+
+; 4.097 ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; CLK         ; 0.500        ; 5.690      ; 2.136      ;
+; 4.597 ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; CLK         ; 1.000        ; 5.690      ; 2.136      ;
++-------+----------------------------------------+----------------------------------------+----------------------------------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'r'                                                                                                                                                                                                     ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                     ; To Node                                       ; Launch Clock                                  ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-------------+--------------+------------+------------+
+; -5.311 ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; r           ; 0.000        ; 6.851      ; 2.137      ;
+; -5.038 ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; r           ; 0.000        ; 6.577      ; 2.136      ;
+; -4.811 ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; r           ; -0.500       ; 6.851      ; 2.137      ;
+; -4.736 ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; r           ; 0.000        ; 6.275      ; 2.136      ;
+; -4.574 ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; r           ; 0.000        ; 6.114      ; 2.137      ;
+; -4.538 ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; r           ; -0.500       ; 6.577      ; 2.136      ;
+; -4.528 ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; r           ; 0.000        ; 5.809      ; 1.878      ;
+; -4.454 ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; r           ; 0.000        ; 5.735      ; 1.878      ;
+; -4.237 ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; r           ; 0.000        ; 5.776      ; 2.136      ;
+; -4.236 ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; r           ; -0.500       ; 6.275      ; 2.136      ;
+; -4.171 ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; r           ; 0.000        ; 5.712      ; 2.138      ;
+; -4.074 ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; r           ; -0.500       ; 6.114      ; 2.137      ;
+; -4.028 ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; r           ; -0.500       ; 5.809      ; 1.878      ;
+; -3.954 ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; r           ; -0.500       ; 5.735      ; 1.878      ;
+; -3.889 ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; r           ; 0.000        ; 5.428      ; 2.136      ;
+; -3.737 ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; r           ; -0.500       ; 5.776      ; 2.136      ;
+; -3.671 ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; r           ; -0.500       ; 5.712      ; 2.138      ;
+; -3.389 ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; r           ; -0.500       ; 5.428      ; 2.136      ;
+; 0.616  ; r                                             ; debounce:db_1|dff_new:d_1|Q                   ; r                                             ; r           ; 0.000        ; 8.682      ; 9.519      ;
+; 0.720  ; r                                             ; debounce:db_1|dff_new:d_2|Q                   ; r                                             ; r           ; 0.000        ; 8.682      ; 9.623      ;
+; 1.078  ; debounce:db_1|dff_new:d_1|Q                   ; debounce:db_1|dff_new:d_1|Q                   ; r                                             ; r           ; 0.000        ; 0.000      ; 1.299      ;
+; 1.116  ; r                                             ; debounce:db_1|dff_new:d_1|Q                   ; r                                             ; r           ; -0.500       ; 8.682      ; 9.519      ;
+; 1.220  ; r                                             ; debounce:db_1|dff_new:d_2|Q                   ; r                                             ; r           ; -0.500       ; 8.682      ; 9.623      ;
+; 1.642  ; debounce:db_1|dff_new:d_2|Q                   ; debounce:db_1|dff_new:d_1|Q                   ; r                                             ; r           ; 0.000        ; 0.000      ; 1.863      ;
++--------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'CLK'                                                                                                                                                                              ;
++--------+----------------------------------------+----------------------------------------+----------------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                              ; To Node                                ; Launch Clock                           ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------+----------------------------------------+----------------------------------------+-------------+--------------+------------+------------+
+; -4.151 ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; CLK         ; 0.000        ; 5.690      ; 2.136      ;
+; -3.651 ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; CLK         ; -0.500       ; 5.690      ; 2.136      ;
++--------+----------------------------------------+----------------------------------------+----------------------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q'                                                                                                                                                                                          ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; Slack ; From Node                                     ; To Node                                       ; Launch Clock                                  ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; 2.145 ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; 0.000        ; 0.000      ; 2.366      ;
+; 3.023 ; r                                             ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; 0.000        ; 1.787      ; 5.031      ;
+; 3.523 ; r                                             ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; -0.500       ; 1.787      ; 5.031      ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q'                                                                                                                                                                                          ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; Slack ; From Node                                     ; To Node                                       ; Launch Clock                                  ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; 2.145 ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; 0.000        ; 0.000      ; 2.366      ;
+; 2.702 ; r                                             ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; 0.000        ; 1.787      ; 4.710      ;
+; 3.202 ; r                                             ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; -0.500       ; 1.787      ; 4.710      ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'divider:d_1|counter4:c_1|dff_new:d_1|Q'                                                                                                                                                                     ;
++-------+----------------------------------------+----------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; Slack ; From Node                              ; To Node                                ; Launch Clock                           ; Latch Clock                            ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------+----------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; 2.145 ; divider:d_1|counter4:c_1|dff_new:d_2|Q ; divider:d_1|counter4:c_1|dff_new:d_2|Q ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; 0.000        ; 0.000      ; 2.366      ;
+; 3.012 ; r                                      ; divider:d_1|counter4:c_1|dff_new:d_2|Q ; r                                      ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; 0.000        ; 1.787      ; 5.020      ;
+; 3.512 ; r                                      ; divider:d_1|counter4:c_1|dff_new:d_2|Q ; r                                      ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; -0.500       ; 1.787      ; 5.020      ;
++-------+----------------------------------------+----------------------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q'                                                                                                                                                                                          ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; Slack ; From Node                                     ; To Node                                       ; Launch Clock                                  ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; 2.392 ; r                                             ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; 0.000        ; 1.785      ; 4.398      ;
+; 2.502 ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; 0.000        ; 0.000      ; 2.723      ;
+; 2.892 ; r                                             ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; -0.500       ; 1.785      ; 4.398      ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q'                                                                                                                                                                                          ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; Slack ; From Node                                     ; To Node                                       ; Launch Clock                                  ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; 2.502 ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; 0.000        ; 0.000      ; 2.723      ;
+; 2.634 ; r                                             ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; 0.000        ; 1.786      ; 4.641      ;
+; 3.134 ; r                                             ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; -0.500       ; 1.786      ; 4.641      ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q'                                                                                                                                                                                          ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; Slack ; From Node                                     ; To Node                                       ; Launch Clock                                  ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; 2.502 ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; 0.000        ; 0.000      ; 2.723      ;
+; 2.611 ; r                                             ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; 0.000        ; 1.786      ; 4.618      ;
+; 3.111 ; r                                             ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; -0.500       ; 1.786      ; 4.618      ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q'                                                                                                                                                                                          ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; Slack ; From Node                                     ; To Node                                       ; Launch Clock                                  ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; 2.740 ; r                                             ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; 0.000        ; 1.787      ; 4.748      ;
+; 2.910 ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; 0.000        ; 0.000      ; 3.131      ;
+; 3.240 ; r                                             ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; -0.500       ; 1.787      ; 4.748      ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q'                                                                                                                                                                                          ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; Slack ; From Node                                     ; To Node                                       ; Launch Clock                                  ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; 2.907 ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; 0.000        ; 0.000      ; 3.128      ;
+; 3.082 ; r                                             ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; 0.000        ; 1.785      ; 5.088      ;
+; 3.582 ; r                                             ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; -0.500       ; 1.785      ; 5.088      ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q'                                                                                                                                                                                          ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; Slack ; From Node                                     ; To Node                                       ; Launch Clock                                  ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; 2.910 ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; 0.000        ; 0.000      ; 3.131      ;
+; 3.088 ; r                                             ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; 0.000        ; 1.787      ; 5.096      ;
+; 3.588 ; r                                             ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; -0.500       ; 1.787      ; 5.096      ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q'                                                                                                                                                                                          ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; Slack ; From Node                                     ; To Node                                       ; Launch Clock                                  ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+; 2.910 ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_2|Q ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; 0.000        ; 0.000      ; 3.131      ;
+; 3.055 ; r                                             ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; 0.000        ; 1.784      ; 5.060      ;
+; 3.555 ; r                                             ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_2|Q ; r                                             ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; -0.500       ; 1.784      ; 5.060      ;
++-------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+-----------------------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q'                                                                                                                  ;
++--------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                       ; Launch Clock ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; -6.375 ; r         ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; 0.500        ; 1.784      ; 8.326      ;
+; -5.875 ; r         ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; 1.000        ; 1.784      ; 8.326      ;
++--------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q'                                                                                                                  ;
++--------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                       ; Launch Clock ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; -6.374 ; r         ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; 0.500        ; 1.785      ; 8.326      ;
+; -5.874 ; r         ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; 1.000        ; 1.785      ; 8.326      ;
++--------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q'                                                                                                                  ;
++--------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                       ; Launch Clock ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; -6.374 ; r         ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; 0.500        ; 1.785      ; 8.326      ;
+; -5.874 ; r         ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; 1.000        ; 1.785      ; 8.326      ;
++--------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q'                                                                                                                  ;
++--------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                       ; Launch Clock ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; -6.373 ; r         ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; 0.500        ; 1.786      ; 8.326      ;
+; -5.873 ; r         ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; 1.000        ; 1.786      ; 8.326      ;
++--------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q'                                                                                                                  ;
++--------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                       ; Launch Clock ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; -6.373 ; r         ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; 0.500        ; 1.786      ; 8.326      ;
+; -5.873 ; r         ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; 1.000        ; 1.786      ; 8.326      ;
++--------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q'                                                                                                                  ;
++--------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                       ; Launch Clock ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; -6.372 ; r         ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; 0.500        ; 1.787      ; 8.326      ;
+; -5.872 ; r         ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; 1.000        ; 1.787      ; 8.326      ;
++--------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q'                                                                                                                  ;
++--------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                       ; Launch Clock ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; -6.372 ; r         ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; 0.500        ; 1.787      ; 8.326      ;
+; -5.872 ; r         ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; 1.000        ; 1.787      ; 8.326      ;
++--------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q'                                                                                                                  ;
++--------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                       ; Launch Clock ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; -6.372 ; r         ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; 0.500        ; 1.787      ; 8.326      ;
+; -5.872 ; r         ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; 1.000        ; 1.787      ; 8.326      ;
++--------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q'                                                                                                                  ;
++--------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                       ; Launch Clock ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; -6.372 ; r         ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; 0.500        ; 1.787      ; 8.326      ;
+; -5.872 ; r         ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; 1.000        ; 1.787      ; 8.326      ;
++--------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'divider:d_1|counter4:c_1|dff_new:d_1|Q'                                                                                                           ;
++--------+-----------+----------------------------------------+--------------+----------------------------------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                ; Launch Clock ; Latch Clock                            ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+----------------------------------------+--------------+----------------------------------------+--------------+------------+------------+
+; -6.372 ; r         ; divider:d_1|counter4:c_1|dff_new:d_2|Q ; r            ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; 0.500        ; 1.787      ; 8.326      ;
+; -5.872 ; r         ; divider:d_1|counter4:c_1|dff_new:d_2|Q ; r            ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; 1.000        ; 1.787      ; 8.326      ;
++--------+-----------+----------------------------------------+--------------+----------------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'r'                                                                                                                            ;
++--------+-----------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.731 ; r         ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; r            ; r           ; 0.500        ; 5.428      ; 8.326      ;
+; -2.447 ; r         ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; r            ; r           ; 0.500        ; 5.712      ; 8.326      ;
+; -2.424 ; r         ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; r            ; r           ; 0.500        ; 5.735      ; 8.326      ;
+; -2.383 ; r         ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; r            ; r           ; 0.500        ; 5.776      ; 8.326      ;
+; -2.350 ; r         ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; r            ; r           ; 0.500        ; 5.809      ; 8.326      ;
+; -2.231 ; r         ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; r            ; r           ; 1.000        ; 5.428      ; 8.326      ;
+; -2.045 ; r         ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; r            ; r           ; 0.500        ; 6.114      ; 8.326      ;
+; -1.947 ; r         ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; r            ; r           ; 1.000        ; 5.712      ; 8.326      ;
+; -1.924 ; r         ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; r            ; r           ; 1.000        ; 5.735      ; 8.326      ;
+; -1.884 ; r         ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; r            ; r           ; 0.500        ; 6.275      ; 8.326      ;
+; -1.883 ; r         ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; r            ; r           ; 1.000        ; 5.776      ; 8.326      ;
+; -1.850 ; r         ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; r            ; r           ; 1.000        ; 5.809      ; 8.326      ;
+; -1.582 ; r         ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; r            ; r           ; 0.500        ; 6.577      ; 8.326      ;
+; -1.545 ; r         ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; r            ; r           ; 1.000        ; 6.114      ; 8.326      ;
+; -1.384 ; r         ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; r            ; r           ; 1.000        ; 6.275      ; 8.326      ;
+; -1.308 ; r         ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; r            ; r           ; 0.500        ; 6.851      ; 8.326      ;
+; -1.082 ; r         ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; r            ; r           ; 1.000        ; 6.577      ; 8.326      ;
+; -0.808 ; r         ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; r            ; r           ; 1.000        ; 6.851      ; 8.326      ;
++--------+-----------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'CLK'                                                                                                                   ;
++--------+-----------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.469 ; r         ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; r            ; CLK         ; 0.500        ; 5.690      ; 8.326      ;
+; -1.969 ; r         ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; r            ; CLK         ; 1.000        ; 5.690      ; 8.326      ;
++--------+-----------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'r'                                                                                                                            ;
++-------+-----------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.254 ; r         ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; r            ; r           ; 0.000        ; 6.851      ; 8.326      ;
+; 1.528 ; r         ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; r            ; r           ; 0.000        ; 6.577      ; 8.326      ;
+; 1.754 ; r         ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; r            ; r           ; -0.500       ; 6.851      ; 8.326      ;
+; 1.830 ; r         ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; r            ; r           ; 0.000        ; 6.275      ; 8.326      ;
+; 1.991 ; r         ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; r            ; r           ; 0.000        ; 6.114      ; 8.326      ;
+; 2.028 ; r         ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; r            ; r           ; -0.500       ; 6.577      ; 8.326      ;
+; 2.296 ; r         ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; r            ; r           ; 0.000        ; 5.809      ; 8.326      ;
+; 2.329 ; r         ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; r            ; r           ; 0.000        ; 5.776      ; 8.326      ;
+; 2.330 ; r         ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; r            ; r           ; -0.500       ; 6.275      ; 8.326      ;
+; 2.370 ; r         ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; r            ; r           ; 0.000        ; 5.735      ; 8.326      ;
+; 2.393 ; r         ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; r            ; r           ; 0.000        ; 5.712      ; 8.326      ;
+; 2.491 ; r         ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; r            ; r           ; -0.500       ; 6.114      ; 8.326      ;
+; 2.677 ; r         ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; r            ; r           ; 0.000        ; 5.428      ; 8.326      ;
+; 2.796 ; r         ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; r            ; r           ; -0.500       ; 5.809      ; 8.326      ;
+; 2.829 ; r         ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; r            ; r           ; -0.500       ; 5.776      ; 8.326      ;
+; 2.870 ; r         ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; r            ; r           ; -0.500       ; 5.735      ; 8.326      ;
+; 2.893 ; r         ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; r            ; r           ; -0.500       ; 5.712      ; 8.326      ;
+; 3.177 ; r         ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; r            ; r           ; -0.500       ; 5.428      ; 8.326      ;
++-------+-----------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'CLK'                                                                                                                   ;
++-------+-----------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+; 2.415 ; r         ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; r            ; CLK         ; 0.000        ; 5.690      ; 8.326      ;
+; 2.915 ; r         ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; r            ; CLK         ; -0.500       ; 5.690      ; 8.326      ;
++-------+-----------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q'                                                                                                                  ;
++-------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                                       ; Launch Clock ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; 6.318 ; r         ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; 0.000        ; 1.787      ; 8.326      ;
+; 6.818 ; r         ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; -0.500       ; 1.787      ; 8.326      ;
++-------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q'                                                                                                                  ;
++-------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                                       ; Launch Clock ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; 6.318 ; r         ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; 0.000        ; 1.787      ; 8.326      ;
+; 6.818 ; r         ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; -0.500       ; 1.787      ; 8.326      ;
++-------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q'                                                                                                                  ;
++-------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                                       ; Launch Clock ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; 6.318 ; r         ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; 0.000        ; 1.787      ; 8.326      ;
+; 6.818 ; r         ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; -0.500       ; 1.787      ; 8.326      ;
++-------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q'                                                                                                                  ;
++-------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                                       ; Launch Clock ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; 6.318 ; r         ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; 0.000        ; 1.787      ; 8.326      ;
+; 6.818 ; r         ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; -0.500       ; 1.787      ; 8.326      ;
++-------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'divider:d_1|counter4:c_1|dff_new:d_1|Q'                                                                                                           ;
++-------+-----------+----------------------------------------+--------------+----------------------------------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                                ; Launch Clock ; Latch Clock                            ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+----------------------------------------+--------------+----------------------------------------+--------------+------------+------------+
+; 6.318 ; r         ; divider:d_1|counter4:c_1|dff_new:d_2|Q ; r            ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; 0.000        ; 1.787      ; 8.326      ;
+; 6.818 ; r         ; divider:d_1|counter4:c_1|dff_new:d_2|Q ; r            ; divider:d_1|counter4:c_1|dff_new:d_1|Q ; -0.500       ; 1.787      ; 8.326      ;
++-------+-----------+----------------------------------------+--------------+----------------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q'                                                                                                                  ;
++-------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                                       ; Launch Clock ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; 6.319 ; r         ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; 0.000        ; 1.786      ; 8.326      ;
+; 6.819 ; r         ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; -0.500       ; 1.786      ; 8.326      ;
++-------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q'                                                                                                                  ;
++-------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                                       ; Launch Clock ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; 6.319 ; r         ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; 0.000        ; 1.786      ; 8.326      ;
+; 6.819 ; r         ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; -0.500       ; 1.786      ; 8.326      ;
++-------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q'                                                                                                                  ;
++-------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                                       ; Launch Clock ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; 6.320 ; r         ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; 0.000        ; 1.785      ; 8.326      ;
+; 6.820 ; r         ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; -0.500       ; 1.785      ; 8.326      ;
++-------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q'                                                                                                                  ;
++-------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                                       ; Launch Clock ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; 6.320 ; r         ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; 0.000        ; 1.785      ; 8.326      ;
+; 6.820 ; r         ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; -0.500       ; 1.785      ; 8.326      ;
++-------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q'                                                                                                                  ;
++-------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                                       ; Launch Clock ; Latch Clock                                   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+; 6.321 ; r         ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; 0.000        ; 1.784      ; 8.326      ;
+; 6.821 ; r         ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_2|Q ; r            ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; -0.500       ; 1.784      ; 8.326      ;
++-------+-----------+-----------------------------------------------+--------------+-----------------------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                                           ;
++-----------------------------------------------+-----------------------------------------------+----------+----------+----------+----------+
+; From Clock                                    ; To Clock                                      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------------------------------------+-----------------------------------------------+----------+----------+----------+----------+
+; divider:d_1|counter4:c_1|dff_new:d_1|Q        ; CLK                                           ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; 1        ; 0        ; 0        ; 0        ;
+; r                                             ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; 1        ; 0        ; 0        ; 0        ;
+; r                                             ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; 1        ; 0        ; 0        ; 0        ;
+; r                                             ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; 1        ; 0        ; 0        ; 0        ;
+; r                                             ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; 1        ; 0        ; 0        ; 0        ;
+; r                                             ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; 1        ; 0        ; 0        ; 0        ;
+; r                                             ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; 1        ; 0        ; 0        ; 0        ;
+; r                                             ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; 1        ; 0        ; 0        ; 0        ;
+; r                                             ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; 1        ; 0        ; 0        ; 0        ;
+; r                                             ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:c_1|dff_new:d_1|Q        ; divider:d_1|counter4:c_1|dff_new:d_1|Q        ; 1        ; 0        ; 0        ; 0        ;
+; r                                             ; divider:d_1|counter4:c_1|dff_new:d_1|Q        ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; r                                             ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; r                                             ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; r                                             ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; r                                             ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; r                                             ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; r                                             ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; r                                             ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; r                                             ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; r                                             ; 1        ; 1        ; 0        ; 0        ;
+; r                                             ; r                                             ; 4        ; 2        ; 0        ; 0        ;
++-----------------------------------------------+-----------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                                            ;
++-----------------------------------------------+-----------------------------------------------+----------+----------+----------+----------+
+; From Clock                                    ; To Clock                                      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------------------------------------+-----------------------------------------------+----------+----------+----------+----------+
+; divider:d_1|counter4:c_1|dff_new:d_1|Q        ; CLK                                           ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; 1        ; 0        ; 0        ; 0        ;
+; r                                             ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; 1        ; 0        ; 0        ; 0        ;
+; r                                             ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; 1        ; 0        ; 0        ; 0        ;
+; r                                             ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; 1        ; 0        ; 0        ; 0        ;
+; r                                             ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; 1        ; 0        ; 0        ; 0        ;
+; r                                             ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; 1        ; 0        ; 0        ; 0        ;
+; r                                             ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; 1        ; 0        ; 0        ; 0        ;
+; r                                             ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; 1        ; 0        ; 0        ; 0        ;
+; r                                             ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; 1        ; 0        ; 0        ; 0        ;
+; r                                             ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:c_1|dff_new:d_1|Q        ; divider:d_1|counter4:c_1|dff_new:d_1|Q        ; 1        ; 0        ; 0        ; 0        ;
+; r                                             ; divider:d_1|counter4:c_1|dff_new:d_1|Q        ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; r                                             ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; r                                             ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; r                                             ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; r                                             ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; r                                             ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; r                                             ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; r                                             ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; r                                             ; 1        ; 1        ; 0        ; 0        ;
+; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; r                                             ; 1        ; 1        ; 0        ; 0        ;
+; r                                             ; r                                             ; 4        ; 2        ; 0        ; 0        ;
++-----------------------------------------------+-----------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++--------------------------------------------------------------------------------------------------------+
+; Recovery Transfers                                                                                     ;
++------------+-----------------------------------------------+----------+----------+----------+----------+
+; From Clock ; To Clock                                      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+-----------------------------------------------+----------+----------+----------+----------+
+; r          ; CLK                                           ; 1        ; 1        ; 0        ; 0        ;
+; r          ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; r          ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; r          ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; r          ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; r          ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; r          ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; r          ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; r          ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; r          ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; r          ; divider:d_1|counter4:c_1|dff_new:d_1|Q        ; 1        ; 1        ; 0        ; 0        ;
+; r          ; r                                             ; 9        ; 9        ; 0        ; 0        ;
++------------+-----------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++--------------------------------------------------------------------------------------------------------+
+; Removal Transfers                                                                                      ;
++------------+-----------------------------------------------+----------+----------+----------+----------+
+; From Clock ; To Clock                                      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+-----------------------------------------------+----------+----------+----------+----------+
+; r          ; CLK                                           ; 1        ; 1        ; 0        ; 0        ;
+; r          ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; r          ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; r          ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; r          ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; r          ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; r          ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; r          ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; r          ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; r          ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; 1        ; 1        ; 0        ; 0        ;
+; r          ; divider:d_1|counter4:c_1|dff_new:d_1|Q        ; 1        ; 1        ; 0        ; 0        ;
+; r          ; r                                             ; 9        ; 9        ; 0        ; 0        ;
++------------+-----------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 4     ; 4    ;
+; Unconstrained Output Ports      ; 1     ; 1    ;
+; Unconstrained Output Port Paths ; 4     ; 4    ;
++---------------------------------+-------+------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Clock Status Summary                                                                                               ;
++-----------------------------------------------+-----------------------------------------------+------+-------------+
+; Target                                        ; Clock                                         ; Type ; Status      ;
++-----------------------------------------------+-----------------------------------------------+------+-------------+
+; CLK                                           ; CLK                                           ; Base ; Constrained ;
+; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q ; Base ; Constrained ;
+; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q ; Base ; Constrained ;
+; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q ; Base ; Constrained ;
+; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q ; Base ; Constrained ;
+; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q ; Base ; Constrained ;
+; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q ; Base ; Constrained ;
+; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q ; Base ; Constrained ;
+; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q ; Base ; Constrained ;
+; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q ; Base ; Constrained ;
+; divider:d_1|counter4:c_1|dff_new:d_1|Q        ; divider:d_1|counter4:c_1|dff_new:d_1|Q        ; Base ; Constrained ;
+; r                                             ; r                                             ; Base ; Constrained ;
++-----------------------------------------------+-----------------------------------------------+------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                                                          ;
++------------+-----------------------------------------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                                                               ;
++------------+-----------------------------------------------------------------------------------------------------------------------+
+; r          ; No input delay, min/max delays, false-path exceptions, or max skew assignments found. This port has clock assignment. ;
+; x          ; No input delay, min/max delays, false-path exceptions, or max skew assignments found                                  ;
++------------+-----------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; o           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                                                          ;
++------------+-----------------------------------------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                                                               ;
++------------+-----------------------------------------------------------------------------------------------------------------------+
+; r          ; No input delay, min/max delays, false-path exceptions, or max skew assignments found. This port has clock assignment. ;
+; x          ; No input delay, min/max delays, false-path exceptions, or max skew assignments found                                  ;
++------------+-----------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; o           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime TimeQuest Timing Analyzer
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+    Info: Processing started: Sat Apr 21 10:30:31 2018
+Info: Command: quartus_sta debounce -c debounce
+Info: qsta_default_script.tcl version: #1
+Info (293032): Detected changes in source files.
+    Info (293027): Source file: /home/ritesh/Desktop/digitalLab/debounce/divider.vhd has changed.
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'debounce.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name r r
+    Info (332105): create_clock -period 1.000 -name divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q
+    Info (332105): create_clock -period 1.000 -name divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q
+    Info (332105): create_clock -period 1.000 -name divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q
+    Info (332105): create_clock -period 1.000 -name divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q
+    Info (332105): create_clock -period 1.000 -name divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q
+    Info (332105): create_clock -period 1.000 -name divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q
+    Info (332105): create_clock -period 1.000 -name divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q
+    Info (332105): create_clock -period 1.000 -name divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q
+    Info (332105): create_clock -period 1.000 -name divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q
+    Info (332105): create_clock -period 1.000 -name divider:d_1|counter4:c_1|dff_new:d_1|Q divider:d_1|counter4:c_1|dff_new:d_1|Q
+    Info (332105): create_clock -period 1.000 -name CLK CLK
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -3.142
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.142              -3.142 divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q 
+    Info (332119):    -3.136              -3.136 divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q 
+    Info (332119):    -3.109              -3.109 divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q 
+    Info (332119):    -3.077              -3.077 divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q 
+    Info (332119):    -3.066              -3.066 divider:d_1|counter4:c_1|dff_new:d_1|Q 
+    Info (332119):    -2.794              -2.794 divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q 
+    Info (332119):    -2.756              -2.756 divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q 
+    Info (332119):    -2.688              -2.688 divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q 
+    Info (332119):    -2.665              -2.665 divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q 
+    Info (332119):    -2.446              -2.446 divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q 
+    Info (332119):    -1.196              -1.970 r 
+    Info (332119):     4.097               0.000 CLK 
+Info (332146): Worst-case hold slack is -5.311
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -5.311             -40.938 r 
+    Info (332119):    -4.151              -4.151 CLK 
+    Info (332119):     2.145               0.000 divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q 
+    Info (332119):     2.145               0.000 divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q 
+    Info (332119):     2.145               0.000 divider:d_1|counter4:c_1|dff_new:d_1|Q 
+    Info (332119):     2.392               0.000 divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q 
+    Info (332119):     2.502               0.000 divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q 
+    Info (332119):     2.502               0.000 divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q 
+    Info (332119):     2.740               0.000 divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q 
+    Info (332119):     2.907               0.000 divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q 
+    Info (332119):     2.910               0.000 divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q 
+    Info (332119):     2.910               0.000 divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q 
+Info (332146): Worst-case recovery slack is -6.375
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -6.375              -6.375 divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q 
+    Info (332119):    -6.374              -6.374 divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q 
+    Info (332119):    -6.374              -6.374 divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q 
+    Info (332119):    -6.373              -6.373 divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q 
+    Info (332119):    -6.373              -6.373 divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q 
+    Info (332119):    -6.372              -6.372 divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q 
+    Info (332119):    -6.372              -6.372 divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q 
+    Info (332119):    -6.372              -6.372 divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q 
+    Info (332119):    -6.372              -6.372 divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q 
+    Info (332119):    -6.372              -6.372 divider:d_1|counter4:c_1|dff_new:d_1|Q 
+    Info (332119):    -2.731             -19.154 r 
+    Info (332119):    -2.469              -2.469 CLK 
+Info (332146): Worst-case removal slack is 1.254
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.254               0.000 r 
+    Info (332119):     2.415               0.000 CLK 
+    Info (332119):     6.318               0.000 divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q 
+    Info (332119):     6.318               0.000 divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q 
+    Info (332119):     6.318               0.000 divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q 
+    Info (332119):     6.318               0.000 divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q 
+    Info (332119):     6.318               0.000 divider:d_1|counter4:c_1|dff_new:d_1|Q 
+    Info (332119):     6.319               0.000 divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q 
+    Info (332119):     6.319               0.000 divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q 
+    Info (332119):     6.320               0.000 divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q 
+    Info (332119):     6.320               0.000 divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q 
+    Info (332119):     6.321               0.000 divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q 
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 CLK 
+    Info (332119):    -2.289              -2.289 r 
+    Info (332119):     0.234               0.000 divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q 
+    Info (332119):     0.234               0.000 divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q 
+    Info (332119):     0.234               0.000 divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q 
+    Info (332119):     0.234               0.000 divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q 
+    Info (332119):     0.234               0.000 divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q 
+    Info (332119):     0.234               0.000 divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q 
+    Info (332119):     0.234               0.000 divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q 
+    Info (332119):     0.234               0.000 divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q 
+    Info (332119):     0.234               0.000 divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q 
+    Info (332119):     0.234               0.000 divider:d_1|counter4:c_1|dff_new:d_1|Q 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 1016 megabytes
+    Info: Processing ended: Sat Apr 21 10:30:32 2018
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
