@@ -1,0 +1,7 @@
+# I learnt about arparse for python from here
+https://docs.python.org/2/howto/argparse.html
+
+# samples generated using the function here
+https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.random.binomial.html
+
+# root_finding here (scipy.optimize.root_scalar)
