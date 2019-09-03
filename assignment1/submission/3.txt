@@ -1,0 +1,3 @@
+../instances/i-3.txt, kl-ucb, 20, 0.1, 204800, 138.0
+../instances/i-3.txt, kl-ucb, 21, 0.1, 204800, 121.0
+../instances/i-3.txt, kl-ucb, 22, 0.1, 204800, 293.0
