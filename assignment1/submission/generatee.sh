@@ -9,11 +9,11 @@ eps='0.002 0.02 0.2'
 hz='50 20 800 3200 12800 51200 204800'
 rs='20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49'
 counter=0
-for name in names
+for name in $names
 do
     for al in 'kl-ucb'
     do
-        for h in hz
+        for h in $hz
         do
             for r in {20..24}
             do
