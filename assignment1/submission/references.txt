@@ -5,3 +5,15 @@ https://docs.python.org/2/howto/argparse.html
 https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.random.binomial.html
 
 # root_finding here (scipy.optimize.root_scalar)
+https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.root_scalar.html
+
+# for bisect
+https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.bisect.html
+
+# all other functions from numpy library
+
+# for loading the txt file into a np array directly np.loadtxt
+https://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html
+
+# used pandas for plotting
+https://pandas.pydata.org/

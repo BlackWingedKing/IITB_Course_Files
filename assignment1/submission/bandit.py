@@ -9,14 +9,22 @@ warnings.filterwarnings("ignore")
 
 # define some global variables
 kl_p = 0.5
-kl_eps = 1e-16 # some small value
+kl_eps = 1e-2 # some small value
 kl_B = 1.0
 
 def kl_ce(x):
     global kl_B, kl_p
-    f1 = -kl_B + kl_p*np.log(kl_p + float((kl_p == 0))) + (1.0-kl_p)*np.log(1.0-kl_p + float((kl_p == 1)))
-    f2 = -kl_p*np.log(x) - (1.0-kl_p)*np.log(1.0-x)
-    return f1 + f2
+    if(x == kl_p):
+        return -kl_B
+    else:
+        f1 = -kl_B + kl_p*np.log(kl_p + float((kl_p == 0))) + (1.0-kl_p)*np.log(1.0-kl_p + float((kl_p == 1.0)))
+        if(x == 0):
+            f2 = -kl_p*np.log(kl_eps)
+        elif(x == 1):
+            f2 = (1.0-kl_p)*np.log(kl_eps)
+        else:
+            f2 = -kl_p*np.log(x) - (1.0-kl_p)*np.log(1.0-x)
+        return f1 + f2
 
 def find_kl_ucb(p,B):
     # p has individual prob vectors and B is the addition Bound
@@ -44,7 +52,9 @@ def find_kl_ucb(p,B):
                 elif(t2<0.0):
                     ret[i] = 1.0
             else:
+                # print ('in forbidden else')
                 ret[i] = kl_p
+
     return ret
 
 def round_robin(a, eps, hz):
