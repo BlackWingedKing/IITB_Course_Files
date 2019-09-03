@@ -1,3 +1,17 @@
 ../instances/i-3.txt, kl-ucb, 20, 0.1, 204800, 138.0
 ../instances/i-3.txt, kl-ucb, 21, 0.1, 204800, 121.0
 ../instances/i-3.txt, kl-ucb, 22, 0.1, 204800, 293.0
+../instances/i-3.txt, kl-ucb, 23, 0.1, 204800, 268.0
+../instances/i-3.txt, kl-ucb, 24, 0.1, 204800, 80.0
+../instances/i-3.txt, kl-ucb, 25, 0.1, 204800, 233.0
+../instances/i-3.txt, kl-ucb, 26, 0.1, 204800, 277.0
+../instances/i-3.txt, kl-ucb, 27, 0.1, 204800, 275.0
+../instances/i-3.txt, kl-ucb, 28, 0.1, 204800, 169.0
+../instances/i-3.txt, kl-ucb, 29, 0.1, 204800, 337.0
+../instances/i-3.txt, kl-ucb, 30, 0.1, 204800, 93.0
+../instances/i-3.txt, kl-ucb, 31, 0.1, 204800, 125.0
+../instances/i-3.txt, kl-ucb, 32, 0.1, 204800, 181.0
+../instances/i-3.txt, kl-ucb, 33, 0.1, 204800, 160.0
+../instances/i-3.txt, kl-ucb, 34, 0.1, 204800, 255.0
+../instances/i-3.txt, kl-ucb, 35, 0.1, 204800, 187.0
+../instances/i-3.txt, kl-ucb, 36, 0.1, 204800, 171.0
