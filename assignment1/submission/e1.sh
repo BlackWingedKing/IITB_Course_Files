@@ -14,7 +14,7 @@ for name in "../instances/i-1.txt" "../instances/i-2.txt" "../instances/i-3.txt"
 do
     for al in 'kl-ucb'
     do
-        for h in hz
+        for h in $hz
         do
             for r in {45..49}
             do
