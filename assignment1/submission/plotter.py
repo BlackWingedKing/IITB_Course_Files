@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('1.txt',sep=",",header=None)
+df = pd.read_csv('outputData.txt',sep=",",header=None)
 df.columns = ['ins','algo','rs','eps','hz','reg']
 # now we need to plot for each algortihm the multiple plots 
 df1 = df[df['ins'] == '../instances/i-1.txt']
