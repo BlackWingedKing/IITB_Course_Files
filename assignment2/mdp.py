@@ -25,9 +25,9 @@ def lp_solve_mdp(R,T,gamma,mdp_type,ns,na):
                 rhs+=T[s][a][s1]*(R[s][a][s1] + gamma*dvariables[s1])
             prob+= (dvariables[s] >= rhs)
 
-    if(mdp_type == 'episodic'):
-        # just add an extra condition if its episodic
-        prob+=(dvariables[ns-1] == 0.0)
+    # if(mdp_type == 'episodic'):
+    #     # just add an extra condition if its episodic
+    #     prob+=(dvariables[ns-1] == 0.0)
 
     # now since the definition is completed solve it
     optimization_result = prob.solve()
@@ -46,32 +46,49 @@ def lp_solve_mdp(R,T,gamma,mdp_type,ns,na):
         pi_list.append(np.argmax(Q_array))
     
     for i in range(0,ns):
-        print(dvariables[i].varValue,'\t',pi_list[i])
+        print("{0:.6f}".format(dvariables[i].varValue),'\t',pi_list[i])
 
 def hpi_solve_mdp(R,T,gamma,mdp_type,ns,na):
     # howards policy iteration
     # initialise the policy
-    policy_array = np.random.shuffle(np.arange(0,ns))
+    old_pi = np.zeros(ns,dtype=int)
     # compute the v value
-    for s in range(0,ns):
-        Q_list = []
-    for a in range(0,na):
-        Qval = 0.0
-        for s1 in range(0,ns):
-            Qval+=T[s][a][s1]*(R[s][a][s1]+gamma*dvariables[s1].varValue)
-        Q_list.append(Qval)
-    Q_array = np.array(Q_list)
-    pi_list.append(np.argmax(Q_array))
-
-    for s in range(0,ns):
-        Q_list = []
-        for a in range(0,na):
-            Qval = 0.0
+    # as we have fixed the policy 
+    # computing Tprob P    
+    check_con = True
+    while(check_con):
+        P = np.zeros((ns,ns))
+        for s in range(0,ns):
             for s1 in range(0,ns):
-                Qval+=T[s][a][s1]*(R[s][a][s1]+gamma*dvariables[s1].varValue)
-            Q_list.append(Qval)
-        Q_array = np.array(Q_list)
-        pi_list.append(np.argmax(Q_array))
+                P[s,s1] = T[s][old_pi[s]][s1]
+        r = np.zeros(ns)
+        for s in range(0,ns):
+            rval = 0.0
+            for s1 in range(0,ns):
+                rval+= T[s][old_pi[s]][s1]*R[s][old_pi[s]][s1]
+            r[s] = rval
+        I = np.eye(ns)
+        V = np.matmul(np.linalg.pinv(I-gamma*P),r.reshape(-1,1))
+
+        # find new policy array from this
+        pi_list = []
+        for s in range(0,ns):
+            Q_list = []
+            for a in range(0,na):
+                Qval = 0.0
+                for s1 in range(0,ns):
+                    Qval+=T[s][a][s1]*(R[s][a][s1]+gamma*V[s1])
+                Q_list.append(Qval)
+            Q_array = np.array(Q_list)
+            pi_list.append(np.argmax(Q_array))
+
+        new_pi = np.array(pi_list)
+        # check if the pi and new pi are dif
+        check_con = not np.array_equal(old_pi,new_pi)
+        old_pi = new_pi
+    # now we got the policy new_pi and value V
+    for i in range(0,ns):
+        print("{0:.6f}".format(V[i][0]),'\t',new_pi[i])
 
 def main():
     # initialise the argparser
