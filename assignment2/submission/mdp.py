@@ -25,13 +25,13 @@ def lp_solve_mdp(R,T,gamma,mdp_type,ns,na):
                 rhs+=T[s][a][s1]*(R[s][a][s1] + gamma*dvariables[s1])
             prob+= (dvariables[s] >= rhs)
 
-    # if(mdp_type == 'episodic'):
-    #     # just add an extra condition if its episodic
-    #     prob+=(dvariables[ns-1] == 0.0)
+    if(mdp_type == 'episodic'):
+        # just add an extra condition if its episodic
+        prob+=(dvariables[ns-1] == 0.0)
 
     # now since the definition is completed solve it
     optimization_result = prob.solve()
-    assert optimization_result == pulp.LpStatusOptimal
+    # assert optimization_result == pulp.LpStatusOptimal
 
     # now we got the v value next define q and then solve for pi
     pi_list = []
@@ -49,9 +49,9 @@ def lp_solve_mdp(R,T,gamma,mdp_type,ns,na):
         print("{0:.6f}".format(dvariables[i].varValue),'\t',pi_list[i])
 
 def hpi_solve_mdp(R,T,gamma,mdp_type,ns,na):
-    # howards policy iteration
-    # initialise the policy
     old_pi = np.zeros(ns,dtype=int)
+    # howards policy iteration for non-episodic
+    # initialise the policy
     # compute the v value
     # as we have fixed the policy 
     # computing Tprob P    
@@ -67,8 +67,17 @@ def hpi_solve_mdp(R,T,gamma,mdp_type,ns,na):
             for s1 in range(0,ns):
                 rval+= T[s][old_pi[s]][s1]*R[s][old_pi[s]][s1]
             r[s] = rval
-        I = np.eye(ns)
-        V = np.matmul(np.linalg.pinv(I-gamma*P),r.reshape(-1,1))
+
+        if(mdp_type == 'episodic'):
+            P = P[:-1,:-1]
+            r = r[:-1]
+            I = np.eye(ns-1)
+            V = np.matmul(np.linalg.pinv(I-gamma*P),r.reshape(-1,1))
+            V = np.append(V,[0.0])
+            V = V.reshape(-1,1)
+        else:
+            I = np.eye(ns)
+            V = np.matmul(np.linalg.pinv(I-gamma*P),r.reshape(-1,1))
 
         # find new policy array from this
         pi_list = []
@@ -85,7 +94,8 @@ def hpi_solve_mdp(R,T,gamma,mdp_type,ns,na):
         new_pi = np.array(pi_list)
         # check if the pi and new pi are dif
         check_con = not np.array_equal(old_pi,new_pi)
-        old_pi = new_pi
+        old_pi = new_pi     
+
     # now we got the policy new_pi and value V
     for i in range(0,ns):
         print("{0:.6f}".format(V[i][0]),'\t',new_pi[i])
@@ -128,7 +138,7 @@ def main():
         T.append(t_list)
     
     gamma = float(f.readline())
-    mdp_type = str(f.readline())[:-1]
+    mdp_type = str(f.readline().strip())[:]
 
     if(al == 'lp'):
         lp_solve_mdp(R,T,gamma,mdp_type,ns,na)
