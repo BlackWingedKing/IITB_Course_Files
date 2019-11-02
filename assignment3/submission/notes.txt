@@ -1,0 +1,8 @@
+I have used python3 for my assignment
+First, I have read the the values of ns,na and gamma
+I have used a model based method
+I have estimated the values of R and T matrices (taking sample mean)
+which are of the size ns x na x ns
+Now, using the estimates, I have solved the mdp using lp 
+I have used my own lp code from assignment 2 and solved for 
+V(s) of each and every state.
