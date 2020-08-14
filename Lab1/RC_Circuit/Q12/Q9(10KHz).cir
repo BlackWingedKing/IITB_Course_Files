@@ -1,0 +1,21 @@
+Q9(10KHz)
+*Passive Components
+C 1 2 1u
+R 2 0 1k
+
+*Square wave of 100Hz and -5 to +5 range
+vin 1 0 pulse(0 10 0 0 0 50us 100us )
+
+*transient analysis
+.tran 0.0001ms 1ms
+
+*control and run
+.control
+run
+
+*plots
+plot v(2) v(1)
+*v(2) is output voltage and v(1) is input voltage
+
+.endc
+.end

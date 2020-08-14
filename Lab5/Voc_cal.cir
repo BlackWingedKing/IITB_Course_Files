@@ -1,0 +1,17 @@
+Lab5 light condition Q1
+.include Solar_Cell8.txt
+
+*define the Cell and others 
+xs 1 0 solar_cell
+
+
+*analysis
+.dc temp 35 75 5
+
+.control
+run
+
+*plot the required graphs
+plot v(1)
+.endc
+.end

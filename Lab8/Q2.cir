@@ -1,0 +1,20 @@
+Q2 Lab8
+.include ALD1107.txt
+
+m 2 1 0 0 ALD1107
+vgs 0 1 dc 3.5v
+vds 3 0 dc 1v
+
+*DC source of 0v to measure current
+vid 3 2 dc 0v
+
+*DC analysis 
+.dc vds -5 0 0.0001 vgs 1.5 3 0.5
+
+.control
+run
+
+plot i(vid)
+.endc
+.end
+

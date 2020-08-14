@@ -1,0 +1,14 @@
+Q2
+.include Diode_1N914.txt
+R 2 0 1K
+D 1 2 1N914
+C 2 0 10u
+*Sinusoidal signal of 10Vpp and 500Hz
+vin 1 0 sin(0 5 500)
+.tran 0.001ms 20ms
+.control
+run
+plot v(2) v(1) 
+plot i(vin)
+.endc
+.end

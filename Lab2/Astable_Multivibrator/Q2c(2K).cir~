@@ -1,0 +1,18 @@
+Q2c(2k) Astable Multivibrator
+.include ua741.txt
+x1 1 2 3 4 5 UA741
+R1 0 1 2k
+R2 1 5 2K
+R 2 5 1k
+C 0 2 1u
+Vss 3 0 dc 12
+Vdd 0 4 dc 12
+
+.tran 0.001ms 10ms
+
+.control
+run
+
+plot v(5) v(2)
+.endc
+.end

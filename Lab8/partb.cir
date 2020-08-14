@@ -1,0 +1,21 @@
+Partb Lab8
+.include ALD1107.txt
+m 2 1 0 4 ALD1107
+vgs 1 0 dc -3.5v
+vds 3 0 dc -200mv
+vbs 4 0 dc 0v
+
+*DC source of 0v to measure current
+vid 3 2 dc 0v
+
+*DC analysis 
+.dc vgs -5 0 0.0001 vbs 0 4 1
+
+.control
+run
+
+plot i(vid)
+*plot sqrt(-i(vid))
+.endc
+.end
+

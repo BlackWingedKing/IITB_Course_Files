@@ -1,0 +1,36 @@
+Q7
+.include bc547.txt
+*after solving Rc=3k,Re=2k,R1=27k given R2=10k
+*passive elements in the cicuit
+Re 0 1 2k
+R2 0 2 100k
+Rc 6 7 3k
+R1 2 7 27k
+
+Rl 9 0 1k
+
+Cc 5 9 5u
+Ce 1 0 5u
+Cb 2 8 5u
+
+*biasing voltage
+Vba 7 0 dc 10v
+
+*voltage sources for measuring currents
+vie 3 1 dc 0v
+vic 6 5 dc 0v
+vib 2 4 dc 0v
+
+*nodes of the transistor
+q1 5 4 3 bc547a
+*input voltage 
+vin 8 0 sin(0 10mv 5kHz)
+
+*transient analysis
+.tran 0.0001ms 2ms
+
+.control
+run
+plot v(8) v(9)
+.endc
+.end

@@ -1,0 +1,19 @@
+Q1 Given a rc circuit observe the input and output forms
+*Passive Components
+C 1 2 1u
+R 2 0 1k
+
+*Sinusoidal signal given frequency = 50hz
+vin 1 0 sin(0 5 50Hz)
+
+.tran 0.02ms 50ms
+
+.control
+run
+
+*plot the outputs
+plot v(2) v(1)
+*v(2) is output voltage and v(1) is input voltage
+
+.endc
+.end

@@ -1,0 +1,21 @@
+Q7(500Hz)
+*Passive Components
+C 1 2 1u
+R 2 0 1k
+
+*Square wave of 100Hz and -5 to +5 range
+vin 1 0 pulse(-5 5 0 0 0 1ms 2ms )
+
+*transient analysis
+.tran 0.001ms 50ms
+
+*control and run
+.control
+run
+
+*plots
+plot v(2) v(1)
+*v(2) is output voltage and v(1) is input voltage
+
+.endc
+.end
