@@ -1,0 +1,298 @@
+|debouncer
+CLK => divider:d_1.CLK
+r => divider:d_1.reset
+r => debounce:db_1.r
+x => debounce:db_1.x
+o <= debounce:db_1.o
+
+
+|debouncer|divider:d_1
+CLK => counter4:c_1.CLK
+reset => counter4:c_1.reset
+reset => counter4:g_1:0:c_2.reset
+reset => counter4:g_1:1:c_2.reset
+reset => counter4:g_1:2:c_2.reset
+reset => counter4:g_1:3:c_2.reset
+reset => counter4:g_1:4:c_2.reset
+reset => counter4:g_1:5:c_2.reset
+reset => counter4:g_1:6:c_2.reset
+reset => counter4:g_1:7:c_2.reset
+reset => counter4:g_1:8:c_2.reset
+cout <= counter4:g_1:8:c_2.cout
+
+
+|debouncer|divider:d_1|counter4:c_1
+reset => dff_new:d_1.reset
+reset => dff_new:d_2.reset
+reset => q11.IN1
+reset => q12.IN1
+reset => cout.IN1
+CLK => dff_new:d_1.CLK
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:c_1|dff_new:d_1
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:c_1|dff_new:d_2
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:\g_1:0:c_2
+reset => dff_new:d_1.reset
+reset => dff_new:d_2.reset
+reset => q11.IN1
+reset => q12.IN1
+reset => cout.IN1
+CLK => dff_new:d_1.CLK
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:\g_1:0:c_2|dff_new:d_2
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:\g_1:1:c_2
+reset => dff_new:d_1.reset
+reset => dff_new:d_2.reset
+reset => q11.IN1
+reset => q12.IN1
+reset => cout.IN1
+CLK => dff_new:d_1.CLK
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:\g_1:1:c_2|dff_new:d_2
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:\g_1:2:c_2
+reset => dff_new:d_1.reset
+reset => dff_new:d_2.reset
+reset => q11.IN1
+reset => q12.IN1
+reset => cout.IN1
+CLK => dff_new:d_1.CLK
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:\g_1:2:c_2|dff_new:d_2
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:\g_1:3:c_2
+reset => dff_new:d_1.reset
+reset => dff_new:d_2.reset
+reset => q11.IN1
+reset => q12.IN1
+reset => cout.IN1
+CLK => dff_new:d_1.CLK
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:\g_1:3:c_2|dff_new:d_2
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:\g_1:4:c_2
+reset => dff_new:d_1.reset
+reset => dff_new:d_2.reset
+reset => q11.IN1
+reset => q12.IN1
+reset => cout.IN1
+CLK => dff_new:d_1.CLK
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:\g_1:4:c_2|dff_new:d_2
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:\g_1:5:c_2
+reset => dff_new:d_1.reset
+reset => dff_new:d_2.reset
+reset => q11.IN1
+reset => q12.IN1
+reset => cout.IN1
+CLK => dff_new:d_1.CLK
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:\g_1:5:c_2|dff_new:d_2
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:\g_1:6:c_2
+reset => dff_new:d_1.reset
+reset => dff_new:d_2.reset
+reset => q11.IN1
+reset => q12.IN1
+reset => cout.IN1
+CLK => dff_new:d_1.CLK
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:\g_1:6:c_2|dff_new:d_2
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:\g_1:7:c_2
+reset => dff_new:d_1.reset
+reset => dff_new:d_2.reset
+reset => q11.IN1
+reset => q12.IN1
+reset => cout.IN1
+CLK => dff_new:d_1.CLK
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:\g_1:7:c_2|dff_new:d_2
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:\g_1:8:c_2
+reset => dff_new:d_1.reset
+reset => dff_new:d_2.reset
+reset => q11.IN1
+reset => q12.IN1
+reset => cout.IN1
+CLK => dff_new:d_1.CLK
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|divider:d_1|counter4:\g_1:8:c_2|dff_new:d_2
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|debounce:db_1
+CLK => dff_new:d_1.CLK
+CLK => dff_new:d_2.CLK
+r => nq[0].IN1
+r => nq[1].IN1
+r => o.IN1
+x => nq.IN1
+x => nq.IN1
+x => nq.IN1
+x => nq.IN1
+x => nq.IN1
+x => nq.IN1
+x => nq.IN1
+x => o.IN1
+x => o.IN1
+x => o.IN1
+x => nq.IN1
+x => o.IN1
+o <= o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|debounce:db_1|dff_new:d_1
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|debouncer|debounce:db_1|dff_new:d_2
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

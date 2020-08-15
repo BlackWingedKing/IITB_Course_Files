@@ -1,0 +1,166 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+ 
+entity randomfsm is
+    Port ( CLK,reset1,react1: in  STD_LOGIC;
+            led,gameover,finish,led2s:out  STD_LOGIC);
+end randomfsm;
+ 
+ 
+architecture Behavioral of randomfsm is
+--include 1scount and 2scount
+
+component counter1 is
+	Port ( CLK,reset : in  STD_LOGIC;
+           OUTPUT : out  STD_LOGIC);
+end component; 
+
+component counter2 is
+	Port ( CLK,reset : in  STD_LOGIC;
+           OUTPUT : out  STD_LOGIC);
+end component; 
+
+component random is
+    Port ( CLK,reset,x: in  STD_LOGIC;
+            o: out  STD_LOGIC);
+end component;
+
+type state_type is (sstart, swait1s, sled, swait2s, sgameover, sfinish);
+signal state, next_state : state_type;
+signal reset, react,ledtrig, onestrig, ldone, done1s, done2s, twostrig, c1out, c2out, c3out: STD_LOGIC;
+
+begin
+
+--sync proc for sampling at the rising edge
+SYNC_PROC : process (clk)
+begin
+	if rising_edge(clk) then
+		if (reset = '1') then
+			state <= sstart;
+		else
+			state <= next_state;
+		end if;
+	end if;
+end process;
+
+NEXT_STATE_DECODE : process (state, reset, done1s, ldone, react, done2s)
+begin
+	led <= '0';
+	ledtrig <= '0';
+	onestrig <= '0';
+	twostrig <= '0';
+	
+	case (state) is
+		--sstart
+		when sstart => 
+			led <= '0';
+			ledtrig <= '0';
+			onestrig <= '0';
+			twostrig <= '0';
+			
+			if(reset = '0') then
+				onestrig <= '1';
+				led <= '0';
+				ledtrig <= '0';
+				next_state <= swait1s;
+			end if;
+			
+			if(reset = '1') then
+				next_state <= sstart;
+			end if;
+		
+		--swait 1s
+		when swait1s =>
+			led <= '0';
+			ledtrig <= '0';
+			onestrig <= '1';
+			twostrig <= '0';
+			
+			if (done1s = '1') then
+				ledtrig <= '1';
+				next_state <= sled;
+			end if;
+			
+			if (done1s = '0') then
+				next_state <= swait1s;
+				led <= '0';
+				ledtrig <= '0';
+			end if;
+		
+		-- srandom turn on led	
+		when sled =>
+			led <= '0';
+			ledtrig <= '1';
+			onestrig <= '0';
+			twostrig <= '0';
+			
+			if (ldone = '1') then
+				led <= '1';
+				twostrig <= '1';
+				next_state <= swait2s;
+			end if;
+			
+			if (ldone = '0') then
+				led <= '0';
+				twostrig <= '0';
+				next_state <= sled;
+			end if;
+			
+			if(reset = '1') then
+				next_state <= sstart;
+			end if;
+		
+		-- wait for 2s till react	
+		when swait2s =>
+			led <= '1';
+			ledtrig <= '0';
+			onestrig <= '0';
+			twostrig <= '1';
+			
+			if (done2s = '1' and react = '0') then
+				gameover <= '1';
+				finish <= '0';
+				next_state <= sgameover;
+			end if;
+			
+			if (done2s = '0' and react = '1') then
+				finish <= '1';
+				gameover <= '0';
+				next_state <= sfinish;
+			end if;
+			
+			if (done2s = '0' and react = '0') then
+				finish <= '0';
+				gameover <= '0';
+				next_state <= swait2s;
+			end if;
+		
+		-- gameover state
+		when sgameover =>
+			led <= '0';
+			gameover <= '1';
+			finish <= '0';
+			next_state <= sgameover;
+		
+		-- finish state
+		when sfinish =>
+			led <= '0';
+			gameover <= '0';
+			finish <= '1';
+			next_state <= sfinish;	
+	end case;
+end process;
+reset <= not (reset1);
+react <= not (react1);
+onescount1 : counter1 port map (CLK => CLK,reset => not(onestrig) ,OUTPUT => c1out);
+ranfsm1 : random port map (CLK => CLK, reset => not(onestrig), x => c1out, o => done1s);
+
+freecount : counter1 port map (CLK => CLK,reset => '0',OUTPUT => c2out);
+ranfsm2 : random port map (CLK => CLK, reset => not(ledtrig), x => c2out, o => ldone);
+
+twoscount : counter2 port map (CLK => CLK,reset => not(twostrig) ,OUTPUT => c3out);
+ranfsm3 : random port map (CLK => CLK, reset => not(twostrig), x => c3out, o => done2s);
+
+led2s <= done2s;
+end Behavioral;

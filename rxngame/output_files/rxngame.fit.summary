@@ -1,0 +1,11 @@
+Fitter Status : Successful - Fri May  4 12:01:12 2018
+Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+Revision Name : rxngame
+Top-level Entity Name : final
+Family : MAX V
+Device : 5M1270ZT144C5
+Timing Models : Final
+Total logic elements : 497 / 1,270 ( 39 % )
+Total pins : 21 / 114 ( 18 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

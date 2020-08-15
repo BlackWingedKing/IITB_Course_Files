@@ -1,0 +1,245 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q'
+Slack : -3.142
+TNS   : -3.142
+
+Type  : Setup 'divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q'
+Slack : -3.136
+TNS   : -3.136
+
+Type  : Setup 'divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q'
+Slack : -3.109
+TNS   : -3.109
+
+Type  : Setup 'divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q'
+Slack : -3.077
+TNS   : -3.077
+
+Type  : Setup 'divider:d_1|counter4:c_1|dff_new:d_1|Q'
+Slack : -3.066
+TNS   : -3.066
+
+Type  : Setup 'divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q'
+Slack : -2.794
+TNS   : -2.794
+
+Type  : Setup 'divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q'
+Slack : -2.756
+TNS   : -2.756
+
+Type  : Setup 'divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q'
+Slack : -2.688
+TNS   : -2.688
+
+Type  : Setup 'divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q'
+Slack : -2.665
+TNS   : -2.665
+
+Type  : Setup 'divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q'
+Slack : -2.446
+TNS   : -2.446
+
+Type  : Setup 'r'
+Slack : -1.196
+TNS   : -1.970
+
+Type  : Setup 'CLK'
+Slack : 4.097
+TNS   : 0.000
+
+Type  : Hold 'r'
+Slack : -5.311
+TNS   : -40.938
+
+Type  : Hold 'CLK'
+Slack : -4.151
+TNS   : -4.151
+
+Type  : Hold 'divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q'
+Slack : 2.145
+TNS   : 0.000
+
+Type  : Hold 'divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q'
+Slack : 2.145
+TNS   : 0.000
+
+Type  : Hold 'divider:d_1|counter4:c_1|dff_new:d_1|Q'
+Slack : 2.145
+TNS   : 0.000
+
+Type  : Hold 'divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q'
+Slack : 2.392
+TNS   : 0.000
+
+Type  : Hold 'divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q'
+Slack : 2.502
+TNS   : 0.000
+
+Type  : Hold 'divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q'
+Slack : 2.502
+TNS   : 0.000
+
+Type  : Hold 'divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q'
+Slack : 2.740
+TNS   : 0.000
+
+Type  : Hold 'divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q'
+Slack : 2.907
+TNS   : 0.000
+
+Type  : Hold 'divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q'
+Slack : 2.910
+TNS   : 0.000
+
+Type  : Hold 'divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q'
+Slack : 2.910
+TNS   : 0.000
+
+Type  : Recovery 'divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q'
+Slack : -6.375
+TNS   : -6.375
+
+Type  : Recovery 'divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q'
+Slack : -6.374
+TNS   : -6.374
+
+Type  : Recovery 'divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q'
+Slack : -6.374
+TNS   : -6.374
+
+Type  : Recovery 'divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q'
+Slack : -6.373
+TNS   : -6.373
+
+Type  : Recovery 'divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q'
+Slack : -6.373
+TNS   : -6.373
+
+Type  : Recovery 'divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q'
+Slack : -6.372
+TNS   : -6.372
+
+Type  : Recovery 'divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q'
+Slack : -6.372
+TNS   : -6.372
+
+Type  : Recovery 'divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q'
+Slack : -6.372
+TNS   : -6.372
+
+Type  : Recovery 'divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q'
+Slack : -6.372
+TNS   : -6.372
+
+Type  : Recovery 'divider:d_1|counter4:c_1|dff_new:d_1|Q'
+Slack : -6.372
+TNS   : -6.372
+
+Type  : Recovery 'r'
+Slack : -2.731
+TNS   : -19.154
+
+Type  : Recovery 'CLK'
+Slack : -2.469
+TNS   : -2.469
+
+Type  : Removal 'r'
+Slack : 1.254
+TNS   : 0.000
+
+Type  : Removal 'CLK'
+Slack : 2.415
+TNS   : 0.000
+
+Type  : Removal 'divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q'
+Slack : 6.318
+TNS   : 0.000
+
+Type  : Removal 'divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q'
+Slack : 6.318
+TNS   : 0.000
+
+Type  : Removal 'divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q'
+Slack : 6.318
+TNS   : 0.000
+
+Type  : Removal 'divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q'
+Slack : 6.318
+TNS   : 0.000
+
+Type  : Removal 'divider:d_1|counter4:c_1|dff_new:d_1|Q'
+Slack : 6.318
+TNS   : 0.000
+
+Type  : Removal 'divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q'
+Slack : 6.319
+TNS   : 0.000
+
+Type  : Removal 'divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q'
+Slack : 6.319
+TNS   : 0.000
+
+Type  : Removal 'divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q'
+Slack : 6.320
+TNS   : 0.000
+
+Type  : Removal 'divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q'
+Slack : 6.320
+TNS   : 0.000
+
+Type  : Removal 'divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q'
+Slack : 6.321
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'CLK'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'r'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'divider:d_1|counter4:\g_1:0:c_2|dff_new:d_1|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'divider:d_1|counter4:\g_1:1:c_2|dff_new:d_1|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'divider:d_1|counter4:\g_1:2:c_2|dff_new:d_1|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'divider:d_1|counter4:\g_1:3:c_2|dff_new:d_1|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'divider:d_1|counter4:\g_1:4:c_2|dff_new:d_1|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'divider:d_1|counter4:\g_1:5:c_2|dff_new:d_1|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'divider:d_1|counter4:\g_1:6:c_2|dff_new:d_1|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'divider:d_1|counter4:\g_1:7:c_2|dff_new:d_1|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'divider:d_1|counter4:\g_1:8:c_2|dff_new:d_1|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'divider:d_1|counter4:c_1|dff_new:d_1|Q'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------

@@ -1,0 +1,50 @@
+
+State Machine - |final|lcd_controller:LCD1|state
+Name state.S11 state.S10 state.S9 state.S8 state.S7 state.S6 state.S5 state.S4 state.S3 state.S2 state.S1 state.S0 
+state.S0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.S1 0 0 0 0 0 0 0 0 0 0 1 1 
+state.S2 0 0 0 0 0 0 0 0 0 1 0 1 
+state.S3 0 0 0 0 0 0 0 0 1 0 0 1 
+state.S4 0 0 0 0 0 0 0 1 0 0 0 1 
+state.S5 0 0 0 0 0 0 1 0 0 0 0 1 
+state.S6 0 0 0 0 0 1 0 0 0 0 0 1 
+state.S7 0 0 0 0 1 0 0 0 0 0 0 1 
+state.S8 0 0 0 1 0 0 0 0 0 0 0 1 
+state.S9 0 0 1 0 0 0 0 0 0 0 0 1 
+state.S10 0 1 0 0 0 0 0 0 0 0 0 1 
+state.S11 1 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |final|randomfsm:r0|state
+Name state.sfinish state.scountadd state.sgameover state.swait1s2 state.swait2s state.sled state.swait1s state.sstart 
+state.sstart 0 0 0 0 0 0 0 0 
+state.swait1s 0 0 0 0 0 0 1 1 
+state.sled 0 0 0 0 0 1 0 1 
+state.swait2s 0 0 0 0 1 0 0 1 
+state.swait1s2 0 0 0 1 0 0 0 1 
+state.sgameover 0 0 1 0 0 0 0 1 
+state.scountadd 0 1 0 0 0 0 0 1 
+state.sfinish 1 0 0 0 0 0 0 1 
+
+State Machine - |final|randomfsm:r0|random:ranfsm4|state
+Name state.s0 state.s1 state.sstart 
+state.sstart 0 0 0 
+state.s1 0 1 1 
+state.s0 1 0 1 
+
+State Machine - |final|randomfsm:r0|random:ranfsm3|state
+Name state.s0 state.s1 state.sstart 
+state.sstart 0 0 0 
+state.s1 0 1 1 
+state.s0 1 0 1 
+
+State Machine - |final|randomfsm:r0|random:ranfsm2|state
+Name state.s0 state.s1 state.sstart 
+state.sstart 0 0 0 
+state.s1 0 1 1 
+state.s0 1 0 1 
+
+State Machine - |final|randomfsm:r0|random:ranfsm1|state
+Name state.s0 state.s1 state.sstart 
+state.sstart 0 0 0 
+state.s1 0 1 1 
+state.s0 1 0 1 

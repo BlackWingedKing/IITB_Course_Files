@@ -1,0 +1,809 @@
+TimeQuest Timing Analyzer report for ReactionTime
+Thu May  3 21:38:52 2018
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'lowCLK:cmp2|outclk'
+ 12. Setup: 'clock'
+ 13. Setup: 'lighter:cmp4|lightUp'
+ 14. Hold: 'lowCLK:cmp2|outclk'
+ 15. Hold: 'lighter:cmp4|lightUp'
+ 16. Hold: 'clock'
+ 17. Setup Transfers
+ 18. Hold Transfers
+ 19. Report TCCS
+ 20. Report RSKM
+ 21. Unconstrained Paths Summary
+ 22. Clock Status Summary
+ 23. Unconstrained Input Ports
+ 24. Unconstrained Output Ports
+ 25. Unconstrained Input Ports
+ 26. Unconstrained Output Ports
+ 27. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                           ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Timing Analyzer       ; TimeQuest                                           ;
+; Revision Name         ; ReactionTime                                        ;
+; Device Family         ; MAX V                                               ;
+; Device Name           ; 5M1270ZT144C5                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                     ;
++----------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------+
+; Clock Name           ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                  ;
++----------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------+
+; clock                ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock }                ;
+; lighter:cmp4|lightUp ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { lighter:cmp4|lightUp } ;
+; lowCLK:cmp2|outclk   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { lowCLK:cmp2|outclk }   ;
++----------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------+
+
+
++------------------------------------------------------------+
+; Fmax Summary                                               ;
++------------+-----------------+----------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name           ; Note ;
++------------+-----------------+----------------------+------+
+; 87.5 MHz   ; 87.5 MHz        ; lowCLK:cmp2|outclk   ;      ;
+; 132.54 MHz ; 132.54 MHz      ; clock                ;      ;
+; 269.61 MHz ; 269.61 MHz      ; lighter:cmp4|lightUp ;      ;
++------------+-----------------+----------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------------------+
+; Setup Summary                                  ;
++----------------------+---------+---------------+
+; Clock                ; Slack   ; End Point TNS ;
++----------------------+---------+---------------+
+; lowCLK:cmp2|outclk   ; -10.429 ; -373.879      ;
+; clock                ; -6.545  ; -164.264      ;
+; lighter:cmp4|lightUp ; -2.709  ; -10.257       ;
++----------------------+---------+---------------+
+
+
++----------------------------------------------+
+; Hold Summary                                 ;
++----------------------+-------+---------------+
+; Clock                ; Slack ; End Point TNS ;
++----------------------+-------+---------------+
+; lowCLK:cmp2|outclk   ; 1.376 ; 0.000         ;
+; lighter:cmp4|lightUp ; 1.716 ; 0.000         ;
+; clock                ; 2.151 ; 0.000         ;
++----------------------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++-----------------------------------------------+
+; Minimum Pulse Width Summary                   ;
++----------------------+--------+---------------+
+; Clock                ; Slack  ; End Point TNS ;
++----------------------+--------+---------------+
+; clock                ; -2.289 ; -2.289        ;
+; lighter:cmp4|lightUp ; 0.234  ; 0.000         ;
+; lowCLK:cmp2|outclk   ; 0.234  ; 0.000         ;
++----------------------+--------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'lowCLK:cmp2|outclk'                                                                                              ;
++---------+--------------+--------------+--------------------+--------------------+--------------+------------+------------+
+; Slack   ; From Node    ; To Node      ; Launch Clock       ; Latch Clock        ; Relationship ; Clock Skew ; Data Delay ;
++---------+--------------+--------------+--------------------+--------------------+--------------+------------+------------+
+; -10.429 ; toChange[3]  ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 11.096     ;
+; -10.299 ; toChange[6]  ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 10.966     ;
+; -10.273 ; toChange[5]  ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 10.940     ;
+; -10.207 ; toChange[12] ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 10.874     ;
+; -10.201 ; toChange[13] ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 10.868     ;
+; -10.189 ; toChange[2]  ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 10.856     ;
+; -10.047 ; toChange[11] ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 10.714     ;
+; -10.041 ; toChange[7]  ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 10.708     ;
+; -10.023 ; toChange[8]  ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 10.690     ;
+; -9.923  ; toChange[9]  ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 10.590     ;
+; -9.903  ; toChange[1]  ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 10.570     ;
+; -9.815  ; toChange[10] ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 10.482     ;
+; -9.754  ; toChange[14] ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 10.421     ;
+; -9.726  ; toChange[4]  ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 10.393     ;
+; -9.561  ; toChange[15] ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 10.228     ;
+; -9.548  ; toChange[16] ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 10.215     ;
+; -9.475  ; toChange[0]  ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 10.142     ;
+; -9.008  ; toChange[21] ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 9.675      ;
+; -8.938  ; toChange[17] ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 9.605      ;
+; -8.815  ; toChange[18] ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 9.482      ;
+; -8.680  ; toChange[19] ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 9.347      ;
+; -8.659  ; toChange[6]  ; toChange[20] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 9.326      ;
+; -8.654  ; toChange[3]  ; toChange[20] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 9.321      ;
+; -8.639  ; toChange[20] ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 9.306      ;
+; -8.626  ; toChange[23] ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 9.293      ;
+; -8.567  ; toChange[12] ; toChange[20] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 9.234      ;
+; -8.561  ; toChange[13] ; toChange[20] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 9.228      ;
+; -8.498  ; toChange[5]  ; toChange[20] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 9.165      ;
+; -8.476  ; toChange[24] ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 9.143      ;
+; -8.428  ; toChange[25] ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 9.095      ;
+; -8.414  ; toChange[2]  ; toChange[20] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 9.081      ;
+; -8.407  ; toChange[11] ; toChange[20] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 9.074      ;
+; -8.401  ; toChange[7]  ; toChange[20] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 9.068      ;
+; -8.383  ; toChange[8]  ; toChange[20] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 9.050      ;
+; -8.283  ; toChange[9]  ; toChange[20] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.950      ;
+; -8.175  ; toChange[10] ; toChange[20] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.842      ;
+; -8.128  ; toChange[1]  ; toChange[20] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.795      ;
+; -8.114  ; toChange[14] ; toChange[20] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.781      ;
+; -8.063  ; toChange[16] ; toChange[20] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.730      ;
+; -8.045  ; toChange[22] ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.712      ;
+; -7.951  ; toChange[4]  ; toChange[20] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.618      ;
+; -7.921  ; toChange[15] ; toChange[20] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.588      ;
+; -7.715  ; toChange[6]  ; toChange[28] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.382      ;
+; -7.710  ; toChange[3]  ; toChange[28] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.377      ;
+; -7.700  ; toChange[0]  ; toChange[20] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.367      ;
+; -7.628  ; toChange[6]  ; toChange[26] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.295      ;
+; -7.623  ; toChange[12] ; toChange[28] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.290      ;
+; -7.623  ; toChange[3]  ; toChange[26] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.290      ;
+; -7.617  ; toChange[13] ; toChange[28] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.284      ;
+; -7.554  ; toChange[5]  ; toChange[28] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.221      ;
+; -7.553  ; toChange[16] ; toChange[28] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.220      ;
+; -7.550  ; toChange[26] ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.217      ;
+; -7.536  ; toChange[12] ; toChange[26] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.203      ;
+; -7.530  ; toChange[13] ; toChange[26] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.197      ;
+; -7.497  ; toChange[6]  ; toChange[27] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.164      ;
+; -7.492  ; toChange[3]  ; toChange[27] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.159      ;
+; -7.486  ; toChange[27] ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.153      ;
+; -7.472  ; toChange[3]  ; toChange[10] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.139      ;
+; -7.470  ; toChange[2]  ; toChange[28] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.137      ;
+; -7.467  ; toChange[5]  ; toChange[26] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.134      ;
+; -7.466  ; toChange[16] ; toChange[26] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.133      ;
+; -7.463  ; toChange[3]  ; toChange[4]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.130      ;
+; -7.463  ; toChange[11] ; toChange[28] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.130      ;
+; -7.457  ; toChange[6]  ; toChange[25] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.124      ;
+; -7.457  ; toChange[7]  ; toChange[28] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.124      ;
+; -7.453  ; toChange[17] ; toChange[20] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.120      ;
+; -7.452  ; toChange[3]  ; toChange[25] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.119      ;
+; -7.439  ; toChange[8]  ; toChange[28] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.106      ;
+; -7.405  ; toChange[12] ; toChange[27] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.072      ;
+; -7.399  ; toChange[13] ; toChange[27] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.066      ;
+; -7.383  ; toChange[2]  ; toChange[26] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.050      ;
+; -7.376  ; toChange[11] ; toChange[26] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.043      ;
+; -7.370  ; toChange[7]  ; toChange[26] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.037      ;
+; -7.365  ; toChange[12] ; toChange[25] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.032      ;
+; -7.359  ; toChange[13] ; toChange[25] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.026      ;
+; -7.352  ; toChange[8]  ; toChange[26] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.019      ;
+; -7.339  ; toChange[9]  ; toChange[28] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.006      ;
+; -7.336  ; toChange[5]  ; toChange[27] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.003      ;
+; -7.335  ; toChange[16] ; toChange[27] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 8.002      ;
+; -7.330  ; toChange[18] ; toChange[20] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 7.997      ;
+; -7.316  ; toChange[5]  ; toChange[10] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 7.983      ;
+; -7.296  ; toChange[5]  ; toChange[25] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 7.963      ;
+; -7.295  ; toChange[16] ; toChange[25] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 7.962      ;
+; -7.277  ; toChange[28] ; toChange[2]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 7.944      ;
+; -7.252  ; toChange[6]  ; toChange[17] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 7.919      ;
+; -7.252  ; toChange[9]  ; toChange[26] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 7.919      ;
+; -7.252  ; toChange[2]  ; toChange[27] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 7.919      ;
+; -7.247  ; toChange[3]  ; toChange[17] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 7.914      ;
+; -7.245  ; toChange[11] ; toChange[27] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 7.912      ;
+; -7.239  ; toChange[7]  ; toChange[27] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 7.906      ;
+; -7.232  ; toChange[2]  ; toChange[10] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 7.899      ;
+; -7.231  ; toChange[10] ; toChange[28] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 7.898      ;
+; -7.223  ; toChange[2]  ; toChange[4]  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 7.890      ;
+; -7.221  ; toChange[8]  ; toChange[27] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 7.888      ;
+; -7.212  ; toChange[2]  ; toChange[25] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 7.879      ;
+; -7.205  ; toChange[11] ; toChange[25] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 7.872      ;
+; -7.199  ; toChange[7]  ; toChange[25] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 7.866      ;
+; -7.195  ; toChange[19] ; toChange[20] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 7.862      ;
+; -7.184  ; toChange[1]  ; toChange[28] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 7.851      ;
+; -7.181  ; toChange[8]  ; toChange[25] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 1.000        ; 0.000      ; 7.848      ;
++---------+--------------+--------------+--------------------+--------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clock'                                                                                                                  ;
++--------+-----------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; -6.545 ; lowCLK:cmp2|count[3]  ; lowCLK:cmp2|count[10]    ; clock        ; clock       ; 1.000        ; 0.000      ; 7.212      ;
+; -6.526 ; lowCLK:cmp2|count[0]  ; lowCLK:cmp2|count[10]    ; clock        ; clock       ; 1.000        ; 0.000      ; 7.193      ;
+; -6.434 ; lowCLK:cmp2|count[4]  ; lowCLK:cmp2|count[10]    ; clock        ; clock       ; 1.000        ; 0.000      ; 7.101      ;
+; -6.351 ; lowCLK:cmp2|count[2]  ; lowCLK:cmp2|count[10]    ; clock        ; clock       ; 1.000        ; 0.000      ; 7.018      ;
+; -6.293 ; lowCLK:cmp2|count[5]  ; lowCLK:cmp2|count[10]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.960      ;
+; -6.147 ; lowCLK:cmp2|count[6]  ; lowCLK:cmp2|count[10]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.814      ;
+; -6.107 ; lowCLK:cmp2|count[7]  ; lowCLK:cmp2|count[10]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.774      ;
+; -6.006 ; lowCLK:cmp2|count[4]  ; lowCLK:cmp2|count[6]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.673      ;
+; -6.003 ; lowCLK:cmp2|count[4]  ; lowCLK:cmp2|count[4]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.670      ;
+; -5.983 ; lowCLK:cmp2|count[1]  ; lowCLK:cmp2|count[10]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.650      ;
+; -5.936 ; lowCLK:cmp2|count[10] ; lowCLK:cmp2|count[13]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.603      ;
+; -5.917 ; lowCLK:cmp2|count[3]  ; lowCLK:cmp2|count[11]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.584      ;
+; -5.898 ; lowCLK:cmp2|count[0]  ; lowCLK:cmp2|count[11]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.565      ;
+; -5.858 ; lowCLK:cmp2|count[3]  ; lowCLK:cmp2|count[13]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.525      ;
+; -5.846 ; lowCLK:cmp2|count[13] ; lowCLK:cmp2|count[14]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.513      ;
+; -5.842 ; lowCLK:cmp2|count[10] ; lowCLK:cmp2|count[14]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.509      ;
+; -5.839 ; lowCLK:cmp2|count[0]  ; lowCLK:cmp2|count[13]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.506      ;
+; -5.824 ; lowCLK:cmp2|count[3]  ; lowCLK:cmp2|count[9]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.491      ;
+; -5.806 ; lowCLK:cmp2|count[4]  ; lowCLK:cmp2|count[11]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.473      ;
+; -5.805 ; lowCLK:cmp2|count[0]  ; lowCLK:cmp2|count[9]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.472      ;
+; -5.764 ; lowCLK:cmp2|count[3]  ; lowCLK:cmp2|count[14]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.431      ;
+; -5.747 ; lowCLK:cmp2|count[4]  ; lowCLK:cmp2|count[13]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.414      ;
+; -5.745 ; lowCLK:cmp2|count[0]  ; lowCLK:cmp2|count[14]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.412      ;
+; -5.723 ; lowCLK:cmp2|count[2]  ; lowCLK:cmp2|count[11]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.390      ;
+; -5.713 ; lowCLK:cmp2|count[4]  ; lowCLK:cmp2|count[9]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.380      ;
+; -5.698 ; lowCLK:cmp2|count[13] ; lowCLK:cmp2|count[15]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.365      ;
+; -5.665 ; lowCLK:cmp2|count[5]  ; lowCLK:cmp2|count[11]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.332      ;
+; -5.664 ; lowCLK:cmp2|count[2]  ; lowCLK:cmp2|count[13]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.331      ;
+; -5.653 ; lowCLK:cmp2|count[4]  ; lowCLK:cmp2|count[14]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.320      ;
+; -5.630 ; lowCLK:cmp2|count[2]  ; lowCLK:cmp2|count[9]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.297      ;
+; -5.606 ; lowCLK:cmp2|count[5]  ; lowCLK:cmp2|count[13]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.273      ;
+; -5.572 ; lowCLK:cmp2|count[5]  ; lowCLK:cmp2|count[9]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.239      ;
+; -5.571 ; lowCLK:cmp2|count[10] ; lowCLK:cmp2|count[15]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.238      ;
+; -5.570 ; lowCLK:cmp2|count[2]  ; lowCLK:cmp2|count[14]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.237      ;
+; -5.558 ; lowCLK:cmp2|count[4]  ; lowCLK:cmp2|count[8]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.225      ;
+; -5.551 ; lowCLK:cmp2|count[4]  ; lowCLK:cmp2|count[15]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.218      ;
+; -5.519 ; lowCLK:cmp2|count[6]  ; lowCLK:cmp2|count[11]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.186      ;
+; -5.512 ; lowCLK:cmp2|count[5]  ; lowCLK:cmp2|count[14]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.179      ;
+; -5.506 ; lowCLK:cmp2|count[3]  ; lowCLK:cmp2|count[12]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.173      ;
+; -5.499 ; lowCLK:cmp2|count[3]  ; lowCLK:cmp2|count[8]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.166      ;
+; -5.497 ; lowCLK:cmp2|count[8]  ; lowCLK:cmp2|count[10]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.164      ;
+; -5.493 ; lowCLK:cmp2|count[3]  ; lowCLK:cmp2|count[15]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.160      ;
+; -5.490 ; lowCLK:cmp2|count[8]  ; lowCLK:cmp2|count[13]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.157      ;
+; -5.487 ; lowCLK:cmp2|count[0]  ; lowCLK:cmp2|count[12]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.154      ;
+; -5.480 ; lowCLK:cmp2|count[0]  ; lowCLK:cmp2|count[8]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.147      ;
+; -5.479 ; lowCLK:cmp2|count[7]  ; lowCLK:cmp2|count[11]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.146      ;
+; -5.474 ; lowCLK:cmp2|count[0]  ; lowCLK:cmp2|count[15]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.141      ;
+; -5.460 ; lowCLK:cmp2|count[6]  ; lowCLK:cmp2|count[13]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.127      ;
+; -5.447 ; lowCLK:cmp2|count[0]  ; lowCLK:cmp2|count[6]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.114      ;
+; -5.444 ; lowCLK:cmp2|count[0]  ; lowCLK:cmp2|count[4]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.111      ;
+; -5.438 ; lowCLK:cmp2|count[10] ; lowCLK:cmp2|count[11]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.105      ;
+; -5.426 ; lowCLK:cmp2|count[6]  ; lowCLK:cmp2|count[9]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.093      ;
+; -5.420 ; lowCLK:cmp2|count[7]  ; lowCLK:cmp2|count[13]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.087      ;
+; -5.396 ; lowCLK:cmp2|count[8]  ; lowCLK:cmp2|count[14]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.063      ;
+; -5.395 ; lowCLK:cmp2|count[4]  ; lowCLK:cmp2|count[12]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.062      ;
+; -5.388 ; lowCLK:cmp2|count[4]  ; lowCLK:cmp2|count[0]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.055      ;
+; -5.386 ; lowCLK:cmp2|count[7]  ; lowCLK:cmp2|count[9]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.053      ;
+; -5.386 ; lowCLK:cmp2|count[9]  ; lowCLK:cmp2|count[10]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.053      ;
+; -5.385 ; lowCLK:cmp2|count[11] ; lowCLK:cmp2|count[6]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.052      ;
+; -5.382 ; lowCLK:cmp2|count[11] ; lowCLK:cmp2|count[4]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.049      ;
+; -5.379 ; lowCLK:cmp2|count[9]  ; lowCLK:cmp2|count[13]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.046      ;
+; -5.366 ; lowCLK:cmp2|count[6]  ; lowCLK:cmp2|count[14]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.033      ;
+; -5.355 ; lowCLK:cmp2|count[1]  ; lowCLK:cmp2|count[11]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.022      ;
+; -5.335 ; lowCLK:cmp2|count[0]  ; lowCLK:cmp2|count[3]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.002      ;
+; -5.329 ; lowCLK:cmp2|count[1]  ; lowCLK:cmp2|count[6]     ; clock        ; clock       ; 1.000        ; 0.000      ; 5.996      ;
+; -5.326 ; lowCLK:cmp2|count[1]  ; lowCLK:cmp2|count[4]     ; clock        ; clock       ; 1.000        ; 0.000      ; 5.993      ;
+; -5.326 ; lowCLK:cmp2|count[7]  ; lowCLK:cmp2|count[14]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.993      ;
+; -5.312 ; lowCLK:cmp2|count[2]  ; lowCLK:cmp2|count[12]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.979      ;
+; -5.305 ; lowCLK:cmp2|count[2]  ; lowCLK:cmp2|count[8]     ; clock        ; clock       ; 1.000        ; 0.000      ; 5.972      ;
+; -5.302 ; lowCLK:cmp2|count[0]  ; lowCLK:cmp2|count[5]     ; clock        ; clock       ; 1.000        ; 0.000      ; 5.969      ;
+; -5.299 ; lowCLK:cmp2|count[2]  ; lowCLK:cmp2|count[15]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.966      ;
+; -5.296 ; lowCLK:cmp2|count[1]  ; lowCLK:cmp2|count[13]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.963      ;
+; -5.285 ; lowCLK:cmp2|count[9]  ; lowCLK:cmp2|count[14]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.952      ;
+; -5.262 ; lowCLK:cmp2|count[1]  ; lowCLK:cmp2|count[9]     ; clock        ; clock       ; 1.000        ; 0.000      ; 5.929      ;
+; -5.254 ; lowCLK:cmp2|count[5]  ; lowCLK:cmp2|count[12]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.921      ;
+; -5.247 ; lowCLK:cmp2|count[5]  ; lowCLK:cmp2|count[8]     ; clock        ; clock       ; 1.000        ; 0.000      ; 5.914      ;
+; -5.245 ; lowCLK:cmp2|count[8]  ; lowCLK:cmp2|count[0]     ; clock        ; clock       ; 1.000        ; 0.000      ; 5.912      ;
+; -5.244 ; lowCLK:cmp2|count[10] ; lowCLK:cmp2|count[10]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.911      ;
+; -5.241 ; lowCLK:cmp2|count[5]  ; lowCLK:cmp2|count[15]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.908      ;
+; -5.236 ; randm:cmp3|count[3]   ; randm:cmp3|count[8]      ; clock        ; clock       ; 1.000        ; 0.000      ; 5.903      ;
+; -5.215 ; randm:cmp3|count[3]   ; randm:cmp3|count[6]      ; clock        ; clock       ; 1.000        ; 0.000      ; 5.882      ;
+; -5.212 ; lowCLK:cmp2|count[12] ; lowCLK:cmp2|count[13]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.879      ;
+; -5.202 ; lowCLK:cmp2|count[1]  ; lowCLK:cmp2|count[14]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.869      ;
+; -5.160 ; lowCLK:cmp2|count[2]  ; lowCLK:cmp2|count[3]     ; clock        ; clock       ; 1.000        ; 0.000      ; 5.827      ;
+; -5.158 ; lowCLK:cmp2|count[2]  ; lowCLK:cmp2|count[6]     ; clock        ; clock       ; 1.000        ; 0.000      ; 5.825      ;
+; -5.152 ; lowCLK:cmp2|count[11] ; lowCLK:cmp2|count[13]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.819      ;
+; -5.150 ; lowCLK:cmp2|count[10] ; lowCLK:cmp2|count[12]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.817      ;
+; -5.127 ; lowCLK:cmp2|count[2]  ; lowCLK:cmp2|count[5]     ; clock        ; clock       ; 1.000        ; 0.000      ; 5.794      ;
+; -5.126 ; lowCLK:cmp2|count[12] ; lowCLK:cmp2|count[6]     ; clock        ; clock       ; 1.000        ; 0.000      ; 5.793      ;
+; -5.125 ; lowCLK:cmp2|count[8]  ; lowCLK:cmp2|count[15]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.792      ;
+; -5.123 ; lowCLK:cmp2|count[12] ; lowCLK:cmp2|count[4]     ; clock        ; clock       ; 1.000        ; 0.000      ; 5.790      ;
+; -5.118 ; lowCLK:cmp2|count[13] ; lowCLK:cmp2|count[13]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.785      ;
+; -5.118 ; lowCLK:cmp2|count[12] ; lowCLK:cmp2|count[14]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.785      ;
+; -5.113 ; randm:cmp3|count[4]   ; randm:cmp3|count[8]      ; clock        ; clock       ; 1.000        ; 0.000      ; 5.780      ;
+; -5.109 ; lowCLK:cmp2|count[11] ; lowCLK:cmp2|outputSignal ; clock        ; clock       ; 1.000        ; 0.000      ; 5.776      ;
+; -5.108 ; lowCLK:cmp2|count[6]  ; lowCLK:cmp2|count[12]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.775      ;
+; -5.101 ; lowCLK:cmp2|count[6]  ; lowCLK:cmp2|count[8]     ; clock        ; clock       ; 1.000        ; 0.000      ; 5.768      ;
+; -5.095 ; lowCLK:cmp2|count[6]  ; lowCLK:cmp2|count[15]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.762      ;
+; -5.092 ; randm:cmp3|count[4]   ; randm:cmp3|count[6]      ; clock        ; clock       ; 1.000        ; 0.000      ; 5.759      ;
+; -5.068 ; lowCLK:cmp2|count[7]  ; lowCLK:cmp2|count[12]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.735      ;
++--------+-----------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'lighter:cmp4|lightUp'                                                                                                                                   ;
++--------+--------------------------------+--------------------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack  ; From Node                      ; To Node                        ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------+--------------------------------+----------------------+----------------------+--------------+------------+------------+
+; -2.709 ; runMultiple:cmp7|countTimes[3] ; runMultiple:cmp7|comp          ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 1.000        ; 0.000      ; 3.376      ;
+; -2.514 ; runMultiple:cmp7|countTimes[1] ; runMultiple:cmp7|comp          ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 1.000        ; 0.000      ; 3.181      ;
+; -2.341 ; runMultiple:cmp7|countTimes[2] ; runMultiple:cmp7|comp          ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 1.000        ; 0.000      ; 3.008      ;
+; -2.009 ; runMultiple:cmp7|countTimes[0] ; runMultiple:cmp7|comp          ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 1.000        ; 0.000      ; 2.676      ;
+; -1.899 ; runMultiple:cmp7|countTimes[1] ; runMultiple:cmp7|countTimes[2] ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 1.000        ; 0.000      ; 2.566      ;
+; -1.898 ; runMultiple:cmp7|countTimes[1] ; runMultiple:cmp7|countTimes[3] ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 1.000        ; 0.000      ; 2.565      ;
+; -1.897 ; runMultiple:cmp7|countTimes[1] ; runMultiple:cmp7|countTimes[1] ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 1.000        ; 0.000      ; 2.564      ;
+; -1.854 ; runMultiple:cmp7|countTimes[3] ; runMultiple:cmp7|countTimes[0] ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 1.000        ; 0.000      ; 2.521      ;
+; -1.819 ; runMultiple:cmp7|countTimes[2] ; runMultiple:cmp7|countTimes[3] ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 1.000        ; 0.000      ; 2.486      ;
+; -1.816 ; runMultiple:cmp7|countTimes[2] ; runMultiple:cmp7|countTimes[2] ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 1.000        ; 0.000      ; 2.483      ;
+; -1.753 ; runMultiple:cmp7|countTimes[0] ; runMultiple:cmp7|countTimes[2] ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 1.000        ; 0.000      ; 2.420      ;
+; -1.751 ; runMultiple:cmp7|countTimes[0] ; runMultiple:cmp7|countTimes[3] ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 1.000        ; 0.000      ; 2.418      ;
+; -1.750 ; runMultiple:cmp7|countTimes[0] ; runMultiple:cmp7|countTimes[1] ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 1.000        ; 0.000      ; 2.417      ;
+; -1.479 ; runMultiple:cmp7|comp          ; runMultiple:cmp7|comp          ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 1.000        ; 0.000      ; 2.146      ;
+; -1.272 ; runMultiple:cmp7|countTimes[3] ; runMultiple:cmp7|countTimes[1] ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 1.000        ; 0.000      ; 1.939      ;
+; -1.271 ; runMultiple:cmp7|countTimes[3] ; runMultiple:cmp7|countTimes[2] ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 1.000        ; 0.000      ; 1.938      ;
+; -1.271 ; runMultiple:cmp7|countTimes[0] ; runMultiple:cmp7|countTimes[0] ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 1.000        ; 0.000      ; 1.938      ;
+; -1.270 ; runMultiple:cmp7|countTimes[3] ; runMultiple:cmp7|countTimes[3] ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 1.000        ; 0.000      ; 1.937      ;
++--------+--------------------------------+--------------------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'lowCLK:cmp2|outclk'                                                                                                                                           ;
++-------+-------------------------------------+-------------------------------------+--------------------+--------------------+--------------+------------+------------+
+; Slack ; From Node                           ; To Node                             ; Launch Clock       ; Latch Clock        ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------+-------------------------------------+--------------------+--------------------+--------------+------------+------------+
+; 1.376 ; wrCol[0]                            ; lcd_controller:cmp8|cmd_position[0] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 1.597      ;
+; 1.379 ; wrCol[1]                            ; lcd_controller:cmp8|cmd_position[1] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 1.600      ;
+; 1.384 ; wrCol[2]                            ; lcd_controller:cmp8|cmd_position[2] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 1.605      ;
+; 1.386 ; wrCol[3]                            ; lcd_controller:cmp8|cmd_position[3] ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 1.607      ;
+; 1.688 ; lcd_controller:cmp8|state.S0        ; lcd_controller:cmp8|state.S1        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 1.909      ;
+; 1.704 ; lcd_controller:cmp8|state.S4        ; lcd_controller:cmp8|state.S5        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 1.925      ;
+; 1.715 ; lcd_controller:cmp8|count_cmd[2]    ; lcd_controller:cmp8|count_cmd[2]    ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 1.936      ;
+; 1.931 ; lcd_controller:cmp8|lcd_rs          ; lcd_controller:cmp8|lcd_rs          ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 2.152      ;
+; 1.938 ; lcd_controller:cmp8|lcd[6]          ; lcd_controller:cmp8|lcd[6]          ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 2.159      ;
+; 1.951 ; lcd_controller:cmp8|count_cmd[0]    ; lcd_controller:cmp8|count_cmd[0]    ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 2.172      ;
+; 1.967 ; lcd_controller:cmp8|count_cmd[0]    ; lcd_controller:cmp8|count_cmd[1]    ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 2.188      ;
+; 1.968 ; lcd_controller:cmp8|count_cmd[0]    ; lcd_controller:cmp8|count_cmd[2]    ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 2.189      ;
+; 2.079 ; lcd_controller:cmp8|state.S8        ; lcd_controller:cmp8|state.S9        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 2.300      ;
+; 2.107 ; lighter:cmp4|count[4]               ; lighter:cmp4|count[4]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 2.328      ;
+; 2.107 ; lighter:cmp4|count[5]               ; lighter:cmp4|count[5]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 2.328      ;
+; 2.108 ; lighter:cmp4|count[2]               ; lighter:cmp4|count[2]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 2.329      ;
+; 2.126 ; lighter:cmp4|count[6]               ; lighter:cmp4|count[6]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; lighter:cmp4|count[7]               ; lighter:cmp4|count[7]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 2.347      ;
+; 2.136 ; lcd_controller:cmp8|lcd_en          ; lcd_controller:cmp8|lcd_en          ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 2.357      ;
+; 2.184 ; lcd_controller:cmp8|count_cmd[1]    ; lcd_controller:cmp8|count_cmd[2]    ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 2.405      ;
+; 2.184 ; lcd_controller:cmp8|count_cmd[1]    ; lcd_controller:cmp8|count_cmd[1]    ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 2.405      ;
+; 2.212 ; lighter:cmp4|count[3]               ; lighter:cmp4|count[3]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 2.433      ;
+; 2.221 ; lighter:cmp4|count[0]               ; lighter:cmp4|count[0]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 2.442      ;
+; 2.222 ; lighter:cmp4|count[1]               ; lighter:cmp4|count[1]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 2.443      ;
+; 2.230 ; lighter:cmp4|count[10]              ; lighter:cmp4|count[10]              ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 2.451      ;
+; 2.231 ; lighter:cmp4|count[9]               ; lighter:cmp4|count[9]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 2.452      ;
+; 2.232 ; lighter:cmp4|count[8]               ; lighter:cmp4|count[8]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 2.453      ;
+; 2.243 ; lcd_controller:cmp8|lcd[1]          ; lcd_controller:cmp8|lcd[1]          ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 2.464      ;
+; 2.247 ; lcd_controller:cmp8|state.S7        ; lcd_controller:cmp8|state.S8        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 2.468      ;
+; 2.393 ; randm:cmp3|outval[10]               ; lighter:cmp4|light                  ; clock              ; lowCLK:cmp2|outclk ; 0.000        ; 0.242      ; 2.856      ;
+; 2.643 ; toChange[0]                         ; wrCol[0]                            ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 2.864      ;
+; 2.650 ; lcd_controller:cmp8|state.S6        ; lcd_controller:cmp8|state.S7        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 2.871      ;
+; 2.832 ; lcd_controller:cmp8|count_cmd[0]    ; lcd_controller:cmp8|lcd[7]          ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.053      ;
+; 2.835 ; toChange[30]                        ; toChange[30]                        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.056      ;
+; 2.846 ; toChange[0]                         ; toChange[0]                         ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.067      ;
+; 2.849 ; toChange[31]                        ; toChange[31]                        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.070      ;
+; 2.871 ; randm:cmp3|outval[4]                ; lighter:cmp4|light                  ; clock              ; lowCLK:cmp2|outclk ; 0.000        ; 0.242      ; 3.334      ;
+; 2.879 ; lcd_controller:cmp8|state.S5        ; lcd_controller:cmp8|state.S6        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.100      ;
+; 2.939 ; lighter:cmp4|count[5]               ; lighter:cmp4|count[6]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.160      ;
+; 2.940 ; lighter:cmp4|count[2]               ; lighter:cmp4|count[3]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.161      ;
+; 2.943 ; lcd_controller:cmp8|state.S2        ; lcd_controller:cmp8|count_cmd[0]    ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.164      ;
+; 2.944 ; lcd_controller:cmp8|count_cmd[2]    ; lcd_controller:cmp8|state.S1        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.165      ;
+; 2.958 ; lighter:cmp4|count[7]               ; lighter:cmp4|count[8]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.179      ;
+; 2.958 ; lighter:cmp4|count[6]               ; lighter:cmp4|count[7]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.179      ;
+; 2.970 ; lcd_controller:cmp8|state.S6        ; lcd_controller:cmp8|lcd[1]          ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.191      ;
+; 3.009 ; toChange[1]                         ; toChange[1]                         ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.230      ;
+; 3.023 ; randm:cmp3|outval[2]                ; lighter:cmp4|light                  ; clock              ; lowCLK:cmp2|outclk ; 0.000        ; 0.242      ; 3.486      ;
+; 3.050 ; lighter:cmp4|count[5]               ; lighter:cmp4|count[7]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.271      ;
+; 3.051 ; lighter:cmp4|count[2]               ; lighter:cmp4|count[4]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.272      ;
+; 3.057 ; lcd_controller:cmp8|state.S9        ; lcd_controller:cmp8|state.S3        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.278      ;
+; 3.069 ; lighter:cmp4|count[7]               ; lighter:cmp4|count[9]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.290      ;
+; 3.069 ; lighter:cmp4|count[6]               ; lighter:cmp4|count[8]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.290      ;
+; 3.072 ; lighter:cmp4|count[1]               ; lighter:cmp4|light                  ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.293      ;
+; 3.100 ; lcd_controller:cmp8|cmd_position[2] ; lcd_controller:cmp8|lcd[2]          ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.321      ;
+; 3.111 ; lcd_controller:cmp8|count_cmd[2]    ; lcd_controller:cmp8|lcd[4]          ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.332      ;
+; 3.121 ; nst[0]                              ; nst[0]                              ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.342      ;
+; 3.139 ; lcd_controller:cmp8|lcd[3]          ; lcd_controller:cmp8|lcd[3]          ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.360      ;
+; 3.152 ; lighter:cmp4|count[3]               ; lighter:cmp4|count[4]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.373      ;
+; 3.161 ; lighter:cmp4|count[0]               ; lighter:cmp4|count[1]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.382      ;
+; 3.161 ; lighter:cmp4|count[5]               ; lighter:cmp4|count[8]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.382      ;
+; 3.162 ; lighter:cmp4|count[1]               ; lighter:cmp4|count[2]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.383      ;
+; 3.172 ; lighter:cmp4|count[8]               ; lighter:cmp4|count[9]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.393      ;
+; 3.180 ; lighter:cmp4|count[6]               ; lighter:cmp4|count[9]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.401      ;
+; 3.207 ; randm:cmp3|outval[6]                ; lighter:cmp4|light                  ; clock              ; lowCLK:cmp2|outclk ; 0.000        ; 0.242      ; 3.670      ;
+; 3.234 ; toChange[3]                         ; wrCol[3]                            ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.455      ;
+; 3.250 ; toChange[29]                        ; toChange[29]                        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.471      ;
+; 3.259 ; lcd_controller:cmp8|cmd_position[3] ; lcd_controller:cmp8|lcd[3]          ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.480      ;
+; 3.269 ; randm:cmp3|outval[9]                ; lighter:cmp4|light                  ; clock              ; lowCLK:cmp2|outclk ; 0.000        ; 0.242      ; 3.732      ;
+; 3.270 ; lcd_controller:cmp8|count_cmd[0]    ; lcd_controller:cmp8|state.S1        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.491      ;
+; 3.272 ; lighter:cmp4|count[0]               ; lighter:cmp4|count[2]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.493      ;
+; 3.272 ; lighter:cmp4|count[5]               ; lighter:cmp4|count[9]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.493      ;
+; 3.273 ; lighter:cmp4|count[1]               ; lighter:cmp4|count[3]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.494      ;
+; 3.281 ; lcd_controller:cmp8|state.S3        ; lcd_controller:cmp8|state.S4        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.502      ;
+; 3.284 ; lcd_controller:cmp8|state.S9        ; lcd_controller:cmp8|lcd[1]          ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.505      ;
+; 3.330 ; nst[0]                              ; lcd_controller:cmp8|state.S7        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.551      ;
+; 3.358 ; lcd_controller:cmp8|state.S7        ; lcd_controller:cmp8|lcd_rs          ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.579      ;
+; 3.383 ; lighter:cmp4|count[0]               ; lighter:cmp4|count[3]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.604      ;
+; 3.384 ; lighter:cmp4|count[1]               ; lighter:cmp4|count[4]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.605      ;
+; 3.395 ; nst[0]                              ; toChange[28]                        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.616      ;
+; 3.395 ; nst[0]                              ; toChange[25]                        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.616      ;
+; 3.395 ; nst[0]                              ; toChange[24]                        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.616      ;
+; 3.395 ; nst[0]                              ; toChange[20]                        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.616      ;
+; 3.395 ; nst[0]                              ; toChange[19]                        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.616      ;
+; 3.395 ; nst[0]                              ; toChange[17]                        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.616      ;
+; 3.398 ; lcd_controller:cmp8|count_cmd[1]    ; lcd_controller:cmp8|lcd[7]          ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.619      ;
+; 3.405 ; lcd_controller:cmp8|count_cmd[0]    ; lcd_controller:cmp8|lcd[3]          ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.626      ;
+; 3.413 ; lcd_controller:cmp8|state.S1        ; lcd_controller:cmp8|state.S2        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.634      ;
+; 3.421 ; lcd_controller:cmp8|cmd_position[0] ; lcd_controller:cmp8|lcd[0]          ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.642      ;
+; 3.428 ; nst[0]                              ; toChange[31]                        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.649      ;
+; 3.428 ; nst[0]                              ; toChange[30]                        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.649      ;
+; 3.428 ; nst[0]                              ; toChange[29]                        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.649      ;
+; 3.428 ; nst[0]                              ; toChange[22]                        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.649      ;
+; 3.443 ; lcd_controller:cmp8|count_cmd[0]    ; lcd_controller:cmp8|lcd[0]          ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.664      ;
+; 3.449 ; nst[0]                              ; toChange[27]                        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.670      ;
+; 3.449 ; nst[0]                              ; toChange[26]                        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.670      ;
+; 3.452 ; lcd_controller:cmp8|state.S6        ; lcd_controller:cmp8|state.S3        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.673      ;
+; 3.460 ; nst[0]                              ; lcd_controller:cmp8|lcd[1]          ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.681      ;
+; 3.480 ; lcd_controller:cmp8|count_cmd[1]    ; lcd_controller:cmp8|state.S1        ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.701      ;
+; 3.492 ; lighter:cmp4|count[9]               ; lighter:cmp4|count[10]              ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.713      ;
+; 3.494 ; lighter:cmp4|count[0]               ; lighter:cmp4|count[4]               ; lowCLK:cmp2|outclk ; lowCLK:cmp2|outclk ; 0.000        ; 0.000      ; 3.715      ;
++-------+-------------------------------------+-------------------------------------+--------------------+--------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'lighter:cmp4|lightUp'                                                                                                                                   ;
++-------+--------------------------------+--------------------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack ; From Node                      ; To Node                        ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------+--------------------------------+----------------------+----------------------+--------------+------------+------------+
+; 1.716 ; runMultiple:cmp7|countTimes[3] ; runMultiple:cmp7|countTimes[3] ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 0.000        ; 0.000      ; 1.937      ;
+; 1.717 ; runMultiple:cmp7|countTimes[3] ; runMultiple:cmp7|countTimes[2] ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 0.000        ; 0.000      ; 1.938      ;
+; 1.717 ; runMultiple:cmp7|countTimes[0] ; runMultiple:cmp7|countTimes[0] ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 0.000        ; 0.000      ; 1.938      ;
+; 1.718 ; runMultiple:cmp7|countTimes[3] ; runMultiple:cmp7|countTimes[1] ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 0.000        ; 0.000      ; 1.939      ;
+; 1.925 ; runMultiple:cmp7|comp          ; runMultiple:cmp7|comp          ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 0.000        ; 0.000      ; 2.146      ;
+; 2.196 ; runMultiple:cmp7|countTimes[0] ; runMultiple:cmp7|countTimes[1] ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 0.000        ; 0.000      ; 2.417      ;
+; 2.197 ; runMultiple:cmp7|countTimes[0] ; runMultiple:cmp7|countTimes[3] ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 0.000        ; 0.000      ; 2.418      ;
+; 2.199 ; runMultiple:cmp7|countTimes[0] ; runMultiple:cmp7|countTimes[2] ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 0.000        ; 0.000      ; 2.420      ;
+; 2.262 ; runMultiple:cmp7|countTimes[2] ; runMultiple:cmp7|countTimes[2] ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 0.000        ; 0.000      ; 2.483      ;
+; 2.265 ; runMultiple:cmp7|countTimes[2] ; runMultiple:cmp7|countTimes[3] ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 0.000        ; 0.000      ; 2.486      ;
+; 2.300 ; runMultiple:cmp7|countTimes[3] ; runMultiple:cmp7|countTimes[0] ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 0.000        ; 0.000      ; 2.521      ;
+; 2.343 ; runMultiple:cmp7|countTimes[1] ; runMultiple:cmp7|countTimes[1] ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 0.000        ; 0.000      ; 2.564      ;
+; 2.344 ; runMultiple:cmp7|countTimes[1] ; runMultiple:cmp7|countTimes[3] ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 0.000        ; 0.000      ; 2.565      ;
+; 2.345 ; runMultiple:cmp7|countTimes[1] ; runMultiple:cmp7|countTimes[2] ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 0.000        ; 0.000      ; 2.566      ;
+; 2.455 ; runMultiple:cmp7|countTimes[0] ; runMultiple:cmp7|comp          ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 0.000        ; 0.000      ; 2.676      ;
+; 2.787 ; runMultiple:cmp7|countTimes[2] ; runMultiple:cmp7|comp          ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 0.000        ; 0.000      ; 3.008      ;
+; 2.960 ; runMultiple:cmp7|countTimes[1] ; runMultiple:cmp7|comp          ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 0.000        ; 0.000      ; 3.181      ;
+; 3.155 ; runMultiple:cmp7|countTimes[3] ; runMultiple:cmp7|comp          ; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 0.000        ; 0.000      ; 3.376      ;
++-------+--------------------------------+--------------------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clock'                                                                                                                     ;
++-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; 2.151 ; lowCLK:cmp2|count[5]     ; lowCLK:cmp2|outputSignal ; clock        ; clock       ; 0.000        ; 0.000      ; 2.372      ;
+; 2.341 ; randm:cmp3|count[10]     ; randm:cmp3|count[8]      ; clock        ; clock       ; 0.000        ; 0.000      ; 2.562      ;
+; 2.343 ; randm:cmp3|count[10]     ; randm:cmp3|count[4]      ; clock        ; clock       ; 0.000        ; 0.000      ; 2.564      ;
+; 2.349 ; randm:cmp3|count[10]     ; randm:cmp3|count[6]      ; clock        ; clock       ; 0.000        ; 0.000      ; 2.570      ;
+; 2.351 ; randm:cmp3|count[10]     ; randm:cmp3|count[7]      ; clock        ; clock       ; 0.000        ; 0.000      ; 2.572      ;
+; 2.352 ; randm:cmp3|count[10]     ; randm:cmp3|count[3]      ; clock        ; clock       ; 0.000        ; 0.000      ; 2.573      ;
+; 2.353 ; randm:cmp3|count[10]     ; randm:cmp3|count[9]      ; clock        ; clock       ; 0.000        ; 0.000      ; 2.574      ;
+; 2.523 ; randm:cmp3|count[10]     ; randm:cmp3|outval[10]    ; clock        ; clock       ; 0.000        ; 0.000      ; 2.744      ;
+; 2.565 ; lowCLK:cmp2|count[13]    ; lowCLK:cmp2|count[14]    ; clock        ; clock       ; 0.000        ; 0.000      ; 2.786      ;
+; 2.566 ; lowCLK:cmp2|count[13]    ; lowCLK:cmp2|count[9]     ; clock        ; clock       ; 0.000        ; 0.000      ; 2.787      ;
+; 2.568 ; randm:cmp3|count[10]     ; randm:cmp3|count[2]      ; clock        ; clock       ; 0.000        ; 0.000      ; 2.789      ;
+; 2.572 ; lowCLK:cmp2|count[13]    ; lowCLK:cmp2|count[15]    ; clock        ; clock       ; 0.000        ; 0.000      ; 2.793      ;
+; 2.656 ; lowCLK:cmp2|count[3]     ; lowCLK:cmp2|outputSignal ; clock        ; clock       ; 0.000        ; 0.000      ; 2.877      ;
+; 2.728 ; randm:cmp3|count[3]      ; randm:cmp3|count[3]      ; clock        ; clock       ; 0.000        ; 0.000      ; 2.949      ;
+; 2.770 ; lowCLK:cmp2|count[13]    ; lowCLK:cmp2|count[8]     ; clock        ; clock       ; 0.000        ; 0.000      ; 2.991      ;
+; 2.782 ; randm:cmp3|count[5]      ; randm:cmp3|outval[5]     ; clock        ; clock       ; 0.000        ; 0.000      ; 3.003      ;
+; 2.810 ; randm:cmp3|count[8]      ; randm:cmp3|outval[8]     ; clock        ; clock       ; 0.000        ; 0.000      ; 3.031      ;
+; 2.885 ; randm:cmp3|count[5]      ; randm:cmp3|count[3]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.106      ;
+; 2.907 ; randm:cmp3|count[4]      ; randm:cmp3|count[3]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.128      ;
+; 3.013 ; lowCLK:cmp2|outputSignal ; lowCLK:cmp2|outclk       ; clock        ; clock       ; 0.000        ; 0.000      ; 3.234      ;
+; 3.091 ; lowCLK:cmp2|count[7]     ; lowCLK:cmp2|count[6]     ; clock        ; clock       ; 0.000        ; 0.000      ; 3.312      ;
+; 3.099 ; lowCLK:cmp2|count[15]    ; lowCLK:cmp2|outputSignal ; clock        ; clock       ; 0.000        ; 0.000      ; 3.320      ;
+; 3.100 ; lowCLK:cmp2|count[1]     ; lowCLK:cmp2|count[1]     ; clock        ; clock       ; 0.000        ; 0.000      ; 3.321      ;
+; 3.102 ; lowCLK:cmp2|count[14]    ; lowCLK:cmp2|count[14]    ; clock        ; clock       ; 0.000        ; 0.000      ; 3.323      ;
+; 3.103 ; lowCLK:cmp2|count[14]    ; lowCLK:cmp2|count[9]     ; clock        ; clock       ; 0.000        ; 0.000      ; 3.324      ;
+; 3.109 ; lowCLK:cmp2|count[14]    ; lowCLK:cmp2|count[15]    ; clock        ; clock       ; 0.000        ; 0.000      ; 3.330      ;
+; 3.128 ; randm:cmp3|count[7]      ; randm:cmp3|outval[7]     ; clock        ; clock       ; 0.000        ; 0.000      ; 3.349      ;
+; 3.135 ; lowCLK:cmp2|count[13]    ; lowCLK:cmp2|count[0]     ; clock        ; clock       ; 0.000        ; 0.000      ; 3.356      ;
+; 3.142 ; randm:cmp3|count[10]     ; randm:cmp3|count[10]     ; clock        ; clock       ; 0.000        ; 0.000      ; 3.363      ;
+; 3.222 ; randm:cmp3|count[3]      ; randm:cmp3|count[8]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.443      ;
+; 3.261 ; randm:cmp3|count[9]      ; randm:cmp3|count[4]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.482      ;
+; 3.264 ; randm:cmp3|count[6]      ; randm:cmp3|count[4]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.485      ;
+; 3.267 ; randm:cmp3|count[9]      ; randm:cmp3|count[6]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.488      ;
+; 3.268 ; randm:cmp3|count[9]      ; randm:cmp3|count[7]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.489      ;
+; 3.270 ; randm:cmp3|count[6]      ; randm:cmp3|count[6]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.491      ;
+; 3.271 ; randm:cmp3|count[9]      ; randm:cmp3|count[9]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.492      ;
+; 3.271 ; randm:cmp3|count[6]      ; randm:cmp3|count[7]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.492      ;
+; 3.274 ; randm:cmp3|count[6]      ; randm:cmp3|count[9]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.495      ;
+; 3.288 ; lowCLK:cmp2|count[14]    ; lowCLK:cmp2|outputSignal ; clock        ; clock       ; 0.000        ; 0.000      ; 3.509      ;
+; 3.291 ; randm:cmp3|count[2]      ; randm:cmp3|count[3]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.512      ;
+; 3.307 ; lowCLK:cmp2|count[14]    ; lowCLK:cmp2|count[8]     ; clock        ; clock       ; 0.000        ; 0.000      ; 3.528      ;
+; 3.355 ; randm:cmp3|count[2]      ; randm:cmp3|count[2]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.576      ;
+; 3.379 ; randm:cmp3|count[5]      ; randm:cmp3|count[8]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.600      ;
+; 3.391 ; lowCLK:cmp2|count[6]     ; lowCLK:cmp2|outputSignal ; clock        ; clock       ; 0.000        ; 0.000      ; 3.612      ;
+; 3.401 ; randm:cmp3|count[4]      ; randm:cmp3|count[8]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.622      ;
+; 3.412 ; lowCLK:cmp2|count[13]    ; lowCLK:cmp2|count[6]     ; clock        ; clock       ; 0.000        ; 0.000      ; 3.633      ;
+; 3.433 ; randm:cmp3|count[8]      ; randm:cmp3|count[4]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.654      ;
+; 3.438 ; lowCLK:cmp2|count[15]    ; lowCLK:cmp2|count[15]    ; clock        ; clock       ; 0.000        ; 0.000      ; 3.659      ;
+; 3.439 ; randm:cmp3|count[8]      ; randm:cmp3|count[6]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.660      ;
+; 3.440 ; randm:cmp3|count[8]      ; randm:cmp3|count[7]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.661      ;
+; 3.443 ; randm:cmp3|count[8]      ; randm:cmp3|count[9]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.664      ;
+; 3.504 ; randm:cmp3|count[9]      ; randm:cmp3|outval[9]     ; clock        ; clock       ; 0.000        ; 0.000      ; 3.725      ;
+; 3.560 ; randm:cmp3|count[3]      ; randm:cmp3|count[2]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.781      ;
+; 3.583 ; lowCLK:cmp2|count[4]     ; lowCLK:cmp2|outputSignal ; clock        ; clock       ; 0.000        ; 0.000      ; 3.804      ;
+; 3.598 ; lowCLK:cmp2|count[10]    ; lowCLK:cmp2|count[9]     ; clock        ; clock       ; 0.000        ; 0.000      ; 3.819      ;
+; 3.599 ; lowCLK:cmp2|count[10]    ; lowCLK:cmp2|count[14]    ; clock        ; clock       ; 0.000        ; 0.000      ; 3.820      ;
+; 3.601 ; lowCLK:cmp2|count[9]     ; lowCLK:cmp2|outputSignal ; clock        ; clock       ; 0.000        ; 0.000      ; 3.822      ;
+; 3.608 ; lowCLK:cmp2|count[7]     ; lowCLK:cmp2|count[15]    ; clock        ; clock       ; 0.000        ; 0.000      ; 3.829      ;
+; 3.618 ; lowCLK:cmp2|count[15]    ; lowCLK:cmp2|count[14]    ; clock        ; clock       ; 0.000        ; 0.000      ; 3.839      ;
+; 3.619 ; lowCLK:cmp2|count[15]    ; lowCLK:cmp2|count[9]     ; clock        ; clock       ; 0.000        ; 0.000      ; 3.840      ;
+; 3.641 ; lowCLK:cmp2|count[7]     ; lowCLK:cmp2|count[7]     ; clock        ; clock       ; 0.000        ; 0.000      ; 3.862      ;
+; 3.645 ; randm:cmp3|count[7]      ; randm:cmp3|count[4]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.866      ;
+; 3.651 ; randm:cmp3|count[7]      ; randm:cmp3|count[6]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.872      ;
+; 3.652 ; randm:cmp3|count[7]      ; randm:cmp3|count[7]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.873      ;
+; 3.655 ; randm:cmp3|count[7]      ; randm:cmp3|count[9]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.876      ;
+; 3.672 ; lowCLK:cmp2|count[14]    ; lowCLK:cmp2|count[0]     ; clock        ; clock       ; 0.000        ; 0.000      ; 3.893      ;
+; 3.677 ; randm:cmp3|count[3]      ; randm:cmp3|count[9]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.898      ;
+; 3.681 ; randm:cmp3|count[3]      ; randm:cmp3|count[7]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.902      ;
+; 3.683 ; randm:cmp3|count[3]      ; randm:cmp3|count[6]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.904      ;
+; 3.688 ; randm:cmp3|count[3]      ; randm:cmp3|count[4]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.909      ;
+; 3.688 ; lowCLK:cmp2|count[7]     ; lowCLK:cmp2|count[4]     ; clock        ; clock       ; 0.000        ; 0.000      ; 3.909      ;
+; 3.697 ; lowCLK:cmp2|count[7]     ; lowCLK:cmp2|outputSignal ; clock        ; clock       ; 0.000        ; 0.000      ; 3.918      ;
+; 3.699 ; lowCLK:cmp2|count[7]     ; lowCLK:cmp2|count[8]     ; clock        ; clock       ; 0.000        ; 0.000      ; 3.920      ;
+; 3.708 ; randm:cmp3|count[3]      ; randm:cmp3|outval[3]     ; clock        ; clock       ; 0.000        ; 0.000      ; 3.929      ;
+; 3.712 ; lowCLK:cmp2|count[3]     ; lowCLK:cmp2|count[9]     ; clock        ; clock       ; 0.000        ; 0.000      ; 3.933      ;
+; 3.713 ; lowCLK:cmp2|count[3]     ; lowCLK:cmp2|count[14]    ; clock        ; clock       ; 0.000        ; 0.000      ; 3.934      ;
+; 3.717 ; randm:cmp3|count[5]      ; randm:cmp3|count[2]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.938      ;
+; 3.732 ; lowCLK:cmp2|count[13]    ; lowCLK:cmp2|count[4]     ; clock        ; clock       ; 0.000        ; 0.000      ; 3.953      ;
+; 3.739 ; randm:cmp3|count[4]      ; randm:cmp3|count[2]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.960      ;
+; 3.770 ; lowCLK:cmp2|count[9]     ; lowCLK:cmp2|count[14]    ; clock        ; clock       ; 0.000        ; 0.000      ; 3.991      ;
+; 3.771 ; lowCLK:cmp2|count[9]     ; lowCLK:cmp2|count[9]     ; clock        ; clock       ; 0.000        ; 0.000      ; 3.992      ;
+; 3.777 ; lowCLK:cmp2|count[9]     ; lowCLK:cmp2|count[15]    ; clock        ; clock       ; 0.000        ; 0.000      ; 3.998      ;
+; 3.780 ; lowCLK:cmp2|count[4]     ; lowCLK:cmp2|count[4]     ; clock        ; clock       ; 0.000        ; 0.000      ; 4.001      ;
+; 3.785 ; randm:cmp3|count[2]      ; randm:cmp3|count[8]      ; clock        ; clock       ; 0.000        ; 0.000      ; 4.006      ;
+; 3.793 ; randm:cmp3|count[2]      ; randm:cmp3|outval[2]     ; clock        ; clock       ; 0.000        ; 0.000      ; 4.014      ;
+; 3.823 ; lowCLK:cmp2|count[15]    ; lowCLK:cmp2|count[8]     ; clock        ; clock       ; 0.000        ; 0.000      ; 4.044      ;
+; 3.829 ; lowCLK:cmp2|count[2]     ; lowCLK:cmp2|count[9]     ; clock        ; clock       ; 0.000        ; 0.000      ; 4.050      ;
+; 3.830 ; lowCLK:cmp2|count[2]     ; lowCLK:cmp2|count[14]    ; clock        ; clock       ; 0.000        ; 0.000      ; 4.051      ;
+; 3.834 ; randm:cmp3|count[5]      ; randm:cmp3|count[9]      ; clock        ; clock       ; 0.000        ; 0.000      ; 4.055      ;
+; 3.838 ; randm:cmp3|count[5]      ; randm:cmp3|count[7]      ; clock        ; clock       ; 0.000        ; 0.000      ; 4.059      ;
+; 3.840 ; randm:cmp3|count[5]      ; randm:cmp3|count[6]      ; clock        ; clock       ; 0.000        ; 0.000      ; 4.061      ;
+; 3.845 ; randm:cmp3|count[5]      ; randm:cmp3|count[4]      ; clock        ; clock       ; 0.000        ; 0.000      ; 4.066      ;
+; 3.856 ; randm:cmp3|count[4]      ; randm:cmp3|count[9]      ; clock        ; clock       ; 0.000        ; 0.000      ; 4.077      ;
+; 3.860 ; randm:cmp3|count[4]      ; randm:cmp3|count[7]      ; clock        ; clock       ; 0.000        ; 0.000      ; 4.081      ;
+; 3.862 ; randm:cmp3|count[4]      ; randm:cmp3|count[6]      ; clock        ; clock       ; 0.000        ; 0.000      ; 4.083      ;
+; 3.867 ; randm:cmp3|count[4]      ; randm:cmp3|count[4]      ; clock        ; clock       ; 0.000        ; 0.000      ; 4.088      ;
+; 3.875 ; lowCLK:cmp2|count[13]    ; lowCLK:cmp2|outputSignal ; clock        ; clock       ; 0.000        ; 0.000      ; 4.096      ;
+; 3.891 ; randm:cmp3|count[9]      ; randm:cmp3|count[8]      ; clock        ; clock       ; 0.000        ; 0.000      ; 4.112      ;
+; 3.894 ; randm:cmp3|count[6]      ; randm:cmp3|count[8]      ; clock        ; clock       ; 0.000        ; 0.000      ; 4.115      ;
+; 3.900 ; randm:cmp3|count[9]      ; randm:cmp3|count[3]      ; clock        ; clock       ; 0.000        ; 0.000      ; 4.121      ;
++-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Setup Transfers                                                                         ;
++----------------------+----------------------+----------+----------+----------+----------+
+; From Clock           ; To Clock             ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------+----------------------+----------+----------+----------+----------+
+; clock                ; clock                ; 509      ; 0        ; 0        ; 0        ;
+; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 18       ; 0        ; 0        ; 0        ;
+; clock                ; lowCLK:cmp2|outclk   ; 9        ; 0        ; 0        ; 0        ;
+; lowCLK:cmp2|outclk   ; lowCLK:cmp2|outclk   ; 2172     ; 0        ; 0        ; 0        ;
++----------------------+----------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------+
+; Hold Transfers                                                                          ;
++----------------------+----------------------+----------+----------+----------+----------+
+; From Clock           ; To Clock             ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------+----------------------+----------+----------+----------+----------+
+; clock                ; clock                ; 509      ; 0        ; 0        ; 0        ;
+; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; 18       ; 0        ; 0        ; 0        ;
+; clock                ; lowCLK:cmp2|outclk   ; 9        ; 0        ; 0        ; 0        ;
+; lowCLK:cmp2|outclk   ; lowCLK:cmp2|outclk   ; 2172     ; 0        ; 0        ; 0        ;
++----------------------+----------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 45    ; 45   ;
+; Unconstrained Output Ports      ; 11    ; 11   ;
+; Unconstrained Output Port Paths ; 12    ; 12   ;
++---------------------------------+-------+------+
+
+
++------------------------------------------------------------------+
+; Clock Status Summary                                             ;
++----------------------+----------------------+------+-------------+
+; Target               ; Clock                ; Type ; Status      ;
++----------------------+----------------------+------+-------------+
+; clock                ; clock                ; Base ; Constrained ;
+; lighter:cmp4|lightUp ; lighter:cmp4|lightUp ; Base ; Constrained ;
+; lowCLK:cmp2|outclk   ; lowCLK:cmp2|outclk   ; Base ; Constrained ;
++----------------------+----------------------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; btnClick   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; reset      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; datCom      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; enable      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcdOut[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcdOut[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcdOut[2]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcdOut[3]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcdOut[4]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcdOut[5]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcdOut[6]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcdOut[7]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledLight    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; btnClick   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; reset      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; datCom      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; enable      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcdOut[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcdOut[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcdOut[2]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcdOut[3]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcdOut[4]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcdOut[5]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcdOut[6]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcdOut[7]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledLight    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime TimeQuest Timing Analyzer
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+    Info: Processing started: Thu May  3 21:38:51 2018
+Info: Command: quartus_sta ReactionTime -c ReactionTime
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'ReactionTime.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name lowCLK:cmp2|outclk lowCLK:cmp2|outclk
+    Info (332105): create_clock -period 1.000 -name clock clock
+    Info (332105): create_clock -period 1.000 -name lighter:cmp4|lightUp lighter:cmp4|lightUp
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -10.429
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -10.429            -373.879 lowCLK:cmp2|outclk 
+    Info (332119):    -6.545            -164.264 clock 
+    Info (332119):    -2.709             -10.257 lighter:cmp4|lightUp 
+Info (332146): Worst-case hold slack is 1.376
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.376               0.000 lowCLK:cmp2|outclk 
+    Info (332119):     1.716               0.000 lighter:cmp4|lightUp 
+    Info (332119):     2.151               0.000 clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 clock 
+    Info (332119):     0.234               0.000 lighter:cmp4|lightUp 
+    Info (332119):     0.234               0.000 lowCLK:cmp2|outclk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 1008 megabytes
+    Info: Processing ended: Thu May  3 21:38:52 2018
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

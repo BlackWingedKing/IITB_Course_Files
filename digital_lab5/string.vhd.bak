@@ -1,0 +1,55 @@
+library std;
+use std.standard.all;
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+
+entity string is
+  port (reset: in std_logic;
+        x: in std_logic_vector(4 downto 0);
+		  CLK: in std_logic;
+		  o: out std_logic);
+end entity string;
+architecture Behave of string is
+
+component dff_new is
+  port (D, CLK: in std_logic; Q: out std_logic);
+end component;
+
+component gun is
+  port (r: in std_logic;
+        x: in std_logic_vector(4 downto 0);
+		  CLK: in std_logic;
+		  o: out std_logic);
+end component;
+
+component bomb is
+  port (r: in std_logic;
+        x: in std_logic_vector(4 downto 0);
+		  CLK: in std_logic;
+		  o: out std_logic);
+end component;
+
+component knife is
+  port (r: in std_logic;
+        x: in std_logic_vector(4 downto 0);
+		  CLK: in std_logic;
+		  o: out std_logic);
+end component;
+
+component terror is
+  port (r: in std_logic;
+        x: in std_logic_vector(4 downto 0);
+		  CLK: in std_logic;
+		  o: out std_logic);
+end component;
+
+  signal  a,b,c,d: std_logic;
+begin
+g: gun port map (r => reset, x => x, CLK => CLK, o =>a);
+k: knife port map (r => reset, x => x, CLK => CLK, o =>b);
+p: bomb port map (r => reset, x => x, CLK => CLK, o =>c);
+t: terror port map (r => reset, x => x, CLK => CLK, o =>d);
+o <= a or b or c or d;
+end Behave;

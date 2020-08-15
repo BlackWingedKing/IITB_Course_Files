@@ -1,0 +1,753 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/ritesh/Desktop/digitalLab/digital_lab3/simulation/modelsim
+Ealu
+Z1 w1518175227
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8/home/ritesh/Desktop/digitalLab/digital_lab3/alu.vhd
+Z5 F/home/ritesh/Desktop/digitalLab/digital_lab3/alu.vhd
+l0
+L9
+V<NO1K0EX@^mS6>P1k4TF83
+!s100 E5AnUc2J:8;<<_]d_gm;R1
+Z6 OV;C;10.4d;61
+31
+Z7 !s110 1520257729
+!i10b 1
+Z8 !s108 1520257729.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/digitalLab/digital_lab3/alu.vhd|
+Z10 !s107 /home/ritesh/Desktop/digitalLab/digital_lab3/alu.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1
+Abehave
+R2
+R3
+DEx4 work 3 alu 0 22 <NO1K0EX@^mS6>P1k4TF83
+l40
+L13
+VZJkTW:bHL=`]=lM3=;8262
+!s100 ANdPMPilEB;g>>7>1UNVG1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eand_2
+Z13 w1520254689
+R2
+R3
+R0
+Z14 8/home/ritesh/Desktop/digitalLab/digital_lab3/halfadder.vhd
+Z15 F/home/ritesh/Desktop/digitalLab/digital_lab3/halfadder.vhd
+l0
+L38
+VQI]oLHj[7OjfOgWKR;[m;2
+!s100 OHhE?GTCV^Ak2S@QY<2cl0
+R6
+31
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/digitalLab/digital_lab3/halfadder.vhd|
+Z17 !s107 /home/ritesh/Desktop/digitalLab/digital_lab3/halfadder.vhd|
+!i113 1
+R11
+R12
+Abehave
+R2
+R3
+DEx4 work 5 and_2 0 22 QI]oLHj[7OjfOgWKR;[m;2
+l43
+L42
+VcRHiMBkDee=8EV<F:<Tog3
+!s100 VOlLhQ<cM6_ZV1>Alm:Ed0
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Edut
+Z18 w1518176343
+R2
+R3
+R0
+Z19 8/home/ritesh/Desktop/digitalLab/digital_lab3/DUT.vhd
+Z20 F/home/ritesh/Desktop/digitalLab/digital_lab3/DUT.vhd
+l0
+L10
+VjW9`j;UW^gj6_[=:65E_23
+!s100 ;le`mJe63jBlZ2g5b^[]k3
+R6
+31
+R7
+!i10b 1
+R8
+Z21 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/digitalLab/digital_lab3/DUT.vhd|
+Z22 !s107 /home/ritesh/Desktop/digitalLab/digital_lab3/DUT.vhd|
+!i113 1
+R11
+R12
+Adutwrap
+R2
+R3
+DEx4 work 3 dut 0 22 jW9`j;UW^gj6_[=:65E_23
+l44
+L15
+VDG`00Sk0Cjeh6B<0G1F_l0
+!s100 lfhm1oi=3cC<kHJHcCi8m1
+R6
+31
+R7
+!i10b 1
+R8
+R21
+R22
+!i113 1
+R11
+R12
+Eebitrightshift
+Z23 w1520256453
+Z24 DPx4 work 16 ee224_components 0 22 f]:4N9OdKofEZOQ>22L_D1
+R2
+R3
+R0
+Z25 8/home/ritesh/Desktop/digitalLab/digital_lab3/ebitrightshift.vhd
+Z26 F/home/ritesh/Desktop/digitalLab/digital_lab3/ebitrightshift.vhd
+l0
+L12
+VKNFDnkgWBk=OIXY45AKN`1
+!s100 BkaljKF00;Lj@O`ViQI813
+R6
+31
+R7
+!i10b 1
+R8
+Z27 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/digitalLab/digital_lab3/ebitrightshift.vhd|
+Z28 !s107 /home/ritesh/Desktop/digitalLab/digital_lab3/ebitrightshift.vhd|
+!i113 1
+R11
+R12
+Astruct
+R24
+R2
+R3
+DEx4 work 14 ebitrightshift 0 22 KNFDnkgWBk=OIXY45AKN`1
+l26
+L18
+VIeN7`Z;@I7DXWPCj;B3mf0
+!s100 OFLXIn;T69bMeWUa?E>go3
+R6
+31
+R7
+!i10b 1
+R8
+R27
+R28
+!i113 1
+R11
+R12
+Pee224_components
+R2
+R3
+R13
+R0
+R14
+R15
+l0
+L7
+Vf]:4N9OdKofEZOQ>22L_D1
+!s100 f;;]jMk6kHEMFYhH:_g321
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Eeightbit
+Z29 w1520255520
+R24
+R2
+R3
+R0
+Z30 8/home/ritesh/Desktop/digitalLab/digital_lab3/eightbit.vhd
+Z31 F/home/ritesh/Desktop/digitalLab/digital_lab3/eightbit.vhd
+l0
+L11
+V0XG0HzS>12On894oi`ggE2
+!s100 dEV`EZQode2dO8bTABPm?1
+R6
+31
+R7
+!i10b 1
+R8
+Z32 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/digitalLab/digital_lab3/eightbit.vhd|
+Z33 !s107 /home/ritesh/Desktop/digitalLab/digital_lab3/eightbit.vhd|
+!i113 1
+R11
+R12
+Astruct
+R24
+R2
+R3
+DEx4 work 8 eightbit 0 22 0XG0HzS>12On894oi`ggE2
+l26
+L18
+VNS79<YU@Y]2EKW1<mM:KU2
+!s100 `8ZBehB>0Gg[T5P2@eM^K2
+R6
+31
+R7
+!i10b 1
+R8
+R32
+R33
+!i113 1
+R11
+R12
+Eeightbitsub
+Z34 w1520255874
+R24
+R2
+R3
+R0
+Z35 8/home/ritesh/Desktop/digitalLab/digital_lab3/eightbitsub.vhd
+Z36 F/home/ritesh/Desktop/digitalLab/digital_lab3/eightbitsub.vhd
+l0
+L14
+Vhn5zn_oVbo5mXePK?3GV_2
+!s100 6n@W0LQlL09_4M8DT6NXD1
+R6
+31
+R7
+!i10b 1
+R8
+Z37 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/digitalLab/digital_lab3/eightbitsub.vhd|
+Z38 !s107 /home/ritesh/Desktop/digitalLab/digital_lab3/eightbitsub.vhd|
+!i113 1
+R11
+R12
+Astruct
+R24
+R2
+R3
+DEx4 work 11 eightbitsub 0 22 hn5zn_oVbo5mXePK?3GV_2
+l27
+L19
+V6Mc;4W:FD4V;4`Ze3@5_G0
+!s100 aHZU_G>eZMON:<Vho7m@c1
+R6
+31
+R7
+!i10b 1
+R8
+R37
+R38
+!i113 1
+R11
+R12
+Efulladder
+Z39 w1520255196
+R24
+R2
+R3
+R0
+Z40 8/home/ritesh/Desktop/digitalLab/digital_lab3/fulladder.vhd
+Z41 F/home/ritesh/Desktop/digitalLab/digital_lab3/fulladder.vhd
+l0
+L11
+Vl44[Yg5:G16l;>4X4=0?;2
+!s100 B@O;V_c?Nzh0k8U1EPVRX0
+R6
+31
+R7
+!i10b 1
+R8
+Z42 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/digitalLab/digital_lab3/fulladder.vhd|
+Z43 !s107 /home/ritesh/Desktop/digitalLab/digital_lab3/fulladder.vhd|
+!i113 1
+R11
+R12
+Astruct
+R24
+R2
+R3
+DEx4 work 9 fulladder 0 22 l44[Yg5:G16l;>4X4=0?;2
+l23
+L15
+VXR2LG7Tj]HUDImMNe3``e3
+!s100 UPVAZbK;bFKMCn6bON[[P0
+R6
+31
+R7
+!i10b 1
+R8
+R42
+R43
+!i113 1
+R11
+R12
+Efullsub
+Z44 w1520255927
+R24
+R2
+R3
+R0
+Z45 8/home/ritesh/Desktop/digitalLab/digital_lab3/fullsub.vhd
+Z46 F/home/ritesh/Desktop/digitalLab/digital_lab3/fullsub.vhd
+l0
+L13
+VbXPGzz8D?RIDJ0>4?QCQU0
+!s100 ?K@gR<_K[;^=4^7;iozS_1
+R6
+31
+R7
+!i10b 1
+R8
+Z47 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/digitalLab/digital_lab3/fullsub.vhd|
+Z48 !s107 /home/ritesh/Desktop/digitalLab/digital_lab3/fullsub.vhd|
+!i113 1
+R11
+R12
+Astruct
+R24
+R2
+R3
+DEx4 work 7 fullsub 0 22 bXPGzz8D?RIDJ0>4?QCQU0
+l19
+L17
+VW^Lk:PH=LXI;QmF:z:RkY0
+!s100 _k;jBkWR>dUL5z=6`ifzM0
+R6
+31
+R7
+!i10b 1
+R8
+R47
+R48
+!i113 1
+R11
+R12
+Ehalfadder
+R13
+R24
+R2
+R3
+R0
+R14
+R15
+l0
+L90
+VMk5W3iGVBCOmgNonHZRcG1
+!s100 BUXDie4a?@La`WIBKN8310
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Astruct
+R24
+R2
+R3
+DEx4 work 9 halfadder 0 22 Mk5W3iGVBCOmgNonHZRcG1
+l97
+L95
+VMPY9P8gnV13PCYZ?5[nQR3
+!s100 :@RD9i=58O11V8U@M4X<h1
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Einputinverter
+Z49 w1520257000
+R24
+R2
+R3
+R0
+Z50 8/home/ritesh/Desktop/digitalLab/digital_lab3/inputinverter.vhd
+Z51 F/home/ritesh/Desktop/digitalLab/digital_lab3/inputinverter.vhd
+l0
+L12
+V::1<gCzKFUUiPdJj3fHVh3
+!s100 e9Y43GnE8oORSdN^A<78S0
+R6
+31
+Z52 !s110 1520257730
+!i10b 1
+Z53 !s108 1520257730.000000
+Z54 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/digitalLab/digital_lab3/inputinverter.vhd|
+Z55 !s107 /home/ritesh/Desktop/digitalLab/digital_lab3/inputinverter.vhd|
+!i113 1
+R11
+R12
+Astruct
+R24
+R2
+R3
+DEx4 work 13 inputinverter 0 22 ::1<gCzKFUUiPdJj3fHVh3
+l23
+L17
+VF6cCKZF0^=7]WPfJFm:gg2
+!s100 glW@K@zWC^23O=gMNS2<32
+R6
+31
+R52
+!i10b 1
+R53
+R54
+R55
+!i113 1
+R11
+R12
+Einverter
+R13
+R2
+R3
+R0
+R14
+R15
+l0
+L27
+VW8;4keO[6^2ogL@lRN^TN2
+!s100 FbATZPTnkE2=kXf_TXiGD1
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Abehave
+R2
+R3
+DEx4 work 8 inverter 0 22 W8;4keO[6^2ogL@lRN^TN2
+l32
+L31
+V[?EMPPWiT^Fl3W4;d2=JP1
+!s100 ;XJhV`dY1<N2CLV[no0QT2
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Emodifiedleftshift
+Z56 w1520256842
+R24
+R2
+R3
+R0
+Z57 8/home/ritesh/Desktop/digitalLab/digital_lab3/modifiedleftshift.vhd
+Z58 F/home/ritesh/Desktop/digitalLab/digital_lab3/modifiedleftshift.vhd
+l0
+L11
+V7Z:N5@EZjKG7>=:ZmBS_=3
+!s100 `o<3[^UHWM=U6nNoYIio93
+R6
+31
+R52
+!i10b 1
+R53
+Z59 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/digitalLab/digital_lab3/modifiedleftshift.vhd|
+Z60 !s107 /home/ritesh/Desktop/digitalLab/digital_lab3/modifiedleftshift.vhd|
+!i113 1
+R11
+R12
+Astruct
+R24
+R2
+R3
+DEx4 work 17 modifiedleftshift 0 22 7Z:N5@EZjKG7>=:ZmBS_=3
+l32
+L17
+VHIP=K2aGH`XmRS=C?BSU]3
+!s100 7C]jGhfF9<[mU;=ff0Pac2
+R6
+31
+R52
+!i10b 1
+R53
+R59
+R60
+!i113 1
+R11
+R12
+Emodifiedrightshift
+Z61 w1520256627
+R24
+R2
+R3
+R0
+Z62 8/home/ritesh/Desktop/digitalLab/digital_lab3/modifiedrightshift.vhd
+Z63 F/home/ritesh/Desktop/digitalLab/digital_lab3/modifiedrightshift.vhd
+l0
+L12
+VE`U9=gzCEBMN@cidhKN=f2
+!s100 DmU`6N;11TVIZX8ZSmV^^3
+R6
+31
+R52
+!i10b 1
+R53
+Z64 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/digitalLab/digital_lab3/modifiedrightshift.vhd|
+Z65 !s107 /home/ritesh/Desktop/digitalLab/digital_lab3/modifiedrightshift.vhd|
+!i113 1
+R11
+R12
+Astruct
+R24
+R2
+R3
+DEx4 work 18 modifiedrightshift 0 22 E`U9=gzCEBMN@cidhKN=f2
+l33
+L18
+VzgkB:9AQgNin]eOOXOO8S3
+!s100 ]?BNk_[@`9ZL1IM65`94L2
+R6
+31
+R52
+!i10b 1
+R53
+R64
+R65
+!i113 1
+R11
+R12
+Emultiplexor
+Z66 w1520256009
+R24
+R2
+R3
+R0
+Z67 8/home/ritesh/Desktop/digitalLab/digital_lab3/multiplexor.vhd
+Z68 F/home/ritesh/Desktop/digitalLab/digital_lab3/multiplexor.vhd
+l0
+L10
+V`cnL[lCKnF7eaFG5;EWOM1
+!s100 Y`DLZznXQG5R18@?]WX;O1
+R6
+31
+R52
+!i10b 1
+R8
+Z69 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/digitalLab/digital_lab3/multiplexor.vhd|
+Z70 !s107 /home/ritesh/Desktop/digitalLab/digital_lab3/multiplexor.vhd|
+!i113 1
+R11
+R12
+Astruct
+R24
+R2
+R3
+DEx4 work 11 multiplexor 0 22 `cnL[lCKnF7eaFG5;EWOM1
+l20
+L17
+V[2]NHVoC=DYhYAh`3@[jX3
+!s100 :cz=XOOW@6GlQdFV42f5O0
+R6
+31
+R52
+!i10b 1
+R8
+R69
+R70
+!i113 1
+R11
+R12
+Enand_2
+R13
+R2
+R3
+R0
+R14
+R15
+l0
+L60
+V^RoNT?bXNL3^ZNTA27YGH3
+!s100 IDI8mBb;9HhP5l[_gde>k3
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Abehave
+R2
+R3
+DEx4 work 6 nand_2 0 22 ^RoNT?bXNL3^ZNTA27YGH3
+l65
+L64
+VD1@C8?MLaP@dU?BEzini12
+!s100 81iH0TW8aSXE8OEAiMlaP1
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Eor_2
+R13
+R2
+R3
+R0
+R14
+R15
+l0
+L49
+V;i`f5A33NTCa45`Ho2NG_2
+!s100 Ifl^;Nl8nb4]@nn4jU:RZ0
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Abehave
+R2
+R3
+DEx4 work 4 or_2 0 22 ;i`f5A33NTCa45`Ho2NG_2
+l54
+L53
+VgFW[T3j^i>NKUU<gSPVKT1
+!s100 Ng7o>cSW^mbzE1SVJG;Po1
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Etestbench
+Z71 w1518772270
+R3
+R2
+R0
+Z72 8/home/ritesh/Desktop/digitalLab/digital_lab3/Testbench.vhd
+Z73 F/home/ritesh/Desktop/digitalLab/digital_lab3/Testbench.vhd
+l0
+L10
+V@5iQ<LF@c19<e]mQMaJza0
+!s100 h`<<f5Y0?55R4a`U0c<TP2
+R6
+31
+R52
+!i10b 1
+R53
+Z74 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/digitalLab/digital_lab3/Testbench.vhd|
+Z75 !s107 /home/ritesh/Desktop/digitalLab/digital_lab3/Testbench.vhd|
+!i113 1
+R11
+R12
+Abehave
+R3
+R2
+DEx4 work 9 testbench 0 22 @5iQ<LF@c19<e]mQMaJza0
+l44
+L12
+V_9dF]RLPd4O3Aof@MQmcE1
+!s100 cTJ8LXd:eA8j]z[Z8?Bnk0
+R6
+31
+R52
+!i10b 1
+R53
+R74
+R75
+!i113 1
+R11
+R12
+Exor_2
+R13
+R2
+R3
+R0
+R14
+R15
+l0
+L71
+VBhj9NFNZEf075oNhNoBCQ0
+!s100 aYbUfMa9bA`Znl`LBOT]K3
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Abehave
+R2
+R3
+DEx4 work 5 xor_2 0 22 Bhj9NFNZEf075oNhNoBCQ0
+l76
+L75
+VFRRdh3REYM3Y9bZ[6D0fC1
+!s100 B1gX?O:o[O_hLh1ijdXl>0
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12

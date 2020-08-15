@@ -1,0 +1,14 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {/home/aakash/Desktop/EE214 - Digital Lab/ReactionTime/ReactionTime.vhd}
+vcom -93 -work work {/home/aakash/Desktop/EE214 - Digital Lab/ReactionTime/randm.vhd}
+vcom -93 -work work {/home/aakash/Desktop/EE214 - Digital Lab/ReactionTime/lowCLK.vhd}
+vcom -93 -work work {/home/aakash/Desktop/EE214 - Digital Lab/ReactionTime/lighter.vhd}
+vcom -93 -work work {/home/aakash/Desktop/EE214 - Digital Lab/ReactionTime/calculateTime.vhd}
+vcom -93 -work work {/home/aakash/Desktop/EE214 - Digital Lab/ReactionTime/runMultiple.vhd}
+

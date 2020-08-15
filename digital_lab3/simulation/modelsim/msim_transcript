@@ -1,0 +1,215 @@
+# ERROR: No extended dataflow license exists
+# do shifter_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4d Lib Mapping Utility 2015.12 Dec 30 2015
+# vmap work rtl_work 
+# Copying /home/ritesh/altera_lite/16.0/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {/home/ritesh/Desktop/digitalLab/digital_lab3/DUT.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:18:49 on Mar 05,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/digitalLab/digital_lab3/DUT.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity DUT
+# -- Compiling architecture DutWrap of DUT
+# End time: 19:18:49 on Mar 05,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/digitalLab/digital_lab3/alu.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:18:49 on Mar 05,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/digitalLab/digital_lab3/alu.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity alu
+# -- Compiling architecture behave of alu
+# End time: 19:18:49 on Mar 05,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/digitalLab/digital_lab3/halfadder.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:18:49 on Mar 05,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/digitalLab/digital_lab3/halfadder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package EE224_Components
+# -- Compiling entity INVERTER
+# -- Compiling architecture Behave of INVERTER
+# -- Compiling entity AND_2
+# -- Compiling architecture Behave of AND_2
+# -- Compiling entity OR_2
+# -- Compiling architecture Behave of OR_2
+# -- Compiling entity NAND_2
+# -- Compiling architecture Behave of NAND_2
+# -- Compiling entity XOR_2
+# -- Compiling architecture Behave of XOR_2
+# -- Loading package EE224_Components
+# -- Compiling entity halfadder
+# -- Compiling architecture Struct of halfadder
+# End time: 19:18:49 on Mar 05,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/digitalLab/digital_lab3/fullsub.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:18:49 on Mar 05,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/digitalLab/digital_lab3/fullsub.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package EE224_Components
+# -- Compiling entity fullsub
+# -- Compiling architecture Struct of fullsub
+# End time: 19:18:49 on Mar 05,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/digitalLab/digital_lab3/fulladder.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:18:49 on Mar 05,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/digitalLab/digital_lab3/fulladder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package EE224_Components
+# -- Compiling entity fulladder
+# -- Compiling architecture Struct of fulladder
+# End time: 19:18:49 on Mar 05,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/digitalLab/digital_lab3/eightbitsub.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:18:49 on Mar 05,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/digitalLab/digital_lab3/eightbitsub.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package EE224_Components
+# -- Compiling entity eightbitsub
+# -- Compiling architecture Struct of eightbitsub
+# End time: 19:18:49 on Mar 05,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/digitalLab/digital_lab3/eightbit.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:18:49 on Mar 05,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/digitalLab/digital_lab3/eightbit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package EE224_Components
+# -- Compiling entity eightbit
+# -- Compiling architecture Struct of eightbit
+# End time: 19:18:49 on Mar 05,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/digitalLab/digital_lab3/ebitrightshift.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:18:49 on Mar 05,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/digitalLab/digital_lab3/ebitrightshift.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package EE224_Components
+# -- Compiling entity ebitrightshift
+# -- Compiling architecture Struct of ebitrightshift
+# End time: 19:18:49 on Mar 05,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/digitalLab/digital_lab3/multiplexor.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:18:49 on Mar 05,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/digitalLab/digital_lab3/multiplexor.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package EE224_Components
+# -- Compiling entity multiplexor
+# -- Compiling architecture Struct of multiplexor
+# End time: 19:18:50 on Mar 05,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/digitalLab/digital_lab3/inputinverter.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:18:50 on Mar 05,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/digitalLab/digital_lab3/inputinverter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package EE224_Components
+# -- Compiling entity inputinverter
+# -- Compiling architecture Struct of inputinverter
+# End time: 19:18:50 on Mar 05,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/digitalLab/digital_lab3/modifiedrightshift.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:18:50 on Mar 05,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/digitalLab/digital_lab3/modifiedrightshift.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package EE224_Components
+# -- Compiling entity modifiedrightshift
+# -- Compiling architecture Struct of modifiedrightshift
+# End time: 19:18:50 on Mar 05,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/digitalLab/digital_lab3/modifiedleftshift.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:18:50 on Mar 05,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/digitalLab/digital_lab3/modifiedleftshift.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package EE224_Components
+# -- Compiling entity modifiedleftshift
+# -- Compiling architecture Struct of modifiedleftshift
+# End time: 19:18:50 on Mar 05,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {/home/ritesh/Desktop/digitalLab/digital_lab3/Testbench.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:18:50 on Mar 05,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/digitalLab/digital_lab3/Testbench.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Testbench
+# -- Compiling architecture Behave of Testbench
+# End time: 19:18:50 on Mar 05,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs="+acc"  Testbench
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs=""+acc"" Testbench 
+# Start time: 19:18:50 on Mar 05,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.testbench(behave)
+# Loading work.dut(dutwrap)
+# Loading work.alu(behave)
+# Loading work.ee224_components
+# Loading work.eightbit(struct)
+# Loading work.fulladder(struct)
+# Loading work.halfadder(struct)
+# Loading work.xor_2(behave)
+# Loading work.and_2(behave)
+# Loading work.or_2(behave)
+# Loading work.modifiedleftshift(struct)
+# Loading work.inputinverter(struct)
+# Loading work.multiplexor(struct)
+# Loading work.inverter(behave)
+# Loading work.modifiedrightshift(struct)
+# Loading work.ebitrightshift(struct)
+# Loading work.eightbitsub(struct)
+# Loading work.fullsub(struct)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Note: SUCCESS, all tests passed.
+#    Time: 22020096 ns  Iteration: 0  Instance: /testbench
+# 
+# stdin: <EOF>
+# End time: 19:19:49 on Mar 05,2018, Elapsed time: 0:00:59
+# Errors: 0, Warnings: 0

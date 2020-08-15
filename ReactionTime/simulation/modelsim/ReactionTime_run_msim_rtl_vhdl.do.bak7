@@ -1,0 +1,22 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {/home/aakash/Desktop/EE214 - Digital Lab/ReactionTime/df.vhd}
+vcom -93 -work work {/home/aakash/Desktop/EE214 - Digital Lab/ReactionTime/debounceFSM.vhd}
+vcom -93 -work work {/home/aakash/Desktop/EE214 - Digital Lab/ReactionTime/ReactionTime.vhd}
+vcom -93 -work work {/home/aakash/Desktop/EE214 - Digital Lab/ReactionTime/debounce.vhd}
+vcom -93 -work work {/home/aakash/Desktop/EE214 - Digital Lab/ReactionTime/randm.vhd}
+vcom -93 -work work {/home/aakash/Desktop/EE214 - Digital Lab/ReactionTime/divider4.vhd}
+vcom -93 -work work {/home/aakash/Desktop/EE214 - Digital Lab/ReactionTime/divider2.vhd}
+vcom -93 -work work {/home/aakash/Desktop/EE214 - Digital Lab/ReactionTime/divider.vhd}
+vcom -93 -work work {/home/aakash/Desktop/EE214 - Digital Lab/ReactionTime/dflip.vhd}
+vcom -93 -work work {/home/aakash/Desktop/EE214 - Digital Lab/ReactionTime/lowCLK.vhd}
+vcom -93 -work work {/home/aakash/Desktop/EE214 - Digital Lab/ReactionTime/lighter.vhd}
+vcom -93 -work work {/home/aakash/Desktop/EE214 - Digital Lab/ReactionTime/calculateTime.vhd}
+vcom -93 -work work {/home/aakash/Desktop/EE214 - Digital Lab/ReactionTime/validation.vhd}
+vcom -93 -work work {/home/aakash/Desktop/EE214 - Digital Lab/ReactionTime/runMultiple.vhd}
+

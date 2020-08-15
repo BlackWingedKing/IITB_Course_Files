@@ -1,0 +1,30 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+ 
+entity counter is
+    Port ( CLK,reset : in  STD_LOGIC;
+           OUTPUT : out  STD_LOGIC_VECTOR (7 downto 0));
+end counter;
+ 
+ 
+architecture Behavioral of counter is
+ 
+signal counter : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
+ 
+ 
+begin
+ 
+OUTPUT <= counter;
+ 
+count_process: process(CLK)
+ begin
+  if rising_edge(CLK) then
+   counter <= counter + 1;
+	if (counter = 200000000 or reset = '1') then
+		counter <= "00000000";
+	end if;
+  end if;
+ end process;
+  
+end Behavioral;

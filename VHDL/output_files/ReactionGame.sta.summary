@@ -1,0 +1,93 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'HighToLow:CH1|Output'
+Slack : -16.820
+TNS   : -1522.086
+
+Type  : Setup 'HighTLow:CH|Output'
+Slack : -13.320
+TNS   : -248.769
+
+Type  : Setup 'CLK'
+Slack : -12.590
+TNS   : -547.885
+
+Type  : Setup 'Control:Con|TenCounter:TimeCount1|car'
+Slack : -10.123
+TNS   : -244.594
+
+Type  : Setup 'Control:Con|TenCounter:TimeCount2|car'
+Slack : -9.731
+TNS   : -264.227
+
+Type  : Setup 'Control:Con|TenCounter:TimeCount0|car'
+Slack : -9.458
+TNS   : -226.687
+
+Type  : Setup 'Control:Con|TenCounter:TimeCount3|car'
+Slack : -8.880
+TNS   : -254.198
+
+Type  : Hold 'CLK'
+Slack : -1.948
+TNS   : -5.674
+
+Type  : Hold 'HighTLow:CH|Output'
+Slack : 1.078
+TNS   : 0.000
+
+Type  : Hold 'HighToLow:CH1|Output'
+Slack : 1.180
+TNS   : 0.000
+
+Type  : Hold 'Control:Con|TenCounter:TimeCount1|car'
+Slack : 2.162
+TNS   : 0.000
+
+Type  : Hold 'Control:Con|TenCounter:TimeCount0|car'
+Slack : 2.309
+TNS   : 0.000
+
+Type  : Hold 'Control:Con|TenCounter:TimeCount3|car'
+Slack : 2.843
+TNS   : 0.000
+
+Type  : Hold 'Control:Con|TenCounter:TimeCount2|car'
+Slack : 2.844
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'CLK'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'Control:Con|TenCounter:TimeCount0|car'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'Control:Con|TenCounter:TimeCount1|car'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'Control:Con|TenCounter:TimeCount2|car'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'Control:Con|TenCounter:TimeCount3|car'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'HighTLow:CH|Output'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'HighTLower:CL|Output'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'HighToLow:CH1|Output'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------

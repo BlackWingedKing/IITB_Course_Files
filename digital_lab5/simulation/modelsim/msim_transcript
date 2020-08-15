@@ -1,0 +1,129 @@
+# ERROR: No extended dataflow license exists
+# do string_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4d Lib Mapping Utility 2015.12 Dec 30 2015
+# vmap work rtl_work 
+# Copying /home/ritesh/altera_lite/16.0/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {/home/ritesh/Desktop/digitalLab/digital_lab5/DUT.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 20:11:30 on Mar 17,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/digitalLab/digital_lab5/DUT.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity DUT
+# -- Compiling architecture DutWrap of DUT
+# End time: 20:11:30 on Mar 17,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/digitalLab/digital_lab5/string.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 20:11:30 on Mar 17,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/digitalLab/digital_lab5/string.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity string
+# -- Compiling architecture Behave of string
+# End time: 20:11:30 on Mar 17,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/digitalLab/digital_lab5/terror.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 20:11:30 on Mar 17,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/digitalLab/digital_lab5/terror.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity terror
+# -- Compiling architecture Behave of terror
+# End time: 20:11:30 on Mar 17,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/digitalLab/digital_lab5/dff_new.vhdl}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 20:11:30 on Mar 17,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/digitalLab/digital_lab5/dff_new.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dff_new
+# -- Compiling architecture anything of dff_new
+# End time: 20:11:30 on Mar 17,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/digitalLab/digital_lab5/gun.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 20:11:30 on Mar 17,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/digitalLab/digital_lab5/gun.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity gun
+# -- Compiling architecture Behave of gun
+# End time: 20:11:30 on Mar 17,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/digitalLab/digital_lab5/bomb.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 20:11:30 on Mar 17,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/digitalLab/digital_lab5/bomb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity bomb
+# -- Compiling architecture Behave of bomb
+# End time: 20:11:30 on Mar 17,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/digitalLab/digital_lab5/knife.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 20:11:30 on Mar 17,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/digitalLab/digital_lab5/knife.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity knife
+# -- Compiling architecture Behave of knife
+# End time: 20:11:30 on Mar 17,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {/home/ritesh/Desktop/digitalLab/digital_lab5/Testbench.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 20:11:30 on Mar 17,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/digitalLab/digital_lab5/Testbench.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Testbench
+# -- Compiling architecture Behave of Testbench
+# End time: 20:11:30 on Mar 17,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs="+acc"  Testbench
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs=""+acc"" Testbench 
+# Start time: 20:11:30 on Mar 17,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.testbench(behave)
+# Loading work.dut(dutwrap)
+# Loading work.string(behave)
+# Loading work.gun(behave)
+# Loading work.dff_new(anything)
+# Loading work.knife(behave)
+# Loading work.bomb(behave)
+# Loading work.terror(behave)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Note: SUCCESS, all tests passed.
+#    Time: 81312 ns  Iteration: 0  Instance: /testbench
+# 
+# stdin: <EOF>
+# End time: 20:12:06 on Mar 17,2018, Elapsed time: 0:00:36
+# Errors: 0, Warnings: 0

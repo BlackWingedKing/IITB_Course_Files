@@ -1,0 +1,13 @@
+
+State Machine - |fsmrandom|state
+Name state.sledon state.sled state.swait1s state.sstart 
+state.sstart 0 0 0 0 
+state.swait1s 0 0 1 1 
+state.sled 0 1 0 1 
+state.sledon 1 0 0 1 
+
+State Machine - |fsmrandom|random:ranfsm|state
+Name state.s0 state.s1 state.sstart 
+state.sstart 0 0 0 
+state.s1 0 1 1 
+state.s0 1 0 1 

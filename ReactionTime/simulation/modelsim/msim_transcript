@@ -1,0 +1,404 @@
+# ERROR: No extended dataflow license exists
+# do ReactionTime_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4d Lib Mapping Utility 2015.12 Dec 30 2015
+# vmap work rtl_work 
+# Copying /home/ritesh/altera_lite/16.0/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {/home/ritesh/Desktop/ReactionTime/lcd_controller.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 20:57:26 on May 03,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/ReactionTime/lcd_controller.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity lcd_controller
+# -- Compiling architecture Behavioral of lcd_controller
+# End time: 20:57:26 on May 03,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/ReactionTime/ReactionTime.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 20:57:26 on May 03,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/ReactionTime/ReactionTime.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ReactionTime
+# -- Compiling architecture intelli of ReactionTime
+# ** Warning: /home/ritesh/Desktop/ReactionTime/ReactionTime.vhd(91): (vcom-1013) Initial value of "oldNum" depends on value of signal "timeOut".
+# ** Warning: /home/ritesh/Desktop/ReactionTime/ReactionTime.vhd(74): (vcom-1013) Initial value of "rst" depends on value of signal "reset".
+# End time: 20:57:26 on May 03,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+# vcom -93 -work work {/home/ritesh/Desktop/ReactionTime/randm.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 20:57:26 on May 03,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/ReactionTime/randm.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity randm
+# -- Compiling architecture behave of randm
+# End time: 20:57:26 on May 03,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/ReactionTime/lowCLK.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 20:57:26 on May 03,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/ReactionTime/lowCLK.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity lowCLK
+# -- Compiling architecture behave of lowCLK
+# End time: 20:57:26 on May 03,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/ReactionTime/lighter.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 20:57:26 on May 03,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/ReactionTime/lighter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity lighter
+# -- Compiling architecture letsee of lighter
+# End time: 20:57:26 on May 03,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/ReactionTime/calculateTime.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 20:57:26 on May 03,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/ReactionTime/calculateTime.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity calculateTime
+# -- Compiling architecture notedown of calculateTime
+# End time: 20:57:26 on May 03,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/ReactionTime/runMultiple.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 20:57:26 on May 03,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/ReactionTime/runMultiple.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity runMultiple
+# -- Compiling architecture looparound of runMultiple
+# End time: 20:57:26 on May 03,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# 
+# stdin: <EOF>
+vsim work.reactiontime
+# vsim work.reactiontime 
+# Start time: 20:58:01 on May 03,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.reactiontime(intelli)
+# Loading work.lowclk(behave)
+# Loading work.randm(behave)
+# Loading work.lighter(letsee)
+# Loading work.calculatetime(notedown)
+# Loading work.runmultiple(looparound)
+# ** Fatal: (vsim-3817) Port "reset" of entity "runmultiple" is not in the component being instantiated.
+#    Time: 0 ps  Iteration: 0  Instance: /reactiontime/cmp7 File: /home/ritesh/Desktop/ReactionTime/runMultiple.vhd Line: 8
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 20:58:01 on May 03,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work.reactiontime
+# vsim work.reactiontime 
+# Start time: 20:58:04 on May 03,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.reactiontime(intelli)
+# Loading work.lowclk(behave)
+# Loading work.randm(behave)
+# Loading work.lighter(letsee)
+# Loading work.calculatetime(notedown)
+# Loading work.runmultiple(looparound)
+# ** Fatal: (vsim-3817) Port "reset" of entity "runmultiple" is not in the component being instantiated.
+#    Time: 0 ps  Iteration: 0  Instance: /reactiontime/cmp7 File: /home/ritesh/Desktop/ReactionTime/runMultiple.vhd Line: 8
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 20:58:04 on May 03,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+wave create -pattern none -portmode in -language vhdl /reactiontime/btnClick
+# Editable Wave items are not compatible with the wave window's standard undo-redo.  Standard undo-redo has been disabled.
+# reactiontime
+wave create -pattern none -portmode in -language vhdl /reactiontime/clock
+# reactiontime
+wave create -pattern none -portmode in -language vhdl /reactiontime/reset
+# reactiontime
+wave create -pattern none -portmode out -language vhdl /reactiontime/ledLight
+# reactiontime
+wave create -pattern none -portmode out -language vhdl /reactiontime/readWrite
+# reactiontime
+wave create -pattern none -portmode out -language vhdl /reactiontime/enable
+# reactiontime
+wave create -pattern none -portmode out -language vhdl /reactiontime/datCom
+# reactiontime
+wave create -pattern none -portmode out -language vhdl /reactiontime/b11
+# reactiontime
+wave create -pattern none -portmode out -language vhdl /reactiontime/b12
+# reactiontime
+wave create -pattern none -portmode out -language vhdl -range 7 0 /reactiontime/lcdOut
+# reactiontime
+vsim work.reactiontime
+# vsim work.reactiontime 
+# Start time: 20:58:22 on May 03,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.reactiontime(intelli)
+# Loading work.lowclk(behave)
+# Loading work.randm(behave)
+# Loading work.lighter(letsee)
+# Loading work.calculatetime(notedown)
+# Loading work.runmultiple(looparound)
+# ** Fatal: (vsim-3817) Port "reset" of entity "runmultiple" is not in the component being instantiated.
+#    Time: 0 ps  Iteration: 0  Instance: /reactiontime/cmp7 File: /home/ritesh/Desktop/ReactionTime/runMultiple.vhd Line: 8
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 20:58:22 on May 03,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work.reactiontime
+# vsim work.reactiontime 
+# Start time: 20:58:23 on May 03,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.reactiontime(intelli)
+# Loading work.lowclk(behave)
+# Loading work.randm(behave)
+# Loading work.lighter(letsee)
+# Loading work.calculatetime(notedown)
+# Loading work.runmultiple(looparound)
+# ** Fatal: (vsim-3817) Port "reset" of entity "runmultiple" is not in the component being instantiated.
+#    Time: 0 ps  Iteration: 0  Instance: /reactiontime/cmp7 File: /home/ritesh/Desktop/ReactionTime/runMultiple.vhd Line: 8
+# FATAL ERROR while loading design
+# Error loading design
+vsim work.reactiontime
+# End time: 20:58:23 on May 03,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# vsim work.reactiontime 
+# Start time: 20:58:23 on May 03,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.reactiontime(intelli)
+# Loading work.lowclk(behave)
+# Loading work.randm(behave)
+# Loading work.lighter(letsee)
+# Loading work.calculatetime(notedown)
+# Loading work.runmultiple(looparound)
+# ** Fatal: (vsim-3817) Port "reset" of entity "runmultiple" is not in the component being instantiated.
+#    Time: 0 ps  Iteration: 0  Instance: /reactiontime/cmp7 File: /home/ritesh/Desktop/ReactionTime/runMultiple.vhd Line: 8
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 20:58:24 on May 03,2018, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+vsim work.reactiontime
+# vsim work.reactiontime 
+# Start time: 20:58:24 on May 03,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.reactiontime(intelli)
+# Loading work.lowclk(behave)
+# Loading work.randm(behave)
+# Loading work.lighter(letsee)
+# Loading work.calculatetime(notedown)
+# Loading work.runmultiple(looparound)
+# ** Fatal: (vsim-3817) Port "reset" of entity "runmultiple" is not in the component being instantiated.
+#    Time: 0 ps  Iteration: 0  Instance: /reactiontime/cmp7 File: /home/ritesh/Desktop/ReactionTime/runMultiple.vhd Line: 8
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 20:58:24 on May 03,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work.reactiontime
+# vsim work.reactiontime 
+# Start time: 20:58:24 on May 03,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.reactiontime(intelli)
+# Loading work.lowclk(behave)
+# Loading work.randm(behave)
+# Loading work.lighter(letsee)
+# Loading work.calculatetime(notedown)
+# Loading work.runmultiple(looparound)
+# ** Fatal: (vsim-3817) Port "reset" of entity "runmultiple" is not in the component being instantiated.
+#    Time: 0 ps  Iteration: 0  Instance: /reactiontime/cmp7 File: /home/ritesh/Desktop/ReactionTime/runMultiple.vhd Line: 8
+# FATAL ERROR while loading design
+# Error loading design
+vsim work.reactiontime
+# End time: 20:58:24 on May 03,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# vsim work.reactiontime 
+# Start time: 20:58:24 on May 03,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.reactiontime(intelli)
+# Loading work.lowclk(behave)
+# Loading work.randm(behave)
+# Loading work.lighter(letsee)
+# Loading work.calculatetime(notedown)
+# Loading work.runmultiple(looparound)
+# ** Fatal: (vsim-3817) Port "reset" of entity "runmultiple" is not in the component being instantiated.
+#    Time: 0 ps  Iteration: 0  Instance: /reactiontime/cmp7 File: /home/ritesh/Desktop/ReactionTime/runMultiple.vhd Line: 8
+# FATAL ERROR while loading design
+# Error loading design
+vsim work.reactiontime
+# End time: 20:58:24 on May 03,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# vsim work.reactiontime 
+# Start time: 20:58:24 on May 03,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.reactiontime(intelli)
+# Loading work.lowclk(behave)
+# Loading work.randm(behave)
+# Loading work.lighter(letsee)
+# Loading work.calculatetime(notedown)
+# Loading work.runmultiple(looparound)
+# ** Fatal: (vsim-3817) Port "reset" of entity "runmultiple" is not in the component being instantiated.
+#    Time: 0 ps  Iteration: 0  Instance: /reactiontime/cmp7 File: /home/ritesh/Desktop/ReactionTime/runMultiple.vhd Line: 8
+# FATAL ERROR while loading design
+# Error loading design
+vsim work.reactiontime
+# End time: 20:58:24 on May 03,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# vsim work.reactiontime 
+# Start time: 20:58:24 on May 03,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.reactiontime(intelli)
+# Loading work.lowclk(behave)
+# Loading work.randm(behave)
+# Loading work.lighter(letsee)
+# Loading work.calculatetime(notedown)
+# Loading work.runmultiple(looparound)
+# ** Fatal: (vsim-3817) Port "reset" of entity "runmultiple" is not in the component being instantiated.
+#    Time: 0 ps  Iteration: 0  Instance: /reactiontime/cmp7 File: /home/ritesh/Desktop/ReactionTime/runMultiple.vhd Line: 8
+# FATAL ERROR while loading design
+# Error loading design
+vsim work.reactiontime
+# End time: 20:58:29 on May 03,2018, Elapsed time: 0:00:05
+# Errors: 1, Warnings: 0
+# vsim work.reactiontime 
+# Start time: 20:58:29 on May 03,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.reactiontime(intelli)
+# Loading work.lowclk(behave)
+# Loading work.randm(behave)
+# Loading work.lighter(letsee)
+# Loading work.calculatetime(notedown)
+# Loading work.runmultiple(looparound)
+# ** Fatal: (vsim-3817) Port "reset" of entity "runmultiple" is not in the component being instantiated.
+#    Time: 0 ps  Iteration: 0  Instance: /reactiontime/cmp7 File: /home/ritesh/Desktop/ReactionTime/runMultiple.vhd Line: 8
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 20:58:29 on May 03,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work.reactiontime
+# vsim work.reactiontime 
+# Start time: 20:58:33 on May 03,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.reactiontime(intelli)
+# Loading work.lowclk(behave)
+# Loading work.randm(behave)
+# Loading work.lighter(letsee)
+# Loading work.calculatetime(notedown)
+# Loading work.runmultiple(looparound)
+# ** Fatal: (vsim-3817) Port "reset" of entity "runmultiple" is not in the component being instantiated.
+#    Time: 0 ps  Iteration: 0  Instance: /reactiontime/cmp7 File: /home/ritesh/Desktop/ReactionTime/runMultiple.vhd Line: 8
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 20:58:33 on May 03,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+wave create -pattern none -portmode in -language vhdl /reactiontime/btnClick
+# Editable Wave items are not compatible with the wave window's standard undo-redo.  Standard undo-redo has been disabled.
+# reactiontime
+wave create -pattern none -portmode in -language vhdl /reactiontime/clock
+# reactiontime
+wave create -pattern none -portmode in -language vhdl /reactiontime/reset
+# reactiontime
+wave create -pattern none -portmode out -language vhdl /reactiontime/ledLight
+# reactiontime
+wave create -pattern none -portmode out -language vhdl /reactiontime/readWrite
+# reactiontime
+wave create -pattern none -portmode out -language vhdl /reactiontime/enable
+# reactiontime
+wave create -pattern none -portmode out -language vhdl /reactiontime/datCom
+# reactiontime
+wave create -pattern none -portmode out -language vhdl /reactiontime/b11
+# reactiontime
+wave create -pattern none -portmode out -language vhdl /reactiontime/b12
+# reactiontime
+wave create -pattern none -portmode out -language vhdl -range 7 0 /reactiontime/lcdOut
+# reactiontime
+force -freeze NewSig:/reactiontime/clock 1 0, 0 {50 ps} -r 100
+# ** Warning: (vish-168) The time value, 100, is smaller than the simulator resolution so no run occurred.
+# ** Error: (vish-4004) The -repeat option requires a time period argument.
+# Usage: force <object_name> {<value> [[@]<time_info>][, <value> [[@]<time_info>]...} [-freeze | -drive | -deposit] [-cancel [@]<time_info>] [-repeat [@]<time_info>]
+force -freeze NewSig:/reactiontime/reset 1 0
+# Error while executing: force
+# Usage: force <object_name> {<value> [[@]<time_info>][, <value> [[@]<time_info>]...} [-freeze | -drive | -deposit] [-cancel [@]<time_info>] [-repeat [@]<time_info>]
+vsim work.reactiontime
+# vsim work.reactiontime 
+# Start time: 21:01:29 on May 03,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.reactiontime(intelli)
+# Loading work.lowclk(behave)
+# Loading work.randm(behave)
+# Loading work.lighter(letsee)
+# Loading work.calculatetime(notedown)
+# Loading work.runmultiple(looparound)
+# ** Fatal: (vsim-3817) Port "reset" of entity "runmultiple" is not in the component being instantiated.
+#    Time: 0 ps  Iteration: 0  Instance: /reactiontime/cmp7 File: /home/ritesh/Desktop/ReactionTime/runMultiple.vhd Line: 8
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 21:01:30 on May 03,2018, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+force -freeze NewSig:/reactiontime/clock 1 0, 0 {50 ps} -r 100
+# ** Warning: (vish-168) The time value, 100, is smaller than the simulator resolution so no run occurred.
+# ** Error: (vish-4004) The -repeat option requires a time period argument.
+# Usage: force <object_name> {<value> [[@]<time_info>][, <value> [[@]<time_info>]...} [-freeze | -drive | -deposit] [-cancel [@]<time_info>] [-repeat [@]<time_info>]

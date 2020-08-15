@@ -1,0 +1,127 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/ritesh/Desktop/digitalLab/debounce/simulation/modelsim
+Ecounter4
+Z1 w1521805336
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8/home/ritesh/Desktop/digitalLab/debounce/counter4.vhd
+Z5 F/home/ritesh/Desktop/digitalLab/debounce/counter4.vhd
+l0
+L8
+V^SXjzoCC_>]cW5eaWF>JN2
+!s100 O>C3HF?`[LgQDcF[UXXK81
+Z6 OV;C;10.4d;61
+31
+Z7 !s110 1521806751
+!i10b 1
+Z8 !s108 1521806751.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/digitalLab/debounce/counter4.vhd|
+Z10 !s107 /home/ritesh/Desktop/digitalLab/debounce/counter4.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1
+Abehave
+R2
+R3
+DEx4 work 8 counter4 0 22 ^SXjzoCC_>]cW5eaWF>JN2
+l17
+L11
+VDnd6>j58[MQzhBX6G1CIO1
+!s100 SbjdK39T89]ZWVYfCn`Y23
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Edff_new
+Z13 w1521195696
+R2
+R3
+R0
+Z14 8/home/ritesh/Desktop/digitalLab/debounce/dff_new.vhdl
+Z15 F/home/ritesh/Desktop/digitalLab/debounce/dff_new.vhdl
+l0
+L11
+VHIJf4Z6W1A;NN@CgN4HfR3
+!s100 e0o1D3<V90KkXn=H@G<DR1
+R6
+31
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/digitalLab/debounce/dff_new.vhdl|
+Z17 !s107 /home/ritesh/Desktop/digitalLab/debounce/dff_new.vhdl|
+!i113 1
+R11
+R12
+Aanything
+R2
+R3
+DEx4 work 7 dff_new 0 22 HIJf4Z6W1A;NN@CgN4HfR3
+l16
+L15
+VBcY]UQ]^U:XL@NjQml6<c1
+!s100 68;mIAc]ic?R0R>cn91]M2
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Edivider
+Z18 w1521806710
+R2
+R3
+R0
+Z19 8/home/ritesh/Desktop/digitalLab/debounce/divider.vhd
+Z20 F/home/ritesh/Desktop/digitalLab/debounce/divider.vhd
+l0
+L8
+VTo9Oh1:D=D?;1S8Lf>Dc_3
+!s100 Z4Pk3hh73AcJcV@338;<Q1
+R6
+31
+R7
+!i10b 1
+R8
+Z21 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/digitalLab/debounce/divider.vhd|
+Z22 !s107 /home/ritesh/Desktop/digitalLab/debounce/divider.vhd|
+!i113 1
+R11
+R12
+Abehave
+R2
+R3
+DEx4 work 7 divider 0 22 To9Oh1:D=D?;1S8Lf>Dc_3
+l18
+L11
+Vk^ei:PkR^;PPWPmTd2LQa3
+!s100 @TV4D74H^H>UUk7LB8o?Z1
+R6
+31
+R7
+!i10b 1
+R8
+R21
+R22
+!i113 1
+R11
+R12

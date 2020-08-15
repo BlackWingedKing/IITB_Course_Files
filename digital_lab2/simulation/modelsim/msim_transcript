@@ -1,0 +1,93 @@
+# ERROR: No extended dataflow license exists
+# do adder_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4d Lib Mapping Utility 2015.12 Dec 30 2015
+# vmap work rtl_work 
+# Copying /home/ritesh/altera_lite/16.0/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {/home/ritesh/Desktop/digital_lab2/halfadder.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 17:00:33 on Feb 02,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/digital_lab2/halfadder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package EE224_Components
+# -- Compiling entity INVERTER
+# -- Compiling architecture Behave of INVERTER
+# -- Compiling entity AND_2
+# -- Compiling architecture Behave of AND_2
+# -- Compiling entity OR_2
+# -- Compiling architecture Behave of OR_2
+# -- Compiling entity NAND_2
+# -- Compiling architecture Behave of NAND_2
+# -- Compiling entity XOR_2
+# -- Compiling architecture Behave of XOR_2
+# -- Loading package EE224_Components
+# -- Compiling entity halfadder
+# -- Compiling architecture Struct of halfadder
+# End time: 17:00:33 on Feb 02,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/digital_lab2/fullsub.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 17:00:33 on Feb 02,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/digital_lab2/fullsub.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package EE224_Components
+# -- Compiling entity fullsub
+# -- Compiling architecture Struct of fullsub
+# End time: 17:00:34 on Feb 02,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/digital_lab2/eightbitsub.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 17:00:34 on Feb 02,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/digital_lab2/eightbitsub.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package EE224_Components
+# -- Compiling entity eightbitsub
+# -- Compiling architecture Struct of eightbitsub
+# End time: 17:00:34 on Feb 02,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# 
+# stdin: <EOF>
+vsim work.eightbitsub
+# vsim work.eightbitsub 
+# Start time: 17:00:55 on Feb 02,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.ee224_components
+# Loading work.eightbitsub(struct)
+# Loading work.fullsub(struct)
+# Loading work.xor_2(behave)
+# Loading work.inverter(behave)
+# Loading work.and_2(behave)
+# Loading work.or_2(behave)
+add wave -position insertpoint sim:/eightbitsub/*
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 1 times, errno 11
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 2 times, errno 11
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 3 times, errno 11
+# ** Error: Cannot lock WLF file: "vsim.wlf"
+#           errno 11: Resource temporarily unavailable.
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: unknown  Hostname: genibo  ProcessID: 13720
+#           Attempting to use alternate WLF file "./wlftyM3ixJ".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftyM3ixJ
+force -freeze sim:/eightbitsub/x0 00011111 0
+force -freeze sim:/eightbitsub/x1 00001111 0
+run
+force -freeze sim:/eightbitsub/x1 00101111 0
+run
+# End time: 17:03:20 on Feb 02,2018, Elapsed time: 0:02:25
+# Errors: 4, Warnings: 2

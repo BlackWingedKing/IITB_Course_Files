@@ -1,0 +1,35 @@
+library std;
+use std.standard.all;
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity ReactionGame is
+  port (Click, CLK, Reset: in std_logic;
+         LED: out std_logic);
+end entity ReactionGame;
+architecture Behave of ReactionGame is
+	signal clkh, clkl: std_logic;
+	signal debounce: std_logic;
+
+component HighToLow is
+	port (CLK, Reset: in std_logic;
+         LowOut: out std_logic);
+end component;
+component HighToLower is
+	port (CLK, Reset: in std_logic;
+         LowOut: out std_logic);
+end component;
+component debouncer is 
+	port (X, RESET, CLK: in std_logic; W: out std_logic);
+end component;
+
+begin
+	
+	CH: HighToLow port map(CLK, Reset, clkh);
+	CL: HighToLower port map(CLK, Reset, clkl);
+	
+	Deb: debouncer port map(Click, Reset, clkl, debounce);
+
+
+end Behave;

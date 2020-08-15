@@ -1,0 +1,62 @@
+library std;
+use std.standard.all;
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+
+entity knife is
+--inputs are reset->r, 5 bit input vector, clk.
+--o is the output
+  port (r: in std_logic;
+        x: in std_logic_vector(4 downto 0);
+		  CLK: in std_logic;
+		  o: out std_logic);
+end entity knife;
+architecture Behave of knife is
+--used a dflip flop named dff_new
+component dff_new is
+  port (D, CLK: in std_logic; Q: out std_logic);
+end component;
+--q and nq are the 3 bit states 
+--since the number of states in the knife are 5
+--they are encoded using 3 bit vectors.
+	signal  q,nq: std_logic_vector(2 downto 0);
+--signals k,n,i,f,e reperesent the inputs k,n,i,f,e respectively 
+--so they are 1 when the inputs are k,n,i,f,e respectively
+--signals nk,nn,ni,nf,ne represent the inputs which arent not k, not n
+--, not i, not f, not e respectively
+--signals ss,sk,skn,skni,sknif represent the states start,k,kn,kni,knif respectively
+--state encoding is 000-start,001-k,010-kn,011-kni,100-knif
+--rbar is 1 when reset is low
+	signal  k,n,i,f,e,nk,nn,ni,nf,ne,ss,sk,skn,skni,sknif,rbar: std_logic; 
+begin
+  k <= (not x(4)) and (x(3)) and (not x(2)) and (x(1)) and (x(0));
+  nk <= not k;
+  n <= (not x(4)) and (x(3)) and (x(2)) and (x(1)) and (not x(0));
+  nn <= not n;
+  i <= (not x(4)) and (x(3)) and (not x(2)) and (not x(1)) and (x(0));
+  ni <= not i;
+  f <= (not x(4)) and (not x(3)) and (x(2)) and (x(1)) and (not x(0));
+  nf <= not f;
+  e <= (not x(4)) and (not x(3)) and (x(2)) and (not x(1)) and (x(0));
+  ne <= not e;
+  rbar <= not r;
+  
+  ss <= (not q(2)) and (not q(1)) and (not q(0));
+  sk <= (not q(2)) and (not q(1)) and (q(0));
+  skn <= (not q(2)) and (q(1)) and (not q(0));
+  skni <= (not q(2)) and (q(1)) and (q(0));
+  sknif <= (q(2)) and (not q(1)) and (not q(0));
+--output is high when the transition is from state knif to start
+--so output will be just the and of rbar,sknif,e
+  o <= (rbar) and (sknif) and e;
+--similary i have defined then nq(2), nq(1) and nq(0)
+  nq(2) <= (rbar) and ((skni and f) or (sknif and ne));
+  nq(1) <= (rbar) and ((sk and n) or (skn and i) or (skn and ni) or (skni and nf));
+  nq(0) <= (rbar) and ((ss and k) or (sk and nn) or (skn and i) or (skni and nf));
+-- nq is the input for the flipflop and the ouput is q    
+  d_1: dff_new port map (D => nq(0), CLK => CLK, Q => q(0));
+  d_2: dff_new port map (D => nq(1), CLK => CLK, Q => q(1));
+  d_3: dff_new port map (D => nq(2), CLK => CLK, Q => q(2));
+end Behave;

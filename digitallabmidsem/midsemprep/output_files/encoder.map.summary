@@ -1,0 +1,9 @@
+Analysis & Synthesis Status : Successful - Sat Mar 10 00:39:32 2018
+Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+Revision Name : encoder
+Top-level Entity Name : dut
+Family : MAX V
+Total logic elements : 2
+Total pins : 6
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

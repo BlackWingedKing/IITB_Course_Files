@@ -1,0 +1,41 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'lowCLK:cmp2|outclk'
+Slack : -10.429
+TNS   : -373.879
+
+Type  : Setup 'clock'
+Slack : -6.545
+TNS   : -164.264
+
+Type  : Setup 'lighter:cmp4|lightUp'
+Slack : -2.709
+TNS   : -10.257
+
+Type  : Hold 'lowCLK:cmp2|outclk'
+Slack : 1.376
+TNS   : 0.000
+
+Type  : Hold 'lighter:cmp4|lightUp'
+Slack : 1.716
+TNS   : 0.000
+
+Type  : Hold 'clock'
+Slack : 2.151
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clock'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'lighter:cmp4|lightUp'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'lowCLK:cmp2|outclk'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------

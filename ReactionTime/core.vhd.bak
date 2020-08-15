@@ -1,0 +1,6 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+-- This is the core of the entire device
+entity core is 
+end entity;

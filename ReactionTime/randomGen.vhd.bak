@@ -1,0 +1,4 @@
+entity randomGen is
+end entity;
+architecture gen of randomGen is
+end gen;

@@ -1,0 +1,14 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {/home/ritesh/Desktop/digital_lab3/halfadder.vhd}
+vcom -93 -work work {/home/ritesh/Desktop/digital_lab3/leftshift.vhd}
+vcom -93 -work work {/home/ritesh/Desktop/digital_lab3/shiftleft.vhd}
+vcom -93 -work work {/home/ritesh/Desktop/digital_lab3/multiply.vhd}
+vcom -93 -work work {/home/ritesh/Desktop/digital_lab3/add.vhd}
+vcom -93 -work work {/home/ritesh/Desktop/digital_lab3/decoder.vhd}
+

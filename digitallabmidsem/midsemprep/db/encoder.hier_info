@@ -1,0 +1,20 @@
+|dut
+input_vector[0] => encoder:dut1.x[0]
+input_vector[1] => encoder:dut1.x[1]
+input_vector[2] => encoder:dut1.x[2]
+input_vector[3] => encoder:dut1.x[3]
+output_vector[0] << encoder:dut1.o[0]
+output_vector[1] << encoder:dut1.o[1]
+
+
+|dut|encoder:dut1
+x[0] => o.IN0
+x[1] => o.IN0
+x[1] => o.IN1
+x[2] => o.IN1
+x[2] => o.IN1
+x[3] => ~NO_FANOUT~
+o[0] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[1] <= o.DB_MAX_OUTPUT_PORT_TYPE
+
+

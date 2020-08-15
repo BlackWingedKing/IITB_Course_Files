@@ -1,0 +1,501 @@
+Analysis & Synthesis report for ReactionGame
+Sat May  5 00:47:15 2018
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |ReactionGame|lcd_controller:LCD1|state
+  9. State Machine - |ReactionGame|Control:Con|state
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Port Connectivity Checks: "lcd_controller:LCD1"
+ 16. Port Connectivity Checks: "Control:Con|TenCounter:TimeCount4"
+ 17. Port Connectivity Checks: "Control:Con"
+ 18. Port Connectivity Checks: "debouncer:Deb|dflipflop:dff2"
+ 19. Port Connectivity Checks: "debouncer:Deb|dflipflop:dff1"
+ 20. Port Connectivity Checks: "debouncer:Deb"
+ 21. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sat May  5 00:47:15 2018       ;
+; Quartus Prime Version       ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Revision Name               ; ReactionGame                                ;
+; Top-level Entity Name       ; ReactionGame                                ;
+; Family                      ; MAX V                                       ;
+; Total logic elements        ; 968                                         ;
+; Total pins                  ; 19                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; 5M1270ZT144C5      ;                    ;
+; Top-level entity name                                                      ; ReactionGame       ; ReactionGame       ;
+; Family name                                                                ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                        ;
++----------------------------------+-----------------+-----------------+----------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                 ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------+---------+
+; Assign.vhd                       ; yes             ; User VHDL File  ; /home/ritesh/Desktop/VHDL/Assign.vhd         ;         ;
+; lcd_controller.vhd               ; yes             ; User VHDL File  ; /home/ritesh/Desktop/VHDL/lcd_controller.vhd ;         ;
+; dflipflop.vhd                    ; yes             ; User VHDL File  ; /home/ritesh/Desktop/VHDL/dflipflop.vhd      ;         ;
+; EdgeFSM.vhd                      ; yes             ; User VHDL File  ; /home/ritesh/Desktop/VHDL/EdgeFSM.vhd        ;         ;
+; debouncer.vhd                    ; yes             ; User VHDL File  ; /home/ritesh/Desktop/VHDL/debouncer.vhd      ;         ;
+; TenCounter.vhd                   ; yes             ; User VHDL File  ; /home/ritesh/Desktop/VHDL/TenCounter.vhd     ;         ;
+; HighToLow.vhd                    ; yes             ; User VHDL File  ; /home/ritesh/Desktop/VHDL/HighToLow.vhd      ;         ;
+; HighToLower.vhd                  ; yes             ; User VHDL File  ; /home/ritesh/Desktop/VHDL/HighToLower.vhd    ;         ;
+; ReactionGame.vhd                 ; yes             ; User VHDL File  ; /home/ritesh/Desktop/VHDL/ReactionGame.vhd   ;         ;
+; Controller.vhd                   ; yes             ; User VHDL File  ; /home/ritesh/Desktop/VHDL/Controller.vhd     ;         ;
+; HIghTLow.vhd                     ; yes             ; User VHDL File  ; /home/ritesh/Desktop/VHDL/HIghTLow.vhd       ;         ;
+; HighTLower.vhd                   ; yes             ; User VHDL File  ; /home/ritesh/Desktop/VHDL/HighTLower.vhd     ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------+---------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Total logic elements                        ; 968    ;
+;     -- Combinational with no register       ; 589    ;
+;     -- Register only                        ; 242    ;
+;     -- Combinational with a register        ; 137    ;
+;                                             ;        ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 201    ;
+;     -- 3 input functions                    ; 73     ;
+;     -- 2 input functions                    ; 433    ;
+;     -- 1 input functions                    ; 19     ;
+;     -- 0 input functions                    ; 0      ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 600    ;
+;     -- arithmetic mode                      ; 368    ;
+;     -- qfbk mode                            ; 0      ;
+;     -- register cascade mode                ; 0      ;
+;     -- synchronous clear/load mode          ; 13     ;
+;     -- asynchronous clear/load mode         ; 329    ;
+;                                             ;        ;
+; Total registers                             ; 379    ;
+; Total logic cells in carry chains           ; 380    ;
+; I/O pins                                    ; 19     ;
+; Maximum fan-out node                        ; NReset ;
+; Maximum fan-out                             ; 368    ;
+; Total fan-out                               ; 3020   ;
+; Average fan-out                             ; 3.06   ;
++---------------------------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                  ;
++-------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------+----------------+--------------+
+; Compilation Hierarchy Node    ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                             ; Entity Name    ; Library Name ;
++-------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------+----------------+--------------+
+; |ReactionGame                 ; 968 (68)    ; 379          ; 0          ; 19   ; 0            ; 589 (57)     ; 242 (0)           ; 137 (11)         ; 380 (0)         ; 0 (0)      ; |ReactionGame                                   ; ReactionGame   ; work         ;
+;    |Assign:A4|                ; 9 (9)       ; 0            ; 0          ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|Assign:A4                         ; Assign         ; work         ;
+;    |Control:Con|              ; 641 (252)   ; 266          ; 0          ; 0    ; 0            ; 375 (150)    ; 179 (29)          ; 87 (73)          ; 285 (125)       ; 0 (0)      ; |ReactionGame|Control:Con                       ; Control        ; work         ;
+;       |TenCounter:TimeCount0| ; 78 (78)     ; 33           ; 0          ; 0    ; 0            ; 45 (45)      ; 30 (30)           ; 3 (3)            ; 32 (32)         ; 0 (0)      ; |ReactionGame|Control:Con|TenCounter:TimeCount0 ; TenCounter     ; work         ;
+;       |TenCounter:TimeCount1| ; 78 (78)     ; 33           ; 0          ; 0    ; 0            ; 45 (45)      ; 30 (30)           ; 3 (3)            ; 32 (32)         ; 0 (0)      ; |ReactionGame|Control:Con|TenCounter:TimeCount1 ; TenCounter     ; work         ;
+;       |TenCounter:TimeCount2| ; 78 (78)     ; 33           ; 0          ; 0    ; 0            ; 45 (45)      ; 30 (30)           ; 3 (3)            ; 32 (32)         ; 0 (0)      ; |ReactionGame|Control:Con|TenCounter:TimeCount2 ; TenCounter     ; work         ;
+;       |TenCounter:TimeCount3| ; 78 (78)     ; 33           ; 0          ; 0    ; 0            ; 45 (45)      ; 30 (30)           ; 3 (3)            ; 32 (32)         ; 0 (0)      ; |ReactionGame|Control:Con|TenCounter:TimeCount3 ; TenCounter     ; work         ;
+;       |TenCounter:TimeCount4| ; 77 (77)     ; 32           ; 0          ; 0    ; 0            ; 45 (45)      ; 30 (30)           ; 2 (2)            ; 32 (32)         ; 0 (0)      ; |ReactionGame|Control:Con|TenCounter:TimeCount4 ; TenCounter     ; work         ;
+;    |EdgeFSM:Edge|             ; 2 (2)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |ReactionGame|EdgeFSM:Edge                      ; EdgeFSM        ; work         ;
+;    |HighTLow:CH|              ; 75 (75)     ; 33           ; 0          ; 0    ; 0            ; 42 (42)      ; 26 (26)           ; 7 (7)            ; 32 (32)         ; 0 (0)      ; |ReactionGame|HighTLow:CH                       ; HighTLow       ; work         ;
+;    |HighTLower:CL|            ; 74 (74)     ; 32           ; 0          ; 0    ; 0            ; 42 (42)      ; 24 (24)           ; 8 (8)            ; 32 (32)         ; 0 (0)      ; |ReactionGame|HighTLower:CL                     ; HighTLower     ; work         ;
+;    |HighToLow:CH1|            ; 42 (42)     ; 1            ; 0          ; 0    ; 0            ; 41 (41)      ; 0 (0)             ; 1 (1)            ; 31 (31)         ; 0 (0)      ; |ReactionGame|HighToLow:CH1                     ; HighToLow      ; work         ;
+;    |lcd_controller:LCD1|      ; 57 (57)     ; 35           ; 0          ; 0    ; 0            ; 22 (22)      ; 13 (13)           ; 22 (22)          ; 0 (0)           ; 0 (0)      ; |ReactionGame|lcd_controller:LCD1               ; lcd_controller ; work         ;
++-------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------+----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |ReactionGame|lcd_controller:LCD1|state                                                                                         ;
++-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; Name      ; state.S11 ; state.S10 ; state.S9 ; state.S8 ; state.S7 ; state.S6 ; state.S5 ; state.S4 ; state.S3 ; state.S2 ; state.S1 ; state.S0 ;
++-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; state.S0  ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ;
+; state.S1  ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 1        ;
+; state.S2  ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 1        ;
+; state.S3  ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 1        ;
+; state.S4  ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 1        ;
+; state.S5  ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.S6  ; 0         ; 0         ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.S7  ; 0         ; 0         ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.S8  ; 0         ; 0         ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.S9  ; 0         ; 0         ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.S10 ; 0         ; 1         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.S11 ; 1         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
++-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------+
+; State Machine - |ReactionGame|Control:Con|state    ;
++-------------+------------+-------------+-----------+
+; Name        ; state.GEND ; state.GOVER ; state.GON ;
++-------------+------------+-------------+-----------+
+; state.GON   ; 0          ; 0           ; 0         ;
+; state.GOVER ; 0          ; 1           ; 1         ;
+; state.GEND  ; 1          ; 0           ; 1         ;
++-------------+------------+-------------+-----------+
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; lcd_controller:LCD1|cmd_position[4..6] ; Stuck at GND due to stuck port data_in ;
+; lcd_controller:LCD1|cmd_position[7]    ; Stuck at VCC due to stuck port data_in ;
+; HighToLow:CH1|c[31]                    ; Merged with HighTLow:CH|c[31]          ;
+; HighToLow:CH1|c[30]                    ; Merged with HighTLow:CH|c[30]          ;
+; HighToLow:CH1|c[29]                    ; Merged with HighTLow:CH|c[29]          ;
+; HighToLow:CH1|c[28]                    ; Merged with HighTLow:CH|c[28]          ;
+; HighToLow:CH1|c[27]                    ; Merged with HighTLow:CH|c[27]          ;
+; HighToLow:CH1|c[26]                    ; Merged with HighTLow:CH|c[26]          ;
+; HighToLow:CH1|c[25]                    ; Merged with HighTLow:CH|c[25]          ;
+; HighToLow:CH1|c[24]                    ; Merged with HighTLow:CH|c[24]          ;
+; HighToLow:CH1|c[23]                    ; Merged with HighTLow:CH|c[23]          ;
+; HighToLow:CH1|c[22]                    ; Merged with HighTLow:CH|c[22]          ;
+; HighToLow:CH1|c[21]                    ; Merged with HighTLow:CH|c[21]          ;
+; HighToLow:CH1|c[20]                    ; Merged with HighTLow:CH|c[20]          ;
+; HighToLow:CH1|c[19]                    ; Merged with HighTLow:CH|c[19]          ;
+; HighToLow:CH1|c[18]                    ; Merged with HighTLow:CH|c[18]          ;
+; HighToLow:CH1|c[17]                    ; Merged with HighTLow:CH|c[17]          ;
+; HighToLow:CH1|c[16]                    ; Merged with HighTLow:CH|c[16]          ;
+; HighToLow:CH1|c[15]                    ; Merged with HighTLow:CH|c[15]          ;
+; HighToLow:CH1|c[14]                    ; Merged with HighTLow:CH|c[14]          ;
+; HighToLow:CH1|c[13]                    ; Merged with HighTLow:CH|c[13]          ;
+; HighToLow:CH1|c[12]                    ; Merged with HighTLow:CH|c[12]          ;
+; HighToLow:CH1|c[11]                    ; Merged with HighTLow:CH|c[11]          ;
+; HighToLow:CH1|c[10]                    ; Merged with HighTLow:CH|c[10]          ;
+; HighToLow:CH1|c[9]                     ; Merged with HighTLow:CH|c[9]           ;
+; HighToLow:CH1|c[8]                     ; Merged with HighTLow:CH|c[8]           ;
+; HighToLow:CH1|c[7]                     ; Merged with HighTLow:CH|c[7]           ;
+; HighToLow:CH1|c[6]                     ; Merged with HighTLow:CH|c[6]           ;
+; HighToLow:CH1|c[5]                     ; Merged with HighTLow:CH|c[5]           ;
+; HighToLow:CH1|c[4]                     ; Merged with HighTLow:CH|c[4]           ;
+; HighToLow:CH1|c[3]                     ; Merged with HighTLow:CH|c[3]           ;
+; HighToLow:CH1|c[2]                     ; Merged with HighTLow:CH|c[2]           ;
+; HighToLow:CH1|c[1]                     ; Merged with HighTLow:CH|c[1]           ;
+; HighToLow:CH1|c[0]                     ; Merged with HighTLow:CH|c[0]           ;
+; lcd_data[7]                            ; Stuck at GND due to stuck port data_in ;
+; lcd_controller:LCD1|data_dis[7]        ; Stuck at GND due to stuck port data_in ;
+; lcd_controller:LCD1|lcd_rw             ; Stuck at GND due to stuck port data_in ;
+; lcd_controller:LCD1|state.S10          ; Lost fanout                            ;
+; lcd_controller:LCD1|state.S11          ; Lost fanout                            ;
+; HighTLower:CL|c[0]                     ; Merged with HighTLow:CH|c[0]           ;
+; Total Number of Removed Registers = 42 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                        ;
++---------------+---------------------------+----------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register ;
++---------------+---------------------------+----------------------------------------+
+; lcd_data[7]   ; Stuck at GND              ; lcd_controller:LCD1|data_dis[7]        ;
+;               ; due to stuck port data_in ;                                        ;
++---------------+---------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 379   ;
+; Number of registers using Synchronous Clear  ; 7     ;
+; Number of registers using Synchronous Load   ; 6     ;
+; Number of registers using Asynchronous Clear ; 329   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 132   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; Control:Con|Random[3]                  ; 1       ;
+; Control:Con|Random[5]                  ; 1       ;
+; Control:Con|Random[6]                  ; 1       ;
+; Control:Con|Random[7]                  ; 1       ;
+; Control:Con|Random[8]                  ; 1       ;
+; Control:Con|Random[9]                  ; 1       ;
+; Total number of inverted registers = 6 ;         ;
++----------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |ReactionGame|lcd_controller:LCD1|count_cmd[2] ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |ReactionGame|Control:Con|Count[14]            ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |ReactionGame|col[2]                           ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; Yes        ; |ReactionGame|lcd_controller:LCD1|lcd[5]       ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |ReactionGame|Control:Con|state                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "lcd_controller:LCD1" ;
++-----------+-------+----------+------------------+
+; Port      ; Type  ; Severity ; Details          ;
++-----------+-------+----------+------------------+
+; erase     ; Input ; Info     ; Stuck at GND     ;
+; put_char  ; Input ; Info     ; Stuck at VCC     ;
+; write_row ; Input ; Info     ; Stuck at GND     ;
++-----------+-------+----------+------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Control:Con|TenCounter:TimeCount4"                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; carry ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Control:Con"                                                                            ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; gameover ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "debouncer:Deb|dflipflop:dff2"                                                       ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; notq ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "debouncer:Deb|dflipflop:dff1"                                                       ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; notq ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "debouncer:Deb"                                                                      ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; w    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+    Info: Processing started: Sat May  5 00:47:03 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ReactionGame -c ReactionGame
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file Assign.vhd
+    Info (12022): Found design unit 1: Assign-Behave File: /home/ritesh/Desktop/VHDL/Assign.vhd Line: 8
+    Info (12023): Found entity 1: Assign File: /home/ritesh/Desktop/VHDL/Assign.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file lcd_controller.vhd
+    Info (12022): Found design unit 1: lcd_controller-Behavioral File: /home/ritesh/Desktop/VHDL/lcd_controller.vhd Line: 24
+    Info (12023): Found entity 1: lcd_controller File: /home/ritesh/Desktop/VHDL/lcd_controller.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file dflipflop.vhd
+    Info (12022): Found design unit 1: dflipflop-Behave File: /home/ritesh/Desktop/VHDL/dflipflop.vhd Line: 8
+    Info (12023): Found entity 1: dflipflop File: /home/ritesh/Desktop/VHDL/dflipflop.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file EdgeFSM.vhd
+    Info (12022): Found design unit 1: EdgeFSM-Behave File: /home/ritesh/Desktop/VHDL/EdgeFSM.vhd Line: 10
+    Info (12023): Found entity 1: EdgeFSM File: /home/ritesh/Desktop/VHDL/EdgeFSM.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file debouncer.vhd
+    Info (12022): Found design unit 1: debouncer-Behave File: /home/ritesh/Desktop/VHDL/debouncer.vhd Line: 10
+    Info (12023): Found entity 1: debouncer File: /home/ritesh/Desktop/VHDL/debouncer.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file TenCounter.vhd
+    Info (12022): Found design unit 1: TenCounter-Behave File: /home/ritesh/Desktop/VHDL/TenCounter.vhd Line: 12
+    Info (12023): Found entity 1: TenCounter File: /home/ritesh/Desktop/VHDL/TenCounter.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file HighToLow.vhd
+    Info (12022): Found design unit 1: HighToLow-Behave File: /home/ritesh/Desktop/VHDL/HighToLow.vhd Line: 11
+    Info (12023): Found entity 1: HighToLow File: /home/ritesh/Desktop/VHDL/HighToLow.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file HighToLower.vhd
+    Info (12022): Found design unit 1: HighToLower-Behave File: /home/ritesh/Desktop/VHDL/HighToLower.vhd Line: 11
+    Info (12023): Found entity 1: HighToLower File: /home/ritesh/Desktop/VHDL/HighToLower.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file ReactionGame.vhd
+    Info (12022): Found design unit 1: ReactionGame-Behave File: /home/ritesh/Desktop/VHDL/ReactionGame.vhd Line: 15
+    Info (12023): Found entity 1: ReactionGame File: /home/ritesh/Desktop/VHDL/ReactionGame.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file Controller.vhd
+    Info (12022): Found design unit 1: Control-Behave File: /home/ritesh/Desktop/VHDL/Controller.vhd Line: 12
+    Info (12023): Found entity 1: Control File: /home/ritesh/Desktop/VHDL/Controller.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file HIghTLow.vhd
+    Info (12022): Found design unit 1: HighTLow-Behave File: /home/ritesh/Desktop/VHDL/HIghTLow.vhd Line: 11
+    Info (12023): Found entity 1: HighTLow File: /home/ritesh/Desktop/VHDL/HIghTLow.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file HighTLower.vhd
+    Info (12022): Found design unit 1: HighTLower-Behave File: /home/ritesh/Desktop/VHDL/HighTLower.vhd Line: 11
+    Info (12023): Found entity 1: HighTLower File: /home/ritesh/Desktop/VHDL/HighTLower.vhd Line: 7
+Info (12127): Elaborating entity "ReactionGame" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at ReactionGame.vhd(17): object "debounce" assigned a value but never read File: /home/ritesh/Desktop/VHDL/ReactionGame.vhd Line: 17
+Warning (10036): Verilog HDL or VHDL warning at ReactionGame.vhd(22): object "GAMEOVER" assigned a value but never read File: /home/ritesh/Desktop/VHDL/ReactionGame.vhd Line: 22
+Info (12128): Elaborating entity "HighTLow" for hierarchy "HighTLow:CH" File: /home/ritesh/Desktop/VHDL/ReactionGame.vhd Line: 80
+Info (12128): Elaborating entity "HighToLow" for hierarchy "HighToLow:CH1" File: /home/ritesh/Desktop/VHDL/ReactionGame.vhd Line: 81
+Info (12128): Elaborating entity "HighTLower" for hierarchy "HighTLower:CL" File: /home/ritesh/Desktop/VHDL/ReactionGame.vhd Line: 82
+Info (12128): Elaborating entity "debouncer" for hierarchy "debouncer:Deb" File: /home/ritesh/Desktop/VHDL/ReactionGame.vhd Line: 84
+Info (12128): Elaborating entity "HighToLower" for hierarchy "debouncer:Deb|HighToLower:co1" File: /home/ritesh/Desktop/VHDL/debouncer.vhd Line: 21
+Info (12128): Elaborating entity "dflipflop" for hierarchy "debouncer:Deb|dflipflop:dff1" File: /home/ritesh/Desktop/VHDL/debouncer.vhd Line: 29
+Warning (10492): VHDL Process Statement warning at dflipflop.vhd(13): signal "RESET" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/VHDL/dflipflop.vhd Line: 13
+Info (12128): Elaborating entity "EdgeFSM" for hierarchy "EdgeFSM:Edge" File: /home/ritesh/Desktop/VHDL/ReactionGame.vhd Line: 85
+Info (12128): Elaborating entity "Control" for hierarchy "Control:Con" File: /home/ritesh/Desktop/VHDL/ReactionGame.vhd Line: 87
+Warning (10492): VHDL Process Statement warning at Controller.vhd(41): signal "LEDF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/VHDL/Controller.vhd Line: 41
+Warning (10492): VHDL Process Statement warning at Controller.vhd(42): signal "CLKH" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/VHDL/Controller.vhd Line: 42
+Info (12128): Elaborating entity "TenCounter" for hierarchy "Control:Con|TenCounter:TimeCount0" File: /home/ritesh/Desktop/VHDL/Controller.vhd Line: 31
+Info (12128): Elaborating entity "Assign" for hierarchy "Assign:A0" File: /home/ritesh/Desktop/VHDL/ReactionGame.vhd Line: 91
+Warning (10492): VHDL Process Statement warning at Assign.vhd(15): signal "X" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/VHDL/Assign.vhd Line: 15
+Info (12128): Elaborating entity "lcd_controller" for hierarchy "lcd_controller:LCD1" File: /home/ritesh/Desktop/VHDL/ReactionGame.vhd Line: 97
+Warning (10036): Verilog HDL or VHDL warning at lcd_controller.vhd(32): object "count_next_data" assigned a value but never read File: /home/ritesh/Desktop/VHDL/lcd_controller.vhd Line: 32
+Warning (10036): Verilog HDL or VHDL warning at lcd_controller.vhd(33): object "count_next_data1" assigned a value but never read File: /home/ritesh/Desktop/VHDL/lcd_controller.vhd Line: 33
+Warning (10036): Verilog HDL or VHDL warning at lcd_controller.vhd(34): object "cmd_line_next" assigned a value but never read File: /home/ritesh/Desktop/VHDL/lcd_controller.vhd Line: 34
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "rw" is stuck at GND File: /home/ritesh/Desktop/VHDL/ReactionGame.vhd Line: 12
+    Warning (13410): Pin "b11" is stuck at VCC File: /home/ritesh/Desktop/VHDL/ReactionGame.vhd Line: 12
+    Warning (13410): Pin "b12" is stuck at GND File: /home/ritesh/Desktop/VHDL/ReactionGame.vhd Line: 12
+Info (18000): Registers with preset signals will power-up high File: /home/ritesh/Desktop/VHDL/Controller.vhd Line: 54
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (21057): Implemented 987 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 968 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 14 warnings
+    Info: Peak virtual memory: 1229 megabytes
+    Info: Processing ended: Sat May  5 00:47:15 2018
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:28
+
+

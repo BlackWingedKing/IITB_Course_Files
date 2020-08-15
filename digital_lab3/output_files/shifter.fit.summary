@@ -1,0 +1,11 @@
+Fitter Status : Successful - Mon Mar  5 19:18:13 2018
+Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+Revision Name : shifter
+Top-level Entity Name : DUT
+Family : MAX V
+Device : 5M1270ZT144C5
+Timing Models : Final
+Total logic elements : 82 / 1,270 ( 6 % )
+Total pins : 26 / 114 ( 23 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

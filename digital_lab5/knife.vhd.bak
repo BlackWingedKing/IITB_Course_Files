@@ -1,0 +1,39 @@
+library std;
+use std.standard.all;
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+
+entity gun is
+  port (r: in std_logic;
+        x: in std_logic_vector(4 downto 0);
+		  CLK: in std_logic;
+		  o: out std_logic);
+end entity gun;
+architecture Behave of gun is
+
+component dff_new is
+  port (D, CLK: in std_logic; Q: out std_logic);
+end component;
+	signal  q,nq: std_logic_vector(1 downto 0);
+	signal  b,a,m,nb,na,nm,ss,sb,sbo,sbom,rbar: std_logic; 
+begin
+  b <= (not x(4)) and (not x(3)) and (not x(2)) and (x(1)) and (not x(0));
+  nb <= not b;
+  a <= (not x(4)) and (x(3)) and (x(2)) and (x(1)) and (x(0));
+  na <= not a;
+  m <= (not x(4)) and (x(3)) and (x(2)) and (not x(1)) and (x(0));
+  nm <= not m;
+  rbar <= not r;
+  ss <= (not q(1)) and (not q(0));
+  sb <= (not q(1)) and (q(0));
+  sbo <= (q(1)) and (not q(0));
+  sbom <= (q(1)) and (q(0));
+  o <= (rbar) and (sbom) and b;
+  nq(1) <= (rbar) and ((sb and a) or (sbo and m) or (sbo and nm) or (sbom and nb));
+  nq(0) <= (rbar) and ((ss and b) or (sbo and m) or (sb and na) or (sbom and nb));
+  
+  d_1: dff_new port map (D => nq(0), CLK => CLK, Q => q(0));
+  d_2: dff_new port map (D => nq(1), CLK => CLK, Q => q(1));
+end Behave;

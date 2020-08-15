@@ -1,0 +1,384 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/ritesh/Desktop/endsemprep/simulation/modelsim
+Eand_2
+Z1 w1524249926
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8/home/ritesh/Desktop/endsemprep/EE224_Components.vhd
+Z5 F/home/ritesh/Desktop/endsemprep/EE224_Components.vhd
+l0
+L38
+VQI]oLHj[7OjfOgWKR;[m;2
+!s100 OHhE?GTCV^Ak2S@QY<2cl0
+Z6 OV;C;10.4d;61
+31
+Z7 !s110 1524307235
+!i10b 1
+Z8 !s108 1524307235.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/endsemprep/EE224_Components.vhd|
+Z10 !s107 /home/ritesh/Desktop/endsemprep/EE224_Components.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1
+Abehave
+R2
+R3
+DEx4 work 5 and_2 0 22 QI]oLHj[7OjfOgWKR;[m;2
+l43
+L42
+VcRHiMBkDee=8EV<F:<Tog3
+!s100 VOlLhQ<cM6_ZV1>Alm:Ed0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Edff_new
+Z13 w1524300683
+R2
+R3
+R0
+Z14 8/home/ritesh/Desktop/endsemprep/dff_new.vhdl
+Z15 F/home/ritesh/Desktop/endsemprep/dff_new.vhdl
+l0
+L4
+VBW50De>m;UeWTCNZf<^JR1
+!s100 @?Oz[O>@QAN4EK@V6DlJF1
+R6
+31
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/endsemprep/dff_new.vhdl|
+Z17 !s107 /home/ritesh/Desktop/endsemprep/dff_new.vhdl|
+!i113 1
+R11
+R12
+Aanything
+R2
+R3
+DEx4 work 7 dff_new 0 22 BW50De>m;UeWTCNZf<^JR1
+l9
+L8
+V6nzSPK=_F>hQg`=hI_X`P3
+!s100 k1dndoGngY^nee>SigD=03
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Edut
+Z18 w1524303239
+R2
+R3
+R0
+Z19 8/home/ritesh/Desktop/endsemprep/dut.vhd
+Z20 F/home/ritesh/Desktop/endsemprep/dut.vhd
+l0
+L7
+VTm<Y3XPSc:Ke6n`@2K[aQ0
+!s100 XGPZXda7XVnK@JXHhJ@L11
+R6
+31
+R7
+!i10b 1
+Z21 !s108 1524307234.000000
+Z22 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/endsemprep/dut.vhd|
+Z23 !s107 /home/ritesh/Desktop/endsemprep/dut.vhd|
+!i113 1
+R11
+R12
+Adutwrap
+R2
+R3
+DEx4 work 3 dut 0 22 Tm<Y3XPSc:Ke6n`@2K[aQ0
+l20
+L12
+V5[CdaR>C3aS2ZNb@=OCH?2
+!s100 mJ<SGS?B0oz_Xk@R8n4Xa1
+R6
+31
+R7
+!i10b 1
+R21
+R22
+R23
+!i113 1
+R11
+R12
+Pee224_components
+R2
+R3
+R1
+R0
+R4
+R5
+l0
+L7
+Vf]:4N9OdKofEZOQ>22L_D1
+!s100 f;;]jMk6kHEMFYhH:_g321
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eendsem
+Z24 w1524304718
+Z25 DPx4 work 16 ee224_components 0 22 f]:4N9OdKofEZOQ>22L_D1
+R2
+R3
+R0
+Z26 8/home/ritesh/Desktop/endsemprep/endsem.vhd
+Z27 F/home/ritesh/Desktop/endsemprep/endsem.vhd
+l0
+L12
+VPC3Pj7HcfHjAkEhT9igQd1
+!s100 ZSlVUdPLCdN^G_zO^BMh73
+R6
+31
+R7
+!i10b 1
+R8
+Z28 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/endsemprep/endsem.vhd|
+Z29 !s107 /home/ritesh/Desktop/endsemprep/endsem.vhd|
+!i113 1
+R11
+R12
+Abehave
+R25
+R2
+R3
+DEx4 work 6 endsem 0 22 PC3Pj7HcfHjAkEhT9igQd1
+l27
+L19
+VC6TSC`KzMG@TWCZZGFA^A3
+!s100 3^H3OYThimPFdjBAa^OGQ0
+R6
+31
+R7
+!i10b 1
+R8
+R28
+R29
+!i113 1
+R11
+R12
+Einverter
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L27
+VW8;4keO[6^2ogL@lRN^TN2
+!s100 FbATZPTnkE2=kXf_TXiGD1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Abehave
+R2
+R3
+DEx4 work 8 inverter 0 22 W8;4keO[6^2ogL@lRN^TN2
+l32
+L31
+V[?EMPPWiT^Fl3W4;d2=JP1
+!s100 ;XJhV`dY1<N2CLV[no0QT2
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Enand_2
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L60
+V^RoNT?bXNL3^ZNTA27YGH3
+!s100 IDI8mBb;9HhP5l[_gde>k3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Abehave
+R2
+R3
+DEx4 work 6 nand_2 0 22 ^RoNT?bXNL3^ZNTA27YGH3
+l65
+L64
+VD1@C8?MLaP@dU?BEzini12
+!s100 81iH0TW8aSXE8OEAiMlaP1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eor_2
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L49
+V;i`f5A33NTCa45`Ho2NG_2
+!s100 Ifl^;Nl8nb4]@nn4jU:RZ0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Abehave
+R2
+R3
+DEx4 work 4 or_2 0 22 ;i`f5A33NTCa45`Ho2NG_2
+l54
+L53
+VgFW[T3j^i>NKUU<gSPVKT1
+!s100 Ng7o>cSW^mbzE1SVJG;Po1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Etestbench
+Z30 w1524303170
+R3
+R2
+R0
+Z31 8/home/ritesh/Desktop/endsemprep/testbench.vhd
+Z32 F/home/ritesh/Desktop/endsemprep/testbench.vhd
+l0
+L10
+V;aMaWb7lbSHC7N<aX0l`S0
+!s100 LCH]60V`gX=U5c?BTOlD21
+R6
+31
+R7
+!i10b 1
+R8
+Z33 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/endsemprep/testbench.vhd|
+Z34 !s107 /home/ritesh/Desktop/endsemprep/testbench.vhd|
+!i113 1
+R11
+R12
+Abehave
+R3
+R2
+DEx4 work 9 testbench 0 22 ;aMaWb7lbSHC7N<aX0l`S0
+l44
+L12
+VCYAFP9CR0;E:FXCX1Ak>b3
+!s100 g?XL25VF4XIHfSb70Cm;@3
+R6
+31
+R7
+!i10b 1
+R8
+R33
+R34
+!i113 1
+R11
+R12
+Exor_2
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L71
+VBhj9NFNZEf075oNhNoBCQ0
+!s100 aYbUfMa9bA`Znl`LBOT]K3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Abehave
+R2
+R3
+DEx4 work 5 xor_2 0 22 Bhj9NFNZEf075oNhNoBCQ0
+l76
+L75
+VFRRdh3REYM3Y9bZ[6D0fC1
+!s100 B1gX?O:o[O_hLh1ijdXl>0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12

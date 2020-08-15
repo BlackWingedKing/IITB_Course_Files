@@ -1,0 +1,11 @@
+Fitter Status : Successful - Thu Apr 12 17:35:54 2018
+Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+Revision Name : game
+Top-level Entity Name : counter2
+Family : MAX V
+Device : 5M1270ZT144C5
+Timing Models : Final
+Total logic elements : 69 / 1,270 ( 5 % )
+Total pins : 3 / 114 ( 3 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )
