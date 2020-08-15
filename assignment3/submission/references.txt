@@ -1,0 +1,9 @@
+# all functions are from numpy library
+https://numpy.org/
+
+# reading a text file from here
+https://www.tutorialspoint.com/python/file_readline.htm
+
+# pulp and it's tutorial
+https://www.coin-or.org/PuLP/index.html
+https://github.com/AnnaNican/optimizers

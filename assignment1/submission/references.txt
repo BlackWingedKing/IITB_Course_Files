@@ -1,0 +1,25 @@
+# I learnt about arparse for python from here
+https://docs.python.org/2/howto/argparse.html
+
+# samples generated using the function here
+https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.random.binomial.html
+
+# root_finding here (scipy.optimize.root_scalar)
+https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.root_scalar.html
+
+# for bisect
+https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.bisect.html
+
+# all other functions are from numpy library
+
+# for loading the txt file into a np array directly np.loadtxt
+https://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html
+
+# used pandas for parsing the data from the output.txt
+https://pandas.pydata.org/
+
+# used matplotlib for plotting
+https://matplotlib.org/3.1.1/tutorials/introductory/pyplot.html
+
+# i removed warnings using the solution here
+https://stackoverflow.com/questions/14463277/how-to-disable-python-warnings

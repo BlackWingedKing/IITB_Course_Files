@@ -1,0 +1,7 @@
+The file windgrid.py consists of the environment implemented as windgrid class
+sarsa.py has my sarsa implementation
+It also runs through all the 3 tasks plus my variant (4 tasks)
+$ python3 sarsa.py n
+where n is the number of seeds across which it will be averaged
+The file displays 5 plots in total
+Combined + 4tasks plot
